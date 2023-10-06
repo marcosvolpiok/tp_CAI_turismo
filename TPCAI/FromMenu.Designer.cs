@@ -1,6 +1,6 @@
 ﻿namespace TPCAI
 {
-    partial class Form1
+    partial class FromMenu
     {
         /// <summary>
         /// Required designer variable.
