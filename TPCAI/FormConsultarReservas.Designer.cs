@@ -35,6 +35,7 @@
             this.ColumnDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,16 +88,26 @@
             this.ColumnEstado.HeaderText = "Estado";
             this.ColumnEstado.Name = "ColumnEstado";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(557, 487);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Volver al Menú";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormConsultarReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 484);
+            this.ClientSize = new System.Drawing.Size(670, 522);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormConsultarReservas";
-            this.Text = "FormConsultarReservas";
+            this.Text = "Consultar Reservas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,5 +123,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
+        private System.Windows.Forms.Button button1;
     }
 }
