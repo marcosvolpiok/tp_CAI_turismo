@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPCAI", "TPCAI\TPCAI.csproj", "{6B9C36F5-1BA4-4B73-B07A-A1BB0273751F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromConsultaProductos", "FromConsultaProductos\FromConsultaProductos.csproj", "{8F05AD50-967C-44D6-9842-985CDA7EE663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromConsularAlojamientos", "FromConsularAlojamientos\FromConsularAlojamientos.csproj", "{5E706DC3-EB9F-48A7-AD41-6F3BEBA6C1B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{6B9C36F5-1BA4-4B73-B07A-A1BB0273751F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B9C36F5-1BA4-4B73-B07A-A1BB0273751F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B9C36F5-1BA4-4B73-B07A-A1BB0273751F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F05AD50-967C-44D6-9842-985CDA7EE663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F05AD50-967C-44D6-9842-985CDA7EE663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F05AD50-967C-44D6-9842-985CDA7EE663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F05AD50-967C-44D6-9842-985CDA7EE663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E706DC3-EB9F-48A7-AD41-6F3BEBA6C1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E706DC3-EB9F-48A7-AD41-6F3BEBA6C1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E706DC3-EB9F-48A7-AD41-6F3BEBA6C1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E706DC3-EB9F-48A7-AD41-6F3BEBA6C1B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
