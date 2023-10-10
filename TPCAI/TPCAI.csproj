@@ -74,6 +74,12 @@
     <Compile Include="FormConsultarVuelos.Designer.cs">
       <DependentUpon>FormConsultarVuelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGenerarReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarReservas.Designer.cs">
+      <DependentUpon>FormGenerarReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListadoAlojamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultarVuelos.resx">
       <DependentUpon>FormConsultarVuelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarReservas.resx">
+      <DependentUpon>FormGenerarReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListadoAlojamiento.resx">
       <DependentUpon>FormListadoAlojamiento.cs</DependentUpon>

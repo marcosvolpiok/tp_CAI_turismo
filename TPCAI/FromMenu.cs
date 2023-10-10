@@ -31,7 +31,14 @@ namespace TPCAI
 
         private void btnGenerarReservas_Click(object sender, EventArgs e)
         {
-            
+            FormGenerarReservas generarReservas = new FormGenerarReservas();
+            generarReservas.Show();
+        }
+
+        private void btnConsultarReservas_Click(object sender, EventArgs e)
+        {
+            FormConsultarReservas consultarReservas = new FormConsultarReservas();
+            consultarReservas.Show();
         }
     }
 }

@@ -17,3 +17,4 @@ C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\bin\Debug\TPCAI.pdb
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.exe
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.pdb
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormConsultarPaquetes.resources
+C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormGenerarReservas.resources

@@ -104,7 +104,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Volver al Menú";
+            this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // FormConsultarReservas
