@@ -28,57 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnConsultarProductos = new System.Windows.Forms.Button();
+            this.btnConsultarReservas = new System.Windows.Forms.Button();
+            this.btnGenerarReservas = new System.Windows.Forms.Button();
+            this.btnSalirMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnConsultarProductos
             // 
-            this.button1.Location = new System.Drawing.Point(147, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Consultar Productos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConsultarProductos.Location = new System.Drawing.Point(147, 43);
+            this.btnConsultarProductos.Name = "btnConsultarProductos";
+            this.btnConsultarProductos.Size = new System.Drawing.Size(143, 42);
+            this.btnConsultarProductos.TabIndex = 0;
+            this.btnConsultarProductos.Text = "Consultar Productos";
+            this.btnConsultarProductos.UseVisualStyleBackColor = true;
+            this.btnConsultarProductos.Click += new System.EventHandler(this.btnConsultarProductos_Click);
             // 
-            // button3
+            // btnConsultarReservas
             // 
-            this.button3.Location = new System.Drawing.Point(147, 214);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 42);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Consular Reservas";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnConsultarReservas.Location = new System.Drawing.Point(147, 214);
+            this.btnConsultarReservas.Name = "btnConsultarReservas";
+            this.btnConsultarReservas.Size = new System.Drawing.Size(143, 42);
+            this.btnConsultarReservas.TabIndex = 2;
+            this.btnConsultarReservas.Text = "Consular Reservas";
+            this.btnConsultarReservas.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnGenerarReservas
             // 
-            this.button4.Location = new System.Drawing.Point(147, 125);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 42);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Generar Reservas";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnGenerarReservas.Location = new System.Drawing.Point(147, 125);
+            this.btnGenerarReservas.Name = "btnGenerarReservas";
+            this.btnGenerarReservas.Size = new System.Drawing.Size(143, 42);
+            this.btnGenerarReservas.TabIndex = 3;
+            this.btnGenerarReservas.Text = "Generar Reservas";
+            this.btnGenerarReservas.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnSalirMenu
             // 
-            this.button5.Location = new System.Drawing.Point(147, 301);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(143, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Salir";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSalirMenu.Location = new System.Drawing.Point(147, 301);
+            this.btnSalirMenu.Name = "btnSalirMenu";
+            this.btnSalirMenu.Size = new System.Drawing.Size(143, 42);
+            this.btnSalirMenu.TabIndex = 4;
+            this.btnSalirMenu.Text = "Salir";
+            this.btnSalirMenu.UseVisualStyleBackColor = true;
             // 
             // FromMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 467);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalirMenu);
+            this.Controls.Add(this.btnGenerarReservas);
+            this.Controls.Add(this.btnConsultarReservas);
+            this.Controls.Add(this.btnConsultarProductos);
             this.Name = "FromMenu";
             this.Text = "Menú";
             this.ResumeLayout(false);
@@ -87,10 +88,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnConsultarProductos;
+        private System.Windows.Forms.Button btnConsultarReservas;
+        private System.Windows.Forms.Button btnGenerarReservas;
+        private System.Windows.Forms.Button btnSalirMenu;
     }
 }
 
