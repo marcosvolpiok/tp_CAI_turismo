@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FromConsularAlojamientos
+namespace TPCAI
 {
-    public partial class FromConsultarAlojamientos : Form
+    public partial class FormConsultarAlojamientos : Form
     {
-        public FromConsultarAlojamientos()
+        public FormConsultarAlojamientos()
         {
             InitializeComponent();
         }

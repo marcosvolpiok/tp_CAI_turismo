@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TPCAI
 {
-    public partial class FormListadoAlojamiento : Form
+    public partial class FormListadoCruceros : Form
     {
-        public FormListadoAlojamiento()
+        public FormListadoCruceros()
         {
             InitializeComponent();
         }

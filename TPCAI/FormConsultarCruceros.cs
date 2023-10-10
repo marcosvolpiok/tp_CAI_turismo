@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FromConsularAlojamientos
+namespace TPCAI
 {
-    public partial class FromConsultarAlojamientos : Form
+    public partial class FormConsultarCruceros : Form
     {
-        public FromConsultarAlojamientos()
+        public FormConsultarCruceros()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

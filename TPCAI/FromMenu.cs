@@ -16,5 +16,12 @@ namespace TPCAI
         {
             InitializeComponent();
         }
+
+        private void btnConsultarProductos_Click(object sender, EventArgs e)
+        {
+            FormMenuProductos menu = new FormMenuProductos();
+            menu.Show();
+            
+        }
     }
 }

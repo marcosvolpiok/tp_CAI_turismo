@@ -1,6 +1,6 @@
 ﻿namespace TPCAI
 {
-    partial class FormListadoAlojamiento
+    partial class FormListadoPaquetesAdicionales
     {
         /// <summary>
         /// Required designer variable.
@@ -41,11 +41,10 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDescripcion,
             this.ColumnTarifa});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(98, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(470, 523);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.TabIndex = 4;
             // 
             // ColumnDescripcion
             // 
@@ -59,22 +58,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(363, 554);
+            this.button1.Location = new System.Drawing.Point(449, 544);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 29);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Agregar al Paquete";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // FormListadoAlojamiento
+            // FormListadoPaquetesAdicionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 595);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(666, 575);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FormListadoAlojamiento";
-            this.Text = "Adicionales Detalle";
+            this.Controls.Add(this.button1);
+            this.Name = "FormListadoPaquetesAdicionales";
+            this.Text = "FormListadoPaquetesAdicionales";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
