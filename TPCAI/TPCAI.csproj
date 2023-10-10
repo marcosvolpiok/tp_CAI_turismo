@@ -56,6 +56,12 @@
     <Compile Include="FormConsultarCruceros.Designer.cs">
       <DependentUpon>FormConsultarCruceros.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultarPaquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarPaquetes.Designer.cs">
+      <DependentUpon>FormConsultarPaquetes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultarReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,12 +92,6 @@
     <Compile Include="FormListadoPaquetesAdicionales.Designer.cs">
       <DependentUpon>FormListadoPaquetesAdicionales.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultarPaquetes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormConsultarPaquetes.Designer.cs">
-      <DependentUpon>FormConsultarPaquetes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormListadoVuelos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +118,9 @@
     <EmbeddedResource Include="FormConsultarCruceros.resx">
       <DependentUpon>FormConsultarCruceros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarPaquetes.resx">
+      <DependentUpon>FormConsultarPaquetes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormConsultarReservas.resx">
       <DependentUpon>FormConsultarReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormListadoPaquetesAdicionales.resx">
       <DependentUpon>FormListadoPaquetesAdicionales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarPaquetes.resx">
-      <DependentUpon>FormConsultarPaquetes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListadoVuelos.resx">
       <DependentUpon>FormListadoVuelos.cs</DependentUpon>

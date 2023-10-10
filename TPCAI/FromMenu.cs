@@ -23,5 +23,15 @@ namespace TPCAI
             menu.Show();
             
         }
+
+        private void btnSalirMenu_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void btnGenerarReservas_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

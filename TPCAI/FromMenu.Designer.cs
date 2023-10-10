@@ -61,6 +61,7 @@
             this.btnGenerarReservas.TabIndex = 3;
             this.btnGenerarReservas.Text = "Generar Reservas";
             this.btnGenerarReservas.UseVisualStyleBackColor = true;
+            this.btnGenerarReservas.Click += new System.EventHandler(this.btnGenerarReservas_Click);
             // 
             // btnSalirMenu
             // 
@@ -70,6 +71,7 @@
             this.btnSalirMenu.TabIndex = 4;
             this.btnSalirMenu.Text = "Salir";
             this.btnSalirMenu.UseVisualStyleBackColor = true;
+            this.btnSalirMenu.Click += new System.EventHandler(this.btnSalirMenu_Click);
             // 
             // FromMenu
             // 

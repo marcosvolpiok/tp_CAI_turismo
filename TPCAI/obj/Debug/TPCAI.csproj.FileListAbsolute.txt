@@ -6,7 +6,6 @@ C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormConsultar
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormListadoAlojamiento.resources
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormListadoCruceros.resources
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormListadoPaquetesAdicionales.resources
-C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\FromConsularAlojamientos.FromConsultarAlojamientos.resources
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormListadoVuelos.resources
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormMenuProductos.resources
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FromMenu.resources
@@ -17,3 +16,4 @@ C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\bin\Debug\TPCAI.exe
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\bin\Debug\TPCAI.pdb
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.exe
 C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.pdb
+C:\Users\keynes\Desktop\tp_CAI_Turismo\TPCAI\TPCAI\obj\Debug\TPCAI.FormConsultarPaquetes.resources
