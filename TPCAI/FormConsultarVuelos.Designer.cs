@@ -222,7 +222,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormConsultarVuelos";
-            this.Text = "FormConsultarVuelos";
+            this.Text = "Consultar Vuelos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

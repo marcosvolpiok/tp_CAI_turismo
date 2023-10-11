@@ -201,7 +201,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "FormConsultarPaquetes";
-            this.Text = "FormConsultarPaquetes";
+            this.Text = "Consultar Paquetes";
             this.ResumeLayout(false);
             this.PerformLayout();
 

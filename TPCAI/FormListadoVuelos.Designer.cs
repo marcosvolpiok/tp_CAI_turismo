@@ -126,7 +126,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormListadoVuelos";
-            this.Text = "FormListadoVuelos";
+            this.Text = "Listado Vuelos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

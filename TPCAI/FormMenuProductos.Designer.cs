@@ -84,7 +84,7 @@
             this.Controls.Add(this.btnConsultarPaquetes);
             this.Controls.Add(this.btnConsultarVuelos);
             this.Name = "FormMenuProductos";
-            this.Text = "FormMenuProductos";
+            this.Text = "Menu Productos";
             this.ResumeLayout(false);
 
         }

@@ -118,7 +118,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormConsultarReservas";
-            this.Text = "FormConsultarReservas";
+            this.Text = "Consultar Reservas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
