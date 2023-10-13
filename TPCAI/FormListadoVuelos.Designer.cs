@@ -39,6 +39,7 @@
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.ColumnPrecio,
             this.ColumnClase,
             this.ColumnTipoPasajero});
-            this.dataGridView1.Location = new System.Drawing.Point(-28, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 36);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(854, 523);
             this.dataGridView1.TabIndex = 3;
@@ -101,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(742, 565);
+            this.button2.Location = new System.Drawing.Point(801, 565);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 29);
             this.button2.TabIndex = 5;
@@ -110,18 +111,28 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(591, 565);
+            this.button1.Location = new System.Drawing.Point(486, 565);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 29);
             this.button1.TabIndex = 4;
             this.button1.Text = "Añadir a Presupuesto";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(640, 565);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 29);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Ver Presupuesto";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // FormListadoVuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 630);
+            this.ClientSize = new System.Drawing.Size(967, 630);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -145,5 +156,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

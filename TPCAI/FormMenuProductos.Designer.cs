@@ -60,7 +60,7 @@
             this.Controls.Add(this.btnConsultarAlojamiento);
             this.Controls.Add(this.btnConsultarVuelos);
             this.Name = "FormMenuProductos";
-            this.Text = "FormMenuProductos";
+            this.Text = "Menú Productos";
             this.ResumeLayout(false);
 
         }
