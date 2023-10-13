@@ -19,8 +19,16 @@ namespace TPCAI
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormListadoAlojamiento listadoAlojamientos = new FormListadoAlojamiento();
             listadoAlojamientos.Show();
+        }
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenuProductos menuProductos = new FormMenuProductos();
+            menuProductos.Show();
         }
     }
 }

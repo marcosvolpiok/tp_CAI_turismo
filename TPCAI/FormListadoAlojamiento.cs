@@ -19,8 +19,16 @@ namespace TPCAI
 
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
             listadoPresupuestos.Show();
+        }
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenuProductos menuProductos = new FormMenuProductos();
+            menuProductos.Show();
         }
     }
 }

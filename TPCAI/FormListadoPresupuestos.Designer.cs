@@ -50,7 +50,7 @@
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -216,21 +216,22 @@
             this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
             this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
             // 
-            // button3
+            // btnVolver
             // 
-            this.button3.Location = new System.Drawing.Point(776, 532);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 29);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Volver al menú de Produtos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnVolver.Location = new System.Drawing.Point(776, 532);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(180, 29);
+            this.btnVolver.TabIndex = 10;
+            this.btnVolver.Text = "Volver al menú de Produtos";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 592);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControlAlojamientosVuelos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -269,6 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnClase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -36,7 +36,7 @@
             this.ColumnFechaEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,18 +93,19 @@
             this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
             this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
             // 
-            // button2
+            // btnVolverMenu
             // 
-            this.button2.Location = new System.Drawing.Point(711, 550);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Volver a Menú";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVolverMenu.Location = new System.Drawing.Point(644, 550);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(151, 29);
+            this.btnVolverMenu.TabIndex = 5;
+            this.btnVolverMenu.Text = "Volver a Menú de productos";
+            this.btnVolverMenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(417, 550);
+            this.button1.Location = new System.Drawing.Point(355, 550);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 29);
             this.button1.TabIndex = 4;
@@ -113,7 +114,7 @@
             // 
             // btnVerPresupuesto
             // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(563, 550);
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(497, 550);
             this.btnVerPresupuesto.Name = "btnVerPresupuesto";
             this.btnVerPresupuesto.Size = new System.Drawing.Size(123, 29);
             this.btnVerPresupuesto.TabIndex = 6;
@@ -128,7 +129,7 @@
             this.ClientSize = new System.Drawing.Size(844, 603);
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.button1);
             this.Name = "FormListadoAlojamiento";
             this.Text = "Listado Alojamiento";
@@ -147,7 +148,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaEgreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoHabitacion;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVolverMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnVerPresupuesto;
     }

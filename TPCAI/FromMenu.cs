@@ -19,9 +19,9 @@ namespace TPCAI
 
         private void btnConsultarProductos_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormMenuProductos menu = new FormMenuProductos();
             menu.Show();
-            
         }
 
         private void btnSalirMenu_Click(object sender, EventArgs e)
@@ -31,12 +31,14 @@ namespace TPCAI
 
         private void btnGenerarReservas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormGenerarReservas generarReservas = new FormGenerarReservas();
             generarReservas.Show();
         }
 
         private void btnConsultarReservas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormConsultarReservas consultarReservas = new FormConsultarReservas();
             consultarReservas.Show();
         }

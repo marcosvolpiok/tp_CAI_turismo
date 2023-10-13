@@ -21,5 +21,12 @@ namespace TPCAI
         {
 
         }
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            FromMenu menu = new FromMenu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }
