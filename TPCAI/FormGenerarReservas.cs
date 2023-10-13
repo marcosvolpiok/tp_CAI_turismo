@@ -28,5 +28,12 @@ namespace TPCAI
             menu.Show();
             this.Hide();
         }
+
+        private void FormGenerarReservas_Load(object sender, EventArgs e)
+        {
+            this.dataGridViewPreReserva.Rows.Add("100", "13/10/2023", "2 Noches Hotel Kau Kaleshen", "$ 30.000");
+            this.dataGridViewGenerarReserva.Rows.Add("101", "4 Noches Hotel Hilton Córdoba Centro", "$ 60.000");
+            this.dataGridViewGenerarConfirmacion.Rows.Add("102", "13/10/2023", "1 Noche Hotel Kau Kaleshen", "Pagado", "$ 15.000");
+        }
     }
 }

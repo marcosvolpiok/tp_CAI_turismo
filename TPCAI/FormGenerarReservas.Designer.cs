@@ -33,19 +33,19 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabGenerarPreReserva = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPreReserva = new System.Windows.Forms.DataGridView();
             this.ColumnNroPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTotalPrespuestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabReservar = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGenerarReserva = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.tabConfirmar = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGenerarConfirmacion = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,11 +55,11 @@
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).BeginInit();
             this.tabReservar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarReserva)).BeginInit();
             this.tabConfirmar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarConfirmacion)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -100,7 +100,7 @@
             // 
             // tabGenerarPreReserva
             // 
-            this.tabGenerarPreReserva.Controls.Add(this.dataGridView1);
+            this.tabGenerarPreReserva.Controls.Add(this.dataGridViewPreReserva);
             this.tabGenerarPreReserva.Controls.Add(this.button1);
             this.tabGenerarPreReserva.Location = new System.Drawing.Point(4, 22);
             this.tabGenerarPreReserva.Name = "tabGenerarPreReserva";
@@ -111,18 +111,20 @@
             this.tabGenerarPreReserva.UseVisualStyleBackColor = true;
             this.tabGenerarPreReserva.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // dataGridView1
+            // dataGridViewPreReserva
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewPreReserva.AllowUserToAddRows = false;
+            this.dataGridViewPreReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPreReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPreReserva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNroPresupuesto,
             this.ColumnFecha,
             this.ColumnProductos,
             this.ColumnTotalPrespuestado});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(998, 441);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewPreReserva.Location = new System.Drawing.Point(7, 7);
+            this.dataGridViewPreReserva.Name = "dataGridViewPreReserva";
+            this.dataGridViewPreReserva.Size = new System.Drawing.Size(998, 441);
+            this.dataGridViewPreReserva.TabIndex = 3;
             // 
             // ColumnNroPresupuesto
             // 
@@ -146,7 +148,7 @@
             // 
             // tabReservar
             // 
-            this.tabReservar.Controls.Add(this.dataGridView2);
+            this.tabReservar.Controls.Add(this.dataGridViewGenerarReserva);
             this.tabReservar.Controls.Add(this.button2);
             this.tabReservar.Location = new System.Drawing.Point(4, 22);
             this.tabReservar.Name = "tabReservar";
@@ -156,17 +158,19 @@
             this.tabReservar.Text = "Generar Reservar";
             this.tabReservar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridViewGenerarReserva
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewGenerarReserva.AllowUserToAddRows = false;
+            this.dataGridViewGenerarReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewGenerarReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGenerarReserva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(998, 427);
-            this.dataGridView2.TabIndex = 4;
+            this.dataGridViewGenerarReserva.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewGenerarReserva.Name = "dataGridViewGenerarReserva";
+            this.dataGridViewGenerarReserva.Size = new System.Drawing.Size(998, 427);
+            this.dataGridViewGenerarReserva.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -194,7 +198,7 @@
             // 
             // tabConfirmar
             // 
-            this.tabConfirmar.Controls.Add(this.dataGridView3);
+            this.tabConfirmar.Controls.Add(this.dataGridViewGenerarConfirmacion);
             this.tabConfirmar.Controls.Add(this.button3);
             this.tabConfirmar.Location = new System.Drawing.Point(4, 22);
             this.tabConfirmar.Name = "tabConfirmar";
@@ -204,18 +208,20 @@
             this.tabConfirmar.Text = "Generar Confirmación";
             this.tabConfirmar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dataGridViewGenerarConfirmacion
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewGenerarConfirmacion.AllowUserToAddRows = false;
+            this.dataGridViewGenerarConfirmacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewGenerarConfirmacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGenerarConfirmacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7,
             this.ColumnEstadoPago,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(998, 417);
-            this.dataGridView3.TabIndex = 4;
+            this.dataGridViewGenerarConfirmacion.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewGenerarConfirmacion.Name = "dataGridViewGenerarConfirmacion";
+            this.dataGridViewGenerarConfirmacion.Size = new System.Drawing.Size(998, 417);
+            this.dataGridViewGenerarConfirmacion.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -277,13 +283,14 @@
             this.Controls.Add(this.labelDNI);
             this.Name = "FormGenerarReservas";
             this.Text = "Generar Reservas";
+            this.Load += new System.EventHandler(this.FormGenerarReservas_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabGenerarPreReserva.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).EndInit();
             this.tabReservar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarReserva)).EndInit();
             this.tabConfirmar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarConfirmacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,14 +307,14 @@
         private System.Windows.Forms.TabPage tabConfirmar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPreReserva;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNroPresupuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotalPrespuestado;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewGenerarReserva;
+        private System.Windows.Forms.DataGridView dataGridViewGenerarConfirmacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
