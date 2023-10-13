@@ -27,20 +27,6 @@ namespace TPCAI
         {
             FormConsultarVuelos vuelos = new FormConsultarVuelos();
             vuelos.Show();
-        }
-
-        private void btnConsultarPaquetes_Click(object sender, EventArgs e)
-        {
-            FormConsultarPaquetes paquetes = new FormConsultarPaquetes();
-            paquetes.Show();
-        }
-
-        private void btnConsultarCruceros_Click(object sender, EventArgs e)
-        {
-            FormConsultarCruceros cruceros = new FormConsultarCruceros();
-            cruceros.Show();
-        }
-
-       
+        }       
     }
 }
