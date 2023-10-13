@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TPCAI
 {
-    public partial class FormGenerarReservas : Form
+    public partial class FormAñadirCliente : Form
     {
-        public FormGenerarReservas()
+        public FormAñadirCliente()
         {
             InitializeComponent();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
