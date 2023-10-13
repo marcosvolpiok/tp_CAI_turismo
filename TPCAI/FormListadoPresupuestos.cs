@@ -23,5 +23,12 @@ namespace TPCAI
             FormMenuProductos menuProductos = new FormMenuProductos();
             menuProductos.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAñadirCliente formCliente = new FormAñadirCliente();
+            formCliente.Show();
+        }
     }
 }
