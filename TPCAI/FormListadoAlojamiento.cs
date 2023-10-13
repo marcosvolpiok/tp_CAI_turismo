@@ -16,5 +16,11 @@ namespace TPCAI
         {
             InitializeComponent();
         }
+
+        private void btnVerPresupuesto_Click(object sender, EventArgs e)
+        {
+            FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
+            listadoPresupuestos.Show();
+        }
     }
 }
