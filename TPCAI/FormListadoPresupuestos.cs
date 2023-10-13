@@ -12,9 +12,18 @@ namespace TPCAI
 {
     public partial class FormListadoPresupuestos : Form
     {
-        public FormListadoPresupuestos()
+        public FormListadoPresupuestos(String TabParaMostrar)
         {
             InitializeComponent();
+
+            if (TabParaMostrar == "VUELOS")
+            {
+                this.tabControlAlojamientosVuelos.SelectTab("tabVuelos");
+            }
+            else
+            {
+                this.tabControlAlojamientosVuelos.SelectTab("tabAlojamientos");
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
