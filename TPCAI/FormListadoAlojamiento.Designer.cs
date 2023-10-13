@@ -53,7 +53,7 @@
             this.ColumnFechaEgreso,
             this.ColumnCalificacion,
             this.ColumnTipoHabitacion});
-            this.dataGridView1.Location = new System.Drawing.Point(108, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(763, 509);
             this.dataGridView1.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(787, 569);
+            this.button2.Location = new System.Drawing.Point(711, 550);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 29);
             this.button2.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(493, 569);
+            this.button1.Location = new System.Drawing.Point(417, 550);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 29);
             this.button1.TabIndex = 4;
@@ -113,7 +113,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(639, 569);
+            this.button3.Location = new System.Drawing.Point(563, 550);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 29);
             this.button3.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 639);
+            this.ClientSize = new System.Drawing.Size(844, 603);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);

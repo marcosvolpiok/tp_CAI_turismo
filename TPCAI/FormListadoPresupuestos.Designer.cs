@@ -32,7 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControlAlojamientosVuelos = new System.Windows.Forms.TabControl();
             this.tabAlojamientos = new System.Windows.Forms.TabPage();
-            this.tabVuelos = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +40,7 @@
             this.ColumnFechaEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabVuelos = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,16 +50,17 @@
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
-            this.tabVuelos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabVuelos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(850, 532);
+            this.button2.Location = new System.Drawing.Point(589, 532);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 29);
             this.button2.TabIndex = 8;
@@ -68,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(667, 532);
+            this.button1.Location = new System.Drawing.Point(401, 532);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 29);
             this.button1.TabIndex = 7;
@@ -95,17 +96,6 @@
             this.tabAlojamientos.TabIndex = 0;
             this.tabAlojamientos.Text = "Alojamientos";
             this.tabAlojamientos.UseVisualStyleBackColor = true;
-            // 
-            // tabVuelos
-            // 
-            this.tabVuelos.Controls.Add(this.dataGridView2);
-            this.tabVuelos.Location = new System.Drawing.Point(4, 22);
-            this.tabVuelos.Name = "tabVuelos";
-            this.tabVuelos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVuelos.Size = new System.Drawing.Size(948, 467);
-            this.tabVuelos.TabIndex = 1;
-            this.tabVuelos.Text = "Vuelos";
-            this.tabVuelos.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -157,6 +147,17 @@
             // 
             this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
             this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
+            // 
+            // tabVuelos
+            // 
+            this.tabVuelos.Controls.Add(this.dataGridView2);
+            this.tabVuelos.Location = new System.Drawing.Point(4, 22);
+            this.tabVuelos.Name = "tabVuelos";
+            this.tabVuelos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVuelos.Size = new System.Drawing.Size(948, 467);
+            this.tabVuelos.TabIndex = 1;
+            this.tabVuelos.Text = "Vuelos";
+            this.tabVuelos.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -215,11 +216,21 @@
             this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
             this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(776, 532);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(180, 29);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Volver al menú de Produtos";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 620);
+            this.ClientSize = new System.Drawing.Size(1013, 592);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControlAlojamientosVuelos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -227,8 +238,8 @@
             this.Text = "Listado Presupuestos";
             this.tabControlAlojamientosVuelos.ResumeLayout(false);
             this.tabAlojamientos.ResumeLayout(false);
-            this.tabVuelos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabVuelos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnClase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
+        private System.Windows.Forms.Button button3;
     }
 }

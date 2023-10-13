@@ -48,7 +48,7 @@
             this.ColumnDNI,
             this.ColNombre,
             this.ColumnEstado});
-            this.dataGridView1.Location = new System.Drawing.Point(117, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(57, 87);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(628, 390);
             this.dataGridView1.TabIndex = 7;
@@ -75,7 +75,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 53);
+            this.textBox1.Location = new System.Drawing.Point(136, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 20);
             this.textBox1.TabIndex = 6;
@@ -83,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 58);
+            this.label1.Location = new System.Drawing.Point(54, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(438, 51);
+            this.button2.Location = new System.Drawing.Point(378, 37);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 26);
             this.button2.TabIndex = 9;
@@ -100,7 +100,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(650, 506);
+            this.button1.Location = new System.Drawing.Point(590, 492);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 8;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 580);
+            this.ClientSize = new System.Drawing.Size(756, 545);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
