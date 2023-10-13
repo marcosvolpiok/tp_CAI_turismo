@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListadoVuelos = new System.Windows.Forms.DataGridView();
             this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFechaHoraArribo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +40,15 @@
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoVuelos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewListadoVuelos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewListadoVuelos.AllowUserToAddRows = false;
+            this.dataGridViewListadoVuelos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListadoVuelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListadoVuelos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnOrigen,
             this.ColumnDestino,
             this.ColumnFechaHoraArribo,
@@ -55,10 +57,10 @@
             this.ColumnPrecio,
             this.ColumnClase,
             this.ColumnTipoPasajero});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(854, 523);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewListadoVuelos.Location = new System.Drawing.Point(26, 36);
+            this.dataGridViewListadoVuelos.Name = "dataGridViewListadoVuelos";
+            this.dataGridViewListadoVuelos.Size = new System.Drawing.Size(854, 523);
+            this.dataGridViewListadoVuelos.TabIndex = 3;
             // 
             // ColumnOrigen
             // 
@@ -135,20 +137,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 617);
             this.Controls.Add(this.btnVerPresupuesto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewListadoVuelos);
             this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.button1);
             this.Name = "FormListadoVuelos";
             this.Text = "Listado Vuelos";
             this.Load += new System.EventHandler(this.FormListadoVuelos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoVuelos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewListadoVuelos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaHoraArribo;

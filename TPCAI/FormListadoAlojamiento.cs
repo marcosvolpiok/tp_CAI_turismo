@@ -30,5 +30,10 @@ namespace TPCAI
             FormMenuProductos menuProductos = new FormMenuProductos();
             menuProductos.Show();
         }
+
+        private void FormListadoAlojamiento_Load(object sender, EventArgs e)
+        {
+            this.dataGridViewListadoAlojamiento.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", "$ 25.000", "5 Estrellas", "Doble");
+        }
     }
 }
