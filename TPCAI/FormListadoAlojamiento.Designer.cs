@@ -37,6 +37,8 @@
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.ColumnTarifa,
             this.ColumnCalificacion,
             this.ColumnTipoHabitacion});
-            this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(27, 24);
+            this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(27, 61);
             this.dataGridViewListadoAlojamiento.Name = "dataGridViewListadoAlojamiento";
             this.dataGridViewListadoAlojamiento.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoAlojamiento.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             // btnVolverMenu
             // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(817, 538);
+            this.btnVolverMenu.Location = new System.Drawing.Point(817, 575);
             this.btnVolverMenu.Name = "btnVolverMenu";
             this.btnVolverMenu.Size = new System.Drawing.Size(169, 31);
             this.btnVolverMenu.TabIndex = 5;
@@ -93,7 +95,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(515, 538);
+            this.button1.Location = new System.Drawing.Point(515, 575);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 31);
             this.button1.TabIndex = 4;
@@ -102,7 +104,7 @@
             // 
             // btnVerPresupuesto
             // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(665, 538);
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(665, 575);
             this.btnVerPresupuesto.Name = "btnVerPresupuesto";
             this.btnVerPresupuesto.Size = new System.Drawing.Size(122, 31);
             this.btnVerPresupuesto.TabIndex = 6;
@@ -110,11 +112,31 @@
             this.btnVerPresupuesto.UseVisualStyleBackColor = true;
             this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Fecha Ingreso: 01/03/2024";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Fecha Egreso: 15/03/2024";
+            // 
             // FormListadoAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 592);
+            this.ClientSize = new System.Drawing.Size(1013, 625);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridViewListadoAlojamiento);
             this.Controls.Add(this.btnVolverMenu);
@@ -124,6 +146,7 @@
             this.Load += new System.EventHandler(this.FormListadoAlojamiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,5 +161,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTarifa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoHabitacion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
