@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPreReservar = new System.Windows.Forms.Button();
             this.labelDNI = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -43,7 +43,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReservar = new System.Windows.Forms.Button();
             this.tabConfirmar = new System.Windows.Forms.TabPage();
             this.dataGridViewGenerarConfirmacion = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,14 +62,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarConfirmacion)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnPreReservar
             // 
-            this.button1.Location = new System.Drawing.Point(899, 454);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Pre-Reservar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPreReservar.Location = new System.Drawing.Point(921, 457);
+            this.btnPreReservar.Name = "btnPreReservar";
+            this.btnPreReservar.Size = new System.Drawing.Size(84, 23);
+            this.btnPreReservar.TabIndex = 2;
+            this.btnPreReservar.Text = "Pre-Reservar";
+            this.btnPreReservar.UseVisualStyleBackColor = true;
+            this.btnPreReservar.Click += new System.EventHandler(this.btnPreReservar_Click);
             // 
             // labelDNI
             // 
@@ -101,7 +102,7 @@
             // tabGenerarPreReserva
             // 
             this.tabGenerarPreReserva.Controls.Add(this.dataGridViewPreReserva);
-            this.tabGenerarPreReserva.Controls.Add(this.button1);
+            this.tabGenerarPreReserva.Controls.Add(this.btnPreReservar);
             this.tabGenerarPreReserva.Location = new System.Drawing.Point(4, 22);
             this.tabGenerarPreReserva.Name = "tabGenerarPreReserva";
             this.tabGenerarPreReserva.Padding = new System.Windows.Forms.Padding(3);
@@ -149,7 +150,7 @@
             // tabReservar
             // 
             this.tabReservar.Controls.Add(this.dataGridViewGenerarReserva);
-            this.tabReservar.Controls.Add(this.button2);
+            this.tabReservar.Controls.Add(this.btnReservar);
             this.tabReservar.Location = new System.Drawing.Point(4, 22);
             this.tabReservar.Name = "tabReservar";
             this.tabReservar.Padding = new System.Windows.Forms.Padding(3);
@@ -187,14 +188,15 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Precio Total";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // button2
+            // btnReservar
             // 
-            this.button2.Location = new System.Drawing.Point(921, 454);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Reservar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReservar.Location = new System.Drawing.Point(921, 454);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(84, 23);
+            this.btnReservar.TabIndex = 3;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // tabConfirmar
             // 
@@ -298,14 +300,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPreReservar;
         private System.Windows.Forms.Label labelDNI;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabGenerarPreReserva;
         private System.Windows.Forms.TabPage tabReservar;
         private System.Windows.Forms.TabPage tabConfirmar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReservar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridViewPreReserva;
         private System.Windows.Forms.Button button4;

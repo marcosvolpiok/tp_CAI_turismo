@@ -35,5 +35,19 @@ namespace TPCAI
             this.dataGridViewGenerarReserva.Rows.Add("101", "4 Noches Hotel Hilton Córdoba Centro", "$ 60.000");
             this.dataGridViewGenerarConfirmacion.Rows.Add("102", "13/10/2023", "1 Noche Hotel Kau Kaleshen", "Pagado", "$ 15.000");
         }
+
+        private void btnPreReservar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAñadirPasajero formPasajero = new FormAñadirPasajero();
+            formPasajero.Show();
+        }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAñadirPasajero formPasajero = new FormAñadirPasajero();
+            formPasajero.Show();
+        }
     }
 }

@@ -16,5 +16,12 @@ namespace TPCAI
         {
             InitializeComponent();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormGenerarReservas formReservas = new FormGenerarReservas();
+            formReservas.Show();
+        }
     }
 }
