@@ -90,6 +90,7 @@
             this.BtnBuscar.TabIndex = 34;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // dateTimePicker2
             // 

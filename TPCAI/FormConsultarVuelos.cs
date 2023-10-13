@@ -16,5 +16,11 @@ namespace TPCAI
         {
             InitializeComponent();
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            FormListadoVuelos listadovuelos = new FormListadoVuelos();
+            listadovuelos.Show();
+        }
     }
 }
