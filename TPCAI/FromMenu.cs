@@ -42,5 +42,10 @@ namespace TPCAI
             FormConsultarReservas consultarReservas = new FormConsultarReservas();
             consultarReservas.Show();
         }
+
+        private void FromMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

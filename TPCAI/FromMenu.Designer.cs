@@ -85,6 +85,7 @@
             this.Controls.Add(this.btnConsultarProductos);
             this.Name = "FromMenu";
             this.Text = "Menú";
+            this.Load += new System.EventHandler(this.FromMenu_Load);
             this.ResumeLayout(false);
 
         }

@@ -23,5 +23,10 @@ namespace TPCAI
             menu.Show();
             this.Hide();
         }
+
+        private void FormConsultarReservas_Load(object sender, EventArgs e)
+        {
+            this.dataGridViewReservas.Rows.Add("01/10/2023", "31.091.212", "Florencia Cervi", "Pre-Reservado");
+        }
     }
 }

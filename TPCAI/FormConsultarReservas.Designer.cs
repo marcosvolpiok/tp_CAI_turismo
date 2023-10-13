@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
             this.ColumnFechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,21 +38,23 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewReservas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewReservas.AllowUserToAddRows = false;
+            this.dataGridViewReservas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReservas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnFechaReserva,
             this.ColumnDNI,
             this.ColNombre,
             this.ColumnEstado});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(957, 495);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridViewReservas.Location = new System.Drawing.Point(23, 84);
+            this.dataGridViewReservas.Name = "dataGridViewReservas";
+            this.dataGridViewReservas.Size = new System.Drawing.Size(957, 495);
+            this.dataGridViewReservas.TabIndex = 7;
             // 
             // ColumnFechaReserva
             // 
@@ -124,14 +126,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 659);
             this.Controls.Add(this.btnVolverMenu);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewReservas);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormConsultarReservas";
             this.Text = "Consultar Reservas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormConsultarReservas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +142,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewReservas;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
