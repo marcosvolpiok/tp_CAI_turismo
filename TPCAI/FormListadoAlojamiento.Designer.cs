@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridViewListadoAlojamiento = new System.Windows.Forms.DataGridView();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnVerPresupuesto = new System.Windows.Forms.Button();
             this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerPresupuesto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,39 +51,10 @@
             this.ColumnTarifa,
             this.ColumnCalificacion,
             this.ColumnTipoHabitacion});
-            this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(32, 21);
+            this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(27, 24);
             this.dataGridViewListadoAlojamiento.Name = "dataGridViewListadoAlojamiento";
-            this.dataGridViewListadoAlojamiento.Size = new System.Drawing.Size(763, 509);
+            this.dataGridViewListadoAlojamiento.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoAlojamiento.TabIndex = 3;
-            // 
-            // btnVolverMenu
-            // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(644, 550);
-            this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(151, 29);
-            this.btnVolverMenu.TabIndex = 5;
-            this.btnVolverMenu.Text = "Volver a Menú de productos";
-            this.btnVolverMenu.UseVisualStyleBackColor = true;
-            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(355, 550);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Añadir a Presupuesto";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnVerPresupuesto
-            // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(497, 550);
-            this.btnVerPresupuesto.Name = "btnVerPresupuesto";
-            this.btnVerPresupuesto.Size = new System.Drawing.Size(123, 29);
-            this.btnVerPresupuesto.TabIndex = 6;
-            this.btnVerPresupuesto.Text = "Ver Presupuesto";
-            this.btnVerPresupuesto.UseVisualStyleBackColor = true;
-            this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
             // 
             // ColumnDestino
             // 
@@ -110,11 +81,40 @@
             this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
             this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
             // 
+            // btnVolverMenu
+            // 
+            this.btnVolverMenu.Location = new System.Drawing.Point(817, 538);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(169, 31);
+            this.btnVolverMenu.TabIndex = 5;
+            this.btnVolverMenu.Text = "Volver a Menú de productos";
+            this.btnVolverMenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(515, 538);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Añadir a Presupuesto";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnVerPresupuesto
+            // 
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(665, 538);
+            this.btnVerPresupuesto.Name = "btnVerPresupuesto";
+            this.btnVerPresupuesto.Size = new System.Drawing.Size(122, 31);
+            this.btnVerPresupuesto.TabIndex = 6;
+            this.btnVerPresupuesto.Text = "Ver Presupuesto";
+            this.btnVerPresupuesto.UseVisualStyleBackColor = true;
+            this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
+            // 
             // FormListadoAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 603);
+            this.ClientSize = new System.Drawing.Size(1013, 592);
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridViewListadoAlojamiento);
             this.Controls.Add(this.btnVolverMenu);

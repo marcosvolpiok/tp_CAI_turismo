@@ -35,9 +35,9 @@
             // 
             // btnConsultarAlojamiento
             // 
-            this.btnConsultarAlojamiento.Location = new System.Drawing.Point(85, 71);
+            this.btnConsultarAlojamiento.Location = new System.Drawing.Point(85, 109);
             this.btnConsultarAlojamiento.Name = "btnConsultarAlojamiento";
-            this.btnConsultarAlojamiento.Size = new System.Drawing.Size(114, 40);
+            this.btnConsultarAlojamiento.Size = new System.Drawing.Size(143, 42);
             this.btnConsultarAlojamiento.TabIndex = 10;
             this.btnConsultarAlojamiento.Text = "Consular Alojamientos";
             this.btnConsultarAlojamiento.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // btnConsultarVuelos
             // 
-            this.btnConsultarVuelos.Location = new System.Drawing.Point(85, 140);
+            this.btnConsultarVuelos.Location = new System.Drawing.Point(85, 179);
             this.btnConsultarVuelos.Name = "btnConsultarVuelos";
-            this.btnConsultarVuelos.Size = new System.Drawing.Size(114, 40);
+            this.btnConsultarVuelos.Size = new System.Drawing.Size(143, 42);
             this.btnConsultarVuelos.TabIndex = 8;
             this.btnConsultarVuelos.Text = "Consular Vuelos";
             this.btnConsultarVuelos.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // 
             // btnVolverMenu
             // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(179, 229);
+            this.btnVolverMenu.Location = new System.Drawing.Point(85, 249);
             this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(93, 29);
+            this.btnVolverMenu.Size = new System.Drawing.Size(143, 42);
             this.btnVolverMenu.TabIndex = 11;
             this.btnVolverMenu.Text = "Volver al Menú";
             this.btnVolverMenu.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 270);
+            this.ClientSize = new System.Drawing.Size(313, 400);
             this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.btnConsultarAlojamiento);
             this.Controls.Add(this.btnConsultarVuelos);

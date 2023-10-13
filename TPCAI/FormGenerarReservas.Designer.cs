@@ -64,9 +64,9 @@
             // 
             // btnPreReservar
             // 
-            this.btnPreReservar.Location = new System.Drawing.Point(921, 457);
+            this.btnPreReservar.Location = new System.Drawing.Point(850, 509);
             this.btnPreReservar.Name = "btnPreReservar";
-            this.btnPreReservar.Size = new System.Drawing.Size(84, 23);
+            this.btnPreReservar.Size = new System.Drawing.Size(122, 31);
             this.btnPreReservar.TabIndex = 2;
             this.btnPreReservar.Text = "Pre-Reservar";
             this.btnPreReservar.UseVisualStyleBackColor = true;
@@ -75,7 +75,7 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Location = new System.Drawing.Point(14, 22);
+            this.labelDNI.Location = new System.Drawing.Point(11, 20);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(26, 13);
             this.labelDNI.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 22);
+            this.textBox1.Location = new System.Drawing.Point(43, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 20);
             this.textBox1.TabIndex = 4;
@@ -93,10 +93,10 @@
             this.tabControl1.Controls.Add(this.tabGenerarPreReserva);
             this.tabControl1.Controls.Add(this.tabReservar);
             this.tabControl1.Controls.Add(this.tabConfirmar);
-            this.tabControl1.Location = new System.Drawing.Point(16, 61);
+            this.tabControl1.Location = new System.Drawing.Point(9, 59);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1019, 509);
+            this.tabControl1.Size = new System.Drawing.Size(995, 572);
             this.tabControl1.TabIndex = 9;
             // 
             // tabGenerarPreReserva
@@ -106,7 +106,7 @@
             this.tabGenerarPreReserva.Location = new System.Drawing.Point(4, 22);
             this.tabGenerarPreReserva.Name = "tabGenerarPreReserva";
             this.tabGenerarPreReserva.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenerarPreReserva.Size = new System.Drawing.Size(1011, 483);
+            this.tabGenerarPreReserva.Size = new System.Drawing.Size(987, 546);
             this.tabGenerarPreReserva.TabIndex = 0;
             this.tabGenerarPreReserva.Text = "Generar Pre-Reserva";
             this.tabGenerarPreReserva.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@
             this.ColumnFecha,
             this.ColumnProductos,
             this.ColumnTotalPrespuestado});
-            this.dataGridViewPreReserva.Location = new System.Drawing.Point(7, 7);
+            this.dataGridViewPreReserva.Location = new System.Drawing.Point(15, 6);
             this.dataGridViewPreReserva.Name = "dataGridViewPreReserva";
-            this.dataGridViewPreReserva.Size = new System.Drawing.Size(998, 441);
+            this.dataGridViewPreReserva.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewPreReserva.TabIndex = 3;
             // 
             // ColumnNroPresupuesto
@@ -154,7 +154,7 @@
             this.tabReservar.Location = new System.Drawing.Point(4, 22);
             this.tabReservar.Name = "tabReservar";
             this.tabReservar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReservar.Size = new System.Drawing.Size(1011, 483);
+            this.tabReservar.Size = new System.Drawing.Size(987, 546);
             this.tabReservar.TabIndex = 1;
             this.tabReservar.Text = "Generar Reservar";
             this.tabReservar.UseVisualStyleBackColor = true;
@@ -168,9 +168,9 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridViewGenerarReserva.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewGenerarReserva.Location = new System.Drawing.Point(15, 6);
             this.dataGridViewGenerarReserva.Name = "dataGridViewGenerarReserva";
-            this.dataGridViewGenerarReserva.Size = new System.Drawing.Size(998, 427);
+            this.dataGridViewGenerarReserva.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewGenerarReserva.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -190,9 +190,9 @@
             // 
             // btnReservar
             // 
-            this.btnReservar.Location = new System.Drawing.Point(921, 454);
+            this.btnReservar.Location = new System.Drawing.Point(850, 507);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(84, 23);
+            this.btnReservar.Size = new System.Drawing.Size(122, 31);
             this.btnReservar.TabIndex = 3;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             this.tabConfirmar.Location = new System.Drawing.Point(4, 22);
             this.tabConfirmar.Name = "tabConfirmar";
             this.tabConfirmar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConfirmar.Size = new System.Drawing.Size(1011, 483);
+            this.tabConfirmar.Size = new System.Drawing.Size(987, 546);
             this.tabConfirmar.TabIndex = 2;
             this.tabConfirmar.Text = "Generar Confirmación";
             this.tabConfirmar.UseVisualStyleBackColor = true;
@@ -220,9 +220,9 @@
             this.dataGridViewTextBoxColumn7,
             this.ColumnEstadoPago,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridViewGenerarConfirmacion.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewGenerarConfirmacion.Location = new System.Drawing.Point(15, 6);
             this.dataGridViewGenerarConfirmacion.Name = "dataGridViewGenerarConfirmacion";
-            this.dataGridViewGenerarConfirmacion.Size = new System.Drawing.Size(998, 417);
+            this.dataGridViewGenerarConfirmacion.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewGenerarConfirmacion.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn5
@@ -247,27 +247,27 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(921, 444);
+            this.button3.Location = new System.Drawing.Point(850, 507);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 23);
+            this.button3.Size = new System.Drawing.Size(122, 31);
             this.button3.TabIndex = 3;
             this.button3.Text = "Confirmar";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(352, 22);
+            this.button4.Location = new System.Drawing.Point(349, 14);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(122, 31);
             this.button4.TabIndex = 10;
             this.button4.Text = "Buscar";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // btnVolverMenu
             // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(941, 572);
+            this.btnVolverMenu.Location = new System.Drawing.Point(863, 637);
             this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(90, 19);
+            this.btnVolverMenu.Size = new System.Drawing.Size(122, 31);
             this.btnVolverMenu.TabIndex = 12;
             this.btnVolverMenu.Text = "Volver al Menú";
             this.btnVolverMenu.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 603);
+            this.ClientSize = new System.Drawing.Size(1013, 682);
             this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.tabControl1);

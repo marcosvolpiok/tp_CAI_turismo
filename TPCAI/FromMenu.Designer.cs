@@ -36,7 +36,7 @@
             // 
             // btnConsultarProductos
             // 
-            this.btnConsultarProductos.Location = new System.Drawing.Point(77, 34);
+            this.btnConsultarProductos.Location = new System.Drawing.Point(85, 50);
             this.btnConsultarProductos.Name = "btnConsultarProductos";
             this.btnConsultarProductos.Size = new System.Drawing.Size(143, 42);
             this.btnConsultarProductos.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btnConsultarReservas
             // 
-            this.btnConsultarReservas.Location = new System.Drawing.Point(77, 205);
+            this.btnConsultarReservas.Location = new System.Drawing.Point(85, 221);
             this.btnConsultarReservas.Name = "btnConsultarReservas";
             this.btnConsultarReservas.Size = new System.Drawing.Size(143, 42);
             this.btnConsultarReservas.TabIndex = 2;
@@ -56,7 +56,7 @@
             // 
             // btnGenerarReservas
             // 
-            this.btnGenerarReservas.Location = new System.Drawing.Point(77, 116);
+            this.btnGenerarReservas.Location = new System.Drawing.Point(85, 132);
             this.btnGenerarReservas.Name = "btnGenerarReservas";
             this.btnGenerarReservas.Size = new System.Drawing.Size(143, 42);
             this.btnGenerarReservas.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             // btnSalirMenu
             // 
-            this.btnSalirMenu.Location = new System.Drawing.Point(77, 292);
+            this.btnSalirMenu.Location = new System.Drawing.Point(85, 308);
             this.btnSalirMenu.Name = "btnSalirMenu";
             this.btnSalirMenu.Size = new System.Drawing.Size(143, 42);
             this.btnSalirMenu.TabIndex = 4;

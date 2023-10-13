@@ -49,9 +49,9 @@
             this.ColumnDNI,
             this.ColNombre,
             this.ColumnEstado});
-            this.dataGridView1.Location = new System.Drawing.Point(57, 87);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 84);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(628, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(957, 495);
             this.dataGridView1.TabIndex = 7;
             // 
             // ColumnFechaReserva
@@ -76,7 +76,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 39);
+            this.textBox1.Location = new System.Drawing.Point(102, 38);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 20);
             this.textBox1.TabIndex = 6;
@@ -84,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 44);
+            this.label1.Location = new System.Drawing.Point(20, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 5;
@@ -92,27 +92,27 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(378, 37);
+            this.button2.Location = new System.Drawing.Point(344, 32);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 26);
+            this.button2.Size = new System.Drawing.Size(122, 31);
             this.button2.TabIndex = 9;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(590, 492);
+            this.button1.Location = new System.Drawing.Point(673, 596);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.Size = new System.Drawing.Size(122, 31);
             this.button1.TabIndex = 8;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnVolverMenu
             // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(654, 521);
+            this.btnVolverMenu.Location = new System.Drawing.Point(858, 596);
             this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(90, 19);
+            this.btnVolverMenu.Size = new System.Drawing.Size(122, 31);
             this.btnVolverMenu.TabIndex = 13;
             this.btnVolverMenu.Text = "Volver al Menú";
             this.btnVolverMenu.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 551);
+            this.ClientSize = new System.Drawing.Size(1001, 659);
             this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);

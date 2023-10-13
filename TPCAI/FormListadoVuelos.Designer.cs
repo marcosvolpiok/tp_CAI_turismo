@@ -57,9 +57,9 @@
             this.ColumnPrecio,
             this.ColumnClase,
             this.ColumnTipoPasajero});
-            this.dataGridViewListadoVuelos.Location = new System.Drawing.Point(26, 36);
+            this.dataGridViewListadoVuelos.Location = new System.Drawing.Point(27, 26);
             this.dataGridViewListadoVuelos.Name = "dataGridViewListadoVuelos";
-            this.dataGridViewListadoVuelos.Size = new System.Drawing.Size(854, 523);
+            this.dataGridViewListadoVuelos.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoVuelos.TabIndex = 3;
             // 
             // ColumnOrigen
@@ -104,9 +104,9 @@
             // 
             // btnVolverMenu
             // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(715, 565);
+            this.btnVolverMenu.Location = new System.Drawing.Point(833, 536);
             this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(165, 29);
+            this.btnVolverMenu.Size = new System.Drawing.Size(153, 31);
             this.btnVolverMenu.TabIndex = 5;
             this.btnVolverMenu.Text = "Volver a Menú de Productos";
             this.btnVolverMenu.UseVisualStyleBackColor = true;
@@ -114,18 +114,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(418, 565);
+            this.button1.Location = new System.Drawing.Point(536, 536);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 29);
+            this.button1.Size = new System.Drawing.Size(122, 31);
             this.button1.TabIndex = 4;
             this.button1.Text = "Añadir a Presupuesto";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnVerPresupuesto
             // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(569, 565);
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(687, 536);
             this.btnVerPresupuesto.Name = "btnVerPresupuesto";
-            this.btnVerPresupuesto.Size = new System.Drawing.Size(123, 29);
+            this.btnVerPresupuesto.Size = new System.Drawing.Size(122, 31);
             this.btnVerPresupuesto.TabIndex = 7;
             this.btnVerPresupuesto.Text = "Ver Presupuesto";
             this.btnVerPresupuesto.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 617);
+            this.ClientSize = new System.Drawing.Size(1013, 592);
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridViewListadoVuelos);
             this.Controls.Add(this.btnVolverMenu);

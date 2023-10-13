@@ -60,18 +60,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(589, 532);
+            this.button2.Location = new System.Drawing.Point(674, 540);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 29);
+            this.button2.Size = new System.Drawing.Size(122, 31);
             this.button2.TabIndex = 8;
             this.button2.Text = "Eliminar Producto";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(401, 532);
+            this.button1.Location = new System.Drawing.Point(486, 540);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 29);
+            this.button1.Size = new System.Drawing.Size(122, 31);
             this.button1.TabIndex = 7;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
@@ -81,10 +81,10 @@
             // 
             this.tabControlAlojamientosVuelos.Controls.Add(this.tabAlojamientos);
             this.tabControlAlojamientosVuelos.Controls.Add(this.tabVuelos);
-            this.tabControlAlojamientosVuelos.Location = new System.Drawing.Point(23, 21);
+            this.tabControlAlojamientosVuelos.Location = new System.Drawing.Point(24, 22);
             this.tabControlAlojamientosVuelos.Name = "tabControlAlojamientosVuelos";
             this.tabControlAlojamientosVuelos.SelectedIndex = 0;
-            this.tabControlAlojamientosVuelos.Size = new System.Drawing.Size(956, 493);
+            this.tabControlAlojamientosVuelos.Size = new System.Drawing.Size(965, 505);
             this.tabControlAlojamientosVuelos.TabIndex = 9;
             // 
             // tabAlojamientos
@@ -93,7 +93,7 @@
             this.tabAlojamientos.Location = new System.Drawing.Point(4, 22);
             this.tabAlojamientos.Name = "tabAlojamientos";
             this.tabAlojamientos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlojamientos.Size = new System.Drawing.Size(948, 467);
+            this.tabAlojamientos.Size = new System.Drawing.Size(957, 479);
             this.tabAlojamientos.TabIndex = 0;
             this.tabAlojamientos.Text = "Alojamientos";
             this.tabAlojamientos.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             this.ColumnTipoHabitacion});
             this.dataGridViewPresupuestosAlojamientos.Location = new System.Drawing.Point(3, 0);
             this.dataGridViewPresupuestosAlojamientos.Name = "dataGridViewPresupuestosAlojamientos";
-            this.dataGridViewPresupuestosAlojamientos.Size = new System.Drawing.Size(942, 464);
+            this.dataGridViewPresupuestosAlojamientos.Size = new System.Drawing.Size(951, 473);
             this.dataGridViewPresupuestosAlojamientos.TabIndex = 4;
             // 
             // ColumnDestino
@@ -157,7 +157,7 @@
             this.tabVuelos.Location = new System.Drawing.Point(4, 22);
             this.tabVuelos.Name = "tabVuelos";
             this.tabVuelos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVuelos.Size = new System.Drawing.Size(948, 467);
+            this.tabVuelos.Size = new System.Drawing.Size(957, 479);
             this.tabVuelos.TabIndex = 1;
             this.tabVuelos.Text = "Vuelos";
             this.tabVuelos.UseVisualStyleBackColor = true;
@@ -176,9 +176,9 @@
             this.ColumnPrecio,
             this.ColumnClase,
             this.ColumnTipoPasajero});
-            this.dataGridViewPresupuestosVuelos.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridViewPresupuestosVuelos.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewPresupuestosVuelos.Name = "dataGridViewPresupuestosVuelos";
-            this.dataGridViewPresupuestosVuelos.Size = new System.Drawing.Size(952, 464);
+            this.dataGridViewPresupuestosVuelos.Size = new System.Drawing.Size(957, 473);
             this.dataGridViewPresupuestosVuelos.TabIndex = 4;
             // 
             // ColumnOrigen
@@ -223,9 +223,9 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(776, 532);
+            this.btnVolver.Location = new System.Drawing.Point(821, 540);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(180, 29);
+            this.btnVolver.Size = new System.Drawing.Size(162, 31);
             this.btnVolver.TabIndex = 10;
             this.btnVolver.Text = "Volver al menú de Produtos";
             this.btnVolver.UseVisualStyleBackColor = true;
