@@ -49,6 +49,10 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Caracas, Venezuela",
+            "Córdoba, Argentina",
+            "La Habana, Cuba"});
             this.comboBox2.Location = new System.Drawing.Point(224, 62);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(196, 21);
@@ -91,6 +95,12 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1 Estrella",
+            "2 Estrellas",
+            "3 Estrellas",
+            "4 Estrellas",
+            "5 Estrellas"});
             this.comboBox1.Location = new System.Drawing.Point(226, 330);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(196, 21);
