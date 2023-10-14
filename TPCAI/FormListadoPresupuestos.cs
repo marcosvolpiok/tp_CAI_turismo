@@ -42,7 +42,7 @@ namespace TPCAI
 
         private void FormListadoPresupuestos_Load(object sender, EventArgs e)
         {
-            this.dataGridViewPresupuestosAlojamientos.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", "$ 25.000", "5 Estrellas", "Doble");
+            this.dataGridViewPresupuestosAlojamientos.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", "20/10/23 08:00", "25/10/23 11:00", "$ 25.000", "5 Estrellas", "Doble");
             this.dataGridViewPresupuestosVuelos.Rows.Add("CABA, Argentina", "La Habana, Cuba", "20/10/2023 00:30", "20/10/2023 06:30", "Latam", "$120.000", "Turista", "Adulto");
 
         }
