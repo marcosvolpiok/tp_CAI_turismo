@@ -39,7 +39,7 @@
             this.btnConsultarAlojamiento.Name = "btnConsultarAlojamiento";
             this.btnConsultarAlojamiento.Size = new System.Drawing.Size(143, 42);
             this.btnConsultarAlojamiento.TabIndex = 10;
-            this.btnConsultarAlojamiento.Text = "Consular Alojamientos";
+            this.btnConsultarAlojamiento.Text = "Consultar Alojamientos";
             this.btnConsultarAlojamiento.UseVisualStyleBackColor = true;
             this.btnConsultarAlojamiento.Click += new System.EventHandler(this.btnConsultarAlojamiento_Click);
             // 
@@ -49,7 +49,7 @@
             this.btnConsultarVuelos.Name = "btnConsultarVuelos";
             this.btnConsultarVuelos.Size = new System.Drawing.Size(143, 42);
             this.btnConsultarVuelos.TabIndex = 8;
-            this.btnConsultarVuelos.Text = "Consular Vuelos";
+            this.btnConsultarVuelos.Text = "Consultar Vuelos";
             this.btnConsultarVuelos.UseVisualStyleBackColor = true;
             this.btnConsultarVuelos.Click += new System.EventHandler(this.btnConsultarVuelos_Click);
             // 
