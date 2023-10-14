@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
-            this.ColumnFechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
+            this.ColumnFechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,26 +54,6 @@
             this.dataGridViewReservas.Name = "dataGridViewReservas";
             this.dataGridViewReservas.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewReservas.TabIndex = 7;
-            // 
-            // ColumnFechaReserva
-            // 
-            this.ColumnFechaReserva.HeaderText = "Fecha de Reserva";
-            this.ColumnFechaReserva.Name = "ColumnFechaReserva";
-            // 
-            // ColumnDNI
-            // 
-            this.ColumnDNI.HeaderText = "DNI";
-            this.ColumnDNI.Name = "ColumnDNI";
-            // 
-            // ColNombre
-            // 
-            this.ColNombre.HeaderText = "Nombre";
-            this.ColNombre.Name = "ColNombre";
-            // 
-            // ColumnEstado
-            // 
-            this.ColumnEstado.HeaderText = "Estado";
-            this.ColumnEstado.Name = "ColumnEstado";
             // 
             // textBox1
             // 
@@ -110,6 +90,26 @@
             this.btnVolverMenu.UseVisualStyleBackColor = true;
             this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
+            // ColumnFechaReserva
+            // 
+            this.ColumnFechaReserva.HeaderText = "Fecha de Reserva";
+            this.ColumnFechaReserva.Name = "ColumnFechaReserva";
+            // 
+            // ColumnDNI
+            // 
+            this.ColumnDNI.HeaderText = "DNI";
+            this.ColumnDNI.Name = "ColumnDNI";
+            // 
+            // ColNombre
+            // 
+            this.ColNombre.HeaderText = "Nombre y Apellido del Cliente";
+            this.ColNombre.Name = "ColNombre";
+            // 
+            // ColumnEstado
+            // 
+            this.ColumnEstado.HeaderText = "Estado";
+            this.ColumnEstado.Name = "ColumnEstado";
+            // 
             // FormConsultarReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,13 +132,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewReservas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaReserva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnVolverMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaReserva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
     }
 }
