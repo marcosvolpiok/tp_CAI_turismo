@@ -49,5 +49,12 @@ namespace TPCAI
             FormAñadirPasajero formPasajero = new FormAñadirPasajero();
             formPasajero.Show();
         }
+
+        private void btnReserverFromGenerarPreReserva_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAñadirPasajero formPasajero = new FormAñadirPasajero();
+            formPasajero.Show();
+        }
     }
 }
