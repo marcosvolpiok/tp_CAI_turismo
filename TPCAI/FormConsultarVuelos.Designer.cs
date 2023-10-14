@@ -51,6 +51,10 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Rosario, Argentina",
+            "New York, Estados Unidos",
+            "Moscú, Rusia"});
             this.comboBox3.Location = new System.Drawing.Point(208, 84);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(196, 21);
@@ -59,6 +63,11 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "CABA, Argentina",
+            "Córdoba, Argentina",
+            "Mendoza, Argentina",
+            "Madrid, España"});
             this.comboBox2.Location = new System.Drawing.Point(210, 42);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(196, 21);
@@ -110,6 +119,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Economy",
+            "Premium",
+            "Business",
+            "First"});
             this.comboBox1.Location = new System.Drawing.Point(210, 349);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(196, 21);
