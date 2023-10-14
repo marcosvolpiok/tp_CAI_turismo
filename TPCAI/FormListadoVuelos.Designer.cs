@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dataGridViewListadoVuelos = new System.Windows.Forms.DataGridView();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerPresupuesto = new System.Windows.Forms.Button();
             this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFechaHoraArribo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFechaHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFechaHoraArribo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAerolinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnVerPresupuesto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoVuelos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,8 +51,8 @@
             this.dataGridViewListadoVuelos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnOrigen,
             this.ColumnDestino,
-            this.ColumnFechaHoraArribo,
             this.ColumnFechaHoraSalida,
+            this.ColumnFechaHoraArribo,
             this.ColumnAerolinea,
             this.ColumnPrecio,
             this.ColumnClase,
@@ -61,46 +61,6 @@
             this.dataGridViewListadoVuelos.Name = "dataGridViewListadoVuelos";
             this.dataGridViewListadoVuelos.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoVuelos.TabIndex = 3;
-            // 
-            // ColumnOrigen
-            // 
-            this.ColumnOrigen.HeaderText = "Origen";
-            this.ColumnOrigen.Name = "ColumnOrigen";
-            // 
-            // ColumnDestino
-            // 
-            this.ColumnDestino.HeaderText = "Destino";
-            this.ColumnDestino.Name = "ColumnDestino";
-            // 
-            // ColumnFechaHoraArribo
-            // 
-            this.ColumnFechaHoraArribo.HeaderText = "Fecha Hora Arribo";
-            this.ColumnFechaHoraArribo.Name = "ColumnFechaHoraArribo";
-            // 
-            // ColumnFechaHoraSalida
-            // 
-            this.ColumnFechaHoraSalida.HeaderText = "Fecha Hora Salida";
-            this.ColumnFechaHoraSalida.Name = "ColumnFechaHoraSalida";
-            // 
-            // ColumnAerolinea
-            // 
-            this.ColumnAerolinea.HeaderText = "Aerolinea";
-            this.ColumnAerolinea.Name = "ColumnAerolinea";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnClase
-            // 
-            this.ColumnClase.HeaderText = "Clase";
-            this.ColumnClase.Name = "ColumnClase";
-            // 
-            // ColumnTipoPasajero
-            // 
-            this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
-            this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
             // 
             // btnVolverMenu
             // 
@@ -131,6 +91,46 @@
             this.btnVerPresupuesto.UseVisualStyleBackColor = true;
             this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
             // 
+            // ColumnOrigen
+            // 
+            this.ColumnOrigen.HeaderText = "Origen";
+            this.ColumnOrigen.Name = "ColumnOrigen";
+            // 
+            // ColumnDestino
+            // 
+            this.ColumnDestino.HeaderText = "Destino";
+            this.ColumnDestino.Name = "ColumnDestino";
+            // 
+            // ColumnFechaHoraSalida
+            // 
+            this.ColumnFechaHoraSalida.HeaderText = "Fecha Hora Salida";
+            this.ColumnFechaHoraSalida.Name = "ColumnFechaHoraSalida";
+            // 
+            // ColumnFechaHoraArribo
+            // 
+            this.ColumnFechaHoraArribo.HeaderText = "Fecha Hora Arribo";
+            this.ColumnFechaHoraArribo.Name = "ColumnFechaHoraArribo";
+            // 
+            // ColumnAerolinea
+            // 
+            this.ColumnAerolinea.HeaderText = "Aerolinea";
+            this.ColumnAerolinea.Name = "ColumnAerolinea";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnClase
+            // 
+            this.ColumnClase.HeaderText = "Clase";
+            this.ColumnClase.Name = "ColumnClase";
+            // 
+            // ColumnTipoPasajero
+            // 
+            this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
+            this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
+            // 
             // FormListadoVuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,16 +151,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewListadoVuelos;
+        private System.Windows.Forms.Button btnVolverMenu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVerPresupuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaHoraArribo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaHoraSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaHoraArribo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAerolinea;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnClase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
-        private System.Windows.Forms.Button btnVolverMenu;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnVerPresupuesto;
     }
 }
