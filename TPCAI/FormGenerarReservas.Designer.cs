@@ -53,6 +53,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
+            this.btnReserverFromGenerarPreReserva = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).BeginInit();
@@ -64,7 +65,7 @@
             // 
             // btnPreReservar
             // 
-            this.btnPreReservar.Location = new System.Drawing.Point(850, 509);
+            this.btnPreReservar.Location = new System.Drawing.Point(705, 507);
             this.btnPreReservar.Name = "btnPreReservar";
             this.btnPreReservar.Size = new System.Drawing.Size(122, 31);
             this.btnPreReservar.TabIndex = 2;
@@ -101,6 +102,7 @@
             // 
             // tabGenerarPreReserva
             // 
+            this.tabGenerarPreReserva.Controls.Add(this.btnReserverFromGenerarPreReserva);
             this.tabGenerarPreReserva.Controls.Add(this.dataGridViewPreReserva);
             this.tabGenerarPreReserva.Controls.Add(this.btnPreReservar);
             this.tabGenerarPreReserva.Location = new System.Drawing.Point(4, 22);
@@ -273,6 +275,16 @@
             this.btnVolverMenu.UseVisualStyleBackColor = true;
             this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
+            // btnReserverFromGenerarPreReserva
+            // 
+            this.btnReserverFromGenerarPreReserva.Location = new System.Drawing.Point(850, 507);
+            this.btnReserverFromGenerarPreReserva.Name = "btnReserverFromGenerarPreReserva";
+            this.btnReserverFromGenerarPreReserva.Size = new System.Drawing.Size(122, 31);
+            this.btnReserverFromGenerarPreReserva.TabIndex = 4;
+            this.btnReserverFromGenerarPreReserva.Text = "Reservar";
+            this.btnReserverFromGenerarPreReserva.UseVisualStyleBackColor = true;
+            this.btnReserverFromGenerarPreReserva.Click += new System.EventHandler(this.btnReserverFromGenerarPreReserva_Click);
+            // 
             // FormGenerarReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,5 +337,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstadoPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button btnVolverMenu;
+        private System.Windows.Forms.Button btnReserverFromGenerarPreReserva;
     }
 }
