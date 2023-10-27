@@ -194,7 +194,7 @@
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(122, 31);
             this.btnReservar.TabIndex = 3;
-            this.btnReservar.Text = "Reservar";
+            this.btnReservar.Text = "Enviar Link de Pago";
             this.btnReservar.UseVisualStyleBackColor = true;
             this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
