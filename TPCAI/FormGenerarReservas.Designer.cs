@@ -33,6 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabGenerarPreReserva = new System.Windows.Forms.TabPage();
+            this.btnReserverFromGenerarPreReserva = new System.Windows.Forms.Button();
             this.dataGridViewPreReserva = new System.Windows.Forms.DataGridView();
             this.ColumnNroPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +54,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.btnReserverFromGenerarPreReserva = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).BeginInit();
@@ -78,13 +78,13 @@
             this.labelDNI.AutoSize = true;
             this.labelDNI.Location = new System.Drawing.Point(11, 20);
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(26, 13);
+            this.labelDNI.Size = new System.Drawing.Size(75, 13);
             this.labelDNI.TabIndex = 3;
-            this.labelDNI.Text = "DNI";
+            this.labelDNI.Text = "N° Presupusto";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 20);
+            this.textBox1.Location = new System.Drawing.Point(108, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 20);
             this.textBox1.TabIndex = 4;
@@ -113,6 +113,16 @@
             this.tabGenerarPreReserva.Text = "Generar Pre-Reserva";
             this.tabGenerarPreReserva.UseVisualStyleBackColor = true;
             this.tabGenerarPreReserva.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnReserverFromGenerarPreReserva
+            // 
+            this.btnReserverFromGenerarPreReserva.Location = new System.Drawing.Point(850, 507);
+            this.btnReserverFromGenerarPreReserva.Name = "btnReserverFromGenerarPreReserva";
+            this.btnReserverFromGenerarPreReserva.Size = new System.Drawing.Size(122, 31);
+            this.btnReserverFromGenerarPreReserva.TabIndex = 4;
+            this.btnReserverFromGenerarPreReserva.Text = "Reservar";
+            this.btnReserverFromGenerarPreReserva.UseVisualStyleBackColor = true;
+            this.btnReserverFromGenerarPreReserva.Click += new System.EventHandler(this.btnReserverFromGenerarPreReserva_Click);
             // 
             // dataGridViewPreReserva
             // 
@@ -258,7 +268,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(349, 14);
+            this.button4.Location = new System.Drawing.Point(414, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 31);
             this.button4.TabIndex = 10;
@@ -274,16 +284,6 @@
             this.btnVolverMenu.Text = "Volver al Menú";
             this.btnVolverMenu.UseVisualStyleBackColor = true;
             this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
-            // 
-            // btnReserverFromGenerarPreReserva
-            // 
-            this.btnReserverFromGenerarPreReserva.Location = new System.Drawing.Point(850, 507);
-            this.btnReserverFromGenerarPreReserva.Name = "btnReserverFromGenerarPreReserva";
-            this.btnReserverFromGenerarPreReserva.Size = new System.Drawing.Size(122, 31);
-            this.btnReserverFromGenerarPreReserva.TabIndex = 4;
-            this.btnReserverFromGenerarPreReserva.Text = "Reservar";
-            this.btnReserverFromGenerarPreReserva.UseVisualStyleBackColor = true;
-            this.btnReserverFromGenerarPreReserva.Click += new System.EventHandler(this.btnReserverFromGenerarPreReserva_Click);
             // 
             // FormGenerarReservas
             // 
