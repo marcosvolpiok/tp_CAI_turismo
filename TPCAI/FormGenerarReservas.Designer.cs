@@ -53,7 +53,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarVuelo = new System.Windows.Forms.Button();
+            this.btnAgregarAlojamiento = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).BeginInit();
@@ -102,7 +104,9 @@
             // 
             // tabGenerarPreReserva
             // 
-            this.tabGenerarPreReserva.Controls.Add(this.button1);
+            this.tabGenerarPreReserva.Controls.Add(this.button5);
+            this.tabGenerarPreReserva.Controls.Add(this.btnAgregarAlojamiento);
+            this.tabGenerarPreReserva.Controls.Add(this.btnAgregarVuelo);
             this.tabGenerarPreReserva.Controls.Add(this.dataGridViewPreReserva);
             this.tabGenerarPreReserva.Controls.Add(this.btnPreReservar);
             this.tabGenerarPreReserva.Location = new System.Drawing.Point(4, 22);
@@ -275,14 +279,34 @@
             this.btnVolverMenu.UseVisualStyleBackColor = true;
             this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
-            // button1
+            // btnAgregarVuelo
             // 
-            this.button1.Location = new System.Drawing.Point(665, 507);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Modificar Presupuesto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregarVuelo.Location = new System.Drawing.Point(336, 510);
+            this.btnAgregarVuelo.Name = "btnAgregarVuelo";
+            this.btnAgregarVuelo.Size = new System.Drawing.Size(164, 30);
+            this.btnAgregarVuelo.TabIndex = 4;
+            this.btnAgregarVuelo.Text = "Agregar Vuelo";
+            this.btnAgregarVuelo.UseVisualStyleBackColor = true;
+            this.btnAgregarVuelo.Click += new System.EventHandler(this.btnAgregarVuelo_Click);
+            // 
+            // btnAgregarAlojamiento
+            // 
+            this.btnAgregarAlojamiento.Location = new System.Drawing.Point(506, 510);
+            this.btnAgregarAlojamiento.Name = "btnAgregarAlojamiento";
+            this.btnAgregarAlojamiento.Size = new System.Drawing.Size(164, 30);
+            this.btnAgregarAlojamiento.TabIndex = 5;
+            this.btnAgregarAlojamiento.Text = "Agregar Alojamiento";
+            this.btnAgregarAlojamiento.UseVisualStyleBackColor = true;
+            this.btnAgregarAlojamiento.Click += new System.EventHandler(this.btnAgregarAlojamiento_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(680, 510);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(164, 30);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Quitar Producto";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // FormGenerarReservas
             // 
@@ -336,6 +360,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstadoPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button btnVolverMenu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarVuelo;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnAgregarAlojamiento;
     }
 }
