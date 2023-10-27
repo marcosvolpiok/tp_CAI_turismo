@@ -56,23 +56,11 @@
     <Compile Include="FormAñadirPasajero.Designer.cs">
       <DependentUpon>FormAñadirPasajero.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultarAlojamientos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormConsultarAlojamientos.Designer.cs">
-      <DependentUpon>FormConsultarAlojamientos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormConsultarReservas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormConsultarReservas.Designer.cs">
       <DependentUpon>FormConsultarReservas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormConsultarVuelos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormConsultarVuelos.Designer.cs">
-      <DependentUpon>FormConsultarVuelos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGenerarReservas.cs">
       <SubType>Form</SubType>
@@ -98,12 +86,6 @@
     <Compile Include="FormListadoVuelos.Designer.cs">
       <DependentUpon>FormListadoVuelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenuProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenuProductos.Designer.cs">
-      <DependentUpon>FormMenuProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FromMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,14 +100,8 @@
     <EmbeddedResource Include="FormAñadirPasajero.resx">
       <DependentUpon>FormAñadirPasajero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarAlojamientos.resx">
-      <DependentUpon>FormConsultarAlojamientos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormConsultarReservas.resx">
       <DependentUpon>FormConsultarReservas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarVuelos.resx">
-      <DependentUpon>FormConsultarVuelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGenerarReservas.resx">
       <DependentUpon>FormGenerarReservas.cs</DependentUpon>
@@ -138,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormListadoVuelos.resx">
       <DependentUpon>FormListadoVuelos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMenuProductos.resx">
-      <DependentUpon>FormMenuProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromMenu.resx">
       <DependentUpon>FromMenu.cs</DependentUpon>

@@ -228,7 +228,7 @@
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(162, 31);
             this.btnVolver.TabIndex = 10;
-            this.btnVolver.Text = "Volver al menú de Produtos";
+            this.btnVolver.Text = "Volver al menú";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 

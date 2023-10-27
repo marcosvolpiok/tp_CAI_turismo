@@ -27,13 +27,20 @@ namespace TPCAI
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormMenuProductos menuProductos = new FormMenuProductos();
-            menuProductos.Show();
+            FromMenu menu = new FromMenu();
+            menu.Show();
         }
 
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
         {
             this.dataGridViewListadoAlojamiento.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", "$ 25.000", "5 Estrellas", "Doble");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FromMenu menu = new FromMenu();
+            menu.Show();
         }
     }
 }

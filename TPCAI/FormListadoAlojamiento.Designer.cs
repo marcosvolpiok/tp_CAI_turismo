@@ -34,7 +34,6 @@
             this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +41,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +71,7 @@
             this.ColumnTarifa,
             this.ColumnCalificacion,
             this.ColumnTipoHabitacion});
-            this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(27, 61);
+            this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(460, 57);
             this.dataGridViewListadoAlojamiento.Name = "dataGridViewListadoAlojamiento";
             this.dataGridViewListadoAlojamiento.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoAlojamiento.TabIndex = 3;
@@ -86,19 +101,9 @@
             this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
             this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
             // 
-            // btnVolverMenu
-            // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(817, 575);
-            this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(169, 31);
-            this.btnVolverMenu.TabIndex = 5;
-            this.btnVolverMenu.Text = "Volver a Menú de productos";
-            this.btnVolverMenu.UseVisualStyleBackColor = true;
-            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(155, 580);
+            this.button1.Location = new System.Drawing.Point(588, 576);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 31);
             this.button1.TabIndex = 4;
@@ -107,7 +112,7 @@
             // 
             // btnVerPresupuesto
             // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(665, 575);
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(1161, 576);
             this.btnVerPresupuesto.Name = "btnVerPresupuesto";
             this.btnVerPresupuesto.Size = new System.Drawing.Size(122, 31);
             this.btnVerPresupuesto.TabIndex = 6;
@@ -118,7 +123,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 9);
+            this.label1.Location = new System.Drawing.Point(619, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 7;
@@ -127,7 +132,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 9);
+            this.label2.Location = new System.Drawing.Point(457, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 13);
             this.label2.TabIndex = 8;
@@ -137,7 +142,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 35);
+            this.label3.Location = new System.Drawing.Point(457, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(472, 20);
             this.label3.TabIndex = 9;
@@ -145,7 +150,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 591);
+            this.textBox1.Location = new System.Drawing.Point(458, 587);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(124, 20);
             this.textBox1.TabIndex = 10;
@@ -153,17 +158,178 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 575);
+            this.label4.Location = new System.Drawing.Point(458, 571);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "N° Presupuesto";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Caracas, Venezuela",
+            "Córdoba, Argentina",
+            "La Habana, Cuba"});
+            this.comboBox2.Location = new System.Drawing.Point(199, 88);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(196, 21);
+            this.comboBox2.TabIndex = 50;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Location = new System.Drawing.Point(45, 414);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(122, 31);
+            this.BtnBuscar.TabIndex = 48;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(199, 181);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(196, 20);
+            this.dateTimePicker2.TabIndex = 47;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(201, 133);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
+            this.dateTimePicker1.TabIndex = 46;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1 Estrella",
+            "2 Estrellas",
+            "3 Estrellas",
+            "4 Estrellas",
+            "5 Estrellas"});
+            this.comboBox1.Location = new System.Drawing.Point(201, 356);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(196, 21);
+            this.comboBox1.TabIndex = 45;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(199, 313);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(196, 20);
+            this.textBox6.TabIndex = 44;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(199, 274);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(196, 20);
+            this.textBox5.TabIndex = 43;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(199, 231);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(198, 20);
+            this.textBox4.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(43, 313);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 13);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Cantidad de Infantes";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 355);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Calificación";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 274);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Cantidad de Menores";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 13);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "* Cantidad de Adultos";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(43, 187);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 13);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "* Fecha de Egreso";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 133);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 13);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "* Fecha de Ingreso";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(43, 91);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "* Destino";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1295, 576);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(122, 31);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "Volver al Menú";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormListadoAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 625);
+            this.ClientSize = new System.Drawing.Size(1462, 625);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -171,7 +337,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridViewListadoAlojamiento);
-            this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.button1);
             this.Name = "FormListadoAlojamiento";
             this.Text = "Listado Alojamiento";
@@ -185,7 +350,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewListadoAlojamiento;
-        private System.Windows.Forms.Button btnVolverMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnVerPresupuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDestino;
@@ -198,5 +362,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button2;
     }
 }

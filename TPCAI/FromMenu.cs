@@ -20,8 +20,8 @@ namespace TPCAI
         private void btnConsultarProductos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormMenuProductos menu = new FormMenuProductos();
-            menu.Show();
+            FormListadoVuelos vuelos = new FormListadoVuelos();
+            vuelos.Show();
         }
 
         private void btnSalirMenu_Click(object sender, EventArgs e)
@@ -46,6 +46,13 @@ namespace TPCAI
         private void FromMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAlojamientos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormListadoAlojamiento alojamiento = new FormListadoAlojamiento();
+            alojamiento.Show();
         }
     }
 }

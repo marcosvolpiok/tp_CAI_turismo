@@ -27,8 +27,8 @@ namespace TPCAI
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormMenuProductos menuProductos = new FormMenuProductos();
-            menuProductos.Show();
+            FromMenu menu = new FromMenu();
+            menu.Show();
         }
 
         private void FormListadoVuelos_Load(object sender, EventArgs e)
