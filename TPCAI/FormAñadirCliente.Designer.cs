@@ -37,6 +37,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +106,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(184, 203);
+            this.btnGuardar.Location = new System.Drawing.Point(82, 203);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(122, 31);
             this.btnGuardar.TabIndex = 8;
@@ -113,11 +114,22 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(292, 203);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(122, 31);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.Text = "Volver al Presupuesto";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FormAñadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 276);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox3);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

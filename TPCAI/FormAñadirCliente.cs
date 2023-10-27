@@ -23,5 +23,12 @@ namespace TPCAI
             FromMenu menu = new FromMenu();
             menu.Show();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormListadoPresupuestos formPresup = new FormListadoPresupuestos("VUELOS");
+            formPresup.Show();
+        }
     }
 }

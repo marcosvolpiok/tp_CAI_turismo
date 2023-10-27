@@ -51,6 +51,7 @@
             this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -69,7 +70,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(480, 540);
+            this.button1.Location = new System.Drawing.Point(347, 540);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 31);
             this.button1.TabIndex = 7;
@@ -231,11 +232,22 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnAñadirDatosCliente
+            // 
+            this.btnAñadirDatosCliente.Location = new System.Drawing.Point(534, 540);
+            this.btnAñadirDatosCliente.Name = "btnAñadirDatosCliente";
+            this.btnAñadirDatosCliente.Size = new System.Drawing.Size(122, 31);
+            this.btnAñadirDatosCliente.TabIndex = 11;
+            this.btnAñadirDatosCliente.Text = "Añadir Datos Cliente";
+            this.btnAñadirDatosCliente.UseVisualStyleBackColor = true;
+            this.btnAñadirDatosCliente.Click += new System.EventHandler(this.btnAñadirDatosCliente_Click);
+            // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 592);
+            this.Controls.Add(this.btnAñadirDatosCliente);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControlAlojamientosVuelos);
             this.Controls.Add(this.button2);
@@ -277,5 +289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnClase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnAñadirDatosCliente;
     }
 }
