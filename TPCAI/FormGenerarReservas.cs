@@ -70,5 +70,12 @@ namespace TPCAI
             FormListadoAlojamiento formAlojamiento = new FormListadoAlojamiento();
             formAlojamiento.Show();
         }
+
+        private void btnAñadirPasajeros_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAñadirPasajero formPasajero = new FormAñadirPasajero();
+            formPasajero.Show();
+        }
     }
 }
