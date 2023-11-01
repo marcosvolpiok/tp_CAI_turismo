@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoVuelos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -317,11 +318,22 @@
             this.label9.TabIndex = 39;
             this.label9.Text = "* Destino";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(93, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(214, 20);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "Presupuesto Activo: 4545";
+            // 
             // FormListadoVuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1462, 625);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label8);
@@ -385,5 +397,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
