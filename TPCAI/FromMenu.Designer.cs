@@ -50,7 +50,7 @@
             this.btnGenerarReservas.Name = "btnGenerarReservas";
             this.btnGenerarReservas.Size = new System.Drawing.Size(143, 42);
             this.btnGenerarReservas.TabIndex = 3;
-            this.btnGenerarReservas.Text = "Generar Reservas";
+            this.btnGenerarReservas.Text = "Presupuestos y Reservas";
             this.btnGenerarReservas.UseVisualStyleBackColor = true;
             this.btnGenerarReservas.Click += new System.EventHandler(this.btnGenerarReservas_Click);
             // 
