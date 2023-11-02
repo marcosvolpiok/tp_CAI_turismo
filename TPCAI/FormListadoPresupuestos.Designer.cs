@@ -52,6 +52,7 @@
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -242,11 +243,22 @@
             this.btnAñadirDatosCliente.UseVisualStyleBackColor = true;
             this.btnAñadirDatosCliente.Click += new System.EventHandler(this.btnAñadirDatosCliente_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 546);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Total: $25.000";
+            // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 592);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirDatosCliente);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControlAlojamientosVuelos);
@@ -261,6 +273,7 @@
             this.tabVuelos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosVuelos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,5 +303,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAñadirDatosCliente;
+        private System.Windows.Forms.Label label1;
     }
 }
