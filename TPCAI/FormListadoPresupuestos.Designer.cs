@@ -53,6 +53,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -62,7 +63,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(674, 540);
+            this.button2.Location = new System.Drawing.Point(674, 551);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 31);
             this.button2.TabIndex = 8;
@@ -71,7 +72,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(347, 540);
+            this.button1.Location = new System.Drawing.Point(347, 551);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 31);
             this.button1.TabIndex = 7;
@@ -83,10 +84,10 @@
             // 
             this.tabControlAlojamientosVuelos.Controls.Add(this.tabAlojamientos);
             this.tabControlAlojamientosVuelos.Controls.Add(this.tabVuelos);
-            this.tabControlAlojamientosVuelos.Location = new System.Drawing.Point(24, 22);
+            this.tabControlAlojamientosVuelos.Location = new System.Drawing.Point(24, 33);
             this.tabControlAlojamientosVuelos.Name = "tabControlAlojamientosVuelos";
             this.tabControlAlojamientosVuelos.SelectedIndex = 0;
-            this.tabControlAlojamientosVuelos.Size = new System.Drawing.Size(965, 505);
+            this.tabControlAlojamientosVuelos.Size = new System.Drawing.Size(965, 484);
             this.tabControlAlojamientosVuelos.TabIndex = 9;
             // 
             // tabAlojamientos
@@ -95,7 +96,7 @@
             this.tabAlojamientos.Location = new System.Drawing.Point(4, 22);
             this.tabAlojamientos.Name = "tabAlojamientos";
             this.tabAlojamientos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlojamientos.Size = new System.Drawing.Size(957, 479);
+            this.tabAlojamientos.Size = new System.Drawing.Size(957, 458);
             this.tabAlojamientos.TabIndex = 0;
             this.tabAlojamientos.Text = "Alojamientos";
             this.tabAlojamientos.UseVisualStyleBackColor = true;
@@ -115,7 +116,7 @@
             this.ColumnTipoHabitacion});
             this.dataGridViewPresupuestosAlojamientos.Location = new System.Drawing.Point(3, 0);
             this.dataGridViewPresupuestosAlojamientos.Name = "dataGridViewPresupuestosAlojamientos";
-            this.dataGridViewPresupuestosAlojamientos.Size = new System.Drawing.Size(951, 473);
+            this.dataGridViewPresupuestosAlojamientos.Size = new System.Drawing.Size(951, 459);
             this.dataGridViewPresupuestosAlojamientos.TabIndex = 4;
             // 
             // ColumnDestino
@@ -159,7 +160,7 @@
             this.tabVuelos.Location = new System.Drawing.Point(4, 22);
             this.tabVuelos.Name = "tabVuelos";
             this.tabVuelos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVuelos.Size = new System.Drawing.Size(957, 479);
+            this.tabVuelos.Size = new System.Drawing.Size(957, 458);
             this.tabVuelos.TabIndex = 1;
             this.tabVuelos.Text = "Vuelos";
             this.tabVuelos.UseVisualStyleBackColor = true;
@@ -180,7 +181,7 @@
             this.ColumnTipoPasajero});
             this.dataGridViewPresupuestosVuelos.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewPresupuestosVuelos.Name = "dataGridViewPresupuestosVuelos";
-            this.dataGridViewPresupuestosVuelos.Size = new System.Drawing.Size(957, 473);
+            this.dataGridViewPresupuestosVuelos.Size = new System.Drawing.Size(957, 449);
             this.dataGridViewPresupuestosVuelos.TabIndex = 4;
             // 
             // ColumnOrigen
@@ -225,7 +226,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(821, 540);
+            this.btnVolver.Location = new System.Drawing.Point(821, 551);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(162, 31);
             this.btnVolver.TabIndex = 10;
@@ -235,7 +236,7 @@
             // 
             // btnAñadirDatosCliente
             // 
-            this.btnAñadirDatosCliente.Location = new System.Drawing.Point(534, 540);
+            this.btnAñadirDatosCliente.Location = new System.Drawing.Point(534, 551);
             this.btnAñadirDatosCliente.Name = "btnAñadirDatosCliente";
             this.btnAñadirDatosCliente.Size = new System.Drawing.Size(122, 31);
             this.btnAñadirDatosCliente.TabIndex = 11;
@@ -247,17 +248,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 546);
+            this.label1.Location = new System.Drawing.Point(30, 557);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "Total: $25.000";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(29, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(214, 20);
+            this.label12.TabIndex = 59;
+            this.label12.Text = "Presupuesto Activo: 4545";
             // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 592);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirDatosCliente);
             this.Controls.Add(this.btnVolver);
@@ -304,5 +316,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAñadirDatosCliente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label12;
     }
 }
