@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnVuelos = new System.Windows.Forms.Button();
-            this.btnConsultarReservas = new System.Windows.Forms.Button();
             this.btnGenerarReservas = new System.Windows.Forms.Button();
             this.btnSalirMenu = new System.Windows.Forms.Button();
             this.btnAlojamientos = new System.Windows.Forms.Button();
@@ -37,7 +36,7 @@
             // 
             // btnVuelos
             // 
-            this.btnVuelos.Location = new System.Drawing.Point(85, 50);
+            this.btnVuelos.Location = new System.Drawing.Point(85, 79);
             this.btnVuelos.Name = "btnVuelos";
             this.btnVuelos.Size = new System.Drawing.Size(143, 42);
             this.btnVuelos.TabIndex = 0;
@@ -45,19 +44,9 @@
             this.btnVuelos.UseVisualStyleBackColor = true;
             this.btnVuelos.Click += new System.EventHandler(this.btnConsultarProductos_Click);
             // 
-            // btnConsultarReservas
-            // 
-            this.btnConsultarReservas.Location = new System.Drawing.Point(85, 294);
-            this.btnConsultarReservas.Name = "btnConsultarReservas";
-            this.btnConsultarReservas.Size = new System.Drawing.Size(143, 42);
-            this.btnConsultarReservas.TabIndex = 2;
-            this.btnConsultarReservas.Text = "Consultar Reservas";
-            this.btnConsultarReservas.UseVisualStyleBackColor = true;
-            this.btnConsultarReservas.Click += new System.EventHandler(this.btnConsultarReservas_Click);
-            // 
             // btnGenerarReservas
             // 
-            this.btnGenerarReservas.Location = new System.Drawing.Point(85, 205);
+            this.btnGenerarReservas.Location = new System.Drawing.Point(85, 234);
             this.btnGenerarReservas.Name = "btnGenerarReservas";
             this.btnGenerarReservas.Size = new System.Drawing.Size(143, 42);
             this.btnGenerarReservas.TabIndex = 3;
@@ -67,7 +56,7 @@
             // 
             // btnSalirMenu
             // 
-            this.btnSalirMenu.Location = new System.Drawing.Point(85, 381);
+            this.btnSalirMenu.Location = new System.Drawing.Point(85, 312);
             this.btnSalirMenu.Name = "btnSalirMenu";
             this.btnSalirMenu.Size = new System.Drawing.Size(143, 42);
             this.btnSalirMenu.TabIndex = 4;
@@ -77,7 +66,7 @@
             // 
             // btnAlojamientos
             // 
-            this.btnAlojamientos.Location = new System.Drawing.Point(85, 125);
+            this.btnAlojamientos.Location = new System.Drawing.Point(85, 154);
             this.btnAlojamientos.Name = "btnAlojamientos";
             this.btnAlojamientos.Size = new System.Drawing.Size(143, 42);
             this.btnAlojamientos.TabIndex = 5;
@@ -89,11 +78,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 501);
+            this.ClientSize = new System.Drawing.Size(313, 433);
             this.Controls.Add(this.btnAlojamientos);
             this.Controls.Add(this.btnSalirMenu);
             this.Controls.Add(this.btnGenerarReservas);
-            this.Controls.Add(this.btnConsultarReservas);
             this.Controls.Add(this.btnVuelos);
             this.Name = "FromMenu";
             this.Text = "Menú";
@@ -105,7 +93,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnVuelos;
-        private System.Windows.Forms.Button btnConsultarReservas;
         private System.Windows.Forms.Button btnGenerarReservas;
         private System.Windows.Forms.Button btnSalirMenu;
         private System.Windows.Forms.Button btnAlojamientos;
