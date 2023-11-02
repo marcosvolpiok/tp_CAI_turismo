@@ -54,6 +54,8 @@
             this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -264,11 +266,31 @@
             this.label12.TabIndex = 59;
             this.label12.Text = "Presupuesto Activo: 4545";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(289, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Cliente: José Cabrera";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(405, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "DNI: 36.258.110";
+            // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 592);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirDatosCliente);
@@ -317,5 +339,7 @@
         private System.Windows.Forms.Button btnAñadirDatosCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
