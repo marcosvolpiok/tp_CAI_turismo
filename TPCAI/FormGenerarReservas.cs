@@ -115,5 +115,19 @@ namespace TPCAI
         {
             MessageBox.Show("Presupuesto encontrado");
         }
+
+        private void btnConsultarVuelos_Click(object sender, EventArgs e)
+        {
+            FormListadoVuelos vuelos = new FormListadoVuelos();
+            vuelos.Show();
+            this.Hide();
+        }
+
+        private void btnConsultarAlojamientos_Click(object sender, EventArgs e)
+        {
+            FormListadoAlojamiento alojamiento = new FormListadoAlojamiento();
+            alojamiento.Show();
+            this.Hide();
+        }
     }
 }

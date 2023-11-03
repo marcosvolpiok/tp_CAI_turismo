@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.ColumnFechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,41 +54,6 @@
             this.dataGridViewReservas.Name = "dataGridViewReservas";
             this.dataGridViewReservas.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewReservas.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(102, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Ingrese DNI";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(344, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 31);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnVolverMenu
-            // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(858, 596);
-            this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(122, 31);
-            this.btnVolverMenu.TabIndex = 13;
-            this.btnVolverMenu.Text = "Volver al Menú";
-            this.btnVolverMenu.UseVisualStyleBackColor = true;
-            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
             // ColumnFechaReserva
             // 
@@ -109,6 +74,41 @@
             // 
             this.ColumnEstado.HeaderText = "Estado";
             this.ColumnEstado.Name = "ColumnEstado";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(102, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(218, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "N° Presupuesto";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(344, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(122, 31);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnVolverMenu
+            // 
+            this.btnVolverMenu.Location = new System.Drawing.Point(858, 596);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(122, 31);
+            this.btnVolverMenu.TabIndex = 13;
+            this.btnVolverMenu.Text = "Volver al Menú";
+            this.btnVolverMenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
             // FormConsultarReservas
             // 

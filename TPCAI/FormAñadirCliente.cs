@@ -20,14 +20,14 @@ namespace TPCAI
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FromMenu menu = new FromMenu();
-            menu.Show();
+            FormListadoPresupuestos presupuestos = new FormListadoPresupuestos("VUELOS"); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
+            presupuestos.Show();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormListadoPresupuestos formPresup = new FormListadoPresupuestos("VUELOS");
+            FormListadoPresupuestos formPresup = new FormListadoPresupuestos("VUELOS"); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
             formPresup.Show();
         }
     }
