@@ -110,5 +110,10 @@ namespace TPCAI
         {
             MessageBox.Show("Reserva confirmada");
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Presupuesto encontrado");
+        }
     }
 }

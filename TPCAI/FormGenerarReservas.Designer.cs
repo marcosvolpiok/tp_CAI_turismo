@@ -53,7 +53,7 @@
             this.ColumnEstadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.lblActivo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -280,14 +280,15 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // button4
+            // btnBuscar
             // 
-            this.button4.Location = new System.Drawing.Point(414, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 31);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(414, 14);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(122, 31);
+            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnVolverMenu
             // 
@@ -316,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(1013, 682);
             this.Controls.Add(this.lblActivo);
             this.Controls.Add(this.btnVolverMenu);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelDNI);
@@ -346,7 +347,7 @@
         private System.Windows.Forms.TabPage tabConfirmar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.DataGridView dataGridViewPreReserva;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNroPresupuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProductos;
