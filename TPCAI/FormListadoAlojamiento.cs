@@ -42,5 +42,15 @@ namespace TPCAI
             FromMenu menu = new FromMenu();
             menu.Show();
         }
+
+        private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Alojamiento añadido a presupuesto 4545");
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Alojamientos encontrados listados en la pantalla");
+        }
     }
 }

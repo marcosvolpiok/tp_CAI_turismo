@@ -35,7 +35,7 @@ namespace TPCAI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Presupuesto Guardado y Cerrado");
         }
 
         private void FormListadoPresupuestos_Load(object sender, EventArgs e)
@@ -50,6 +50,24 @@ namespace TPCAI
             this.Hide();
             FormAñadirCliente formCliente = new FormAñadirCliente();
             formCliente.Show();
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridViewPresupuestosAlojamientos.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in this.dataGridViewPresupuestosAlojamientos.SelectedRows)
+                {
+                    if (!row.IsNewRow) // Ensure you're not trying to remove a new row
+                    {
+                        this.dataGridViewPresupuestosAlojamientos.Rows.Remove(row);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un producto para eliminar del presupuesto");
+            }
         }
     }
 }

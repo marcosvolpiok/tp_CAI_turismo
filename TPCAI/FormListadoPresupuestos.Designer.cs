@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.btnCerrarYGuardarPresupuesto = new System.Windows.Forms.Button();
             this.tabControlAlojamientosVuelos = new System.Windows.Forms.TabControl();
             this.tabAlojamientos = new System.Windows.Forms.TabPage();
             this.dataGridViewPresupuestosAlojamientos = new System.Windows.Forms.DataGridView();
@@ -63,24 +63,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosVuelos)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnEliminarProducto
             // 
-            this.button2.Location = new System.Drawing.Point(674, 551);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 31);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Eliminar Producto";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Location = new System.Drawing.Point(622, 551);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(170, 31);
+            this.btnEliminarProducto.TabIndex = 8;
+            this.btnEliminarProducto.Text = "Eliminar Producto Seleccionado";
+            this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
-            // button1
+            // btnCerrarYGuardarPresupuesto
             // 
-            this.button1.Location = new System.Drawing.Point(347, 551);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 31);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Guardar y Cerrar Presupuesto";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrarYGuardarPresupuesto.Location = new System.Drawing.Point(282, 551);
+            this.btnCerrarYGuardarPresupuesto.Name = "btnCerrarYGuardarPresupuesto";
+            this.btnCerrarYGuardarPresupuesto.Size = new System.Drawing.Size(165, 31);
+            this.btnCerrarYGuardarPresupuesto.TabIndex = 7;
+            this.btnCerrarYGuardarPresupuesto.Text = "Guardar y Cerrar Presupuesto";
+            this.btnCerrarYGuardarPresupuesto.UseVisualStyleBackColor = true;
+            this.btnCerrarYGuardarPresupuesto.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControlAlojamientosVuelos
             // 
@@ -238,7 +239,7 @@
             // 
             // btnAñadirDatosCliente
             // 
-            this.btnAñadirDatosCliente.Location = new System.Drawing.Point(534, 551);
+            this.btnAñadirDatosCliente.Location = new System.Drawing.Point(474, 551);
             this.btnAñadirDatosCliente.Name = "btnAñadirDatosCliente";
             this.btnAñadirDatosCliente.Size = new System.Drawing.Size(122, 31);
             this.btnAñadirDatosCliente.TabIndex = 11;
@@ -296,8 +297,8 @@
             this.Controls.Add(this.btnAñadirDatosCliente);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControlAlojamientosVuelos);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminarProducto);
+            this.Controls.Add(this.btnCerrarYGuardarPresupuesto);
             this.Name = "FormListadoPresupuestos";
             this.Text = "Listado Presupuestos";
             this.Load += new System.EventHandler(this.FormListadoPresupuestos_Load);
@@ -313,8 +314,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminarProducto;
+        private System.Windows.Forms.Button btnCerrarYGuardarPresupuesto;
         private System.Windows.Forms.TabControl tabControlAlojamientosVuelos;
         private System.Windows.Forms.TabPage tabAlojamientos;
         private System.Windows.Forms.TabPage tabVuelos;

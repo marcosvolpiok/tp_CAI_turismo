@@ -38,7 +38,7 @@
             this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolverMenu = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAñadirAPresupuesto = new System.Windows.Forms.Button();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -131,14 +131,15 @@
             this.btnVolverMenu.UseVisualStyleBackColor = true;
             this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
             // 
-            // button1
+            // btnAñadirAPresupuesto
             // 
-            this.button1.Location = new System.Drawing.Point(986, 553);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Añadir a Presupuesto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAñadirAPresupuesto.Location = new System.Drawing.Point(986, 553);
+            this.btnAñadirAPresupuesto.Name = "btnAñadirAPresupuesto";
+            this.btnAñadirAPresupuesto.Size = new System.Drawing.Size(122, 31);
+            this.btnAñadirAPresupuesto.TabIndex = 4;
+            this.btnAñadirAPresupuesto.Text = "Añadir a Presupuesto";
+            this.btnAñadirAPresupuesto.UseVisualStyleBackColor = true;
+            this.btnAñadirAPresupuesto.Click += new System.EventHandler(this.btnAñadirAPresupuesto_Click);
             // 
             // btnVerPresupuesto
             // 
@@ -204,6 +205,7 @@
             this.BtnBuscar.TabIndex = 52;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // dateTimePicker2
             // 
@@ -355,7 +357,7 @@
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridViewListadoVuelos);
             this.Controls.Add(this.btnVolverMenu);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAñadirAPresupuesto);
             this.Name = "FormListadoVuelos";
             this.Text = "Listado Vuelos";
             this.Load += new System.EventHandler(this.FormListadoVuelos_Load);
@@ -369,7 +371,7 @@
 
         private System.Windows.Forms.DataGridView dataGridViewListadoVuelos;
         private System.Windows.Forms.Button btnVolverMenu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAñadirAPresupuesto;
         private System.Windows.Forms.Button btnVerPresupuesto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOrigen;

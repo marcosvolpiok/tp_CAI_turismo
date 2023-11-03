@@ -36,6 +36,14 @@ namespace TPCAI
             this.dataGridViewListadoVuelos.Rows.Add("CABA, Argentina", "La Habana, Cuba", "20/10/2023 00:30", "20/10/2023 06:30", "Latam", "$120.000", "Economy", "Adulto");
         }
 
+        private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vuelo añadido a presupuesto 4545");
+        }
 
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vuelos encontrados listados en la pantalla");
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace TPCAI
 {
     public partial class FormGenerarReservas : Form
     {
+        int idMok = 101;
+
         public FormGenerarReservas()
         {
             InitializeComponent();
@@ -38,9 +40,7 @@ namespace TPCAI
 
         private void btnPreReservar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormAñadirPasajero formPasajero = new FormAñadirPasajero();
-            formPasajero.Show();
+            MessageBox.Show("Estado de presupuesto modificado a Reserva");
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
@@ -76,6 +76,39 @@ namespace TPCAI
             this.Hide();
             FormAñadirPasajero formPasajero = new FormAñadirPasajero();
             formPasajero.Show();
+        }
+
+        private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewPreReserva.Rows.Add(this.idMok, "", "", "");
+            this.idMok++;
+
+        }
+
+        private void btnEstablecerActivo_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridViewPreReserva.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in this.dataGridViewPreReserva.SelectedRows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        string id = row.Cells[0].Value.ToString();
+                        string message = "Presupuesto número "+id+" establecido como activo";
+                        this.lblActivo.Text = "Presupuesto Activo: " + id;
+                        MessageBox.Show(message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un presupuesto para establecer como activo");
+            }
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Reserva confirmada");
         }
     }
 }

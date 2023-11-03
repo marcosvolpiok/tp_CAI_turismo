@@ -55,7 +55,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAñadirAPresupuesto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +102,7 @@
             // 
             // btnVerPresupuesto
             // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(1006, 576);
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(1137, 576);
             this.btnVerPresupuesto.Name = "btnVerPresupuesto";
             this.btnVerPresupuesto.Size = new System.Drawing.Size(122, 31);
             this.btnVerPresupuesto.TabIndex = 6;
@@ -159,6 +159,7 @@
             this.BtnBuscar.TabIndex = 48;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // dateTimePicker2
             // 
@@ -293,21 +294,22 @@
             this.label12.TabIndex = 58;
             this.label12.Text = "Presupuesto Activo: 4545";
             // 
-            // button3
+            // btnAñadirAPresupuesto
             // 
-            this.button3.Location = new System.Drawing.Point(1150, 576);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 31);
-            this.button3.TabIndex = 59;
-            this.button3.Text = "Volver al Menú";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAñadirAPresupuesto.Location = new System.Drawing.Point(975, 576);
+            this.btnAñadirAPresupuesto.Name = "btnAñadirAPresupuesto";
+            this.btnAñadirAPresupuesto.Size = new System.Drawing.Size(122, 31);
+            this.btnAñadirAPresupuesto.TabIndex = 59;
+            this.btnAñadirAPresupuesto.Text = "Añadir a Presupuesto";
+            this.btnAñadirAPresupuesto.UseVisualStyleBackColor = true;
+            this.btnAñadirAPresupuesto.Click += new System.EventHandler(this.btnAñadirAPresupuesto_Click);
             // 
             // FormListadoAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1462, 625);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAñadirAPresupuesto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox2);
@@ -368,6 +370,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAñadirAPresupuesto;
     }
 }
