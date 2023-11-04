@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TPCAI
 {
@@ -33,6 +34,16 @@ namespace TPCAI
 
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
         {
+            //Carga destinos (códigos de ciudades)
+            List<string> codigosCiudad = new List<string> { "MIA", "MAD", "EZE", "BER", "CDG", "GRU", "GIG", "JFK", "USH", "IGR", "LAX", "DFW" };
+            comboDestino.Items.AddRange(codigosCiudad.ToArray());
+
+            //Carga calificaciones (cantidad de estrellas)
+            List<string> calificaciones = new List<string> { "1", "2", "3", "4", "5" };
+            comboCalificacion.Items.AddRange(calificaciones.ToArray());
+
+
+            //Carga listado con todos los alojamientos
             List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelos();
             foreach(AlojamientosEnt alojamiento in alojamientosList){
                 foreach(DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
@@ -57,6 +68,24 @@ namespace TPCAI
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelosFiltrados(
+                comboDestino.Text,
+                dateTimeIngreso.Text,
+                dateTimeEgreso.Text,
+                int.Parse(textCantidadAdultos.Text),
+                int.Parse(textCantidadMenores.Text),
+                int.Parse(textCantidadInfantes.Text),
+                int.Parse(comboCalificacion.Text)
+                );
+            this.dataGridViewListadoAlojamiento.Rows.Clear();
+
+            foreach (AlojamientosEnt alojamiento in alojamientosList)
+            {
+                foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+                {
+                    this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
+                }
+            }
             MessageBox.Show("Alojamientos encontrados listados en la pantalla");
         }
     }

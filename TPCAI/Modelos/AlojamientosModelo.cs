@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPCAI;
 
 namespace TPCAI
@@ -15,8 +16,29 @@ namespace TPCAI
 
         public static List<AlojamientosEnt> BuscarVuelos()
         {
-            return ProductosModulo.ObtenerAlojamientosFiltrados();
-;
+            return ProductosModulo.ObtenerAlojamientos();
         }
+
+        public static List<AlojamientosEnt> BuscarVuelosFiltrados(
+            string destino,
+            string fechaIngreso,
+            string fechaEgreso,
+            int cantidadAdultos,
+            int cantidadMenores,
+            int cantidadInfantes,
+            int calificacion
+            )
+        {
+            return ProductosModulo.ObtenerAlojamientosFiltrados(
+                destino,
+                fechaIngreso,
+                fechaEgreso,
+                cantidadAdultos,
+                cantidadMenores,
+                cantidadInfantes,
+                calificacion);
+        }
+
+
     }
 }

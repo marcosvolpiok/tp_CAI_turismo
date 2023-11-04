@@ -58,6 +58,6 @@ namespace TPCAI
 
         }
 
-        public static void Grabar() => File.WriteAllText("../../JSON/Alojamientos.json", JsonConvert.SerializeObject(clientes));
+        public static void Grabar() => File.WriteAllText("../../JSON/Alojamientos.json", JsonConvert.SerializeObject(alojamientos));
     }
 }

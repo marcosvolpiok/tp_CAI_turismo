@@ -38,14 +38,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboDestino = new System.Windows.Forms.ComboBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dateTimeEgreso = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeIngreso = new System.Windows.Forms.DateTimePicker();
+            this.comboCalificacion = new System.Windows.Forms.ComboBox();
+            this.textCantidadInfantes = new System.Windows.Forms.TextBox();
+            this.textCantidadMenores = new System.Windows.Forms.TextBox();
+            this.textCantidadAdultos = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -138,18 +138,14 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Seleccione el producto que desee agregar al presupuesto";
             // 
-            // comboBox2
+            // comboDestino
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Caracas, Venezuela",
-            "Córdoba, Argentina",
-            "La Habana, Cuba"});
-            this.comboBox2.Location = new System.Drawing.Point(199, 162);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(196, 21);
-            this.comboBox2.TabIndex = 50;
+            this.comboDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboDestino.FormattingEnabled = true;
+            this.comboDestino.Location = new System.Drawing.Point(199, 162);
+            this.comboDestino.Name = "comboDestino";
+            this.comboDestino.Size = new System.Drawing.Size(196, 21);
+            this.comboDestino.TabIndex = 50;
             // 
             // BtnBuscar
             // 
@@ -161,55 +157,49 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // dateTimePicker2
+            // dateTimeEgreso
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(199, 255);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(196, 20);
-            this.dateTimePicker2.TabIndex = 47;
+            this.dateTimeEgreso.Location = new System.Drawing.Point(199, 255);
+            this.dateTimeEgreso.Name = "dateTimeEgreso";
+            this.dateTimeEgreso.Size = new System.Drawing.Size(196, 20);
+            this.dateTimeEgreso.TabIndex = 47;
             // 
-            // dateTimePicker1
+            // dateTimeIngreso
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(201, 207);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
-            this.dateTimePicker1.TabIndex = 46;
+            this.dateTimeIngreso.Location = new System.Drawing.Point(201, 207);
+            this.dateTimeIngreso.Name = "dateTimeIngreso";
+            this.dateTimeIngreso.Size = new System.Drawing.Size(196, 20);
+            this.dateTimeIngreso.TabIndex = 46;
             // 
-            // comboBox1
+            // comboCalificacion
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1 Estrella",
-            "2 Estrellas",
-            "3 Estrellas",
-            "4 Estrellas",
-            "5 Estrellas"});
-            this.comboBox1.Location = new System.Drawing.Point(201, 430);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 21);
-            this.comboBox1.TabIndex = 45;
+            this.comboCalificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCalificacion.FormattingEnabled = true;
+            this.comboCalificacion.Location = new System.Drawing.Point(201, 430);
+            this.comboCalificacion.Name = "comboCalificacion";
+            this.comboCalificacion.Size = new System.Drawing.Size(196, 21);
+            this.comboCalificacion.TabIndex = 45;
             // 
-            // textBox6
+            // textCantidadInfantes
             // 
-            this.textBox6.Location = new System.Drawing.Point(199, 387);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(196, 20);
-            this.textBox6.TabIndex = 44;
+            this.textCantidadInfantes.Location = new System.Drawing.Point(199, 387);
+            this.textCantidadInfantes.Name = "textCantidadInfantes";
+            this.textCantidadInfantes.Size = new System.Drawing.Size(196, 20);
+            this.textCantidadInfantes.TabIndex = 44;
             // 
-            // textBox5
+            // textCantidadMenores
             // 
-            this.textBox5.Location = new System.Drawing.Point(199, 348);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 20);
-            this.textBox5.TabIndex = 43;
+            this.textCantidadMenores.Location = new System.Drawing.Point(199, 348);
+            this.textCantidadMenores.Name = "textCantidadMenores";
+            this.textCantidadMenores.Size = new System.Drawing.Size(196, 20);
+            this.textCantidadMenores.TabIndex = 43;
             // 
-            // textBox4
+            // textCantidadAdultos
             // 
-            this.textBox4.Location = new System.Drawing.Point(199, 305);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 20);
-            this.textBox4.TabIndex = 42;
+            this.textCantidadAdultos.Location = new System.Drawing.Point(199, 305);
+            this.textCantidadAdultos.Name = "textCantidadAdultos";
+            this.textCantidadAdultos.Size = new System.Drawing.Size(198, 20);
+            this.textCantidadAdultos.TabIndex = 42;
             // 
             // label7
             // 
@@ -225,9 +215,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(43, 429);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.Size = new System.Drawing.Size(109, 13);
             this.label6.TabIndex = 40;
-            this.label6.Text = "Calificación";
+            this.label6.Text = "Calificación (Estrellas)";
             // 
             // label5
             // 
@@ -312,14 +302,14 @@
             this.Controls.Add(this.btnAñadirAPresupuesto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboDestino);
             this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.dateTimeEgreso);
+            this.Controls.Add(this.dateTimeIngreso);
+            this.Controls.Add(this.comboCalificacion);
+            this.Controls.Add(this.textCantidadInfantes);
+            this.Controls.Add(this.textCantidadMenores);
+            this.Controls.Add(this.textCantidadAdultos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -353,14 +343,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboDestino;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dateTimeEgreso;
+        private System.Windows.Forms.DateTimePicker dateTimeIngreso;
+        private System.Windows.Forms.ComboBox comboCalificacion;
+        private System.Windows.Forms.TextBox textCantidadInfantes;
+        private System.Windows.Forms.TextBox textCantidadMenores;
+        private System.Windows.Forms.TextBox textCantidadAdultos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
