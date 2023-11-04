@@ -9,6 +9,7 @@ namespace TPCAI.Entidades
     class PersonaEnt
     {
         public long ID { get; set; }
+        public long PasajeroID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public long DNI { get; set; }
