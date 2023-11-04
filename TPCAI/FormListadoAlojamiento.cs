@@ -33,10 +33,12 @@ namespace TPCAI
 
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
         {
-            //this.dataGridViewListadoAlojamiento.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", "$ 25.000", "5 Estrellas", "Doble");
             List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelos();
             foreach(AlojamientosEnt alojamiento in alojamientosList){
-                this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.Nombre, "aaaaa", "$ 0000.000", "aaa Estrellas", "bbbb");
+                foreach(DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+                {
+                    this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
+                }
             }
             
         }

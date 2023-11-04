@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
+using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TPCAI
 {
@@ -12,11 +16,17 @@ namespace TPCAI
 
         static AlojamientoAlmacen()
         {
-            //LEER ACÁ EL ARCHIVO JSON
-            //LEER ACÁ EL ARCHIVO JSON
-            //LEER ACÁ EL ARCHIVO JSON
-            //LEER ACÁ EL ARCHIVO JSON
+            if (File.Exists("../../JSON/Alojamientos.json"))
+            {
+                string contenidoArchivo = File.ReadAllText("../../JSON/Alojamientos.json");
+                alojamientos = JsonConvert.DeserializeObject<List<AlojamientosEnt>>(contenidoArchivo);
+            }
+            else
+            {
+                alojamientos = new List<AlojamientosEnt>();
+            }
 
+            /*
             alojamientos = new List<AlojamientosEnt>{
                 new AlojamientosEnt {
                     IDAlojamientos = 1,
@@ -44,6 +54,8 @@ namespace TPCAI
                  }
                 }
             };
+            */
+
         }
 
         public static void Grabar()

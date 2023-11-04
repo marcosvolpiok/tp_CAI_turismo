@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 433);
+            this.ClientSize = new System.Drawing.Size(317, 486);
             this.Controls.Add(this.btnAlojamientos);
             this.Controls.Add(this.btnSalirMenu);
             this.Controls.Add(this.btnGenerarReservas);
