@@ -54,6 +54,7 @@
     <Compile Include="AñadirClienteModel.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteEnt.cs" />
+    <Compile Include="Entidades\SubClasses\HabitacionesHotelSubClass.cs" />
     <Compile Include="FormAñadirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
