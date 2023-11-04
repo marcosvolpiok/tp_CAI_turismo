@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacenes\AlmacenClientes.cs" />
+    <Compile Include="Almacenes\AlojamientoAlmacen.cs" />
+    <Compile Include="Modelos\AlojamientosModelo.cs" />
     <Compile Include="Entidades\SubClasses\DisponibilidadSubClass.cs" />
     <Compile Include="Entidades\AlojamientosEnt.cs" />
     <Compile Include="AñadirClienteModel.cs" />
@@ -104,6 +106,7 @@
       <DependentUpon>FromMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\ModuloPresupuestos.cs" />
+    <Compile Include="Modulos\ProductosModulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAñadirCliente.resx">

@@ -17,6 +17,10 @@ namespace TPCAI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FromMenu());
+
+
+            //Lee Almacenes
+            //AlojamientoAlmacen;
         }
     }
 }
