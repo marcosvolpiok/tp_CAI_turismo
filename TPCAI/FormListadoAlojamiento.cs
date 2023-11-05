@@ -68,27 +68,40 @@ namespace TPCAI
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelosFiltrados(
+            bool resultadoValidacion = Validacion.validarFiltrosBusquedaAlojamiento(
                 comboDestino.Text,
                 dateTimeIngreso.Text,
                 dateTimeEgreso.Text,
-                int.Parse(textCantidadAdultos.Text),
-                int.Parse(textCantidadMenores.Text),
-                int.Parse(textCantidadInfantes.Text),
-                int.Parse(comboCalificacion.Text)
+                textCantidadAdultos.Text,
+                textCantidadMenores.Text,
+                textCantidadInfantes.Text,
+                comboCalificacion.Text
                 );
-            this.dataGridViewListadoAlojamiento.Rows.Clear();
 
-           
-            foreach (AlojamientosEnt alojamiento in alojamientosList)
-            {
-                foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+
+            if (resultadoValidacion == true) {
+                List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelosFiltrados(
+                comboDestino.Text,
+                dateTimeIngreso.Text,
+                dateTimeEgreso.Text,
+                textCantidadAdultos.Text,
+                textCantidadMenores.Text,
+                textCantidadInfantes.Text,
+                comboCalificacion.Text
+                );
+                this.dataGridViewListadoAlojamiento.Rows.Clear();
+
+
+                foreach (AlojamientosEnt alojamiento in alojamientosList)
                 {
-                    this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
+                    foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+                    {
+                        this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
+                    }
                 }
+
+                MessageBox.Show("Alojamientos encontrados listados en la pantalla");
             }
-           
-            MessageBox.Show("Alojamientos encontrados listados en la pantalla");
         }
     }
 }

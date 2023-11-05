@@ -23,10 +23,10 @@ namespace TPCAI
             string destino,
             string fechaIngreso,
             string fechaEgreso,
-            int cantidadAdultos,
-            int cantidadMenores,
-            int cantidadInfantes,
-            int calificacion
+            string cantidadAdultos, //-------
+            string cantidadMenores,
+            string cantidadInfantes,
+            string calificacion
             )
         {
             return ProductosModulo.ObtenerAlojamientosFiltrados(

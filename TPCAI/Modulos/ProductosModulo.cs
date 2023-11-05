@@ -21,10 +21,10 @@ namespace TPCAI
             string destino,
             string fechaIngreso,
             string fechaEgreso,
-            int cantidadAdultos,
-            int cantidadMenores,
-            int cantidadInfantes,
-            int calificacion)
+            string cantidadAdultos, //--------
+            string cantidadMenores,
+            string cantidadInfantes,
+            string calificacion)
         {
             List<AlojamientosEnt> alojamientosFiltrados = new List<AlojamientosEnt>();
             bool flag1PuntoParaFiltrado;
@@ -33,6 +33,36 @@ namespace TPCAI
             bool flag3PuntoParaFiltradoRangoFechas;
             DateTime dateTimeFechaIngreso = DateTime.Parse(fechaIngreso);
             DateTime dateTimeFechaEgreso = DateTime.Parse(fechaEgreso);
+
+            int intCantidadAdultos = int.Parse(cantidadAdultos);
+
+            int intCantidadMenores;
+            if (cantidadMenores != "")
+            {
+                intCantidadMenores = int.Parse(cantidadMenores);
+            }
+            else {
+                intCantidadMenores = 0;
+            }
+
+            int intCantidadInfantes;
+            if (cantidadInfantes != "")
+            {
+                intCantidadInfantes = int.Parse(cantidadInfantes);
+            }
+            else
+            {
+                intCantidadInfantes = 0;
+            }
+
+            int intCalificacion;
+            if (calificacion != "") {
+                intCalificacion = int.Parse(calificacion);
+            }
+            else
+            {
+                intCalificacion = 0;
+            }
 
             foreach (var alojamiento in Alojamientos)
             {
@@ -43,7 +73,7 @@ namespace TPCAI
 
                 if (
                     alojamiento.CodigoCiudad == destino &&
-                    alojamiento.Calificacion == calificacion
+                    (calificacion == "" || (calificacion != "" && alojamiento.Calificacion == intCalificacion))
                     )
                 {
                     flag1PuntoParaFiltrado = true;
@@ -57,9 +87,9 @@ namespace TPCAI
                     }
 
                     if (flag1PuntoParaFiltrado &&
-                        disponibilidad.Adultos >= cantidadAdultos &&
-                        disponibilidad.Menores >= cantidadMenores &&
-                        disponibilidad.Infantes >= cantidadInfantes
+                        disponibilidad.Adultos >= intCantidadAdultos &&
+                        (cantidadMenores=="" || (cantidadMenores!="" && disponibilidad.Menores >= intCantidadMenores)) &&
+                        (cantidadInfantes=="" || (cantidadInfantes!="" && disponibilidad.Infantes >= intCantidadInfantes))
                         )
                     {
                         flag2PuntoParaFiltrado = true;
