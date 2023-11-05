@@ -11,6 +11,7 @@ namespace TPCAI
         public string Nombre { get; set; }
         public decimal Tarifa { get; set; }
         public int Capacidad { get; set; }
+        public int Adultos { get; set; }
         public int Menores { get; set; }
         public int Infantes { get; set; }
         public List<HabitacionesHotelSubClass> Habitaciones { get; set; }

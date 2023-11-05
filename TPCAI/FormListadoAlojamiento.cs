@@ -79,6 +79,7 @@ namespace TPCAI
                 );
             this.dataGridViewListadoAlojamiento.Rows.Clear();
 
+           
             foreach (AlojamientosEnt alojamiento in alojamientosList)
             {
                 foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
@@ -86,6 +87,7 @@ namespace TPCAI
                     this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
                 }
             }
+           
             MessageBox.Show("Alojamientos encontrados listados en la pantalla");
         }
     }

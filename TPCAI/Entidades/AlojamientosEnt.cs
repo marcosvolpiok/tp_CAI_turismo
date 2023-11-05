@@ -14,7 +14,7 @@ namespace TPCAI
         public string Nombre { get; set; }
         public string CodigoCiudad { get; set; }
         public string Direccion { get; set; }
-        public string Calificacion { get; set; }
+        public int Calificacion { get; set; }
         public List<DisponibilidadSubClass> Disponibilidad { get; set; }
         
 
