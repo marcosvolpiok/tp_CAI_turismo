@@ -1,0 +1,194 @@
+[
+  {
+    "CodigoVuelo": "NGD",
+    "Origen": "MIA",
+    "Destino": "LAX",
+    "FechaSalida": "2024-10-02 00:00:00",
+    "FechaArribo": "2024-10-02 04:00:00",
+    "TiempoVuelo": 4,
+    "Aerolinea": "SIA",
+    "IdVuelo": "V-1",
+    "Tarifas": [
+      {
+        "IdTarifaVuelos": "TV1",
+        "Clase": "Economy",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV2",
+        "Clase": "Economy",
+        "TipoPasajero": "M",
+        "Precio": 150,
+        "Disponibilidad": 4
+      },
+      {
+        "IdTarifaVuelos": "TV3",
+        "Clase": "Economy",
+        "TipoPasajero": "I",
+        "Precio": 450,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV4",
+        "Clase": "Premium",
+        "TipoPasajero": "A",
+        "Precio": 350,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV5",
+        "Clase": "Premium",
+        "TipoPasajero": "M",
+        "Precio": 350,
+        "Disponibilidad": 3
+      },
+      {
+        "IdTarifaVuelos": "TV6",
+        "Clase": "Premium",
+        "TipoPasajero": "I",
+        "Precio": 400,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV7",
+        "Clase": "Business",
+        "TipoPasajero": "A",
+        "Precio": 450,
+        "Disponibilidad": 1
+      },
+      {
+        "IdTarifaVuelos": "TV8",
+        "Clase": "Business",
+        "TipoPasajero": "M",
+        "Precio": 650,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV9",
+        "Clase": "Business",
+        "TipoPasajero": "I",
+        "Precio": 150,
+        "Disponibilidad": 9
+      },
+      {
+        "IdTarifaVuelos": "TV10",
+        "Clase": "First",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 6
+      },
+      {
+        "IdTarifaVuelos": "TV11",
+        "Clase": "First",
+        "TipoPasajero": "M",
+        "Precio": 750,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV12",
+        "Clase": "First",
+        "TipoPasajero": "I",
+        "Precio": 550,
+        "Disponibilidad": 4
+      }
+    ]
+  },
+  {
+    "CodigoVuelo": "XMI",
+    "Origen": "LAX",
+    "Destino": "MIA",
+    "FechaSalida": "2024-10-04 00:00:00",
+    "FechaArribo": "2024-10-04 04:00:00",
+    "TiempoVuelo": 4,
+    "Aerolinea": "SIA",
+    "IdVuelo": "V-2",
+    "Tarifas": [
+      {
+        "IdTarifaVuelos": "TV13",
+        "Clase": "Economy",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV14",
+        "Clase": "Economy",
+        "TipoPasajero": "M",
+        "Precio": 150,
+        "Disponibilidad": 4
+      },
+      {
+        "IdTarifaVuelos": "TV15",
+        "Clase": "Economy",
+        "TipoPasajero": "I",
+        "Precio": 450,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV16",
+        "Clase": "Premium",
+        "TipoPasajero": "A",
+        "Precio": 350,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV17",
+        "Clase": "Premium",
+        "TipoPasajero": "M",
+        "Precio": 350,
+        "Disponibilidad": 3
+      },
+      {
+        "IdTarifaVuelos": "TV18",
+        "Clase": "Premium",
+        "TipoPasajero": "I",
+        "Precio": 400,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV19",
+        "Clase": "Business",
+        "TipoPasajero": "A",
+        "Precio": 450,
+        "Disponibilidad": 1
+      },
+      {
+        "IdTarifaVuelos": "TV20",
+        "Clase": "Business",
+        "TipoPasajero": "M",
+        "Precio": 650,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV21",
+        "Clase": "Business",
+        "TipoPasajero": "I",
+        "Precio": 150,
+        "Disponibilidad": 9
+      },
+      {
+        "IdTarifaVuelos": "TV22",
+        "Clase": "First",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 6
+      },
+      {
+        "IdTarifaVuelos": "TV23",
+        "Clase": "First",
+        "TipoPasajero": "M",
+        "Precio": 750,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV24",
+        "Clase": "First",
+        "TipoPasajero": "I",
+        "Precio": 550,
+        "Disponibilidad": 4
+      }
+    ]
+  }
+]
