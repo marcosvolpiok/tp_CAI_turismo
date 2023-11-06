@@ -101,12 +101,18 @@ namespace TPCAI
 
                     for (DateTime date = dateTimeFechaIngreso; date <= dateTimeFechaEgreso; date = date.AddDays(1))
                     {
+                        if (flagSalirBucleDeDisponibilidad == true)
+                        {
+                            break;
+                        }
+
                         flag3PuntoParaFiltradoRangoFechas = false;
                         flagSalirBucleDeDisponibilidad = false;
 
                         foreach (var habitacion in disponibilidad.Habitaciones)
                         {
-                            if (VerificarSiEstaFechaEstáDentroDelRango(habitacion.FechaHabitacionHotel, dateTimeFechaIngreso, dateTimeFechaEgreso))
+                            if (habitacion.FechaHabitacionHotel == date && 
+                                VerificarSiEstaFechaEstáDentroDelRango(habitacion.FechaHabitacionHotel, dateTimeFechaIngreso, dateTimeFechaEgreso))
                             {
                                 if (habitacion.Cantidad > 0)
                                 {
@@ -119,6 +125,12 @@ namespace TPCAI
                                     break;
                                 }
                             }
+                        }
+
+                        if (flag3PuntoParaFiltradoRangoFechas == false) {
+                            flag3PuntoParaFiltradoRangoFechas = false;
+                            flagSalirBucleDeDisponibilidad = true;
+                            break;
                         }
                     }
                 }

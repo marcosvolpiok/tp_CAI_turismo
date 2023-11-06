@@ -72,6 +72,10 @@ namespace TPCAI
             }
 
             //Fecha Ingreso No puede ser mayor a fecha Egreso
+            if (DateTime.Parse(fechaIngreso) > DateTime.Parse(fechaEgreso)) {
+                MessageBox.Show("La Fecha de Ingreso no puede ser posterior a la Fecha de Egreso");
+                flagHuboError = true;
+            }
 
             if (flagHuboError == true)
             {
