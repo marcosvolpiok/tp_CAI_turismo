@@ -65,16 +65,32 @@ namespace TPCAI
             }
 
 
-            if (cantidadMenores!="" && !int.TryParse(cantidadMenores, out int resultMenores))
+            if (cantidadMenores != "" && !int.TryParse(cantidadMenores, out int resultMenores))
             {
                 MessageBox.Show("La Cantidad de Menores solo puede contener números");
                 flagHuboError = true;
+            }
+
+            if (int.TryParse(cantidadMenores, out int resultMenores2))
+            {
+                if (resultMenores2 < 0)
+                {
+                    MessageBox.Show("La cantidad de menores no puede ser un número negativo");
+                }
             }
 
             if (cantidadInfantes != "" && !int.TryParse(cantidadInfantes, out int resultInfantes))
             {
                 MessageBox.Show("La Cantidad de Infantes solo puede contener números");
                 flagHuboError = true;
+            }
+
+            if (int.TryParse(cantidadInfantes, out int resultInfantes2))
+            {
+                if (resultInfantes2 < 0)
+                {
+                    MessageBox.Show("La cantidad de infantes no puede ser un número negativo");
+                }
             }
 
             //Fecha Ingreso No puede ser mayor a fecha Egreso
