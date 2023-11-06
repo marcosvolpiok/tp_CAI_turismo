@@ -35,7 +35,7 @@ namespace TPCAI
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
         {
             //Carga destinos (códigos de ciudades)
-            List<string> codigosCiudad = new List<string> { "MIA", "MAD", "EZE", "BER", "CDG", "GRU", "GIG", "JFK", "USH", "IGR", "LAX", "DFW" };
+            List<string> codigosCiudad = new List<string> { "MIAMI", "MADRID", "BUENOS AIRES" };
             comboDestino.Items.AddRange(codigosCiudad.ToArray());
 
             //Carga calificaciones (cantidad de estrellas)
