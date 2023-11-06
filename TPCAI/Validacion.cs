@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TPCAI
 {
-    internal class Validacion
+    static internal class Validacion
     {
         public static bool validarFiltrosBusquedaAlojamiento(
             string destino,
