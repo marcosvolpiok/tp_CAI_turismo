@@ -26,7 +26,7 @@ namespace TPCAI.Modulos
                     Nombre = cliente.Nombre,
                     Apellido = cliente.Apellido,
                     DNI = Convert.ToInt64(cliente.DNI),
-                    FechaNacimiento = cliente.FechaNacimiento
+                    FechaNacimiento = cliente.FechaNacimiento.Date
                 };
 
                 clientesEnt.Add(clienteEnt);
