@@ -55,6 +55,12 @@ namespace TPCAI
                 {
                     MessageBox.Show("La Cantidad de Adultos solo puede contener números");
                     flagHuboError = true;
+                } else {
+                    if (resultAdultos < 1)
+                    {
+
+                        MessageBox.Show("La cantidad de Adultos debe ser como mínimo 1");
+                    }
                 }
             }
 
