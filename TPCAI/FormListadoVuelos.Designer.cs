@@ -168,7 +168,8 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Rosario, Argentina",
             "New York, Estados Unidos",
-            "Moscú, Rusia"});
+            "Moscú, Rusia",
+            "LAX"});
             this.comboBox3.Location = new System.Drawing.Point(249, 125);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(196, 21);
@@ -182,7 +183,8 @@
             "CABA, Argentina",
             "Córdoba, Argentina",
             "Mendoza, Argentina",
-            "Madrid, España"});
+            "Madrid, España",
+            "MIA"});
             this.comboBox2.Location = new System.Drawing.Point(251, 83);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(196, 21);

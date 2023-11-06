@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPCAI.Almacenes;
+using TPCAI.Entidades.SubClasses;
+using TPCAI.Entidades;
+using TPCAI.Modelos;
 
 namespace TPCAI.Modulos
 {
@@ -42,6 +45,9 @@ namespace TPCAI.Modulos
             // IMPLEMENTAR LOGICA PARA EL ID
             return 0;
         }
+
+
+        
 
     }
 }

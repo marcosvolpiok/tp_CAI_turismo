@@ -22,9 +22,9 @@ namespace TPCAI.Almacenes
 
         static AlmacenVuelos()
         {
-            if (File.Exists("../../Archivos/Vuelos.json"))
+            if (File.Exists("../../JSON/Vuelos.json"))
             {
-                var contenidoArchivo = File.ReadAllText("../../Archivos/Vuelos.json");
+                var contenidoArchivo = File.ReadAllText("../../JSON/Vuelos.json");
                 vuelos = JsonConvert.DeserializeObject<List<VuelosEnt>>(contenidoArchivo);
             }
             else
@@ -35,7 +35,7 @@ namespace TPCAI.Almacenes
 
 
 
-        public static void Grabar() => File.WriteAllText("../../Archivos/Vuelos.json", JsonConvert.SerializeObject(vuelos));
+        public static void Grabar() => File.WriteAllText("../../JSON/Vuelos.json", JsonConvert.SerializeObject(vuelos));
 
         public static void AgregarCliente(VuelosEnt vuelo)
         {

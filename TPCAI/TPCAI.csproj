@@ -49,13 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacenes\AlmacenClientes.cs" />
+    <Compile Include="Almacenes\AlmacenVuelos.cs" />
     <Compile Include="Almacenes\AlojamientoAlmacen.cs" />
+    <Compile Include="Entidades\SubClasses\Tarifa.cs" />
+    <Compile Include="Entidades\SubClasses\Vuelo.cs" />
+    <Compile Include="Entidades\VuelosEnt.cs" />
     <Compile Include="Modelos\AlojamientosModelo.cs" />
     <Compile Include="Entidades\SubClasses\DisponibilidadSubClass.cs" />
     <Compile Include="Entidades\AlojamientosEnt.cs" />
-    <Compile Include="AñadirClienteModel.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="ClienteEnt.cs" />
+    <Compile Include="Modelos\AñadirClienteModel.cs" />
+    <Compile Include="Entidades\SubClasses\Cliente.cs" />
+    <Compile Include="Entidades\ClienteEnt.cs" />
     <Compile Include="Entidades\SubClasses\HabitacionesHotelSubClass.cs" />
     <Compile Include="FormAñadirCliente.cs">
       <SubType>Form</SubType>
@@ -105,6 +109,7 @@
     <Compile Include="FromMenu.Designer.cs">
       <DependentUpon>FromMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\ListadoVuelosModel.cs" />
     <Compile Include="Modulos\ModuloPresupuestos.cs" />
     <Compile Include="Modulos\ProductosModulo.cs" />
     <Compile Include="Program.cs" />
