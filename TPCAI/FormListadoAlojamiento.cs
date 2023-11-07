@@ -104,6 +104,11 @@ namespace TPCAI
                         this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
                     }
                 }
+
+                if (this.dataGridViewListadoAlojamiento.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron alojamientos con los parámetros solicitados");
+                }
             }
         }
     }
