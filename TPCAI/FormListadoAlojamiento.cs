@@ -14,7 +14,7 @@ namespace TPCAI
 {
     public partial class FormListadoAlojamiento : Form
     {
-        AlojamientosModelo model;
+        ListadoAlojamientosModelo model;
 
         public FormListadoAlojamiento()
         {
@@ -37,7 +37,7 @@ namespace TPCAI
 
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
         {
-            model = new AlojamientosModelo();
+            model = new ListadoAlojamientosModelo();
 
             //Carga destinos (códigos de ciudades)
             List<string> codigosCiudad = new List<string> { "MIAMI", "MADRID", "BUENOS AIRES" };

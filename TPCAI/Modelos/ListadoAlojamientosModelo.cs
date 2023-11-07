@@ -9,7 +9,7 @@ using TPCAI.Entidades.SubClasses;
 
 namespace TPCAI
 {
-    public class AlojamientosModelo
+    public class ListadoAlojamientosModelo
     {
         public string destino { get; set; }
         public string fechaIngreso { get; set; }

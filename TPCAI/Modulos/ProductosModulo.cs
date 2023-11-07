@@ -35,7 +35,7 @@ namespace TPCAI
         }
 
         public static List<Alojamiento> ObtenerAlojamientosFiltrados(
-            AlojamientosModelo alojamientosModel
+            ListadoAlojamientosModelo alojamientosModel
             )
         {
             // Creo una lista para almacenar los alojamientos filtrados

@@ -55,7 +55,7 @@
     <Compile Include="Entidades\SubClasses\Tarifa.cs" />
     <Compile Include="Entidades\SubClasses\Vuelo.cs" />
     <Compile Include="Entidades\VuelosEnt.cs" />
-    <Compile Include="Modelos\AlojamientosModelo.cs" />
+    <Compile Include="Modelos\ListadoAlojamientosModelo.cs" />
     <Compile Include="Entidades\SubClasses\DisponibilidadSubClass.cs" />
     <Compile Include="Entidades\AlojamientosEnt.cs" />
     <Compile Include="Modelos\AñadirClienteModel.cs" />
