@@ -10,9 +10,14 @@ using System.Diagnostics;
 
 namespace TPCAI
 {
-    class AlojamientoAlmacen
+    internal static class AlojamientoAlmacen
     {
-        public static readonly List<AlojamientosEnt> alojamientos;
+        internal static readonly List<AlojamientosEnt> alojamientos;
+
+        public static List<AlojamientosEnt> Alojamientos
+        {
+            get { return alojamientos; }
+        }
 
         static AlojamientoAlmacen()
         {
@@ -25,37 +30,6 @@ namespace TPCAI
             {
                 alojamientos = new List<AlojamientosEnt>();
             }
-
-            /*
-            alojamientos = new List<AlojamientosEnt>{
-                new AlojamientosEnt {
-                    IDAlojamientos = 1,
-                    CodigoHotel ="KAU",
-                    Nombre = "Kaukaleshen",
-                    CodigoCiudad = "CALAF",
-                    Direccion = "Av Santa Cruz 1234",
-                    Calificacion  = "5 Estrellas",
-                    Disponibilidad = new List<DisponibilidadSubClass> {
-                        new DisponibilidadSubClass { 
-                            Nombre = "SUITE NORMAL",
-                            Tarifa = 570000,
-                            Capacidad = 2,
-                            Menores = 1,
-                            Infantes = 1,
-                            IDDisponibilidad = 1,
-                            Habitaciones = new List <HabitacionesHotelSubClass> {
-                                new HabitacionesHotelSubClass {
-                                    IDHabitacion = 1,
-                                    FechaHabitacionHotel = new DateTime(2024, 03, 03),
-                                    Cantidad = 10
-                                }
-                            }
-                     }
-                 }
-                }
-            };
-            */
-
         }
 
         public static void Grabar() => File.WriteAllText("../../JSON/Alojamientos.json", JsonConvert.SerializeObject(alojamientos));

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPCAI
 {
-    class DisponibilidadSubClass
+    public class DisponibilidadSubClass
     {
         public string Nombre { get; set; }
         public decimal Tarifa { get; set; }

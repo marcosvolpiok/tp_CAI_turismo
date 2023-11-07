@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades.SubClasses;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TPCAI
 {
     public partial class FormListadoAlojamiento : Form
     {
+        AlojamientosModelo model;
+
         public FormListadoAlojamiento()
         {
             InitializeComponent();
@@ -34,6 +37,8 @@ namespace TPCAI
 
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
         {
+            model = new AlojamientosModelo();
+
             //Carga destinos (códigos de ciudades)
             List<string> codigosCiudad = new List<string> { "MIAMI", "MADRID", "BUENOS AIRES" };
             comboDestino.Items.AddRange(codigosCiudad.ToArray());
@@ -43,15 +48,17 @@ namespace TPCAI
             comboCalificacion.Items.AddRange(calificaciones.ToArray());
 
 
-            //Carga listado con todos los alojamientos
-            List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelos();
-            foreach(AlojamientosEnt alojamiento in alojamientosList){
-                foreach(DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+            //Busca alojamientos
+            model.BuscarAlojaimentos();
+
+            //Muestra en lista
+            foreach (Alojamiento alojamiento in model.AlojamientosFiltrados)
+            {
+                foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                 {
                     this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
                 }
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,27 +87,23 @@ namespace TPCAI
 
 
             if (resultadoValidacion == true) {
-                List<AlojamientosEnt> alojamientosList = AlojamientosModelo.BuscarVuelosFiltrados(
-                comboDestino.Text,
-                dateTimeIngreso.Text,
-                dateTimeEgreso.Text,
-                textCantidadAdultos.Text,
-                textCantidadMenores.Text,
-                textCantidadInfantes.Text,
-                comboCalificacion.Text
-                );
+                model.destino = comboDestino.Text;
+                model.fechaIngreso = dateTimeIngreso.Text;
+                model.fechaEgreso = dateTimeEgreso.Text;
+                model.cantidadAdultos = textCantidadAdultos.Text;
+                model.cantidadMenores = textCantidadMenores.Text;
+                model.cantidadInfantes = textCantidadInfantes.Text;
+                model.calificacion = comboCalificacion.Text;
+
+                model.BuscarAlojamientosFiltrados(); //<-- OK
+
                 this.dataGridViewListadoAlojamiento.Rows.Clear();
-
-
-                foreach (AlojamientosEnt alojamiento in alojamientosList)
-                {
+                foreach (Alojamiento alojamiento in model.AlojamientosFiltrados) {
                     foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                     {
                         this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
                     }
                 }
-
-                MessageBox.Show("Alojamientos encontrados listados en la pantalla");
             }
         }
     }

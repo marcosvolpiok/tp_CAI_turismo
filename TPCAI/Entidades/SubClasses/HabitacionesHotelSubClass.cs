@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPCAI
 {
-    class HabitacionesHotelSubClass
+    public class HabitacionesHotelSubClass
     {
         public long IDHabitacion { get; set; }
         public DateTime FechaHabitacionHotel { get; set; }

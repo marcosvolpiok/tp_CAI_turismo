@@ -12,47 +12,60 @@ using TPCAI.Modelos;
 
 namespace TPCAI
 {
-    class ProductosModulo
+    public static class ProductosModulo
     {
-        public static List<AlojamientosEnt> Alojamientos = AlojamientoAlmacen.alojamientos;
-
-        public static List<AlojamientosEnt> ObtenerAlojamientos(
+        public static List<Alojamiento> ObtenerAlojamientos(
             )
         {
-            return Alojamientos;
+            List<Alojamiento> alojamientosEncontrados = new List<Alojamiento>();
+            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
+
+            foreach (AlojamientosEnt alojamiento in alojamientos)
+            {
+                alojamientosEncontrados.Add(new Alojamiento(
+                    alojamiento.CodigoHotel,
+                    alojamiento.Nombre,
+                    alojamiento.CodigoCiudad,
+                    alojamiento.Direccion,
+                    alojamiento.Calificacion,
+                    alojamiento.Disponibilidad
+                    ));
+            }
+            return alojamientosEncontrados;
         }
-        public static List<AlojamientosEnt> ObtenerAlojamientosFiltrados(
-            string destino,
-            string fechaIngreso,
-            string fechaEgreso,
-            string cantidadAdultos, //--------
-            string cantidadMenores,
-            string cantidadInfantes,
-            string calificacion)
+
+        public static List<Alojamiento> ObtenerAlojamientosFiltrados(
+            AlojamientosModelo alojamientosModel
+            )
         {
-            List<AlojamientosEnt> alojamientosFiltrados = new List<AlojamientosEnt>();
+            // Creo una lista para almacenar los alojamientos filtrados
+            List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
+
+            // Obtengo los vuelos desde el Almacén de Alojamientos.
+            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
+
             bool flag1PuntoParaFiltrado;
             bool flag2PuntoParaFiltrado;
             bool flagSalirBucleDeDisponibilidad;
             bool flag3PuntoParaFiltradoRangoFechas;
-            DateTime dateTimeFechaIngreso = DateTime.Parse(fechaIngreso);
-            DateTime dateTimeFechaEgreso = DateTime.Parse(fechaEgreso);
+            DateTime dateTimeFechaIngreso = DateTime.Parse(alojamientosModel.fechaIngreso);
+            DateTime dateTimeFechaEgreso = DateTime.Parse(alojamientosModel.fechaEgreso);
 
-            int intCantidadAdultos = int.Parse(cantidadAdultos);
+            int intCantidadAdultos = int.Parse(alojamientosModel.cantidadAdultos);
 
             int intCantidadMenores;
-            if (cantidadMenores != "")
+            if (alojamientosModel.cantidadMenores != "")
             {
-                intCantidadMenores = int.Parse(cantidadMenores);
+                intCantidadMenores = int.Parse(alojamientosModel.cantidadMenores);
             }
             else {
                 intCantidadMenores = 0;
             }
 
             int intCantidadInfantes;
-            if (cantidadInfantes != "")
+            if (alojamientosModel.cantidadInfantes != "")
             {
-                intCantidadInfantes = int.Parse(cantidadInfantes);
+                intCantidadInfantes = int.Parse(alojamientosModel.cantidadInfantes);
             }
             else
             {
@@ -60,15 +73,15 @@ namespace TPCAI
             }
 
             int intCalificacion;
-            if (calificacion != "") {
-                intCalificacion = int.Parse(calificacion);
+            if (alojamientosModel.calificacion != "") {
+                intCalificacion = int.Parse(alojamientosModel.calificacion);
             }
             else
             {
                 intCalificacion = 0;
             }
 
-            foreach (var alojamiento in Alojamientos)
+            foreach (var alojamiento in AlojamientoAlmacen.Alojamientos)
             {
                 flag1PuntoParaFiltrado = false;
                 flag2PuntoParaFiltrado = false;
@@ -76,8 +89,8 @@ namespace TPCAI
                 flag3PuntoParaFiltradoRangoFechas = false;
 
                 if (
-                    alojamiento.CodigoCiudad == destino &&
-                    (calificacion == "" || (calificacion != "" && alojamiento.Calificacion == intCalificacion))
+                    alojamiento.CodigoCiudad == alojamientosModel.destino &&
+                    (alojamientosModel.calificacion == "" || (alojamientosModel.calificacion != "" && alojamiento.Calificacion == intCalificacion))
                     )
                 {
                     flag1PuntoParaFiltrado = true;
@@ -92,8 +105,8 @@ namespace TPCAI
 
                     if (flag1PuntoParaFiltrado &&
                         disponibilidad.Adultos >= intCantidadAdultos &&
-                        (cantidadMenores=="" || (cantidadMenores!="" && disponibilidad.Menores >= intCantidadMenores)) &&
-                        (cantidadInfantes=="" || (cantidadInfantes!="" && disponibilidad.Infantes >= intCantidadInfantes))
+                        (alojamientosModel.cantidadMenores == "" || (alojamientosModel.cantidadMenores != "" && disponibilidad.Menores >= intCantidadMenores)) &&
+                        (alojamientosModel.cantidadInfantes == "" || (alojamientosModel.cantidadInfantes != "" && disponibilidad.Infantes >= intCantidadInfantes))
                         )
                     {
                         flag2PuntoParaFiltrado = true;
@@ -137,7 +150,14 @@ namespace TPCAI
 
                 if (flag1PuntoParaFiltrado && flag2PuntoParaFiltrado && flag3PuntoParaFiltradoRangoFechas == true && flagSalirBucleDeDisponibilidad == false)
                 {
-                    alojamientosFiltrados.Add(alojamiento);
+                    alojamientosFiltrados.Add(new Alojamiento(
+                                        alojamiento.CodigoHotel,
+                                        alojamiento.Nombre,
+                                        alojamiento.CodigoCiudad,
+                                        alojamiento.Direccion,
+                                        alojamiento.Calificacion,
+                                        alojamiento.Disponibilidad
+                                    ));
                 }
             }
             return alojamientosFiltrados;

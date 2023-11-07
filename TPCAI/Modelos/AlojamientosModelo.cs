@@ -5,38 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI;
+using TPCAI.Entidades.SubClasses;
 
 namespace TPCAI
 {
-    class AlojamientosModelo
+    public class AlojamientosModelo
     {
-        //public static List<AlojamientosEnt> Alojamientos = AlojamientoAlmacen.alojamientos;
-        //Traer vuelos de módulo
-        public ProductosModulo ProductosModulo = new ProductosModulo();
+        public string destino { get; set; }
+        public string fechaIngreso { get; set; }
+        public string fechaEgreso { get; set; }
+        public string cantidadAdultos { get; set; }
+        public string cantidadMenores { get; set; }
+        public string cantidadInfantes { get; set; }
+        public string calificacion { get; set; }
 
-        public static List<AlojamientosEnt> BuscarVuelos()
+        public List<Alojamiento> AlojamientosFiltrados { get; private set; }
+
+        public void BuscarAlojaimentos()
         {
-            return ProductosModulo.ObtenerAlojamientos();
+            //return ProductosModulo.ObtenerAlojamientos();
+            AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientos();
         }
 
-        public static List<AlojamientosEnt> BuscarVuelosFiltrados(
-            string destino,
-            string fechaIngreso,
-            string fechaEgreso,
-            string cantidadAdultos, //-------
-            string cantidadMenores,
-            string cantidadInfantes,
-            string calificacion
-            )
+        public void BuscarAlojamientosFiltrados()
         {
-            return ProductosModulo.ObtenerAlojamientosFiltrados(
-                destino,
-                fechaIngreso,
-                fechaEgreso,
-                cantidadAdultos,
-                cantidadMenores,
-                cantidadInfantes,
-                calificacion);
+            AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientosFiltrados(this);
         }
 
 
