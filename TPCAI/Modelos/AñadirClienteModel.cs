@@ -10,6 +10,10 @@ namespace TPCAI
     internal class AñadirClienteModel
     {
         public static List<Cliente> Clientes = new List<Cliente>();
+        /*public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string DNI { get; set; }
+        public DateTime FechaNacimiento { get; set; }*/
 
         internal static void AgregarCliente(Cliente cliente)
         {

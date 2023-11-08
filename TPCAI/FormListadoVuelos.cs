@@ -7,91 +7,91 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades.SubClasses;
 using TPCAI.Modelos;
 
 namespace TPCAI
 {
     public partial class FormListadoVuelos : Form
     {
+        ListadoVuelosModel model;
 
         public FormListadoVuelos()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos("VUELOS");
-            listadoPresupuestos.Show();
+            listadoPresupuestos.ShowDialog();
+
+            // Refresco
+            Buscar();
         }
 
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             FromMenu menu = new FromMenu();
-            menu.Show();
+            menu.Show();*/
+            this.Close();
         }
 
         private void FormListadoVuelos_Load(object sender, EventArgs e)
         {
-            this.dataGridViewListadoVuelos.Rows.Add("CABA, Argentina", "La Habana, Cuba", "20/10/2023 00:30", "20/10/2023 06:30", "Latam", "$120.000", "Economy", "Adulto");
-
+            model = new ListadoVuelosModel();
+            
+            /* inicializar y llenar datos de origenes y destinos */
         }
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
         {
+            // se eliminaria esta linea de codigo
             MessageBox.Show("Vuelo añadido a presupuesto 4545");
+
+            // se agregaria esto o algo parecido
+            //string vueloId = this.dataGridViewListadoVuelos.SelectedRows[0].Cells[0].ToString();
+            //model.AgregarVueloAPresupuestos(vueloId);
+            Buscar();
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            ListadoVuelosModel vuelosModel = new ListadoVuelosModel
-            {
-                Origen = comboBox2.Text,
-                Destino = comboBox3.Text,
-                FechaIda = dateTimePicker1.Value,
-                FechaVuelta = dateTimePicker2.Value,
-                CantAdultos = 0,
-                CantMenores = 0,
-                CantInfantes = 0,
-                Clase = comboBox1.Text
-            };
+        {            
 
             if (int.TryParse(textBox4.Text, out int cantAdultos))
             {
-                vuelosModel.CantAdultos = cantAdultos;
+                model.CantAdultos = cantAdultos;
             }
 
             if (int.TryParse(textBox5.Text, out int cantMenores))
             {
-                vuelosModel.CantMenores = cantMenores;
+                model.CantMenores = cantMenores;
             }
 
             if (int.TryParse(textBox6.Text, out int cantInfantes))
             {
-                vuelosModel.CantInfantes = cantInfantes;
+                model.CantInfantes = cantInfantes;
             }
+            //VALIDACIONES POR AGREGAR
+            model.Origen = comboBox2.Text;
+            model.Destino = comboBox3.Text;
+            model.FechaIda = dateTimePicker1.Value;
+            model.FechaVuelta = dateTimePicker2.Value;
+            model.Clase = comboBox1.Text;
 
-            //PRUEBA
-            /*ListadoVuelosModel vuelosModel = new ListadoVuelosModel
-            {
-                Origen = "MIA",
-                Destino = "LAX",
-                FechaIda = new DateTime(2024, 10, 2),
-                FechaVuelta = new DateTime(2024, 10, 2),
-                CantAdultos = 1, // Ajusta la cantidad de pasajeros según tus necesidades de prueba
-                CantMenores = 0,
-                CantInfantes = 0,
-                Clase = "Economy" // Ajusta la clase de vuelo según tus necesidades de prueba
-            };*/
+            model.BuscarVuelos(); // Realiza la búsqueda de vuelos.
 
+            this.Buscar();
+        }
 
-            vuelosModel.BuscarVuelos(); // Realiza la búsqueda de vuelos.
-
+        
+        private void Buscar()
+        {
             // Mapear los resultados en el dataGridViewListadoVuelos
             this.dataGridViewListadoVuelos.Rows.Clear();
-            foreach (var vuelo in vuelosModel.VuelosFiltrados)
+            foreach (var vuelo in model.VuelosFiltrados)
             {
                 this.dataGridViewListadoVuelos.Rows.Add(
                     vuelo.Origen,
@@ -105,8 +105,8 @@ namespace TPCAI
                 );
             }
             this.dataGridViewListadoVuelos.Refresh();
-
-            MessageBox.Show("Vuelos encontrados listados en la pantalla");
         }
+
+
     }
 }

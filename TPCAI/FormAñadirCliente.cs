@@ -7,26 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Modelos;
 
 namespace TPCAI
 {
     public partial class FormAñadirCliente : Form
     {
-        private AñadirClienteModel model;
+        AñadirClienteModel model;
 
         public FormAñadirCliente()
         {
             InitializeComponent();
-            this.model = model;
+            //this.model = model;
+        }
+
+        private void FormAñadirCliente_Load(object sender, EventArgs e)
+        {
+            model = new AñadirClienteModel();            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Recopilo los datos del formulario
-            string nombre = textBox1.Text;
+            //AGREGAR VALIDACIONES
+            string nombre = textBox1.Text;            
             string apellido = textBox2.Text;
             string dni = textBox3.Text;
             DateTime fechaNacimiento = dateTimePicker1.Value;
+
+            /*
+            model.Nombre = textBox1.Text;
+            model.Apellido = textBox2.Text;
+            model.DNI = textBox3.Text;
+            model.FechaNacimiento = dateTimePicker1.Value;*/
 
             // Creo un objeto Cliente con los datos
             Cliente cliente = new Cliente

@@ -20,9 +20,9 @@ namespace TPCAI
 
         private void btnConsultarProductos_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             FormListadoVuelos vuelos = new FormListadoVuelos();
-            vuelos.Show();
+            vuelos.ShowDialog();
         }
 
         private void btnSalirMenu_Click(object sender, EventArgs e)

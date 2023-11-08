@@ -7,10 +7,11 @@ using TPCAI.Modulos;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Almacenes;
 using TPCAI.Modelos;
+using TPCAI.Modulos;
 
 namespace TPCAI.Modelos
 {
-    public class ListadoVuelosModel
+    internal class ListadoVuelosModel
     {
 
         public string Origen { get; set; }
@@ -22,7 +23,7 @@ namespace TPCAI.Modelos
         public int CantInfantes { get; set; }
         public string Clase { get; set; }
 
-        public List<Vuelo> VuelosFiltrados { get; private set; }
+        public List<Vuelo> VuelosFiltrados { get; set; }
 
         public void BuscarVuelos()
         {

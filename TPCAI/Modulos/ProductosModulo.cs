@@ -180,7 +180,7 @@ namespace TPCAI
 
 
         // BUSQUEDA VUELOS
-        public static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
+        internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
         {
 
 
