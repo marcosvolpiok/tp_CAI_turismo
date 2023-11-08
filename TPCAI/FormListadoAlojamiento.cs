@@ -70,7 +70,20 @@ namespace TPCAI
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Alojamiento añadido a presupuesto 4545");
+            if (dataGridViewListadoAlojamiento.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewListadoAlojamiento.SelectedRows[0];
+                string IDDisponibilidad = selectedRow.Cells["IDDisponibilidad"].Value.ToString();
+
+                model.IdDisponibilidadsSeleccionada = IDDisponibilidad;
+                model.AgregarAlojamientoAPresupuesto(IDDisponibilidad);
+
+                MessageBox.Show("Se ha añadido correctamente el producto al presupuesto.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un alojamiento para agregar al presupuesto.");
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -101,7 +114,7 @@ namespace TPCAI
                 foreach (Alojamiento alojamiento in model.AlojamientosFiltrados) {
                     foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                     {
-                        this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre);
+                        this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre, disponibilidad.IDDisponibilidad);
                     }
                 }
 
