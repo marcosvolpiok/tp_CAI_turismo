@@ -15,16 +15,22 @@ namespace TPCAI
     public partial class FormListadoVuelos : Form
     {
         ListadoVuelosModel model;
+        private FormListadoPresupuestos formListadoPresupuestos; // Referencia al formulario FormListadoPresupuestos
 
         public FormListadoVuelos()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            this.formListadoPresupuestos = formListadoPresupuestos; // Asignar referencia
+            //this.model = model;
         }
 
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos("VUELOS");
+            // Pasa los vuelos al formulario FormListadoPresupuestos
+            listadoPresupuestos.ActualizarPresupuestoVuelos(model.ObtenerVuelosPresupuesto());
+
             listadoPresupuestos.ShowDialog();
 
             // Refresco
@@ -48,13 +54,26 @@ namespace TPCAI
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
         {
-            // se eliminaria esta linea de codigo
-            MessageBox.Show("Vuelo añadido a presupuesto 4545");
+            if (dataGridViewListadoVuelos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewListadoVuelos.SelectedRows[0];
+                string vueloId = selectedRow.Cells["ColumnIdTarifa"].Value.ToString(); 
 
-            // se agregaria esto o algo parecido
-            //string vueloId = this.dataGridViewListadoVuelos.SelectedRows[0].Cells[0].ToString();
-            //model.AgregarVueloAPresupuestos(vueloId);
-            Buscar();
+                model.IdTarifaVuelosSeleccionada = vueloId;
+                model.AgregarVueloAPresupuesto(vueloId);
+
+                if (formListadoPresupuestos != null)
+                {
+                    formListadoPresupuestos.AgregarVueloAPresupuesto(vueloId);
+                    Buscar();
+                    
+                }
+                MessageBox.Show("Se ha añadido correctamente el producto al presupuesto.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un vuelo para agregar al presupuesto.");
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -101,7 +120,8 @@ namespace TPCAI
                     vuelo.Aerolinea,
                     vuelo.Precio,
                     vuelo.Clase,
-                    vuelo.TipoPasajero
+                    vuelo.TipoPasajero,
+                    vuelo.IdTarifaVuelos
                 );
             }
             this.dataGridViewListadoVuelos.Refresh();

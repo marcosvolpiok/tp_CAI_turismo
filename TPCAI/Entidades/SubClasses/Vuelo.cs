@@ -16,8 +16,9 @@ namespace TPCAI.Entidades.SubClasses
         public decimal Precio { get; set; }
         public string Clase { get; set; }
         public string TipoPasajero { get; set; }
+        public string IdTarifaVuelos { get; set; } // Nueva propiedad
 
-        public Vuelo(string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, string aerolinea, decimal precio, string clase, string tipoPasajero)
+        public Vuelo(string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, string aerolinea, decimal precio, string clase, string tipoPasajero, string idTarifaVuelos)
         {
             Origen = origen;
             Destino = destino;
@@ -27,6 +28,7 @@ namespace TPCAI.Entidades.SubClasses
             Precio = precio;
             Clase = clase;
             TipoPasajero = tipoPasajero;
+            IdTarifaVuelos = idTarifaVuelos; // nueva propiedad
         }
     }
 }

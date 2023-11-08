@@ -110,6 +110,7 @@
     <Compile Include="FromMenu.Designer.cs">
       <DependentUpon>FromMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\ListadoPresupuestosModel.cs" />
     <Compile Include="Modelos\ListadoVuelosModel.cs" />
     <Compile Include="Modulos\ModuloPresupuestos.cs" />
     <Compile Include="Modulos\ProductosModulo.cs" />

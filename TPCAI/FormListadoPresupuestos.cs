@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades.SubClasses;
+using TPCAI.Modelos;
 
 namespace TPCAI
 {
     public partial class FormListadoPresupuestos : Form
     {
+        ListadoPresupuestosModel model;
+        private List<Vuelo> vuelosDelPresupuesto = new List<Vuelo>();
+
         public FormListadoPresupuestos(String TabParaMostrar)
         {
             InitializeComponent();
@@ -40,10 +45,8 @@ namespace TPCAI
 
         private void FormListadoPresupuestos_Load(object sender, EventArgs e)
         {
-            //this.dataGridViewPresupuestosAlojamientos.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", "20/10/23 08:00", "25/10/23 11:00", "$ 25.000", "5 Estrellas", "Doble");
-            this.dataGridViewPresupuestosAlojamientos.Rows.Add("Caracas, Venezuela", "Hotel Sheraton", 25000, "20/10/23 08:00", "25/10/23 11:00", "5 Estrellas", "Doble");
-            this.dataGridViewPresupuestosVuelos.Rows.Add("CABA, Argentina", "La Habana, Cuba", "20/10/2023 00:30", "20/10/2023 06:30", "Latam", 120000, "Turista", "Adulto");
-
+            model = new ListadoPresupuestosModel();
+            ActualizarPresupuestoVuelos(new List<Vuelo>()); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
             
         }
@@ -87,28 +90,7 @@ namespace TPCAI
             this.Hide();
             FormAñadirCliente formCliente = new FormAñadirCliente();
             formCliente.Show();
-        }
-
-        /*
-        private void btnEliminarProducto_Click(object sender, EventArgs e)
-        {
-            if (this.dataGridViewPresupuestosAlojamientos.SelectedRows.Count > 0)
-            {
-                foreach (DataGridViewRow row in this.dataGridViewPresupuestosAlojamientos.SelectedRows)
-                {
-                    if (!row.IsNewRow) // Ensure you're not trying to remove a new row
-                    {
-                        this.dataGridViewPresupuestosAlojamientos.Rows.Remove(row);
-                        this.dataGridViewPresupuestosVuelos.Rows.Remove(row);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor seleccione un producto para eliminar del presupuesto");
-            }
-        }
-        */
+        }        
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -147,6 +129,50 @@ namespace TPCAI
                 }
             }
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
+        }
+
+        // CREO METODO PARA ACTUALIZAR GRID VIEW VUELOS
+        
+        public void AgregarVueloAPresupuesto(string vueloId)
+        {
+            Vuelo vuelo = vuelosDelPresupuesto.Find(v => v.IdTarifaVuelos == vueloId); 
+            if (vuelo != null)
+            {
+                dataGridViewPresupuestosVuelos.Rows.Add(
+                    vuelo.Origen,
+                    vuelo.Destino,
+                    vuelo.FechaSalida,
+                    vuelo.FechaArribo,
+                    vuelo.Aerolinea,
+                    vuelo.Precio,
+                    vuelo.Clase,
+                    vuelo.TipoPasajero,
+                    vuelo.IdTarifaVuelos
+                );
+                
+                //ActualizarTotalPresupuesto();
+            }
+        }
+
+        public void ActualizarPresupuestoVuelos(List<Vuelo> vuelos)
+        {
+            foreach (var vuelo in vuelos)
+            {
+                dataGridViewPresupuestosVuelos.Rows.Add(
+                    vuelo.Origen,
+                    vuelo.Destino,
+                    vuelo.FechaSalida,
+                    vuelo.FechaArribo,
+                    vuelo.Aerolinea,
+                    vuelo.Precio,
+                    vuelo.Clase,
+                    vuelo.TipoPasajero,
+                    vuelo.IdTarifaVuelos
+                );
+                this.dataGridViewPresupuestosVuelos.Refresh();
+            }
+
+            //ActualizarTotalPresupuesto();
         }
 
     }

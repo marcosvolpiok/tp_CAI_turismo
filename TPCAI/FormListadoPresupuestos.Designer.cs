@@ -42,6 +42,12 @@
             this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabVuelos = new System.Windows.Forms.TabPage();
             this.dataGridViewPresupuestosVuelos = new System.Windows.Forms.DataGridView();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFechaHoraArribo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +56,7 @@
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.IdTarifaVuel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -181,51 +182,12 @@
             this.ColumnAerolinea,
             this.ColumnPrecio,
             this.ColumnClase,
-            this.ColumnTipoPasajero});
+            this.ColumnTipoPasajero,
+            this.IdTarifaVuel});
             this.dataGridViewPresupuestosVuelos.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewPresupuestosVuelos.Name = "dataGridViewPresupuestosVuelos";
             this.dataGridViewPresupuestosVuelos.Size = new System.Drawing.Size(957, 449);
             this.dataGridViewPresupuestosVuelos.TabIndex = 4;
-            // 
-            // ColumnOrigen
-            // 
-            this.ColumnOrigen.HeaderText = "Origen";
-            this.ColumnOrigen.Name = "ColumnOrigen";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Destino";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // ColumnFechaHoraArribo
-            // 
-            this.ColumnFechaHoraArribo.HeaderText = "Fecha Hora Arribo";
-            this.ColumnFechaHoraArribo.Name = "ColumnFechaHoraArribo";
-            // 
-            // ColumnFechaHoraSalida
-            // 
-            this.ColumnFechaHoraSalida.HeaderText = "Fecha Hora Salida";
-            this.ColumnFechaHoraSalida.Name = "ColumnFechaHoraSalida";
-            // 
-            // ColumnAerolinea
-            // 
-            this.ColumnAerolinea.HeaderText = "Aerolinea";
-            this.ColumnAerolinea.Name = "ColumnAerolinea";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnClase
-            // 
-            this.ColumnClase.HeaderText = "Clase";
-            this.ColumnClase.Name = "ColumnClase";
-            // 
-            // ColumnTipoPasajero
-            // 
-            this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
-            this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
             // 
             // btnVolver
             // 
@@ -285,6 +247,51 @@
             this.label3.TabIndex = 61;
             this.label3.Text = "DNI: 36.258.110";
             // 
+            // ColumnOrigen
+            // 
+            this.ColumnOrigen.HeaderText = "Origen";
+            this.ColumnOrigen.Name = "ColumnOrigen";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Destino";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // ColumnFechaHoraArribo
+            // 
+            this.ColumnFechaHoraArribo.HeaderText = "Fecha Hora Arribo";
+            this.ColumnFechaHoraArribo.Name = "ColumnFechaHoraArribo";
+            // 
+            // ColumnFechaHoraSalida
+            // 
+            this.ColumnFechaHoraSalida.HeaderText = "Fecha Hora Salida";
+            this.ColumnFechaHoraSalida.Name = "ColumnFechaHoraSalida";
+            // 
+            // ColumnAerolinea
+            // 
+            this.ColumnAerolinea.HeaderText = "Aerolinea";
+            this.ColumnAerolinea.Name = "ColumnAerolinea";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnClase
+            // 
+            this.ColumnClase.HeaderText = "Clase";
+            this.ColumnClase.Name = "ColumnClase";
+            // 
+            // ColumnTipoPasajero
+            // 
+            this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
+            this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
+            // 
+            // IdTarifaVuel
+            // 
+            this.IdTarifaVuel.HeaderText = "Id Tarifa";
+            this.IdTarifaVuel.Name = "IdTarifaVuel";
+            // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +335,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoHabitacion;
         private System.Windows.Forms.DataGridView dataGridViewPresupuestosVuelos;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnAñadirDatosCliente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaHoraArribo;
@@ -336,11 +349,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnClase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnAñadirDatosCliente;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdTarifaVuel;
     }
 }

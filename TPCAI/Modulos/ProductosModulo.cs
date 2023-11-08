@@ -224,7 +224,8 @@ namespace TPCAI
                                         vueloEnt.Aerolinea,
                                         tarifaParaPasajero.Precio,
                                         vuelosModel.Clase,
-                                        tipoPasajero
+                                        tarifaParaPasajero.TipoPasajero,
+                                        tarifaParaPasajero.IdTarifaVuelos // Agrego el IdTarifaVuelos
                                     ));
                                 }
                             }
