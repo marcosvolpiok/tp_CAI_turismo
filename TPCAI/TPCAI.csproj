@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacenes\AlmacenClientes.cs" />
+    <Compile Include="Almacenes\AlmacenPresupuestos.cs" />
     <Compile Include="Almacenes\AlmacenVuelos.cs" />
     <Compile Include="Almacenes\AlojamientoAlmacen.cs" />
+    <Compile Include="Entidades\PresupuestosEnt.cs" />
     <Compile Include="Entidades\SubClasses\Alojamiento.cs" />
     <Compile Include="Entidades\SubClasses\Tarifa.cs" />
     <Compile Include="Entidades\SubClasses\Vuelo.cs" />

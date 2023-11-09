@@ -54,25 +54,20 @@ namespace TPCAI
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
         {
+
             if (dataGridViewListadoVuelos.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewListadoVuelos.SelectedRows[0];
-                string vueloId = selectedRow.Cells["ColumnIdTarifa"].Value.ToString(); 
+                string vueloId = selectedRow.Cells["ColumnIdTarifa"].Value.ToString();
 
                 model.IdTarifaVuelosSeleccionada = vueloId;
                 model.AgregarVueloAPresupuesto(vueloId);
 
-                if (formListadoPresupuestos != null)
-                {
-                    formListadoPresupuestos.AgregarVueloAPresupuesto(vueloId);
-                    Buscar();
-                    
-                }
                 MessageBox.Show("Se ha añadido correctamente el producto al presupuesto.");
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un vuelo para agregar al presupuesto.");
+                MessageBox.Show("Por favor, seleccione un alojamiento para agregar al presupuesto.");
             }
         }
 
