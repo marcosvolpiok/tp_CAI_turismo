@@ -24,7 +24,7 @@ namespace TPCAI
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos("ALOJAMIENTOS");
+            FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
             listadoPresupuestos.Show();
         }
 

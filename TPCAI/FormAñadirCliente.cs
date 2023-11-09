@@ -57,14 +57,14 @@ namespace TPCAI
             MessageBox.Show("Cliente guardado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Hide();
-            FormListadoPresupuestos presupuestos = new FormListadoPresupuestos("VUELOS"); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
+            FormListadoPresupuestos presupuestos = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
             presupuestos.Show();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormListadoPresupuestos formPresup = new FormListadoPresupuestos("VUELOS"); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
+            FormListadoPresupuestos formPresup = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
             formPresup.Show();
         }
     }
