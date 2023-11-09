@@ -25,5 +25,10 @@ namespace TPCAI.Modelos
         {
             return vuelosDelPresupuesto;
         }
+
+        public Vuelo ObtenerVueloPorId(string vueloId)
+        {
+            return vuelosDelPresupuesto.Find(v => v.IdTarifaVuelos == vueloId);
+        }
     }
 }

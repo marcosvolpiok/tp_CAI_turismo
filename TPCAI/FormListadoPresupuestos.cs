@@ -14,12 +14,13 @@ namespace TPCAI
 {
     public partial class FormListadoPresupuestos : Form
     {
-        ListadoPresupuestosModel model;
-        private List<Vuelo> vuelosDelPresupuesto = new List<Vuelo>();
+        ListadoPresupuestosModel model;        
 
         public FormListadoPresupuestos(String TabParaMostrar)
         {
             InitializeComponent();
+
+            model = new ListadoPresupuestosModel();
 
             if (TabParaMostrar == "VUELOS")
             {
@@ -38,6 +39,8 @@ namespace TPCAI
             menu.Show();
         }
 
+
+        // BOTON GUARDAR
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Presupuesto Guardado y Cerrado");
@@ -45,7 +48,7 @@ namespace TPCAI
 
         private void FormListadoPresupuestos_Load(object sender, EventArgs e)
         {
-            model = new ListadoPresupuestosModel();
+         
             ActualizarPresupuestoVuelos(new List<Vuelo>()); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
             
@@ -131,33 +134,15 @@ namespace TPCAI
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
         }
 
-        // CREO METODO PARA ACTUALIZAR GRID VIEW VUELOS
         
-        public void AgregarVueloAPresupuesto(string vueloId)
-        {
-            Vuelo vuelo = vuelosDelPresupuesto.Find(v => v.IdTarifaVuelos == vueloId); 
-            if (vuelo != null)
-            {
-                dataGridViewPresupuestosVuelos.Rows.Add(
-                    vuelo.Origen,
-                    vuelo.Destino,
-                    vuelo.FechaSalida,
-                    vuelo.FechaArribo,
-                    vuelo.Aerolinea,
-                    vuelo.Precio,
-                    vuelo.Clase,
-                    vuelo.TipoPasajero,
-                    vuelo.IdTarifaVuelos
-                );
-                
-                //ActualizarTotalPresupuesto();
-            }
-        }
-
+        // CREO METODO PARA ACTUALIZAR GRID VIEW VUELOS
         public void ActualizarPresupuestoVuelos(List<Vuelo> vuelos)
         {
+        
+            // Agrego los vuelos al modelo y actualiza el dataGridView al mismo tiempo
             foreach (var vuelo in vuelos)
             {
+                model.AgregarVueloAPresupuesto(vuelo); // Agrega el vuelo al modelo
                 dataGridViewPresupuestosVuelos.Rows.Add(
                     vuelo.Origen,
                     vuelo.Destino,
@@ -169,11 +154,10 @@ namespace TPCAI
                     vuelo.TipoPasajero,
                     vuelo.IdTarifaVuelos
                 );
-                this.dataGridViewPresupuestosVuelos.Refresh();
             }
-
-            //ActualizarTotalPresupuesto();
+            this.dataGridViewPresupuestosVuelos.Refresh();
         }
+
 
     }
 }
