@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPCAI
 {
-    internal class ClienteEnt
+    public class ClienteEnt
     {
         public long ID { get; set; }
         public string Nombre { get; set; }

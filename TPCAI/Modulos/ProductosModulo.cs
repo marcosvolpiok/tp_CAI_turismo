@@ -237,5 +237,6 @@ namespace TPCAI
 
         }
 
+        internal static Vuelo ObtenerVueloPorId(string vuelosId) => throw new NotImplementedException();
     }
 }

@@ -15,24 +15,17 @@ namespace TPCAI
     public partial class FormListadoVuelos : Form
     {
         ListadoVuelosModel model;
-        private FormListadoPresupuestos formListadoPresupuestos; // Referencia al formulario FormListadoPresupuestos
 
         public FormListadoVuelos()
         {
             InitializeComponent();
-            this.formListadoPresupuestos = formListadoPresupuestos; // Asignar referencia
-            //this.model = model;
         }
 
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos("VUELOS");
-            // Pasa los vuelos al formulario FormListadoPresupuestos
-            listadoPresupuestos.ActualizarPresupuestoVuelos(model.ObtenerVuelosPresupuesto());
-
-            listadoPresupuestos.ShowDialog();
-
+            FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
+            listadoPresupuestos.tabControlAlojamientosVuelos.SelectTab("tabVuelos");
+            listadoPresupuestos.ShowDialog(); //La ejecución se detiene acá y pasa al otro formulario.
             // Refresco
             Buscar();
         }
@@ -47,22 +40,17 @@ namespace TPCAI
 
         private void FormListadoVuelos_Load(object sender, EventArgs e)
         {
-            model = new ListadoVuelosModel();
-            
+            model = new ListadoVuelosModel();            
             /* inicializar y llenar datos de origenes y destinos */
         }
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
         {
-
             if (dataGridViewListadoVuelos.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewListadoVuelos.SelectedRows[0];
                 string vueloId = selectedRow.Cells["ColumnIdTarifa"].Value.ToString();
-
-                model.IdTarifaVuelosSeleccionada = vueloId;
                 model.AgregarVueloAPresupuesto(vueloId);
-
                 MessageBox.Show("Se ha añadido correctamente el producto al presupuesto.");
             }
             else

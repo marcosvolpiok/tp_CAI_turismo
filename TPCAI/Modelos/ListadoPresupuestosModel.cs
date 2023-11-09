@@ -4,31 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPCAI.Entidades.SubClasses;
+using TPCAI.Modulos;
 
 namespace TPCAI.Modelos
 {
     internal class ListadoPresupuestosModel
     {
-        private List<Vuelo> vuelosDelPresupuesto = new List<Vuelo>();
-
-        public void AgregarVueloAPresupuesto(Vuelo vuelo)
+        public void EliminarVueloDelPresupuesto(string vueloId)
         {
-            vuelosDelPresupuesto.Add(vuelo);
-        }
-
-        public void EliminarVueloDelPresupuesto(Vuelo vuelo)
-        {
-            vuelosDelPresupuesto.Remove(vuelo);
+            ModuloPresupuestos.EliminarVueloDeActivo(vueloId);
         }
 
         public List<Vuelo> ObtenerVuelosPresupuesto()
         {
-            return vuelosDelPresupuesto;
+            var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
+            var vuelos = new List<Vuelo>();
+            foreach(var vueloId in vuelosIds)
+            {                
+                Vuelo vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
+                vuelos.Add(vuelo);
+            }
+
+            return vuelos;
         }
 
-        public Vuelo ObtenerVueloPorId(string vueloId)
+        internal decimal ImporteTotalAlojamientos()
         {
-            return vuelosDelPresupuesto.Find(v => v.IdTarifaVuelos == vueloId);
+            return 0M; //TODO: lo mismo que vuelos.
         }
+
+
+        internal decimal ImporteTotalVuelos()
+        {
+            var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
+            decimal importe = 0M;
+            foreach (var vueloId in vuelosIds)
+            {
+                Vuelo vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
+                importe += vuelo.Precio;
+            }
+
+            return importe;
+        }
+
+        internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre;
+        internal long DniClilente() => ModuloPresupuestos.PresupuestoActivo.Clientes.DNI;
     }
 }

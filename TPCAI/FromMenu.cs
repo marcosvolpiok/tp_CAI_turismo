@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using TPCAI.Modulos;
 
 namespace TPCAI
 {
@@ -21,8 +22,14 @@ namespace TPCAI
         private void btnConsultarProductos_Click(object sender, EventArgs e)
         {
             //this.Hide();
+            if (ModuloPresupuestos.PresupuestoActivo == null)
+            {
+                MessageBox.Show("Seleccione un presupuesto primero.");
+                return;
+            }
+
             FormListadoVuelos vuelos = new FormListadoVuelos();
-            vuelos.ShowDialog();
+            vuelos.ShowDialog(); //queda detenida acá. Hasta que.... se oculte FormListadoVuelos.
         }
 
         private void btnSalirMenu_Click(object sender, EventArgs e)
@@ -32,16 +39,14 @@ namespace TPCAI
 
         private void btnGenerarReservas_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormGenerarReservas generarReservas = new FormGenerarReservas();
-            generarReservas.Show();
+            generarReservas.ShowDialog();
         }
 
         private void btnConsultarReservas_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormConsultarReservas consultarReservas = new FormConsultarReservas();
-            consultarReservas.Show();
+            consultarReservas.ShowDialog();
         }
 
         private void FromMenu_Load(object sender, EventArgs e)
@@ -53,9 +58,14 @@ namespace TPCAI
 
         private void btnAlojamientos_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (ModuloPresupuestos.PresupuestoActivo == null)
+            {
+                MessageBox.Show("Seleccione un presupuesto primero.");
+                return;
+            }
+
             FormListadoAlojamiento alojamiento = new FormListadoAlojamiento();
-            alojamiento.Show();
+            alojamiento.ShowDialog();
         }
     }
 }

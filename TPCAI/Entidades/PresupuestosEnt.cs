@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPCAI.Entidades
 {
-    internal class PresupuestosEnt
+    public class PresupuestosEnt
     {
         public int CodigoPresupuesto { get; set; }
         public List<string> IdTarifaVuelo { get; set; }

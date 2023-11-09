@@ -12,6 +12,13 @@ namespace TPCAI.Modulos
 {
     public static class ModuloPresupuestos
     {
+        public static PresupuestosEnt PresupuestoActivo { get; set; }
+
+        internal static void EliminarVueloDeActivo(string vueloId)
+        {
+            //TODO: eliminar un vuelo del presupuesto activo. Hacer validaciones si es necesario.
+        }
+
 
         //CLIENTES
         public static void AgregarClientes(List<Cliente> clientes)

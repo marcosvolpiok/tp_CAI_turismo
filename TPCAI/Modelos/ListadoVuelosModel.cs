@@ -13,7 +13,6 @@ namespace TPCAI.Modelos
 {
     internal class ListadoVuelosModel
     {
-
         public string Origen { get; set; }
         public string Destino { get; set; }
         public DateTime FechaIda { get; set; }
@@ -22,7 +21,6 @@ namespace TPCAI.Modelos
         public int CantMenores { get; set; }
         public int CantInfantes { get; set; }
         public string Clase { get; set; }
-        public string IdTarifaVuelosSeleccionada { get; set; } // Nueva propiedad
 
         public List<Vuelo> VuelosFiltrados { get; set; }
         private List<Vuelo> vuelosPresupuesto = new List<Vuelo>();

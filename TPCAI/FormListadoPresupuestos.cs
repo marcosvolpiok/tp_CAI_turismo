@@ -16,84 +16,40 @@ namespace TPCAI
     {
         ListadoPresupuestosModel model;        
 
-        public FormListadoPresupuestos(String TabParaMostrar)
+        public FormListadoPresupuestos()
         {
-            InitializeComponent();
-
-            model = new ListadoPresupuestosModel();
-
-            if (TabParaMostrar == "VUELOS")
-            {
-                this.tabControlAlojamientosVuelos.SelectTab("tabVuelos");
-            }
-            else
-            {
-                this.tabControlAlojamientosVuelos.SelectTab("tabAlojamientos");
-            }
+            InitializeComponent();            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FromMenu menu = new FromMenu();
-            menu.Show();
+            Close();
         }
 
-
-        // BOTON GUARDAR
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Presupuesto Guardado y Cerrado");
-        }
 
         private void FormListadoPresupuestos_Load(object sender, EventArgs e)
         {
-         
-            ActualizarPresupuestoVuelos(new List<Vuelo>()); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
-            ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
-            
+            model = new ListadoPresupuestosModel();
+            ActualizarPresupuestoVuelos(); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
+            //TODO: hacer lo mismo para alojamientos.
+
+            ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.            
         }
 
         // método para mantener actualizado el presupuesto en pantalla
         private void ActualizarTotalPresupuesto()
         {
-            // Calculo suma de los precios de vuelos            
-            decimal totalVuelos = 0;
-            foreach (DataGridViewRow row in this.dataGridViewPresupuestosVuelos.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    decimal precio;
-                    if (decimal.TryParse(row.Cells["ColumnPrecio"].Value.ToString(), out precio))
-                    {
-                        totalVuelos += precio;
-                    }
-                }
-            }
-
-            // Calculo la suma de las tarifas de alojamientos
-            decimal totalAlojamientos = 0;
-            foreach (DataGridViewRow row in this.dataGridViewPresupuestosAlojamientos.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    decimal tarifa;
-                    if (decimal.TryParse(row.Cells["ColumnTarifa"].Value.ToString(), out tarifa))
-                    {
-                        totalAlojamientos += tarifa;
-                    }
-                }
-            }
-
+            decimal totalVuelos = model.ImporteTotalVuelos();
+            decimal totalAlojamientos = model.ImporteTotalAlojamientos();
             label1.Text = $"Presupuesto Activo: {(totalVuelos + totalAlojamientos):C2}";
         }
 
         private void btnAñadirDatosCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormAñadirCliente formCliente = new FormAñadirCliente();
-            formCliente.Show();
-        }        
+            formCliente.ShowDialog();
+            ActualizarDatosCliente();
+        }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -101,48 +57,48 @@ namespace TPCAI
             {
                 if (this.dataGridViewPresupuestosVuelos.SelectedRows.Count > 0)
                 {
-                    foreach (DataGridViewRow row in this.dataGridViewPresupuestosVuelos.SelectedRows)
-                    {
-                        if (!row.IsNewRow)
-                        {
-                            this.dataGridViewPresupuestosVuelos.Rows.Remove(row);
-                        }
-                    }
+                    DataGridViewRow selectedRow = dataGridViewPresupuestosVuelos.SelectedRows[0];
+                    string vueloId = selectedRow.Cells["IdTarifaVuel"].Value.ToString(); //Obtener algún tipo de identificación de la tarifa a partir de la fila.
+                    model.EliminarVueloDelPresupuesto(vueloId);
+                    ActualizarPresupuestoVuelos();
                 }
                 else
                 {
                     MessageBox.Show("Por favor seleccione al menos una fila para eliminar el vuelo del presupuesto.");
+                    return;
                 }
             }
             else if (this.tabControlAlojamientosVuelos.SelectedTab == tabAlojamientos)
             {
                 if (this.dataGridViewPresupuestosAlojamientos.SelectedRows.Count > 0)
                 {
-                    foreach (DataGridViewRow row in this.dataGridViewPresupuestosAlojamientos.SelectedRows)
-                    {
-                        if (!row.IsNewRow)
-                        {
-                            this.dataGridViewPresupuestosAlojamientos.Rows.Remove(row);
-                        }
-                    }
+                    //Lo mismo que arriba pero con hoteles:
+                    //1) conseguir fila seleccionada
+                    //2) de la fila conseguir un id de tarifa o elemento a borrar.
+                    //3) model.EliminarAlojamientoDePresupuesto(tarifaId)
+                    //4) ActualizarPresupuestoAlojamientos() (o nombre similar)
                 }
                 else
                 {
                     MessageBox.Show("Por favor seleccione al menos una fila para eliminar el alojamiento del presupuesto.");
+                    return;
                 }
             }
+            
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
         }
 
         
         // CREO METODO PARA ACTUALIZAR GRID VIEW VUELOS
-        public void ActualizarPresupuestoVuelos(List<Vuelo> vuelos)
+        private void ActualizarPresupuestoVuelos()
         {
-        
+            var vuelos = model.ObtenerVuelosPresupuesto();
+
+            dataGridViewPresupuestosVuelos.Rows.Clear();
+
             // Agrego los vuelos al modelo y actualiza el dataGridView al mismo tiempo
             foreach (var vuelo in vuelos)
-            {
-                model.AgregarVueloAPresupuesto(vuelo); // Agrega el vuelo al modelo
+            {                
                 dataGridViewPresupuestosVuelos.Rows.Add(
                     vuelo.Origen,
                     vuelo.Destino,
@@ -158,6 +114,13 @@ namespace TPCAI
             this.dataGridViewPresupuestosVuelos.Refresh();
         }
 
+        private void ActualizarDatosCliente()
+        {
+            var nombre = model.NombreCliente();
+            var dni = model.DniClilente();
 
+            label2.Text = $"Cliente: {nombre}";
+            label3.Text = $"DNI: {dni}";
+        }
     }
 }
