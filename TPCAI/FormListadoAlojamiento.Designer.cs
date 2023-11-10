@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridViewListadoAlojamiento = new System.Windows.Forms.DataGridView();
+            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboDestino = new System.Windows.Forms.ComboBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
@@ -51,12 +55,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblPresupuestoActivo = new System.Windows.Forms.Label();
             this.btnAñadirAPresupuesto = new System.Windows.Forms.Button();
-            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +75,36 @@
             this.dataGridViewListadoAlojamiento.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoAlojamiento.TabIndex = 3;
             // 
+            // ColumnDestino
+            // 
+            this.ColumnDestino.HeaderText = "Destino";
+            this.ColumnDestino.Name = "ColumnDestino";
+            // 
+            // ColumnNombreAlojamiento
+            // 
+            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
+            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
+            // 
+            // ColumnTarifa
+            // 
+            this.ColumnTarifa.HeaderText = "Tarifa";
+            this.ColumnTarifa.Name = "ColumnTarifa";
+            // 
+            // ColumnCalificacion
+            // 
+            this.ColumnCalificacion.HeaderText = "Calificacion";
+            this.ColumnCalificacion.Name = "ColumnCalificacion";
+            // 
+            // ColumnTipoHabitacion
+            // 
+            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
+            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
+            // 
+            // IDHabitacion
+            // 
+            this.IDHabitacion.HeaderText = "ID Habitacion";
+            this.IDHabitacion.Name = "IDHabitacion";
+            // 
             // btnVerPresupuesto
             // 
             this.btnVerPresupuesto.Location = new System.Drawing.Point(1137, 576);
@@ -86,24 +114,6 @@
             this.btnVerPresupuesto.Text = "Ver Presupuesto";
             this.btnVerPresupuesto.UseVisualStyleBackColor = true;
             this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(619, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Fecha Ingreso: 01/03/2024";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(457, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Fecha Egreso: 15/03/2024";
             // 
             // label3
             // 
@@ -271,36 +281,6 @@
             this.btnAñadirAPresupuesto.UseVisualStyleBackColor = true;
             this.btnAñadirAPresupuesto.Click += new System.EventHandler(this.btnAñadirAPresupuesto_Click);
             // 
-            // ColumnDestino
-            // 
-            this.ColumnDestino.HeaderText = "Destino";
-            this.ColumnDestino.Name = "ColumnDestino";
-            // 
-            // ColumnNombreAlojamiento
-            // 
-            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
-            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
-            // 
-            // ColumnTarifa
-            // 
-            this.ColumnTarifa.HeaderText = "Tarifa";
-            this.ColumnTarifa.Name = "ColumnTarifa";
-            // 
-            // ColumnCalificacion
-            // 
-            this.ColumnCalificacion.HeaderText = "Calificacion";
-            this.ColumnCalificacion.Name = "ColumnCalificacion";
-            // 
-            // ColumnTipoHabitacion
-            // 
-            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
-            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
-            // 
-            // IDHabitacion
-            // 
-            this.IDHabitacion.HeaderText = "ID Habitacion";
-            this.IDHabitacion.Name = "IDHabitacion";
-            // 
             // FormListadoAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,8 +305,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.dataGridViewListadoAlojamiento);
             this.Name = "FormListadoAlojamiento";
@@ -342,8 +320,6 @@
 
         private System.Windows.Forms.DataGridView dataGridViewListadoAlojamiento;
         private System.Windows.Forms.Button btnVerPresupuesto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboDestino;
         private System.Windows.Forms.Button BtnBuscar;
