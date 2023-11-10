@@ -24,16 +24,15 @@ namespace TPCAI
 
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
-            listadoPresupuestos.Show();
+            listadoPresupuestos.ShowDialog();
+            this.buscarAlojamientos();
+
         }
 
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FromMenu menu = new FromMenu();
-            menu.Show();
+            this.Close();
         }
 
         private void FormListadoAlojamiento_Load(object sender, EventArgs e)
@@ -56,12 +55,19 @@ namespace TPCAI
             //Busca alojamientos
             model.BuscarAlojaimentos();
 
+            this.buscarAlojamientos();
+        }
+
+        private void buscarAlojamientos()
+        {
+            this.dataGridViewListadoAlojamiento.Rows.Clear();
+
             //Muestra en lista
             foreach (Alojamiento alojamiento in model.AlojamientosFiltrados)
             {
                 foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                 {
-                    foreach(HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
+                    foreach (HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
                     {
                         this.dataGridViewListadoAlojamiento.Rows.Add(
                             alojamiento.CodigoCiudad,
@@ -77,9 +83,7 @@ namespace TPCAI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FromMenu menu = new FromMenu();
-            menu.Show();
+            this.Close();
         }
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)

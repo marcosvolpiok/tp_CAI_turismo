@@ -30,9 +30,7 @@ namespace TPCAI
 
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
-            FromMenu menu = new FromMenu();
-            menu.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void FormGenerarReservas_Load(object sender, EventArgs e)
@@ -87,9 +85,8 @@ namespace TPCAI
 
         private void btnAñadirPasajeros_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormAñadirPasajero formPasajero = new FormAñadirPasajero();
-            formPasajero.Show();
+            formPasajero.ShowDialog();
         }
 
         private void btnNuevoPresupuesto_Click(object sender, EventArgs e)

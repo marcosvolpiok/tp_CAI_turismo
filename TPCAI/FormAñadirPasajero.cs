@@ -34,9 +34,9 @@ namespace TPCAI
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormGenerarReservas formReservas = new FormGenerarReservas();
-            formReservas.Show();
+            //FormGenerarReservas formReservas = new FormGenerarReservas();
+            //formReservas.ShowDialog();
+            this.Close();
         }
 
         private void btnQuitarPasajero_Click(object sender, EventArgs e)
