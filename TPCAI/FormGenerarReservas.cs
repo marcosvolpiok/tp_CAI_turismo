@@ -44,7 +44,11 @@ namespace TPCAI
 
             if (ModuloPresupuestos.PresupuestoActivo != null)
             {
-                lblActivo.Text = ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString();
+                lblActivo.Text = "Presupuesto Activo: " + ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString();
+            }
+            else
+            {
+                lblActivo.Text = "";
             }
         }
 
@@ -94,8 +98,6 @@ namespace TPCAI
 
             if (nuevoCodPresupuesto != null)
             {
-                this.dataGridViewPreReserva.Rows.Clear();
-
                 this.dataGridViewPreReserva.Rows.Add(nuevoCodPresupuesto, null, null);
             }
             else

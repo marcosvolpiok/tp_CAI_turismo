@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modulos;
 
@@ -17,6 +18,11 @@ namespace TPCAI.Modelos
 
         public List<Vuelo> ObtenerVuelosPresupuesto()
         {
+            /*
+             * TO DO: este código no compila.
+             * Marcos lo comentó para poder probar esta pantalla con Alojamientos.
+             * 
+             * 
             var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
             var vuelos = new List<Vuelo>();
             foreach(var vueloId in vuelosIds)
@@ -26,6 +32,31 @@ namespace TPCAI.Modelos
             }
 
             return vuelos;
+            */
+
+            List<Vuelo> listaVuelos = new List<Vuelo>(); //TO DO: esto es para que compile. Mirar comentario de arriba
+            return listaVuelos;
+        }
+
+        public List<Alojamiento> ObtenerAlojamientosPresupuesto()
+        {
+            List<int> alojamientosIds = ModuloPresupuestos.PresupuestoActivo.IDHabitacion;
+            
+            var alojamientosNuevos = new List<Alojamiento>();
+            foreach (var alojamientoId in alojamientosIds)
+            {
+                List<Alojamiento> alojamientos = ProductosModulo.ObtenerAlojamientoPorIdHabitacion(alojamientoId);
+                foreach (Alojamiento alojamiento in alojamientos)
+                {
+                    alojamientosNuevos.Add(alojamiento);
+                }
+                
+            }
+
+            return alojamientosNuevos;
+            
+            //List < Alojamiento > aloj = new List<Alojamiento>();
+            //return aloj;
         }
 
         internal decimal ImporteTotalAlojamientos()
@@ -36,6 +67,10 @@ namespace TPCAI.Modelos
 
         internal decimal ImporteTotalVuelos()
         {
+            /* TO DO: Comentado por Marcos para poder probar porque al abrir el formulario tira error
+             * REVISAR
+             * 
+             * 
             var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
             decimal importe = 0M;
             foreach (var vueloId in vuelosIds)
@@ -45,6 +80,9 @@ namespace TPCAI.Modelos
             }
 
             return importe;
+            */
+
+            return 0;
         }
 
         internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre;

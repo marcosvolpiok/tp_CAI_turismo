@@ -32,13 +32,6 @@
             this.tabControlAlojamientosVuelos = new System.Windows.Forms.TabControl();
             this.tabAlojamientos = new System.Windows.Forms.TabPage();
             this.dataGridViewPresupuestosAlojamientos = new System.Windows.Forms.DataGridView();
-            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFechaEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabVuelos = new System.Windows.Forms.TabPage();
             this.dataGridViewPresupuestosVuelos = new System.Windows.Forms.DataGridView();
             this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +46,16 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblPresupuestoActivo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -104,48 +104,13 @@
             this.ColumnNombreAlojamiento,
             this.ColumnTarifa,
             this.ColumnFechaIngreso,
-            this.ColumnFechaEgreso,
             this.ColumnCalificacion,
-            this.ColumnTipoHabitacion});
+            this.ColumnTipoHabitacion,
+            this.IDHabitacion});
             this.dataGridViewPresupuestosAlojamientos.Location = new System.Drawing.Point(3, 0);
             this.dataGridViewPresupuestosAlojamientos.Name = "dataGridViewPresupuestosAlojamientos";
             this.dataGridViewPresupuestosAlojamientos.Size = new System.Drawing.Size(951, 459);
             this.dataGridViewPresupuestosAlojamientos.TabIndex = 4;
-            // 
-            // ColumnDestino
-            // 
-            this.ColumnDestino.HeaderText = "Destino";
-            this.ColumnDestino.Name = "ColumnDestino";
-            // 
-            // ColumnNombreAlojamiento
-            // 
-            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
-            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
-            // 
-            // ColumnTarifa
-            // 
-            this.ColumnTarifa.HeaderText = "Tarifa";
-            this.ColumnTarifa.Name = "ColumnTarifa";
-            // 
-            // ColumnFechaIngreso
-            // 
-            this.ColumnFechaIngreso.HeaderText = "Fecha Ingreso";
-            this.ColumnFechaIngreso.Name = "ColumnFechaIngreso";
-            // 
-            // ColumnFechaEgreso
-            // 
-            this.ColumnFechaEgreso.HeaderText = "Fecha Egreso";
-            this.ColumnFechaEgreso.Name = "ColumnFechaEgreso";
-            // 
-            // ColumnCalificacion
-            // 
-            this.ColumnCalificacion.HeaderText = "Calificacion";
-            this.ColumnCalificacion.Name = "ColumnCalificacion";
-            // 
-            // ColumnTipoHabitacion
-            // 
-            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
-            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
             // 
             // tabVuelos
             // 
@@ -253,15 +218,15 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Total: $25.000";
             // 
-            // label12
+            // lblPresupuestoActivo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(29, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(214, 20);
-            this.label12.TabIndex = 59;
-            this.label12.Text = "Presupuesto Activo: 4545";
+            this.lblPresupuestoActivo.AutoSize = true;
+            this.lblPresupuestoActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresupuestoActivo.Location = new System.Drawing.Point(29, 10);
+            this.lblPresupuestoActivo.Name = "lblPresupuestoActivo";
+            this.lblPresupuestoActivo.Size = new System.Drawing.Size(214, 20);
+            this.lblPresupuestoActivo.TabIndex = 59;
+            this.lblPresupuestoActivo.Text = "Presupuesto Activo: 4545";
             // 
             // label2
             // 
@@ -281,6 +246,41 @@
             this.label3.TabIndex = 61;
             this.label3.Text = "DNI: 36.258.110";
             // 
+            // ColumnDestino
+            // 
+            this.ColumnDestino.HeaderText = "Destino";
+            this.ColumnDestino.Name = "ColumnDestino";
+            // 
+            // ColumnNombreAlojamiento
+            // 
+            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
+            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
+            // 
+            // ColumnTarifa
+            // 
+            this.ColumnTarifa.HeaderText = "Tarifa";
+            this.ColumnTarifa.Name = "ColumnTarifa";
+            // 
+            // ColumnFechaIngreso
+            // 
+            this.ColumnFechaIngreso.HeaderText = "Fecha Ingreso";
+            this.ColumnFechaIngreso.Name = "ColumnFechaIngreso";
+            // 
+            // ColumnCalificacion
+            // 
+            this.ColumnCalificacion.HeaderText = "Calificacion";
+            this.ColumnCalificacion.Name = "ColumnCalificacion";
+            // 
+            // ColumnTipoHabitacion
+            // 
+            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
+            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
+            // 
+            // IDHabitacion
+            // 
+            this.IDHabitacion.HeaderText = "ID Habitacion";
+            this.IDHabitacion.Name = "IDHabitacion";
+            // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +288,7 @@
             this.ClientSize = new System.Drawing.Size(1013, 592);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblPresupuestoActivo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirDatosCliente);
             this.Controls.Add(this.btnVolver);
@@ -313,18 +313,11 @@
         private System.Windows.Forms.TabPage tabAlojamientos;
         private System.Windows.Forms.TabPage tabVuelos;
         private System.Windows.Forms.DataGridView dataGridViewPresupuestosAlojamientos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombreAlojamiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTarifa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaIngreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaEgreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCalificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoHabitacion;
         private System.Windows.Forms.DataGridView dataGridViewPresupuestosVuelos;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAñadirDatosCliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblPresupuestoActivo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOrigen;
@@ -337,5 +330,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoPasajero;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdTarifaVuel;
         public System.Windows.Forms.TabControl tabControlAlojamientosVuelos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombreAlojamiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTarifa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCalificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoHabitacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDHabitacion;
     }
 }

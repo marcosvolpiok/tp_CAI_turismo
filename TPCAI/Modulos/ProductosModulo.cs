@@ -238,5 +238,43 @@ namespace TPCAI
         }
 
         internal static Vuelo ObtenerVueloPorId(string vuelosId) => throw new NotImplementedException();
+
+        internal static List<Alojamiento> ObtenerAlojamientoPorIdHabitacion (int idHabitacion)
+        {
+            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
+            List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
+
+
+            foreach (var alojamiento in AlojamientoAlmacen.Alojamientos)
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    foreach(var habitacion in disponibilidad.Habitaciones)
+                    {
+                        if (habitacion.IDHabitacion == idHabitacion)
+                        {
+                            List<DisponibilidadSubClass> disponibilidades = new List<DisponibilidadSubClass>();
+                            disponibilidades.Add(disponibilidad);
+
+                            List<HabitacionesHotelSubClass> habitaciones = new List<HabitacionesHotelSubClass>();
+                            habitaciones.Add(habitacion);
+
+                            disponibilidades.First().Habitaciones = habitaciones;
+
+                            alojamientosFiltrados.Add(new Alojamiento(
+                                        alojamiento.CodigoHotel,
+                                        alojamiento.Nombre,
+                                        alojamiento.CodigoCiudad,
+                                        alojamiento.Direccion,
+                                        alojamiento.Calificacion,
+                                        disponibilidades
+                                ));
+                        }
+                    }
+                }
+             }
+
+            return alojamientosFiltrados;
+         }
     }
 }

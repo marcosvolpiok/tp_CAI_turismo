@@ -61,7 +61,16 @@ namespace TPCAI
             {
                 foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                 {
-                    this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre, disponibilidad.IDDisponibilidad);
+                    foreach(HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
+                    {
+                        this.dataGridViewListadoAlojamiento.Rows.Add(
+                            alojamiento.CodigoCiudad,
+                            alojamiento.Nombre,
+                            disponibilidad.Tarifa,
+                            alojamiento.Calificacion,
+                            disponibilidad.Nombre,
+                            habitacion.IDHabitacion);
+                    }
                 }
             }
         }
@@ -78,10 +87,10 @@ namespace TPCAI
             if (dataGridViewListadoAlojamiento.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewListadoAlojamiento.SelectedRows[0];
-                string IDDisponibilidad = selectedRow.Cells["IDDisponibilidad"].Value.ToString();
+                string IDHabitacion = selectedRow.Cells["IDHabitacion"].Value.ToString();
 
-                model.IdDisponibilidadsSeleccionada = IDDisponibilidad;
-                model.AgregarAlojamientoAPresupuesto(IDDisponibilidad);
+                //model.IdHabitacionSeleccionada = IDHabitacion;
+                model.AgregarAlojamientoAPresupuesto(IDHabitacion);
 
                 MessageBox.Show("Se ha añadido correctamente el producto al presupuesto.");
             }

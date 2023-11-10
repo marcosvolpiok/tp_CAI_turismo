@@ -308,9 +308,9 @@
             this.lblActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivo.Location = new System.Drawing.Point(589, 20);
             this.lblActivo.Name = "lblActivo";
-            this.lblActivo.Size = new System.Drawing.Size(214, 20);
+            this.lblActivo.Size = new System.Drawing.Size(76, 20);
             this.lblActivo.TabIndex = 59;
-            //this.lblActivo.Text = "Presupuesto Activo: 4545";
+            this.lblActivo.Text = "lblActivo";
             // 
             // btnConsultarVuelos
             // 

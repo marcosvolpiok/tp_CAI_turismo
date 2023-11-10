@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI;
 using TPCAI.Entidades.SubClasses;
+using TPCAI.Modulos;
 
 namespace TPCAI
 {
@@ -34,17 +35,16 @@ namespace TPCAI
             AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientosFiltrados(this);
         }
 
-        public void AgregarAlojamientoAPresupuesto(string idDisponibilidad)
+        public void AgregarAlojamientoAPresupuesto(string idHabitacion)
         {
-            foreach (Alojamiento alojamiento in AlojamientosFiltrados)
+
+            int idHabitacionInt;
+            if (int.TryParse(idHabitacion, out idHabitacionInt)){
+                ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Add(idHabitacionInt);
+            }
+            else
             {
-                foreach(DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
-                {
-                    if(disponibilidad.IDDisponibilidad.ToString() == idDisponibilidad)
-                    {
-                        alojamientosPresupuesto.Add(alojamiento);
-                    }
-                }
+                MessageBox.Show("El ID de habitación no es un número");
             }
         }
     }

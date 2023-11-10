@@ -14,5 +14,10 @@ namespace TPCAI.Entidades
         public ClienteEnt Clientes { get; set; }
         public DateTime FechaPresupuesto { get; set; }
         public decimal PrecioTotal { get; set; }
+
+        public PresupuestosEnt() //TO DO: ¿Está bien esto? Sino lo inicializo no me deja hacerle add
+        {
+            IDHabitacion = new List<int>();
+        }
     }
 }

@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridViewListadoAlojamiento = new System.Windows.Forms.DataGridView();
-            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +51,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblPresupuestoActivo = new System.Windows.Forms.Label();
             this.btnAñadirAPresupuesto = new System.Windows.Forms.Button();
+            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoAlojamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,41 +71,11 @@
             this.ColumnTarifa,
             this.ColumnCalificacion,
             this.ColumnTipoHabitacion,
-            this.IDDisponibilidad});
+            this.IDHabitacion});
             this.dataGridViewListadoAlojamiento.Location = new System.Drawing.Point(460, 57);
             this.dataGridViewListadoAlojamiento.Name = "dataGridViewListadoAlojamiento";
             this.dataGridViewListadoAlojamiento.Size = new System.Drawing.Size(957, 495);
             this.dataGridViewListadoAlojamiento.TabIndex = 3;
-            // 
-            // ColumnDestino
-            // 
-            this.ColumnDestino.HeaderText = "Destino";
-            this.ColumnDestino.Name = "ColumnDestino";
-            // 
-            // ColumnNombreAlojamiento
-            // 
-            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
-            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
-            // 
-            // ColumnTarifa
-            // 
-            this.ColumnTarifa.HeaderText = "Tarifa";
-            this.ColumnTarifa.Name = "ColumnTarifa";
-            // 
-            // ColumnCalificacion
-            // 
-            this.ColumnCalificacion.HeaderText = "Calificacion";
-            this.ColumnCalificacion.Name = "ColumnCalificacion";
-            // 
-            // ColumnTipoHabitacion
-            // 
-            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
-            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
-            // 
-            // IDDisponibilidad
-            // 
-            this.IDDisponibilidad.HeaderText = "ID Disponibilidad";
-            this.IDDisponibilidad.Name = "IDDisponibilidad";
             // 
             // btnVerPresupuesto
             // 
@@ -301,6 +271,36 @@
             this.btnAñadirAPresupuesto.UseVisualStyleBackColor = true;
             this.btnAñadirAPresupuesto.Click += new System.EventHandler(this.btnAñadirAPresupuesto_Click);
             // 
+            // ColumnDestino
+            // 
+            this.ColumnDestino.HeaderText = "Destino";
+            this.ColumnDestino.Name = "ColumnDestino";
+            // 
+            // ColumnNombreAlojamiento
+            // 
+            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
+            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
+            // 
+            // ColumnTarifa
+            // 
+            this.ColumnTarifa.HeaderText = "Tarifa";
+            this.ColumnTarifa.Name = "ColumnTarifa";
+            // 
+            // ColumnCalificacion
+            // 
+            this.ColumnCalificacion.HeaderText = "Calificacion";
+            this.ColumnCalificacion.Name = "ColumnCalificacion";
+            // 
+            // ColumnTipoHabitacion
+            // 
+            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
+            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
+            // 
+            // IDHabitacion
+            // 
+            this.IDHabitacion.HeaderText = "ID Habitacion";
+            this.IDHabitacion.Name = "IDHabitacion";
+            // 
             // FormListadoAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,6 +368,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTarifa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipoHabitacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDDisponibilidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDHabitacion;
     }
 }
