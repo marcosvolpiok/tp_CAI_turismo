@@ -126,7 +126,6 @@ namespace TPCAI
 
 
             dataGridViewPresupuestosAlojamientos.Rows.Clear();
-
             // Agrego los vuelos al modelo y actualiza el dataGridView al mismo tiempo
             foreach (var alojamiento in alojamientos)
             {

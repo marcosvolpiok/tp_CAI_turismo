@@ -245,7 +245,7 @@ namespace TPCAI
             List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
 
 
-            foreach (var alojamiento in AlojamientoAlmacen.Alojamientos)
+            foreach (var alojamiento in alojamientos)
             {
                 foreach (var disponibilidad in alojamiento.Disponibilidad)
                 {
@@ -254,12 +254,24 @@ namespace TPCAI
                         if (habitacion.IDHabitacion == idHabitacion)
                         {
                             List<DisponibilidadSubClass> disponibilidades = new List<DisponibilidadSubClass>();
-                            disponibilidades.Add(disponibilidad);
+                            DisponibilidadSubClass disponibilidadNuevo = new DisponibilidadSubClass();
+                            disponibilidadNuevo.Nombre = disponibilidad.Nombre;
+                            disponibilidadNuevo.Tarifa = disponibilidad.Tarifa;
+                            disponibilidadNuevo.Capacidad = disponibilidad.Capacidad;
+                            disponibilidadNuevo.Adultos = disponibilidad.Adultos;
+                            disponibilidadNuevo.Menores = disponibilidad.Menores;
+                            disponibilidadNuevo.Infantes = disponibilidad.Infantes;
+                            disponibilidadNuevo.IDDisponibilidad = disponibilidad.IDDisponibilidad;
+                            disponibilidadNuevo.Habitaciones = new List<HabitacionesHotelSubClass>();
 
                             List<HabitacionesHotelSubClass> habitaciones = new List<HabitacionesHotelSubClass>();
-                            habitaciones.Add(habitacion);
+                            HabitacionesHotelSubClass habitacionNuevo = new HabitacionesHotelSubClass();
+                            habitacionNuevo.IDHabitacion = habitacion.IDHabitacion;
+                            habitacionNuevo.FechaHabitacionHotel = habitacion.FechaHabitacionHotel;
+                            habitacionNuevo.Cantidad = habitacion.Cantidad;
 
-                            disponibilidades.First().Habitaciones = habitaciones;
+                            disponibilidadNuevo.Habitaciones.Add(habitacionNuevo);
+                            disponibilidades.Add(disponibilidadNuevo);
 
                             alojamientosFiltrados.Add(new Alojamiento(
                                         alojamiento.CodigoHotel,

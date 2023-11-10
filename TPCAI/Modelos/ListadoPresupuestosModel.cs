@@ -54,9 +54,6 @@ namespace TPCAI.Modelos
             }
 
             return alojamientosNuevos;
-            
-            //List < Alojamiento > aloj = new List<Alojamiento>();
-            //return aloj;
         }
 
         internal decimal ImporteTotalAlojamientos()
