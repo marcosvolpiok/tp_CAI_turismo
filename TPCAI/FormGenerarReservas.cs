@@ -104,7 +104,7 @@ namespace TPCAI
 
         private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
         {
-            PresupuestosEnt nuevoCodPresupuesto = model.NuevoPresupuesto();
+            var nuevoCodPresupuesto = model.NuevoPresupuesto();
 
             if (nuevoCodPresupuesto != null)
             {

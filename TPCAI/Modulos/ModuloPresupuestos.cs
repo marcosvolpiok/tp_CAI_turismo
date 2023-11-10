@@ -48,11 +48,24 @@ namespace TPCAI.Modulos
             AlmacenClientes.Grabar();
         }
 
-        private static long GenerarID()
+        private static int GenerarID()
         {
-            
-            // IMPLEMENTAR LOGICA PARA EL ID
-            return 0;
+            // Obtener la lista de clientes desde AlmacenClientes
+            List<ClienteEnt> clientes = AlmacenClientes.Clientes;
+
+            var nuevoId = 1; // Valor predeterminado si no hay clientes registrados
+
+            // Verifico si hay clientes registrados
+            if (clientes != null && clientes.Count > 0)
+            {
+                // Obtengo el último cliente registrado
+                ClienteEnt ultimoCliente = clientes.Last();
+
+                // Incrementar el ID del último cliente en 1
+                nuevoId = ultimoCliente.ID + 1;
+            }
+
+            return nuevoId;
         }
 
         
