@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modelos;
+using TPCAI.Modulos;
 
 namespace TPCAI
 {
@@ -40,6 +41,11 @@ namespace TPCAI
             this.dataGridViewGenerarReserva.Rows.Add("101", "4 Noches Hotel Hilton Córdoba Centro", "$ 60.000");
             this.dataGridViewGenerarConfirmacion.Rows.Add("102", "1 Noche Hotel Kau Kaleshen", "Pagado", "$ 15.000");*/
             model = new GenerarReservasModel();
+
+            if (ModuloPresupuestos.PresupuestoActivo != null)
+            {
+                lblActivo.Text = ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString();
+            }
         }
 
         private void btnPreReservar_Click(object sender, EventArgs e)
@@ -104,7 +110,7 @@ namespace TPCAI
             if (this.dataGridViewPreReserva.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewPreReserva.SelectedRows[0];
-                string PresupuestoActivo = selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString();
+                int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
                 model.EstablecerPresupuestoActivo(PresupuestoActivo);
                 MessageBox.Show($"Presupuesto número {PresupuestoActivo} establecido como activo");
 

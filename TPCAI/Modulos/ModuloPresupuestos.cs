@@ -82,11 +82,9 @@ namespace TPCAI.Modulos
             }
         }
 
-        public static string ObtengoPresupuestoActivo()
+        public static int ObtengoPresupuestoActivo()
         {
-            GenerarReservasModel generarReservasModel = new GenerarReservasModel();
-            var presupuesto = generarReservasModel.PresupuestoActivo;
-            return presupuesto;
+            return ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto;
         }
 
 
