@@ -24,5 +24,10 @@ namespace TPCAI.Modelos
             
             return presupuestoId;
         }
+
+        public List<PresupuestosEnt> obtenerPresupuestos()
+        {
+            return ModuloPresupuestos.obtenerPresupuestos();
+        }
     }
 }

@@ -106,5 +106,17 @@ namespace TPCAI.Modulos
 
             return presupuestoNuevo;
         }
+
+        public static List<PresupuestosEnt> obtenerPresupuestos()
+        {
+            List<PresupuestosEnt> tmpPresup = new List<PresupuestosEnt>();
+            tmpPresup.AddRange(AlmacenPresupuestos.presupuestos);
+            if (Presupuestos != null)
+            {
+                tmpPresup.AddRange(Presupuestos);
+            }
+
+            return tmpPresup;
+        }
     }
 }

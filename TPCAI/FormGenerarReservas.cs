@@ -49,6 +49,18 @@ namespace TPCAI
             {
                 lblActivo.Text = "";
             }
+
+            buscarPresupuestos();
+        }
+
+        private void buscarPresupuestos()
+        {
+            dataGridViewPresupuestos.Rows.Clear();
+            foreach (PresupuestosEnt presupuesto in model.obtenerPresupuestos())
+            {
+                this.dataGridViewPresupuestos.Rows.Add(presupuesto.CodigoPresupuesto, null, null);
+            }
+            this.dataGridViewPresupuestos.Refresh();
         }
 
         private void btnPreReservar_Click(object sender, EventArgs e)
@@ -96,7 +108,7 @@ namespace TPCAI
 
             if (nuevoCodPresupuesto != null)
             {
-                this.dataGridViewPreReserva.Rows.Add(nuevoCodPresupuesto.CodigoPresupuesto, null, null);
+                this.dataGridViewPresupuestos.Rows.Add(nuevoCodPresupuesto.CodigoPresupuesto, null, null);
             }
             else
             {
@@ -107,9 +119,9 @@ namespace TPCAI
 
         private void btnEstablecerActivo_Click(object sender, EventArgs e)
         {
-            if (this.dataGridViewPreReserva.SelectedRows.Count > 0)
+            if (this.dataGridViewPresupuestos.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = dataGridViewPreReserva.SelectedRows[0];
+                DataGridViewRow selectedRow = dataGridViewPresupuestos.SelectedRows[0];
                 int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
                 model.EstablecerPresupuestoActivo(PresupuestoActivo);
                 MessageBox.Show($"Presupuesto número {PresupuestoActivo} establecido como activo");
@@ -137,15 +149,15 @@ namespace TPCAI
         private void btnConsultarVuelos_Click(object sender, EventArgs e)
         {
             FormListadoVuelos vuelos = new FormListadoVuelos();
-            vuelos.Show();
-            this.Hide();
+            vuelos.ShowDialog();
+            buscarPresupuestos();
         }
 
         private void btnConsultarAlojamientos_Click(object sender, EventArgs e)
         {
             FormListadoAlojamiento alojamiento = new FormListadoAlojamiento();
-            alojamiento.Show();
-            this.Hide();
+            alojamiento.ShowDialog();
+            buscarPresupuestos();
         }
     }
 }

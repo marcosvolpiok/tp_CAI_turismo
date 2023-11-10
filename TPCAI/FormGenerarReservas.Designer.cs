@@ -36,7 +36,7 @@
             this.btnNuevoPresupuesto = new System.Windows.Forms.Button();
             this.btnEstablecerActivo = new System.Windows.Forms.Button();
             this.btnAñadirPasajeros = new System.Windows.Forms.Button();
-            this.dataGridViewPreReserva = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPresupuestos = new System.Windows.Forms.DataGridView();
             this.ColumnNroPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             this.btnConsultarAlojamientos = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestos)).BeginInit();
             this.tabReservar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarReserva)).BeginInit();
             this.tabConfirmar.SuspendLayout();
@@ -109,7 +109,7 @@
             this.tabGenerarPreReserva.Controls.Add(this.btnNuevoPresupuesto);
             this.tabGenerarPreReserva.Controls.Add(this.btnEstablecerActivo);
             this.tabGenerarPreReserva.Controls.Add(this.btnAñadirPasajeros);
-            this.tabGenerarPreReserva.Controls.Add(this.dataGridViewPreReserva);
+            this.tabGenerarPreReserva.Controls.Add(this.dataGridViewPresupuestos);
             this.tabGenerarPreReserva.Controls.Add(this.btnPreReservar);
             this.tabGenerarPreReserva.Location = new System.Drawing.Point(4, 22);
             this.tabGenerarPreReserva.Name = "tabGenerarPreReserva";
@@ -150,20 +150,20 @@
             this.btnAñadirPasajeros.UseVisualStyleBackColor = true;
             this.btnAñadirPasajeros.Click += new System.EventHandler(this.btnAñadirPasajeros_Click);
             // 
-            // dataGridViewPreReserva
+            // dataGridViewPresupuestos
             // 
-            this.dataGridViewPreReserva.AllowUserToAddRows = false;
-            this.dataGridViewPreReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewPreReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPreReserva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewPresupuestos.AllowUserToAddRows = false;
+            this.dataGridViewPresupuestos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPresupuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPresupuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNroPresupuesto,
             this.ColumnFecha,
             this.ColumnProductos,
             this.ColumnTotalPrespuestado});
-            this.dataGridViewPreReserva.Location = new System.Drawing.Point(15, 6);
-            this.dataGridViewPreReserva.Name = "dataGridViewPreReserva";
-            this.dataGridViewPreReserva.Size = new System.Drawing.Size(957, 495);
-            this.dataGridViewPreReserva.TabIndex = 3;
+            this.dataGridViewPresupuestos.Location = new System.Drawing.Point(15, 6);
+            this.dataGridViewPresupuestos.Name = "dataGridViewPresupuestos";
+            this.dataGridViewPresupuestos.Size = new System.Drawing.Size(957, 495);
+            this.dataGridViewPresupuestos.TabIndex = 3;
             // 
             // ColumnNroPresupuesto
             // 
@@ -350,7 +350,7 @@
             this.Load += new System.EventHandler(this.FormGenerarReservas_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabGenerarPreReserva.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreReserva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestos)).EndInit();
             this.tabReservar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenerarReserva)).EndInit();
             this.tabConfirmar.ResumeLayout(false);
@@ -370,7 +370,7 @@
         private System.Windows.Forms.TabPage tabReservar;
         private System.Windows.Forms.TabPage tabConfirmar;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridViewPreReserva;
+        private System.Windows.Forms.DataGridView dataGridViewPresupuestos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNroPresupuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
