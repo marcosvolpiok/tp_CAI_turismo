@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modelos;
 using TPCAI.Modulos;
@@ -91,11 +92,11 @@ namespace TPCAI
 
         private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
         {
-            var nuevoCodPresupuesto = model.NuevoPresupuesto();
+            PresupuestosEnt nuevoCodPresupuesto = model.NuevoPresupuesto();
 
             if (nuevoCodPresupuesto != null)
             {
-                this.dataGridViewPreReserva.Rows.Add(nuevoCodPresupuesto, null, null);
+                this.dataGridViewPreReserva.Rows.Add(nuevoCodPresupuesto.CodigoPresupuesto, null, null);
             }
             else
             {

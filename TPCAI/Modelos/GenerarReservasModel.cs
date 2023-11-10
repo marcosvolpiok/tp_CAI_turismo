@@ -11,9 +11,9 @@ namespace TPCAI.Modelos
 {
     internal class GenerarReservasModel
     {
-        public long NuevoPresupuesto()
+        public PresupuestosEnt NuevoPresupuesto()
         {
-            return ModuloPresupuestos.CrearPresupuesto();            
+            return ModuloPresupuestos.agregarPresupuestoNuevo();
         }
 
         public int EstablecerPresupuestoActivo(int presupuestoId)

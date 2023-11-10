@@ -13,7 +13,8 @@ namespace TPCAI.Modulos
 {
     public static class ModuloPresupuestos
     {
-        public static PresupuestosEnt PresupuestoActivo { get; set; }        
+        public static PresupuestosEnt PresupuestoActivo { get; set; }
+        public static List<PresupuestosEnt> Presupuestos { get; set; }
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
@@ -57,22 +58,26 @@ namespace TPCAI.Modulos
         
         
         //PRESUPUESTOS
-        public static long CrearPresupuesto()
+        public static int CrearPresupuesto()
         {
-            long nuevoCodigoPresupuesto = ObtenerNuevoCodigoPresupuesto();
+            int nuevoCodigoPresupuesto = ObtenerNuevoCodigoPresupuesto();
             return nuevoCodigoPresupuesto;
         }
 
-        private static long ObtenerNuevoCodigoPresupuesto()
+        private static int ObtenerNuevoCodigoPresupuesto()
         {
-            // Obtengo la lista de presupuestos del AlmacenPresupuestos
-            List<PresupuestosEnt> presupuestos = AlmacenPresupuestos.Presupuestos;
+            List<PresupuestosEnt> presupuestosTmp = new List<PresupuestosEnt>();
+            presupuestosTmp.AddRange(AlmacenPresupuestos.Presupuestos);
+            if (Presupuestos != null)
+            {
+                presupuestosTmp.AddRange(Presupuestos);
+            }
 
             // Verifico si hay presupuestos existentes
-            if (presupuestos.Any())
+            if (presupuestosTmp.Any())
             {
                 // Obtener el código del último presupuesto
-                long ultimoCodigo = presupuestos.Max(p => p.CodigoPresupuesto);                
+                int ultimoCodigo = presupuestosTmp.Max(p => p.CodigoPresupuesto);                
                 return ultimoCodigo + 1;
             }
             else
@@ -87,6 +92,19 @@ namespace TPCAI.Modulos
             return ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto;
         }
 
+        public static PresupuestosEnt agregarPresupuestoNuevo()
+        {
+            int idPresupuestoNuevo = CrearPresupuesto();
+            PresupuestosEnt presupuestoNuevo = new PresupuestosEnt();
+            presupuestoNuevo.CodigoPresupuesto = idPresupuestoNuevo;
 
+            if (ModuloPresupuestos.Presupuestos == null)
+            {
+                ModuloPresupuestos.Presupuestos = new List<PresupuestosEnt>();
+            }
+            ModuloPresupuestos.Presupuestos.Add(presupuestoNuevo);
+
+            return presupuestoNuevo;
+        }
     }
 }
