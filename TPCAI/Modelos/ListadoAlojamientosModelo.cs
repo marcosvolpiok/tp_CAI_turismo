@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI;
+using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modulos;
 
@@ -24,6 +25,10 @@ namespace TPCAI
         public List<Alojamiento> AlojamientosFiltrados { get; private set; }
         private List<Alojamiento> alojamientosPresupuesto = new List<Alojamiento>();
 
+        public CiudadesEnt obtenerCiudades()
+        {
+            return ProductosModulo.obtenerCiudades();
+        }
         public void BuscarAlojaimentos()
         {
             //return ProductosModulo.ObtenerAlojamientos();

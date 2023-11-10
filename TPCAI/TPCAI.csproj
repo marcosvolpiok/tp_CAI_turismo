@@ -52,8 +52,11 @@
     <Compile Include="Almacenes\AlmacenPresupuestos.cs" />
     <Compile Include="Almacenes\AlmacenVuelos.cs" />
     <Compile Include="Almacenes\AlojamientoAlmacen.cs" />
+    <Compile Include="Almacenes\CiudadAlmacen.cs" />
+    <Compile Include="Entidades\CiudadesEnt.cs" />
     <Compile Include="Entidades\PresupuestosEnt.cs" />
     <Compile Include="Entidades\SubClasses\Alojamiento.cs" />
+    <Compile Include="Entidades\SubClasses\CiudadesDetailSubClass.cs" />
     <Compile Include="Entidades\SubClasses\Presupuestos.cs" />
     <Compile Include="Entidades\SubClasses\Tarifa.cs" />
     <Compile Include="Entidades\SubClasses\Vuelo.cs" />

@@ -1,0 +1,52 @@
+{
+  "Ciudades": [
+    {
+      "Nombre": "Berlín, Alemania",
+      "CodigoISO": "BER"
+    },
+    {
+      "Nombre": "Dallas, Texas",
+      "CodigoISO": "DFW"
+    },
+    {
+      "Nombre": "Los Angeles, California",
+      "CodigoISO": "LAX"
+    },
+    {
+      "Nombre": "Ezeiza, Argentina",
+      "CodigoISO": "EZE"
+    },
+    {
+      "Nombre": "Iguazú, Argentina",
+      "CodigoISO": "IGR"
+    },
+    {
+      "Nombre": "Madrid, España",
+      "CodigoISO": "MAD"
+    },
+    {
+      "Nombre": "Miami, USA",
+      "CodigoISO": "MIA"
+    },
+    {
+      "Nombre": "Nueva York, USA",
+      "CodigoISO": "JFK"
+    },
+    {
+      "Nombre": "París, Francia",
+      "CodigoISO": "CDG"
+    },
+    {
+      "Nombre": "San Pablo, Brazil",
+      "CodigoISO": "GRU"
+    },
+    {
+      "Nombre": "Río de Janeiro, Brasil",
+      "CodigoISO": "GIG"
+    },
+    {
+      "Nombre": "Usuahia, Argentina",
+      "CodigoISO": "USH"
+    }
+  ]
+}

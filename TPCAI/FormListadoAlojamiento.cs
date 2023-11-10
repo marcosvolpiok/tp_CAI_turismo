@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modulos;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -39,9 +40,9 @@ namespace TPCAI
         {
             model = new ListadoAlojamientosModelo();
 
-            //Carga destinos (códigos de ciudades)
-            List<string> codigosCiudad = new List<string> { "MIAMI", "MADRID", "BUENOS AIRES" };
-            comboDestino.Items.AddRange(codigosCiudad.ToArray());
+            comboDestino.DisplayMember = "Nombre";
+            CiudadesEnt ciudades = model.obtenerCiudades();
+            comboDestino.Items.AddRange(ciudades.Ciudades.ToArray());
 
             //Carga calificaciones (cantidad de estrellas)
             List<string> calificaciones = new List<string> { "1", "2", "3", "4", "5" };
