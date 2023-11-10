@@ -1,0 +1,19 @@
+[
+  {
+    "CodigoPresupuesto": 1,
+    "IdTarifaVuelo": [
+      "TV1",
+      "TV2",
+      "TV13",
+      "TV14"
+    ],
+    "IDHabitacion": [
+      1,
+      2,
+      3
+    ],
+    "IdCLiente": 1,
+    "FechaPresupuesto": "2023-11-01 00:00:00",
+    "PrecioTotal": 55000
+  }
+]

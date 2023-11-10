@@ -45,5 +45,10 @@ namespace TPCAI.Modelos
             return vuelosPresupuesto;
         }
 
+        public string PresupuestoActivo()
+        {
+            var presupuestoActivo = ModuloPresupuestos.ObtengoPresupuestoActivo();
+            return presupuestoActivo;
+        }
     }
 }

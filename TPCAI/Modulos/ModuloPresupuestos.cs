@@ -7,12 +7,13 @@ using TPCAI.Almacenes;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Entidades;
 using TPCAI.Modelos;
+using System.Security.Policy;
 
 namespace TPCAI.Modulos
 {
     public static class ModuloPresupuestos
     {
-        public static PresupuestosEnt PresupuestoActivo { get; set; }
+        public static PresupuestosEnt PresupuestoActivo { get; set; }        
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
@@ -53,8 +54,41 @@ namespace TPCAI.Modulos
             return 0;
         }
 
-
         
+        
+        //PRESUPUESTOS
+        public static long CrearPresupuesto()
+        {
+            long nuevoCodigoPresupuesto = ObtenerNuevoCodigoPresupuesto();
+            return nuevoCodigoPresupuesto;
+        }
+
+        private static long ObtenerNuevoCodigoPresupuesto()
+        {
+            // Obtengo la lista de presupuestos del AlmacenPresupuestos
+            List<PresupuestosEnt> presupuestos = AlmacenPresupuestos.Presupuestos;
+
+            // Verifico si hay presupuestos existentes
+            if (presupuestos.Any())
+            {
+                // Obtener el código del último presupuesto
+                long ultimoCodigo = presupuestos.Max(p => p.CodigoPresupuesto);                
+                return ultimoCodigo + 1;
+            }
+            else
+            {
+                // Si no hay presupuestos, comenzar desde el código 1
+                return 1;
+            }
+        }
+
+        public static string ObtengoPresupuestoActivo()
+        {
+            GenerarReservasModel generarReservasModel = new GenerarReservasModel();
+            var presupuesto = generarReservasModel.PresupuestoActivo;
+            return presupuesto;
+        }
+
 
     }
 }

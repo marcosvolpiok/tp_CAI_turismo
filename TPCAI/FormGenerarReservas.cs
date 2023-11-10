@@ -4,15 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades.SubClasses;
+using TPCAI.Modelos;
 
 namespace TPCAI
 {
     public partial class FormGenerarReservas : Form
     {
-        int idMok = 101;
+        GenerarReservasModel model;
 
         public FormGenerarReservas()
         {
@@ -33,9 +36,10 @@ namespace TPCAI
 
         private void FormGenerarReservas_Load(object sender, EventArgs e)
         {
-            this.dataGridViewPreReserva.Rows.Add("100", "13/10/2023", "2 Noches Hotel Kau Kaleshen", "$ 30.000");
+            /*this.dataGridViewPreReserva.Rows.Add("100", "13/10/2023", "2 Noches Hotel Kau Kaleshen", "$ 30.000");
             this.dataGridViewGenerarReserva.Rows.Add("101", "4 Noches Hotel Hilton Córdoba Centro", "$ 60.000");
-            this.dataGridViewGenerarConfirmacion.Rows.Add("102", "1 Noche Hotel Kau Kaleshen", "Pagado", "$ 15.000");
+            this.dataGridViewGenerarConfirmacion.Rows.Add("102", "1 Noche Hotel Kau Kaleshen", "Pagado", "$ 15.000");*/
+            model = new GenerarReservasModel();
         }
 
         private void btnPreReservar_Click(object sender, EventArgs e)
@@ -80,8 +84,18 @@ namespace TPCAI
 
         private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
         {
-            this.dataGridViewPreReserva.Rows.Add(this.idMok, "", "", "");
-            this.idMok++;
+            var nuevoCodPresupuesto = model.NuevoPresupuesto();
+
+            if (nuevoCodPresupuesto != null)
+            {
+                this.dataGridViewPreReserva.Rows.Clear();
+
+                this.dataGridViewPreReserva.Rows.Add(nuevoCodPresupuesto, null, null);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo obtener un nuevo presupuesto del modelo.");
+            }
 
         }
 
@@ -89,22 +103,19 @@ namespace TPCAI
         {
             if (this.dataGridViewPreReserva.SelectedRows.Count > 0)
             {
-                foreach (DataGridViewRow row in this.dataGridViewPreReserva.SelectedRows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        string id = row.Cells[0].Value.ToString();
-                        string message = "Presupuesto número "+id+" establecido como activo";
-                        this.lblActivo.Text = "Presupuesto Activo: " + id;
-                        MessageBox.Show(message);
-                    }
-                }
+                DataGridViewRow selectedRow = dataGridViewPreReserva.SelectedRows[0];
+                string PresupuestoActivo = selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString();
+                model.EstablecerPresupuestoActivo(PresupuestoActivo);
+                MessageBox.Show($"Presupuesto número {PresupuestoActivo} establecido como activo");
+
+                lblActivo.Text = $"Presupuesto Activo: {PresupuestoActivo}";
             }
             else
             {
                 MessageBox.Show("Por favor seleccione un presupuesto para establecer como activo");
             }
-        }
+            
+        }        
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -115,6 +126,7 @@ namespace TPCAI
         {
             MessageBox.Show("Presupuesto encontrado");
         }
+        
 
         private void btnConsultarVuelos_Click(object sender, EventArgs e)
         {

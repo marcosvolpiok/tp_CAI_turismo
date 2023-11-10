@@ -54,9 +54,11 @@
     <Compile Include="Almacenes\AlojamientoAlmacen.cs" />
     <Compile Include="Entidades\PresupuestosEnt.cs" />
     <Compile Include="Entidades\SubClasses\Alojamiento.cs" />
+    <Compile Include="Entidades\SubClasses\Presupuestos.cs" />
     <Compile Include="Entidades\SubClasses\Tarifa.cs" />
     <Compile Include="Entidades\SubClasses\Vuelo.cs" />
     <Compile Include="Entidades\VuelosEnt.cs" />
+    <Compile Include="Modelos\GenerarReservasModel.cs" />
     <Compile Include="Modelos\ListadoAlojamientosModelo.cs" />
     <Compile Include="Entidades\SubClasses\DisponibilidadSubClass.cs" />
     <Compile Include="Entidades\AlojamientosEnt.cs" />

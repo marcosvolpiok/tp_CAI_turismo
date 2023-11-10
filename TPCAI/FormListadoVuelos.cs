@@ -40,7 +40,10 @@ namespace TPCAI
 
         private void FormListadoVuelos_Load(object sender, EventArgs e)
         {
-            model = new ListadoVuelosModel();            
+            model = new ListadoVuelosModel();
+
+            var CodPresupuestoActivo = model.PresupuestoActivo();            
+            label10.Text = $"Presupuesto Activo: {CodPresupuestoActivo}";
             /* inicializar y llenar datos de origenes y destinos */
         }
 

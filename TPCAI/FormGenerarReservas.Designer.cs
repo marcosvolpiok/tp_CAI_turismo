@@ -310,7 +310,7 @@
             this.lblActivo.Name = "lblActivo";
             this.lblActivo.Size = new System.Drawing.Size(214, 20);
             this.lblActivo.TabIndex = 59;
-            this.lblActivo.Text = "Presupuesto Activo: 4545";
+            //this.lblActivo.Text = "Presupuesto Activo: 4545";
             // 
             // btnConsultarVuelos
             // 
