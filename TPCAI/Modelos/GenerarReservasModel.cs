@@ -29,5 +29,10 @@ namespace TPCAI.Modelos
         {
             return ModuloPresupuestos.obtenerPresupuestos();
         }
+
+        public PresupuestosEnt obtenerPrespuestoActivo()
+        {
+            return ModuloPresupuestos.PresupuestoActivo;
+        }
     }
 }

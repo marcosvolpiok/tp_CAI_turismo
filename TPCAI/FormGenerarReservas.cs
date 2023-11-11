@@ -36,14 +36,11 @@ namespace TPCAI
 
         private void FormGenerarReservas_Load(object sender, EventArgs e)
         {
-            /*this.dataGridViewPreReserva.Rows.Add("100", "13/10/2023", "2 Noches Hotel Kau Kaleshen", "$ 30.000");
-            this.dataGridViewGenerarReserva.Rows.Add("101", "4 Noches Hotel Hilton Córdoba Centro", "$ 60.000");
-            this.dataGridViewGenerarConfirmacion.Rows.Add("102", "1 Noche Hotel Kau Kaleshen", "Pagado", "$ 15.000");*/
             model = new GenerarReservasModel();
 
-            if (ModuloPresupuestos.PresupuestoActivo != null)
+            if (model.obtenerPrespuestoActivo() != null)
             {
-                lblActivo.Text = "Presupuesto Activo: " + ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString();
+                lblActivo.Text = "Presupuesto Activo: " + model.obtenerPrespuestoActivo().CodigoPresupuesto.ToString();
             }
             else
             {
