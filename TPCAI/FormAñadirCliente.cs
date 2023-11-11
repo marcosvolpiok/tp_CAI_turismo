@@ -18,14 +18,7 @@ namespace TPCAI
         public FormAñadirCliente()
         {
             InitializeComponent();
-            //this.model = model;
         }
-
-        private void FormAñadirCliente_Load(object sender, EventArgs e)
-        {
-            model = new AñadirClienteModel();            
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Recopilo los datos del formulario
@@ -66,6 +59,13 @@ namespace TPCAI
             this.Hide();
             FormListadoPresupuestos formPresup = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
             formPresup.Show();
+        }
+
+        private void FormAñadirCliente_Load_1(object sender, EventArgs e)
+        {
+            model = new AñadirClienteModel();
+
+            lblPresupuestoActivo.Text = "Presupuesto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
         }
     }
 }

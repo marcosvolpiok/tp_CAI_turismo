@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TPCAI.Entidades;
 using TPCAI.Modulos;
 
 namespace TPCAI
@@ -21,6 +22,11 @@ namespace TPCAI
 
             Clientes.Add(cliente);
             ModuloPresupuestos.AgregarClientes(Clientes);
+        }
+
+        public PresupuestosEnt ObtenerPresupuestoActivo()
+        {
+            return ModuloPresupuestos.PresupuestoActivo;
         }
     }
 }

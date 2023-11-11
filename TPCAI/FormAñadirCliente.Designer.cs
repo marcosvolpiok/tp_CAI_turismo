@@ -38,7 +38,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblPresupuestoActivo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -125,22 +125,22 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label10
+            // lblPresupuestoActivo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(78, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(214, 20);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "Presupuesto Activo: 4545";
+            this.lblPresupuestoActivo.AutoSize = true;
+            this.lblPresupuestoActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresupuestoActivo.Location = new System.Drawing.Point(78, 26);
+            this.lblPresupuestoActivo.Name = "lblPresupuestoActivo";
+            this.lblPresupuestoActivo.Size = new System.Drawing.Size(177, 20);
+            this.lblPresupuestoActivo.TabIndex = 58;
+            this.lblPresupuestoActivo.Text = "lblPresupuestoActivo";
             // 
             // FormAñadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 276);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblPresupuestoActivo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dateTimePicker1);
@@ -153,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormAñadirCliente";
             this.Text = "Añadir Cliente";
+            this.Load += new System.EventHandler(this.FormAñadirCliente_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +171,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPresupuestoActivo;
     }
 }
