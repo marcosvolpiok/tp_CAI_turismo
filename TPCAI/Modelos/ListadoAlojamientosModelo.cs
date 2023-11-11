@@ -23,7 +23,6 @@ namespace TPCAI
         public string IdDisponibilidadsSeleccionada { get; set; } // Nueva propiedad
 
         public List<Alojamiento> AlojamientosFiltrados { get; private set; }
-        private List<Alojamiento> alojamientosPresupuesto = new List<Alojamiento>();
 
         public CiudadesEnt obtenerCiudades()
         {
