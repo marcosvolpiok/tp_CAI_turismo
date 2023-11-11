@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modelos;
-using TPCAI.Modulos;
 
 namespace TPCAI
 {
@@ -38,7 +37,7 @@ namespace TPCAI
 
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
                                           // 
-            lblPresupuestoActivo.Text = $"Presupuesto Activo: {ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString()}";
+            lblPresupuestoActivo.Text = $"Presupuesto Activo: {model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString()}";
 
         }
 

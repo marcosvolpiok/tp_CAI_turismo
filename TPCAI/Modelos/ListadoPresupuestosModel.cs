@@ -106,5 +106,10 @@ namespace TPCAI.Modelos
 
         internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre;
         internal long DniClilente() => ModuloPresupuestos.PresupuestoActivo.Clientes.DNI;
+
+        public PresupuestosEnt ObtenerPresupuestoActivo()
+        {
+            return ModuloPresupuestos.PresupuestoActivo;
+        }
     }
 }
