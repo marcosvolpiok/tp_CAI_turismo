@@ -104,7 +104,8 @@ namespace TPCAI.Modelos
             return ciudadVacia;
         }
 
-        internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre;
+        internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre + " " + ModuloPresupuestos.PresupuestoActivo.Clientes.Apellido;
+
         internal long DniClilente() => ModuloPresupuestos.PresupuestoActivo.Clientes.DNI;
 
         public PresupuestosEnt ObtenerPresupuestoActivo()

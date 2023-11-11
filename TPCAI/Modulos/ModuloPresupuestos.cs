@@ -41,29 +41,9 @@ namespace TPCAI.Modulos
         }
 
         //CLIENTES
-        public static void AgregarClientes(List<Cliente> clientes)
+        public static void AgregarClientes(ClienteEnt cliente)
         {
-            List<ClienteEnt> clientesEnt = new List<ClienteEnt>();
-
-            foreach (Cliente cliente in clientes)
-            {
-                ClienteEnt clienteEnt = new ClienteEnt
-                {
-                    ID = GenerarID(),
-                    Nombre = cliente.Nombre,
-                    Apellido = cliente.Apellido,
-                    DNI = Convert.ToInt64(cliente.DNI),
-                    FechaNacimiento = cliente.FechaNacimiento.Date
-                };
-
-                clientesEnt.Add(clienteEnt);
-            }
-
-            // Agrega los clientes a la lista interna de AlmacenClientes
-            AlmacenClientes.clientes.AddRange(clientesEnt);
-
-            // Llama al método Grabar() de AlmacenClientes para guardar los datos en el archivo JSON.
-            AlmacenClientes.Grabar();
+            PresupuestoActivo.Clientes = cliente;
         }
 
         private static int GenerarID()

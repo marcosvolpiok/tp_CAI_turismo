@@ -35,11 +35,11 @@ namespace TPCAI
             model.FechaNacimiento = dateTimePicker1.Value;*/
 
             // Creo un objeto Cliente con los datos
-            Cliente cliente = new Cliente
+            ClienteEnt cliente = new ClienteEnt
             {
                 Nombre = nombre,
                 Apellido = apellido,
-                DNI = dni,
+                DNI = long.Parse(dni),
                 FechaNacimiento = fechaNacimiento
             };
 
