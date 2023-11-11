@@ -27,8 +27,15 @@ namespace TPCAI
         {
             model = new AñadirPasajeroModel();
 
-            lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
-
+            if(model.ObtenerPresupuestoActivo() == null)
+            {
+                MessageBox.Show("Seleccione un presupuesto primero");
+                this.Close();
+            }
+            else
+            {
+                lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
