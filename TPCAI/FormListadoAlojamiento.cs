@@ -76,6 +76,7 @@ namespace TPCAI
                             disponibilidad.Tarifa,
                             alojamiento.Calificacion,
                             disponibilidad.Nombre,
+                            habitacion.FechaHabitacionHotel.ToString("dd-MM-yyyy"),
                             habitacion.IDHabitacion);
                     }
                 }
