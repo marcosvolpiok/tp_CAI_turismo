@@ -280,7 +280,7 @@
             // 
             // ColumnFecha
             // 
-            this.ColumnFecha.HeaderText = "Fecha";
+            this.ColumnFecha.HeaderText = "Noche del";
             this.ColumnFecha.Name = "ColumnFecha";
             // 
             // IDHabitacion
