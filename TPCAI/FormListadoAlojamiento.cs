@@ -27,7 +27,7 @@ namespace TPCAI
         {
             FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
             listadoPresupuestos.ShowDialog();
-            this.buscarAlojamientos();
+            this.mostrarAlojamientosEnGrilla();
 
         }
 
@@ -56,10 +56,10 @@ namespace TPCAI
             //Busca alojamientos
             model.BuscarAlojaimentos();
 
-            this.buscarAlojamientos();
+            this.mostrarAlojamientosEnGrilla();
         }
 
-        private void buscarAlojamientos()
+        private void mostrarAlojamientosEnGrilla()
         {
             this.dataGridViewListadoAlojamiento.Rows.Clear();
 
@@ -80,6 +80,11 @@ namespace TPCAI
                     }
                 }
             }
+
+            if (this.dataGridViewListadoAlojamiento.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron alojamientos con los parámetros solicitados");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -94,7 +99,6 @@ namespace TPCAI
                 DataGridViewRow selectedRow = dataGridViewListadoAlojamiento.SelectedRows[0];
                 string IDHabitacion = selectedRow.Cells["IDHabitacion"].Value.ToString();
 
-                //model.IdHabitacionSeleccionada = IDHabitacion;
                 model.AgregarAlojamientoAPresupuesto(IDHabitacion);
 
                 MessageBox.Show("Se ha añadido correctamente el producto al presupuesto.");
@@ -119,7 +123,8 @@ namespace TPCAI
 
 
             if (resultadoValidacion == true) {
-                model.destino = comboDestino.Text;
+                CiudadesDetailSubClass ciudadSeleccionada = comboDestino.SelectedItem as CiudadesDetailSubClass;
+                model.destino = ciudadSeleccionada.CodigoISO;
                 model.fechaIngreso = dateTimeIngreso.Text;
                 model.fechaEgreso = dateTimeEgreso.Text;
                 model.cantidadAdultos = textCantidadAdultos.Text;
@@ -127,20 +132,8 @@ namespace TPCAI
                 model.cantidadInfantes = textCantidadInfantes.Text;
                 model.calificacion = comboCalificacion.Text;
 
-                model.BuscarAlojamientosFiltrados(); //<-- OK
-
-                this.dataGridViewListadoAlojamiento.Rows.Clear();
-                foreach (Alojamiento alojamiento in model.AlojamientosFiltrados) {
-                    foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
-                    {
-                        this.dataGridViewListadoAlojamiento.Rows.Add(model.obtenerCiudadPorCodigo(alojamiento.CodigoCiudad).Nombre, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre, disponibilidad.IDDisponibilidad);
-                    }
-                }
-
-                if (this.dataGridViewListadoAlojamiento.Rows.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron alojamientos con los parámetros solicitados");
-                }
+                model.BuscarAlojamientosFiltrados();
+                this.mostrarAlojamientosEnGrilla();
             }
         }
     }
