@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
-using TPCAI.Modulos;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TPCAI
@@ -48,9 +47,11 @@ namespace TPCAI
             List<string> calificaciones = new List<string> { "1", "2", "3", "4", "5" };
             comboCalificacion.Items.AddRange(calificaciones.ToArray());
 
-            if (ModuloPresupuestos.PresupuestoActivo != null)
+            PresupuestosEnt presupuestoActivo = model.ObtenerPresupuestoActivo();
+
+            if (presupuestoActivo != null)
             {
-                lblPresupuestoActivo.Text = "Presupuesto Activo: " + ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString();
+                lblPresupuestoActivo.Text = "Presupuesto Activo: " + presupuestoActivo.CodigoPresupuesto.ToString();
             }
 
             //Busca alojamientos

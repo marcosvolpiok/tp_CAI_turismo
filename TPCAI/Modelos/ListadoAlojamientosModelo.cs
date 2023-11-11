@@ -70,5 +70,10 @@ namespace TPCAI
                 MessageBox.Show("El ID de habitación no es un número");
             }
         }
+
+        public PresupuestosEnt ObtenerPresupuestoActivo()
+        {
+            return ModuloPresupuestos.PresupuestoActivo;
+        }
     }
 }
