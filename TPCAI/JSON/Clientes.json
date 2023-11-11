@@ -1,1 +1,30 @@
-[{"ID":0,"Nombre":"juan","Apellido":"perez","DNI":123456789,"FechaNacimiento":"2023-11-01T01:44:10"},{"ID":0,"Nombre":"nicolas","Apellido":"pare","DNI":987654321,"FechaNacimiento":"2023-10-12T01:46:49"},{"ID":0,"Nombre":"sfdsf","Apellido":"fdsfds","DNI":1111111,"FechaNacimiento":"2023-11-11T00:00:00-03:00"}]
+[
+  {
+    "ID": 100,
+    "Nombre": "Juan",
+    "Apellido": "Perez",
+    "DNI": 123456789,
+    "FechaNacimiento": "2000-01-01"
+  },
+  {
+    "ID": 101,
+    "Nombre": "Agustina",
+    "Apellido": "Lopez",
+    "DNI": 987654321,
+    "FechaNacimiento": "2001-01-01"
+  },
+  {
+    "ID": 102,
+    "Nombre": "Juan Carlos",
+    "Apellido": "Martinez",
+    "DNI": 456789321,
+    "FechaNacimiento": "1998-01-01"
+  },
+  {
+    "ID": 103,
+    "Nombre": "Sofia",
+    "Apellido": "Mendez",
+    "DNI": 456789321,
+    "FechaNacimiento": "1995-11-01"
+  }
+]

@@ -56,7 +56,7 @@ namespace TPCAI
         private void buscarPresupuestos()
         {
             dataGridViewPresupuestos.Rows.Clear();
-            foreach (PresupuestosEnt presupuesto in model.obtenerPresupuestos())
+            foreach (var presupuesto in model.obtenerPresupuestos())
             {
                 this.dataGridViewPresupuestos.Rows.Add(presupuesto.CodigoPresupuesto, null, null);
             }
@@ -104,7 +104,7 @@ namespace TPCAI
 
         private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
         {
-            PresupuestosEnt nuevoCodPresupuesto = model.NuevoPresupuesto();
+            var nuevoCodPresupuesto = model.NuevoPresupuesto();
 
             if (nuevoCodPresupuesto != null)
             {

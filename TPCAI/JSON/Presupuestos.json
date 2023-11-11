@@ -2,18 +2,41 @@
   {
     "CodigoPresupuesto": 1,
     "IdTarifaVuelo": [
-      "TV1",
-      "TV2",
-      "TV13",
-      "TV14"
+      "TV1"
     ],
-    "IDHabitacion": [
-      1,
-      2,
-      3
-    ],
-    "IdCLiente": 1,
+    "IDHabitacion": [],
+    "IdCliente": 100,
     "FechaPresupuesto": "2023-11-01 00:00:00",
-    "PrecioTotal": 55000
+    "PrecioTotal": 550
+  },
+  {
+    "CodigoPresupuesto": 2,
+    "IdTarifaVuelo": [
+      "TV4"
+    ],
+    "IDHabitacion": [],
+    "IdCliente": 101,
+    "FechaPresupuesto": "2023-11-05 00:00:00",
+    "PrecioTotal": 350
+  },
+  {
+    "CodigoPresupuesto": 3,
+    "IdTarifaVuelo": [
+      "TV4"
+    ],
+    "IDHabitacion": [],
+    "IdCliente": 102,
+    "FechaPresupuesto": "2023-11-10 00:00:00",
+    "PrecioTotal": 350
+  },
+  {
+    "CodigoPresupuesto": 4,
+    "IdTarifaVuelo": [
+      "TV7"
+    ],
+    "IDHabitacion": [],
+    "IdCliente": 103,
+    "FechaPresupuesto": "2023-11-11 00:00:00",
+    "PrecioTotal": 450
   }
 ]
