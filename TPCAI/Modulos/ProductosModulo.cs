@@ -43,129 +43,151 @@ namespace TPCAI
             ListadoAlojamientosModelo alojamientosModel
             )
         {
+
             // Creo una lista para almacenar los alojamientos filtrados
             List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
 
-            // Obtengo los vuelos desde el Almacén de Alojamientos.
-            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
 
-            bool flag1PuntoParaFiltrado;
-            bool flag2PuntoParaFiltrado;
-            bool flagSalirBucleDeDisponibilidad;
-            bool flag3PuntoParaFiltradoRangoFechas;
-            DateTime dateTimeFechaIngreso = DateTime.Parse(alojamientosModel.fechaIngreso);
-            DateTime dateTimeFechaEgreso = DateTime.Parse(alojamientosModel.fechaEgreso);
+            bool resultadoValidacion = Validacion.validarFiltrosBusquedaAlojamiento(
+                alojamientosModel.destino,
+                alojamientosModel.fechaIngreso,
+                alojamientosModel.fechaEgreso,
+                alojamientosModel.cantidadAdultos,
+                alojamientosModel.cantidadMenores,
+                alojamientosModel.cantidadInfantes,
+                alojamientosModel.calificacion
+                );
 
-            int intCantidadAdultos = int.Parse(alojamientosModel.cantidadAdultos);
 
-            int intCantidadMenores;
-            if (alojamientosModel.cantidadMenores != "")
+
+            if (resultadoValidacion == true)
             {
-                intCantidadMenores = int.Parse(alojamientosModel.cantidadMenores);
-            }
-            else {
-                intCantidadMenores = 0;
-            }
+                bool flag1PuntoParaFiltrado;
+                bool flag2PuntoParaFiltrado;
+                bool flagSalirBucleDeDisponibilidad;
+                bool flag3PuntoParaFiltradoRangoFechas;
+                DateTime dateTimeFechaIngreso = DateTime.Parse(alojamientosModel.fechaIngreso);
+                DateTime dateTimeFechaEgreso = DateTime.Parse(alojamientosModel.fechaEgreso);
 
-            int intCantidadInfantes;
-            if (alojamientosModel.cantidadInfantes != "")
-            {
-                intCantidadInfantes = int.Parse(alojamientosModel.cantidadInfantes);
-            }
-            else
-            {
-                intCantidadInfantes = 0;
-            }
+                int intCantidadAdultos = int.Parse(alojamientosModel.cantidadAdultos);
 
-            int intCalificacion;
-            if (alojamientosModel.calificacion != "") {
-                intCalificacion = int.Parse(alojamientosModel.calificacion);
-            }
-            else
-            {
-                intCalificacion = 0;
-            }
-
-            foreach (var alojamiento in AlojamientoAlmacen.Alojamientos)
-            {
-                flag1PuntoParaFiltrado = false;
-                flag2PuntoParaFiltrado = false;
-                flagSalirBucleDeDisponibilidad = false;
-                flag3PuntoParaFiltradoRangoFechas = false;
-
-                if (
-                    alojamiento.CodigoCiudad == alojamientosModel.destino &&
-                    (alojamientosModel.calificacion == "" || (alojamientosModel.calificacion != "" && alojamiento.Calificacion == intCalificacion))
-                    )
+                int intCantidadMenores;
+                if (alojamientosModel.cantidadMenores != "")
                 {
-                    flag1PuntoParaFiltrado = true;
+                    intCantidadMenores = int.Parse(alojamientosModel.cantidadMenores);
+                }
+                else
+                {
+                    intCantidadMenores = 0;
                 }
 
-                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                int intCantidadInfantes;
+                if (alojamientosModel.cantidadInfantes != "")
                 {
-                    if (flagSalirBucleDeDisponibilidad == true)
-                    {
-                        break;
-                    }
+                    intCantidadInfantes = int.Parse(alojamientosModel.cantidadInfantes);
+                }
+                else
+                {
+                    intCantidadInfantes = 0;
+                }
 
-                    if (flag1PuntoParaFiltrado &&
-                        disponibilidad.Adultos >= intCantidadAdultos &&
-                        (alojamientosModel.cantidadMenores == "" || (alojamientosModel.cantidadMenores != "" && disponibilidad.Menores >= intCantidadMenores)) &&
-                        (alojamientosModel.cantidadInfantes == "" || (alojamientosModel.cantidadInfantes != "" && disponibilidad.Infantes >= intCantidadInfantes))
+                int intCalificacion;
+                if (alojamientosModel.calificacion != "")
+                {
+                    intCalificacion = int.Parse(alojamientosModel.calificacion);
+                }
+                else
+                {
+                    intCalificacion = 0;
+                }
+
+                foreach (var alojamiento in AlojamientoAlmacen.Alojamientos)
+                {
+                    flag1PuntoParaFiltrado = false;
+                    flag2PuntoParaFiltrado = false;
+                    flagSalirBucleDeDisponibilidad = false;
+                    flag3PuntoParaFiltradoRangoFechas = false;
+
+                    if (
+                        alojamiento.CodigoCiudad == alojamientosModel.destino &&
+                        (alojamientosModel.calificacion == "" || (alojamientosModel.calificacion != "" && alojamiento.Calificacion == intCalificacion))
                         )
                     {
-                        flag2PuntoParaFiltrado = true;
+                        flag1PuntoParaFiltrado = true;
                     }
 
-                    for (DateTime date = dateTimeFechaIngreso; date <= dateTimeFechaEgreso; date = date.AddDays(1))
+                    foreach (var disponibilidad in alojamiento.Disponibilidad)
                     {
                         if (flagSalirBucleDeDisponibilidad == true)
                         {
                             break;
                         }
 
-                        flag3PuntoParaFiltradoRangoFechas = false;
-                        flagSalirBucleDeDisponibilidad = false;
-
-                        foreach (var habitacion in disponibilidad.Habitaciones)
+                        if (flag1PuntoParaFiltrado &&
+                            disponibilidad.Adultos >= intCantidadAdultos &&
+                            (alojamientosModel.cantidadMenores == "" || (alojamientosModel.cantidadMenores != "" && disponibilidad.Menores >= intCantidadMenores)) &&
+                            (alojamientosModel.cantidadInfantes == "" || (alojamientosModel.cantidadInfantes != "" && disponibilidad.Infantes >= intCantidadInfantes))
+                            )
                         {
-                            if (habitacion.FechaHabitacionHotel == date && 
-                                VerificarSiEstaFechaEstáDentroDelRango(habitacion.FechaHabitacionHotel, dateTimeFechaIngreso, dateTimeFechaEgreso))
+                            flag2PuntoParaFiltrado = true;
+                        }
+
+                        for (DateTime date = dateTimeFechaIngreso; date <= dateTimeFechaEgreso; date = date.AddDays(1))
+                        {
+                            if (flagSalirBucleDeDisponibilidad == true)
                             {
-                                if (habitacion.Cantidad > 0)
+                                break;
+                            }
+
+                            flag3PuntoParaFiltradoRangoFechas = false;
+                            flagSalirBucleDeDisponibilidad = false;
+
+                            foreach (var habitacion in disponibilidad.Habitaciones)
+                            {
+                                if (habitacion.FechaHabitacionHotel == date &&
+                                    VerificarSiEstaFechaEstáDentroDelRango(habitacion.FechaHabitacionHotel, dateTimeFechaIngreso, dateTimeFechaEgreso))
                                 {
-                                    flag3PuntoParaFiltradoRangoFechas = true;
-                                }
-                                else
-                                {
-                                    flag3PuntoParaFiltradoRangoFechas = false;
-                                    flagSalirBucleDeDisponibilidad = true;
-                                    break;
+                                    if (habitacion.Cantidad > 0)
+                                    {
+                                        flag3PuntoParaFiltradoRangoFechas = true;
+                                    }
+                                    else
+                                    {
+                                        flag3PuntoParaFiltradoRangoFechas = false;
+                                        flagSalirBucleDeDisponibilidad = true;
+                                        break;
+                                    }
                                 }
                             }
-                        }
 
-                        if (flag3PuntoParaFiltradoRangoFechas == false) {
-                            flag3PuntoParaFiltradoRangoFechas = false;
-                            flagSalirBucleDeDisponibilidad = true;
-                            break;
+                            if (flag3PuntoParaFiltradoRangoFechas == false)
+                            {
+                                flag3PuntoParaFiltradoRangoFechas = false;
+                                flagSalirBucleDeDisponibilidad = true;
+                                break;
+                            }
                         }
                     }
-                }
 
-                if (flag1PuntoParaFiltrado && flag2PuntoParaFiltrado && flag3PuntoParaFiltradoRangoFechas == true && flagSalirBucleDeDisponibilidad == false)
-                {
-                    alojamientosFiltrados.Add(new Alojamiento(
-                                        alojamiento.CodigoHotel,
-                                        alojamiento.Nombre,
-                                        alojamiento.CodigoCiudad,
-                                        alojamiento.Direccion,
-                                        alojamiento.Calificacion,
-                                        alojamiento.Disponibilidad
-                                    ));
+                    if (flag1PuntoParaFiltrado && flag2PuntoParaFiltrado && flag3PuntoParaFiltradoRangoFechas == true && flagSalirBucleDeDisponibilidad == false)
+                    {
+                        alojamientosFiltrados.Add(new Alojamiento(
+                                            alojamiento.CodigoHotel,
+                                            alojamiento.Nombre,
+                                            alojamiento.CodigoCiudad,
+                                            alojamiento.Direccion,
+                                            alojamiento.Calificacion,
+                                            alojamiento.Disponibilidad
+                                        ));
+                    }
                 }
+                return alojamientosFiltrados;
             }
-            return alojamientosFiltrados;
+            else
+            {
+                return null;
+            }
+
         }
 
         private static bool VerificarSiEstaFechaEstáDentroDelRango(DateTime fechaEnCuestion, DateTime rangoInit, DateTime rangoEnd)

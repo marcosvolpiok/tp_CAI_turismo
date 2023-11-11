@@ -111,28 +111,27 @@ namespace TPCAI
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            bool resultadoValidacion = Validacion.validarFiltrosBusquedaAlojamiento(
-                comboDestino.Text,
-                dateTimeIngreso.Text,
-                dateTimeEgreso.Text,
-                textCantidadAdultos.Text,
-                textCantidadMenores.Text,
-                textCantidadInfantes.Text,
-                comboCalificacion.Text
-                );
-
-
-            if (resultadoValidacion == true) {
+            if (comboDestino.SelectedItem != null)
+            {
                 CiudadesDetailSubClass ciudadSeleccionada = comboDestino.SelectedItem as CiudadesDetailSubClass;
                 model.destino = ciudadSeleccionada.CodigoISO;
-                model.fechaIngreso = dateTimeIngreso.Text;
-                model.fechaEgreso = dateTimeEgreso.Text;
-                model.cantidadAdultos = textCantidadAdultos.Text;
-                model.cantidadMenores = textCantidadMenores.Text;
-                model.cantidadInfantes = textCantidadInfantes.Text;
-                model.calificacion = comboCalificacion.Text;
+            }
+            else
+            {
+                model.destino = "";
+            }
+            
+            model.fechaIngreso = dateTimeIngreso.Text;
+            model.fechaEgreso = dateTimeEgreso.Text;
+            model.cantidadAdultos = textCantidadAdultos.Text;
+            model.cantidadMenores = textCantidadMenores.Text;
+            model.cantidadInfantes = textCantidadInfantes.Text;
+            model.calificacion = comboCalificacion.Text;
 
-                model.BuscarAlojamientosFiltrados();
+            model.BuscarAlojamientosFiltrados();
+
+            if (model.AlojamientosFiltrados != null)
+            {
                 this.mostrarAlojamientosEnGrilla();
             }
         }
