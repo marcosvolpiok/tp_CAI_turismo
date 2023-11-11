@@ -11,6 +11,10 @@ namespace TPCAI.Modelos
 {
     internal class ListadoPresupuestosModel
     {
+        public void EliminarAlojamientoDelPresupuesto (int IDHabitacion)
+        {
+            ModuloPresupuestos.EliminarAlojamientoDeActivo(IDHabitacion);
+        }
         public void EliminarVueloDelPresupuesto(string vueloId)
         {
             ModuloPresupuestos.EliminarVueloDeActivo(vueloId);

@@ -21,6 +21,24 @@ namespace TPCAI.Modulos
             //TODO: eliminar un vuelo del presupuesto activo. Hacer validaciones si es necesario.
         }
 
+        internal static void EliminarAlojamientoDeActivo(int IDHabitacion)
+        {
+            int habitacionAEliminar = -1;
+
+            foreach (int habitacion in PresupuestoActivo.IDHabitacion)
+            {
+                if(habitacion == IDHabitacion)
+                {
+                    habitacionAEliminar = habitacion;
+                    break;
+                }
+            }
+
+            if(habitacionAEliminar != -1)
+            {
+                PresupuestoActivo.IDHabitacion.Remove(habitacionAEliminar);
+            }
+        }
 
         //CLIENTES
         public static void AgregarClientes(List<Cliente> clientes)

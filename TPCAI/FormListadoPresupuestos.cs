@@ -83,6 +83,11 @@ namespace TPCAI
                     //2) de la fila conseguir un id de tarifa o elemento a borrar.
                     //3) model.EliminarAlojamientoDePresupuesto(tarifaId)
                     //4) ActualizarPresupuestoAlojamientos() (o nombre similar)
+
+                    DataGridViewRow selectedRow = dataGridViewPresupuestosAlojamientos.SelectedRows[0];
+                    int IDHabitacion = int.Parse(selectedRow.Cells["IDHabitacion"].Value.ToString());
+                    model.EliminarAlojamientoDelPresupuesto(IDHabitacion);
+                    ActualizarPresupuestoAlojamientos();
                 }
                 else
                 {
