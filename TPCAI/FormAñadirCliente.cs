@@ -22,20 +22,13 @@ namespace TPCAI
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Recopilo los datos del formulario
-            //AGREGAR VALIDACIONES
-            string nombre = textBox1.Text;            
-            string apellido = textBox2.Text;
-            string dni = textBox3.Text;
-            DateTime fechaNacimiento = dateTimePicker1.Value;
-
-            /*
-            model.Nombre = textBox1.Text;
-            model.Apellido = textBox2.Text;
-            model.DNI = textBox3.Text;
-            model.FechaNacimiento = dateTimePicker1.Value;*/
+            string nombre = txtNombre.Text;            
+            string apellido = txtApellido.Text;
+            string dni = txtDNI.Text;
+            DateTime fechaNacimiento = dateTimeFechaNacimiento.Value;
 
             // Creo un objeto Cliente con los datos
-            ClienteEnt cliente = new ClienteEnt
+            Cliente cliente = new Cliente
             {
                 Nombre = nombre,
                 Apellido = apellido,

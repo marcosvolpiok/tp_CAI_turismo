@@ -10,7 +10,7 @@ namespace TPCAI
 {
     internal class AñadirClienteModel
     {
-        internal static void AgregarCliente(ClienteEnt cliente)
+        internal static void AgregarCliente(Cliente cliente)
         {
             // Agregar lógica de validación para el cliente si es necesario
 

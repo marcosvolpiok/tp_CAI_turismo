@@ -41,9 +41,14 @@ namespace TPCAI.Modulos
         }
 
         //CLIENTES
-        public static void AgregarClientes(ClienteEnt cliente)
+        public static void AgregarClientes(Cliente cliente)
         {
-            PresupuestoActivo.Clientes = cliente;
+            ClienteEnt clienteNuevo = new ClienteEnt();
+            clienteNuevo.Nombre = cliente.Nombre;
+            clienteNuevo.Apellido = cliente.Apellido;
+            clienteNuevo.DNI = cliente.DNI;
+            cliente.FechaNacimiento = cliente.FechaNacimiento;
+            PresupuestoActivo.Clientes = clienteNuevo;
         }
 
         private static int GenerarID()
