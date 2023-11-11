@@ -8,7 +8,7 @@ namespace TPCAI
 {
     public class HabitacionesHotelSubClass
     {
-        public long IDHabitacion { get; set; }
+        public int IDHabitacion { get; set; }
         public DateTime FechaHabitacionHotel { get; set; }
         public int Cantidad { get; set; }
 

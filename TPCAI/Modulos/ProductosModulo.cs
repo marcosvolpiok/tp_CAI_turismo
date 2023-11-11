@@ -68,6 +68,7 @@ namespace TPCAI
                 bool flag3PuntoParaFiltradoRangoFechas;
                 DateTime dateTimeFechaIngreso = DateTime.Parse(alojamientosModel.fechaIngreso);
                 DateTime dateTimeFechaEgreso = DateTime.Parse(alojamientosModel.fechaEgreso);
+                List<int> habitacionesIDAgregar=new List<int>();
 
                 int intCantidadAdultos = int.Parse(alojamientosModel.cantidadAdultos);
 
@@ -150,6 +151,7 @@ namespace TPCAI
                                     if (habitacion.Cantidad > 0)
                                     {
                                         flag3PuntoParaFiltradoRangoFechas = true;
+                                        habitacionesIDAgregar.Add(habitacion.IDHabitacion);
                                     }
                                     else
                                     {
@@ -171,14 +173,11 @@ namespace TPCAI
 
                     if (flag1PuntoParaFiltrado && flag2PuntoParaFiltrado && flag3PuntoParaFiltradoRangoFechas == true && flagSalirBucleDeDisponibilidad == false)
                     {
-                        alojamientosFiltrados.Add(new Alojamiento(
-                                            alojamiento.CodigoHotel,
-                                            alojamiento.Nombre,
-                                            alojamiento.CodigoCiudad,
-                                            alojamiento.Direccion,
-                                            alojamiento.Calificacion,
-                                            alojamiento.Disponibilidad
-                                        ));
+                        foreach(int habitacionAgregar in habitacionesIDAgregar)
+                        {
+                            alojamientosFiltrados.AddRange(ObtenerAlojamientoPorIdHabitacion(habitacionAgregar));
+                        }
+                        
                     }
                 }
                 return alojamientosFiltrados;
