@@ -10,11 +10,11 @@ namespace TPCAI
 {
     internal class AñadirClienteModel
     {
-        internal static void AgregarCliente(Cliente cliente)
+        internal static bool AgregarCliente(Cliente cliente)
         {
             // Agregar lógica de validación para el cliente si es necesario
 
-            ModuloPresupuestos.AgregarClientes(cliente);
+            return ModuloPresupuestos.AgregarClientes(cliente);
         }
 
         public PresupuestosEnt ObtenerPresupuestoActivo()

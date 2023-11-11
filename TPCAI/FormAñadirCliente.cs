@@ -32,19 +32,20 @@ namespace TPCAI
             {
                 Nombre = nombre,
                 Apellido = apellido,
-                DNI = long.Parse(dni),
+                DNI = dni,
                 FechaNacimiento = fechaNacimiento
             };
 
             // Llamo método en AñadirClienteModel para agregar el cliente
-            AñadirClienteModel.AgregarCliente(cliente);
+            if (AñadirClienteModel.AgregarCliente(cliente) == true)
+            {
+                // MENSAJE DE CONFIRMACION
+                MessageBox.Show("Cliente guardado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // MENSAJE DE CONFIRMACION
-            MessageBox.Show("Cliente guardado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.Hide();
-            FormListadoPresupuestos presupuestos = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
-            presupuestos.Show();
+                this.Close();
+                FormListadoPresupuestos presupuestos = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
+                presupuestos.ShowDialog();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

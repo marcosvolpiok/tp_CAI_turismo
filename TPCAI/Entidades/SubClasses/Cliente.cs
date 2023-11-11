@@ -10,7 +10,7 @@ namespace TPCAI
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public long DNI { get; set; }
+        public string DNI { get; set; }
         public DateTime FechaNacimiento { get; set; }
     }
 }
