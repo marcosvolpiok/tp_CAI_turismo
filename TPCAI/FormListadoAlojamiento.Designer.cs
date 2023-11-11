@@ -275,7 +275,7 @@
             // 
             // ColumnTipoHabitacion
             // 
-            this.ColumnTipoHabitacion.HeaderText = "Tipo Habitacion";
+            this.ColumnTipoHabitacion.HeaderText = "Nombre Habitacion";
             this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
             // 
             // ColumnFecha
