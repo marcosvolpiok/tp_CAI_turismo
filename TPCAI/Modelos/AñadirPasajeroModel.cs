@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,11 @@ namespace TPCAI.Modelos
         public void GuardarPasajeros(List<Pasajero> pasajeros)
         {
                 ModuloReservas.guardarPasajeroAPresupuestoActivo(pasajeros);
+        }
+
+        public ConcurrentDictionary<int, List<Pasajero>> ObtenerPasajerosPresupuestos()
+        {
+            return ModuloReservas.diccionarioPresupuestoPasajero;
         }
     }
 }

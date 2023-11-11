@@ -77,14 +77,14 @@ namespace TPCAI
         private void btnDebug_Click(object sender, EventArgs e)
         {
             ;
-            if(ModuloReservas.diccionarioPresupuestoPasajero.TryGetValue(model.ObtenerPresupuestoActivo().CodigoPresupuesto, out List<Pasajero> valorPasajero))
+            if(model.ObtenerPasajerosPresupuestos().TryGetValue(model.ObtenerPresupuestoActivo().CodigoPresupuesto, out List<Pasajero> valorPasajero))
             {
                 MessageBox.Show("Cantidad de pasajeros en el presupusto activo: " +
-                                ModuloReservas.diccionarioPresupuestoPasajero[model.ObtenerPresupuestoActivo().CodigoPresupuesto].Count().ToString());
+                                model.ObtenerPasajerosPresupuestos()[model.ObtenerPresupuestoActivo().CodigoPresupuesto].Count().ToString());
 
                 MessageBox.Show("Ahora voy a mostrar un messageBox con el nombre y apellido de cada pasajero en el presupuesto activo.");
 
-                foreach (Pasajero pasajero in ModuloReservas.diccionarioPresupuestoPasajero[model.ObtenerPresupuestoActivo().CodigoPresupuesto])
+                foreach (Pasajero pasajero in model.ObtenerPasajerosPresupuestos()[model.ObtenerPresupuestoActivo().CodigoPresupuesto])
                 {
                     MessageBox.Show("Datos de pasajero: " +
                                 " - nombre: " + pasajero.NombrePasajero +
