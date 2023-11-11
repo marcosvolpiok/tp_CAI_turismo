@@ -263,7 +263,7 @@
             // 
             // ColumnFechaIngreso
             // 
-            this.ColumnFechaIngreso.HeaderText = "Fecha Ingreso";
+            this.ColumnFechaIngreso.HeaderText = "Noche del";
             this.ColumnFechaIngreso.Name = "ColumnFechaIngreso";
             // 
             // ColumnCalificacion

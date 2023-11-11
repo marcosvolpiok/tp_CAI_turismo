@@ -136,7 +136,7 @@ namespace TPCAI
                                                                 alojamiento.CodigoCiudad,
                                                                 alojamiento.Nombre,
                                                                 disponibilidad.Tarifa,
-                                                                habitacion.FechaHabitacionHotel,
+                                                                habitacion.FechaHabitacionHotel.ToString("dd-MM-yyyy"),
                                                                 alojamiento.Calificacion,
                                                                 disponibilidad.Nombre,
                                                                 habitacion.IDHabitacion
