@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modulos;
 
@@ -84,6 +85,23 @@ namespace TPCAI.Modelos
             */
 
             return 0;
+        }
+
+        public CiudadesDetailSubClass obtenerCiudadPorCodigo(string codigoCiudad)
+        {
+            CiudadesEnt ciudades = ProductosModulo.obtenerCiudades();
+            foreach (CiudadesDetailSubClass ciudad in ciudades.Ciudades)
+            {
+                if (ciudad.CodigoISO == codigoCiudad)
+                {
+                    return ciudad;
+                }
+            }
+
+            MessageBox.Show("Código de ciudad " + codigoCiudad + " no encontrado");
+            CiudadesDetailSubClass ciudadVacia = new CiudadesDetailSubClass();
+            ciudadVacia.Nombre = "-";
+            return ciudadVacia;
         }
 
         internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre;

@@ -38,7 +38,7 @@ namespace TPCAI
 
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
                                           // 
-            lblPresupuestoActivo.Text = $"Presupuesto Activo: #{ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString()}";
+            lblPresupuestoActivo.Text = $"Presupuesto Activo: {ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto.ToString()}";
 
         }
 
@@ -138,7 +138,7 @@ namespace TPCAI
                     foreach(HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
                     {
                         dataGridViewPresupuestosAlojamientos.Rows.Add(
-                                                                alojamiento.CodigoCiudad,
+                                                                model.obtenerCiudadPorCodigo(alojamiento.CodigoCiudad).Nombre,
                                                                 alojamiento.Nombre,
                                                                 disponibilidad.Tarifa,
                                                                 habitacion.FechaHabitacionHotel.ToString("dd-MM-yyyy"),
