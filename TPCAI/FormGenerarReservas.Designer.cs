@@ -56,8 +56,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.lblActivo = new System.Windows.Forms.Label();
-            this.btnConsultarVuelos = new System.Windows.Forms.Button();
-            this.btnConsultarAlojamientos = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestos)).BeginInit();
@@ -312,33 +310,11 @@
             this.lblActivo.TabIndex = 59;
             this.lblActivo.Text = "lblActivo";
             // 
-            // btnConsultarVuelos
-            // 
-            this.btnConsultarVuelos.Location = new System.Drawing.Point(735, 639);
-            this.btnConsultarVuelos.Name = "btnConsultarVuelos";
-            this.btnConsultarVuelos.Size = new System.Drawing.Size(122, 31);
-            this.btnConsultarVuelos.TabIndex = 60;
-            this.btnConsultarVuelos.Text = "Consultar Vuelos";
-            this.btnConsultarVuelos.UseVisualStyleBackColor = true;
-            this.btnConsultarVuelos.Click += new System.EventHandler(this.btnConsultarVuelos_Click);
-            // 
-            // btnConsultarAlojamientos
-            // 
-            this.btnConsultarAlojamientos.Location = new System.Drawing.Point(607, 639);
-            this.btnConsultarAlojamientos.Name = "btnConsultarAlojamientos";
-            this.btnConsultarAlojamientos.Size = new System.Drawing.Size(122, 31);
-            this.btnConsultarAlojamientos.TabIndex = 61;
-            this.btnConsultarAlojamientos.Text = "Consultar Alojamientos";
-            this.btnConsultarAlojamientos.UseVisualStyleBackColor = true;
-            this.btnConsultarAlojamientos.Click += new System.EventHandler(this.btnConsultarAlojamientos_Click);
-            // 
             // FormGenerarReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 682);
-            this.Controls.Add(this.btnConsultarAlojamientos);
-            this.Controls.Add(this.btnConsultarVuelos);
             this.Controls.Add(this.lblActivo);
             this.Controls.Add(this.btnVolverMenu);
             this.Controls.Add(this.btnBuscar);
@@ -390,7 +366,5 @@
         private System.Windows.Forms.Button btnNuevoPresupuesto;
         private System.Windows.Forms.Button btnEstablecerActivo;
         private System.Windows.Forms.Label lblActivo;
-        private System.Windows.Forms.Button btnConsultarVuelos;
-        private System.Windows.Forms.Button btnConsultarAlojamientos;
     }
 }
