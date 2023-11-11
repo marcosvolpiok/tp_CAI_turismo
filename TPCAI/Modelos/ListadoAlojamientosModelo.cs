@@ -29,6 +29,25 @@ namespace TPCAI
         {
             return ProductosModulo.obtenerCiudades();
         }
+
+        public CiudadesDetailSubClass obtenerCiudadPorCodigo(string codigoCiudad)
+        {
+            CiudadesEnt ciudades = ProductosModulo.obtenerCiudades();
+            foreach(CiudadesDetailSubClass ciudad in ciudades.Ciudades)
+            {
+                if(ciudad.CodigoISO == codigoCiudad)
+                {
+                    return ciudad;
+                }
+            }
+
+            MessageBox.Show("Código de ciudad " + codigoCiudad + " no encontrado");
+            CiudadesDetailSubClass ciudadVacia = new CiudadesDetailSubClass();
+            ciudadVacia.Nombre = "-";
+            return ciudadVacia;
+        }
+
+
         public void BuscarAlojaimentos()
         {
             //return ProductosModulo.ObtenerAlojamientos();

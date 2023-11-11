@@ -3,7 +3,7 @@
     "IDAlojamientos": 1,
     "CodigoHotel": "KAU",
     "Nombre": "Hotel Miami",
-    "CodigoCiudad": "MIAMI",
+    "CodigoCiudad": "MIA",
     "Direccion": "Av Santa Cruz 1234",
     "Calificacion": 5,
     "Disponibilidad": [
@@ -64,7 +64,7 @@
     "IDAlojamientos": 1,
     "CodigoHotel": "KAU",
     "Nombre": "Hotel Madrid",
-    "CodigoCiudad": "MADRID",
+    "CodigoCiudad": "MAD",
     "Direccion": "Av Santa Cruz 1234",
     "Calificacion": 5,
     "Disponibilidad": [
@@ -90,7 +90,7 @@
     "IDAlojamientos": 1,
     "CodigoHotel": "KAU",
     "Nombre": "Hotel Buenos Aires",
-    "CodigoCiudad": "BUENOS AIRES",
+    "CodigoCiudad": "EZE",
     "Direccion": "Av Santa Cruz 1234",
     "Calificacion": 3,
     "Disponibilidad": [

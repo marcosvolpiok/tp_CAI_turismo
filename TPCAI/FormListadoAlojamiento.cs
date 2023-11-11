@@ -71,7 +71,7 @@ namespace TPCAI
                     foreach (HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
                     {
                         this.dataGridViewListadoAlojamiento.Rows.Add(
-                            alojamiento.CodigoCiudad,
+                            model.obtenerCiudadPorCodigo(alojamiento.CodigoCiudad).Nombre,
                             alojamiento.Nombre,
                             disponibilidad.Tarifa,
                             alojamiento.Calificacion,
@@ -133,7 +133,7 @@ namespace TPCAI
                 foreach (Alojamiento alojamiento in model.AlojamientosFiltrados) {
                     foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                     {
-                        this.dataGridViewListadoAlojamiento.Rows.Add(alojamiento.CodigoCiudad, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre, disponibilidad.IDDisponibilidad);
+                        this.dataGridViewListadoAlojamiento.Rows.Add(model.obtenerCiudadPorCodigo(alojamiento.CodigoCiudad).Nombre, alojamiento.Nombre, disponibilidad.Tarifa, alojamiento.Calificacion, disponibilidad.Nombre, disponibilidad.IDDisponibilidad);
                     }
                 }
 
