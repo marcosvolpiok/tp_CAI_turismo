@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Modelos;
 
 namespace TPCAI
 {
     public partial class FormAñadirPasajero : Form
     {
+        AñadirPasajeroModel model;
+
         public FormAñadirPasajero()
         {
             InitializeComponent();
@@ -24,6 +27,10 @@ namespace TPCAI
 
         private void FormAñadirPasajero_Load(object sender, EventArgs e)
         {
+            model = new AñadirPasajeroModel();
+
+            lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
+
             this.dataGridListadoPasajeros.Columns.Add("tipo", "Tipo");
             this.dataGridListadoPasajeros.Columns.Add("nombre", "Nombre");
             this.dataGridListadoPasajeros.Columns.Add("apellido", "Apellido");

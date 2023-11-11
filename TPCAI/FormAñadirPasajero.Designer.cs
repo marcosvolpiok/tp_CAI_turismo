@@ -30,7 +30,7 @@
         {
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblPresupuestoActivo = new System.Windows.Forms.Label();
             this.btnQuitarPasajero = new System.Windows.Forms.Button();
             this.dataGridListadoPasajeros = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -57,15 +57,15 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Producto";
             // 
-            // label10
+            // lblPresupuestoActivo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(68, 36);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(214, 20);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "Presupuesto Activo: 4545";
+            this.lblPresupuestoActivo.AutoSize = true;
+            this.lblPresupuestoActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresupuestoActivo.Location = new System.Drawing.Point(68, 36);
+            this.lblPresupuestoActivo.Name = "lblPresupuestoActivo";
+            this.lblPresupuestoActivo.Size = new System.Drawing.Size(214, 20);
+            this.lblPresupuestoActivo.TabIndex = 58;
+            this.lblPresupuestoActivo.Text = "Presupuesto Activo: 4545";
             // 
             // btnQuitarPasajero
             // 
@@ -113,7 +113,7 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataGridListadoPasajeros);
             this.Controls.Add(this.btnQuitarPasajero);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblPresupuestoActivo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnAddPasajero);
@@ -130,7 +130,7 @@
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPresupuestoActivo;
         private System.Windows.Forms.Button btnQuitarPasajero;
         private System.Windows.Forms.DataGridView dataGridListadoPasajeros;
         private System.Windows.Forms.Button btnVolver;
