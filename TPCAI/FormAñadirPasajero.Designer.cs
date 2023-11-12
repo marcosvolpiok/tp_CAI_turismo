@@ -208,6 +208,7 @@
             this.btnDebug.TabIndex = 73;
             this.btnDebug.Text = "DEBUG: Ver pasajeros en módulo Reservas";
             this.btnDebug.UseVisualStyleBackColor = false;
+            this.btnDebug.Visible = false;
             this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
             // 
             // FormAñadirPasajero
