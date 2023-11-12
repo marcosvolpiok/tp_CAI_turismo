@@ -125,6 +125,7 @@ namespace TPCAI.Modulos
                 {
                     // Actualizar el estado de la reserva a "Confirmada"
                     reserva.EstadoReserva = "Confirmada";
+                    reserva.FechaReservaConfirmada = DateTime.Now;
                     MessageBox.Show("La reserva ha sido confirmada");
                 }
                 else
