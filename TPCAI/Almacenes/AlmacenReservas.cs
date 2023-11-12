@@ -32,19 +32,16 @@ namespace TPCAI.Almacenes
                 reservas = new List<ReservasEnt>();
             }
         }
-
-
-
         public static void Grabar() => File.WriteAllText("../../JSON/Reservas.json", JsonConvert.SerializeObject(reservas));
 
-        public static void AgregarPresupuesto(ReservasEnt presupuesto)
+        public static void AgregarReserva(ReservasEnt reserva)
         {
-            reservas.Add(presupuesto);
+            reservas.Add(reserva);
         }
 
-        public static void QuitarPresupuesto(ReservasEnt presupuesto)
+        public static void QuitarReserva(ReservasEnt reserva)
         {
-            reservas.Remove(presupuesto);
+            reservas.Remove(reserva);
         }
 
     }

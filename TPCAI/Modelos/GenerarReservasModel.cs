@@ -21,7 +21,7 @@ namespace TPCAI.Modelos
             PresupuestosEnt nuevoPresup = new PresupuestosEnt();
             nuevoPresup.CodigoPresupuesto = presupuestoId;
             ModuloPresupuestos.PresupuestoActivo = nuevoPresup;
-            
+
             return presupuestoId;
         }
 
@@ -33,6 +33,61 @@ namespace TPCAI.Modelos
         public PresupuestosEnt obtenerPrespuestoActivo()
         {
             return ModuloPresupuestos.PresupuestoActivo;
+
+        }
+
+        public PresupuestosEnt BuscarPresupuestoPorId(int presupuestoId)
+        {
+            return ModuloPresupuestos.BusquedaPresupuestoId(presupuestoId);
+        }
+
+        public void GenerarPreReserva(int codigoPresupuesto)
+        {
+            ModuloReservas.GenerarPreReserva(codigoPresupuesto);
+        }
+
+        public List<ReservasEnt> BuscarPreReservas()
+        {
+            // Obtengo reservas con EstadoReserva = "Pre reservada" para el presupuesto activo
+            var codigoPresupuestoActivo = obtenerPrespuestoActivo().CodigoPresupuesto;
+            var reservasPreReservadas = ModuloReservas.BuscarPreReservas(codigoPresupuestoActivo);
+
+            // Llamo al método BuscarPreReservas de ModuloReservas
+            return ModuloReservas.BuscarPreReservas(obtenerPrespuestoActivo().CodigoPresupuesto);
+        }
+
+        public List<ReservasEnt> BuscarReservasConfirmar()
+        {
+            // Obtengo reservas con EstadoReserva = "Pendiente de pago" para el presupuesto activo
+            var codigoPresupuestoActivo = obtenerPrespuestoActivo().CodigoPresupuesto;
+            var reservasAConfirmar = ModuloReservas.BuscarReservasAConfirmar(codigoPresupuestoActivo);
+
+            // Llamo al método BuscarPreReservas de ModuloReservas
+            return ModuloReservas.BuscarReservasAConfirmar(obtenerPrespuestoActivo().CodigoPresupuesto);
+        }
+
+
+
+        internal string ObtengoInfoProductos(PresupuestosEnt presupuestoActivo)
+        {
+            var infoProductos = ModuloPresupuestos.ObtenerInfoP(presupuestoActivo);
+            return infoProductos; ;
+        }
+
+        internal decimal ObtengoPrecioTotal(PresupuestosEnt presupuestoActivo)
+        {
+            var infoPrecioTotal = ModuloPresupuestos.ObtenerInfoPrecioTotal(presupuestoActivo);
+            return infoPrecioTotal; ;
+        }
+
+        internal void ReservarPendientePago(int codReserva)
+        {
+            ModuloReservas.GenerarReservaPendPago(codReserva);
+        }
+
+        internal void ConfirmarReserva(int codReserva)
+        {
+            ModuloReservas.GenerarReservaConfirmada(codReserva);
         }
     }
 }

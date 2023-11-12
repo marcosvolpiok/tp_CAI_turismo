@@ -3,72 +3,32 @@
     "CodigoReserva": 1000,
     "Presupuesto": 1,
     "EstadoReserva": "Pre reservada",
-    "cobro": false,
+    "Cobro": false,
     "FechaReservaConfirmada": null,
-    "Pasajero": [
-      {
-        "CodigoPasajero": 1,
-        "IdTarifaVuelos": "TV1",
-        "NombrePasajero": "Juan",
-        "ApellidoPasajero": "Perez",
-        "Dni": 123456789,
-        "FechaNacimiento": "2000-01-01",
-        "TipoPasajero": "Adulto"
-      }
-    ]
+    "Pasajeros": null
   },
   {
     "CodigoReserva": 1001,
     "Presupuesto": 2,
     "EstadoReserva": "Pendiente de pago",
-    "cobro": false,
+    "Cobro": false,
     "FechaReservaConfirmada": null,
-    "Pasajero": [
-      {
-        "CodigoPasajero": 2,
-        "IdTarifaVuelos": "TV4",
-        "NombrePasajero": "Agustina",
-        "ApellidoPasajero": "Lopez",
-        "Dni": 987654321,
-        "FechaNacimiento": "2001-01-01",
-        "TipoPasajero": "Adulto"
-      }
-    ]
+    "Pasajeros": null
   },
   {
     "CodigoReserva": 1002,
     "Presupuesto": 3,
-    "EstadoReserva": "Pendiente de pago",
-    "cobro": true,
+    "EstadoReserva": "Pagado",
+    "Cobro": true,
     "FechaReservaConfirmada": null,
-    "Pasajero": [
-      {
-        "CodigoPasajero": 3,
-        "IdTarifaVuelos": "TV4",
-        "NombrePasajero": "Juan Carlos",
-        "ApellidoPasajero": "Martinez",
-        "Dni": 456789321,
-        "FechaNacimiento": "1998-01-01",
-        "TipoPasajero": "Adulto"
-      }
-    ]
+    "Pasajeros": null
   },
   {
     "CodigoReserva": 1003,
     "Presupuesto": 4,
     "EstadoReserva": "Confirmada",
-    "cobro": true,
-    "FechaReservaConfirmada": "2023-10-01",
-    "Pasajero": [
-      {
-        "CodigoPasajero": 4,
-        "IdTarifaVuelos": "TV7",
-        "NombrePasajero": "Sofia",
-        "ApellidoPasajero": "Mendez",
-        "Dni": 456789321,
-        "FechaNacimiento": "1995-11-01",
-        "TipoPasajero": "Adulto"
-      }
-    ]
+    "Cobro": true,
+    "FechaReservaConfirmada": "2023-10-01T00:00:00",
+    "Pasajeros": null
   }
 ]

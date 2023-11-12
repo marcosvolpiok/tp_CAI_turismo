@@ -142,5 +142,48 @@ namespace TPCAI.Modulos
 
             return tmpPresup;
         }
+
+        public static PresupuestosEnt BusquedaPresupuestoId(int codigoPresupuesto)
+        {
+            List<PresupuestosEnt> Presupuestos = AlmacenPresupuestos.presupuestos;
+
+            if (Presupuestos != null)
+            {
+                return Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == codigoPresupuesto);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static string ObtenerInfoP(PresupuestosEnt presupuestoActivo)
+        {
+            var presupuesto = AlmacenPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoActivo.CodigoPresupuesto);
+
+            if (presupuesto != null)
+            {
+                string info = $"Vuelos: {string.Join(", ", presupuesto.IdTarifaVuelo)}, Alojamientos: {string.Join(", ", presupuesto.IDHabitacion)}";
+                return info;
+            }
+            else
+            {
+                return "Presupuesto no encontrado";
+            }
+        }
+        public static decimal ObtenerInfoPrecioTotal(PresupuestosEnt presupuestoActivo)
+        {
+            var presupuesto = AlmacenPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoActivo.CodigoPresupuesto);
+
+            if (presupuesto != null)
+            {
+                decimal infoPrecioTotal = presupuesto.PrecioTotal;
+                return infoPrecioTotal;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

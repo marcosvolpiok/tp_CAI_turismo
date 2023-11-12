@@ -52,24 +52,31 @@ namespace TPCAI
 
         private void buscarPresupuestos()
         {
-            dataGridViewPresupuestos.Rows.Clear();
+            /*dataGridViewPresupuestos.Rows.Clear();
             foreach (var presupuesto in model.obtenerPresupuestos())
             {
                 this.dataGridViewPresupuestos.Rows.Add(presupuesto.CodigoPresupuesto, null, null);
             }
-            this.dataGridViewPresupuestos.Refresh();
+            this.dataGridViewPresupuestos.Refresh();*/
         }
 
         private void btnPreReservar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Estado de presupuesto modificado a Reserva");
-        }
+            //MessageBox.Show("Estado de presupuesto modificado a Reserva");
+            if (dataGridViewPresupuestos.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridViewPresupuestos.SelectedRows[0];
+                int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
 
-        private void btnReservar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormAñadirPasajero formPasajero = new FormAñadirPasajero();
-            formPasajero.Show();
+                // Llamar al método GenerarPreReserva de GenerarReservasModel
+                model.GenerarPreReserva(PresupuestoActivo);
+
+                //MessageBox.Show("Presupuesto guardado y Reserva en Estado Pre Reservada creada");
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un presupuesto para pre reservar");
+            }
         }
 
         private void btnReserverFromGenerarPreReserva_Click(object sender, EventArgs e)
@@ -105,6 +112,7 @@ namespace TPCAI
 
             if (nuevoCodPresupuesto != null)
             {
+                //AGRGAR DATOS RESTANTES DEL GRID VIEW
                 this.dataGridViewPresupuestos.Rows.Add(nuevoCodPresupuesto.CodigoPresupuesto, null, null);
             }
             else
@@ -123,25 +131,136 @@ namespace TPCAI
                 model.EstablecerPresupuestoActivo(PresupuestoActivo);
                 MessageBox.Show($"Presupuesto número {PresupuestoActivo} establecido como activo");
 
+                // Buscar pre reservas y actualizar el DataGridViewGenerarReserva
+                BuscarPreReservas();
+                // Buscar reservas a confirmar y actualizar el dataGridViewGenerarConfirmacion
+                BuscarReservasAConfirmar();
+
+
                 lblActivo.Text = $"Presupuesto Activo: {PresupuestoActivo}";
             }
             else
             {
                 MessageBox.Show("Por favor seleccione un presupuesto para establecer como activo");
             }
-            
-        }        
+
+        }
+
+        private void BuscarPreReservas()
+        {
+            // Llamo al método BuscarPreReservas de GenerarReservasModel
+            var preReservas = model.BuscarPreReservas();
+
+            // Limpio el DataGridViewGenerarReserva antes de mostrar nuevos datos
+            dataGridViewGenerarReserva.Rows.Clear();
+
+            var presupuestoActivo = model.obtenerPrespuestoActivo();
+
+            // Llamada al método ObtengoInfoProductos en GenerarReservasModel
+            string infoProductos = model.ObtengoInfoProductos(presupuestoActivo);
+
+            // Llamada al método ObtengoPrecioTotal en GenerarReservasModel
+            decimal precioTotal = model.ObtengoPrecioTotal(presupuestoActivo);
+
+            // Llenar el dataGridViewGenerarReserva con la información obtenida
+            foreach (var preReserva in preReservas)
+            {
+                dataGridViewGenerarReserva.Rows.Add(preReserva.CodigoReserva, infoProductos, precioTotal);
+            }
+
+        }
+
+        private void BuscarReservasAConfirmar()
+        {
+            // Llamo al método BuscarReservasConfirmar de GenerarReservasModel
+            var ReservasConfirmar = model.BuscarReservasConfirmar();
+
+            // Limpio el dataGridViewGenerarConfirmacion antes de mostrar nuevos datos
+            dataGridViewGenerarConfirmacion.Rows.Clear();
+
+            var presupuestoActivo = model.obtenerPrespuestoActivo();
+
+            // Llamada al método ObtengoInfoProductos en GenerarReservasModel
+            string infoProductos = model.ObtengoInfoProductos(presupuestoActivo);
+
+            // Llamada al método ObtengoPrecioTotal en GenerarReservasModel
+            decimal precioTotal = model.ObtengoPrecioTotal(presupuestoActivo);
+
+
+            // Llenar el dataGridViewGenerarConfirmacion con la información obtenida
+            foreach (var ReservaAConfirmar in ReservasConfirmar)
+            {
+                dataGridViewGenerarConfirmacion.Rows.Add(ReservaAConfirmar.CodigoReserva, infoProductos, ReservaAConfirmar.EstadoReserva, precioTotal);
+            }
+
+        }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Reserva confirmada");
+            if (dataGridViewGenerarConfirmacion.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridViewGenerarConfirmacion.SelectedRows[0];
+                int CodReserva = int.Parse(selectedRow.Cells["dataGridViewTextBoxColumn5"].Value.ToString());
+
+                // Llamar al método ConfirmarReserva de GenerarReservasModel
+                model.ConfirmarReserva(CodReserva);
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un NroReserva para confirmala");
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Presupuesto encontrado");
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                if (int.TryParse(textBox1.Text, out int codigoPresupuesto))
+                {
+                    var presupuestoEncontrado = model.BuscarPresupuestoPorId(codigoPresupuesto);
+
+                    if (presupuestoEncontrado != null)
+                    {
+                        // Llenar el DataGridView con los datos del presupuesto encontrado
+                        dataGridViewPresupuestos.Rows.Clear();
+                        dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, null, presupuestoEncontrado.PrecioTotal);
+                        lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Presupuesto no encontrado");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un número de presupuesto válido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un número de presupuesto antes de buscar");
+            }
         }
-        
+
+        // BUSCADOR TAB GENERAR RESERVA
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewGenerarReserva.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridViewGenerarReserva.SelectedRows[0];
+                int CodReserva = int.Parse(selectedRow.Cells["dataGridViewTextBoxColumn1"].Value.ToString());
+
+                // Llamar al método ReservarPendientePago de GenerarReservasModel
+                model.ReservarPendientePago(CodReserva);
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un NroReserva para actualizar su Estado de Reserva");
+            }
+        }
+
 
         private void btnConsultarVuelos_Click(object sender, EventArgs e)
         {
