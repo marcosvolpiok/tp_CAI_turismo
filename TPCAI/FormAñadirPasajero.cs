@@ -108,27 +108,43 @@ namespace TPCAI
         }
 
         private void btnAniadir_Click(object sender, EventArgs e)
-        {
-            var item = new ListViewItem(new[] { this.textNombre.Text, this.textApellido.Text, this.textDNI.Text, this.dateTimeFechaNacimiento.Value.ToString("dd-MM-yyyy") });
-            listViewPasajeros.Items.Add(item);
+        {            
+            Producto productoSeleccionado = comboProductos.SelectedItem as Producto;
+
+            if(productoSeleccionado == null)
+            {
+                var item = new ListViewItem(new[] { this.textNombre.Text, this.textApellido.Text, this.textDNI.Text, this.dateTimeFechaNacimiento.Value.ToString("dd-MM-yyyy"), null, null });
+                listViewPasajeros.Items.Add(item);
+            }
+            else if (productoSeleccionado.idVuelo != null)
+            {
+                var item = new ListViewItem(new[] { this.textNombre.Text, this.textApellido.Text, this.textDNI.Text, this.dateTimeFechaNacimiento.Value.ToString("dd-MM-yyyy"), productoSeleccionado.idVuelo.ToString(), null });
+                listViewPasajeros.Items.Add(item);
+            }
+            else
+            {
+                var item = new ListViewItem(new[] { this.textNombre.Text, this.textApellido.Text, this.textDNI.Text, this.dateTimeFechaNacimiento.Value.ToString("dd-MM-yyyy"), null, productoSeleccionado.idhabitacion.ToString() });
+                listViewPasajeros.Items.Add(item);
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            List<Pasajero> pasajeros = new List<Pasajero>();
-            foreach (ListViewItem item in listViewPasajeros.Items)
+            if (model.validarPasajerosDeDataGridView(this.listViewPasajeros))
             {
-                Pasajero pasajero = new Pasajero();
-                pasajero.NombrePasajero = item.SubItems[0].Text;
-                pasajero.ApellidoPasajero = item.SubItems[1].Text;
-                pasajero.Dni = long.Parse(item.SubItems[2].Text);
-                pasajero.FechaNacimiento = DateTime.Parse(item.SubItems[3].Text);
-                pasajeros.Add(pasajero);
+                List<Pasajero> pasajeros = new List<Pasajero>();
+                foreach (ListViewItem item in listViewPasajeros.Items)
+                {
+                    Pasajero pasajero = new Pasajero();
+                    pasajero.NombrePasajero = item.SubItems[0].Text;
+                    pasajero.ApellidoPasajero = item.SubItems[1].Text;
+                    pasajero.Dni = long.Parse(item.SubItems[2].Text);
+                    pasajero.FechaNacimiento = DateTime.Parse(item.SubItems[3].Text);
+                    pasajeros.Add(pasajero);
+                }
 
-                MessageBox.Show("Añadiendo pasajero: " + item.SubItems[0].Text);
+                model.GuardarPasajeros(pasajeros);
             }
-
-            model.GuardarPasajeros(pasajeros);
         }
 
         private void btnDebug_Click(object sender, EventArgs e)

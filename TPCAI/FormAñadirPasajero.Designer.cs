@@ -49,6 +49,8 @@
             this.btnDebug = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboProductos = new System.Windows.Forms.ComboBox();
+            this.columnIdTarifaVuelo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnIdHabitacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblPresupuestoActivo
@@ -97,7 +99,9 @@
             this.ColumnNombre,
             this.columnApellido,
             this.columnDNI,
-            this.columnFechaNacimiento});
+            this.columnFechaNacimiento,
+            this.columnIdTarifaVuelo,
+            this.columnIdHabitacion});
             this.listViewPasajeros.HideSelection = false;
             this.listViewPasajeros.Location = new System.Drawing.Point(84, 60);
             this.listViewPasajeros.Name = "listViewPasajeros";
@@ -198,7 +202,7 @@
             // columnFechaNacimiento
             // 
             this.columnFechaNacimiento.Text = "Fecha Nacimiento";
-            this.columnFechaNacimiento.Width = 478;
+            this.columnFechaNacimiento.Width = 120;
             // 
             // btnDebug
             // 
@@ -229,6 +233,15 @@
             this.comboProductos.Name = "comboProductos";
             this.comboProductos.Size = new System.Drawing.Size(305, 21);
             this.comboProductos.TabIndex = 75;
+            // 
+            // columnIdTarifaVuelo
+            // 
+            this.columnIdTarifaVuelo.Text = "IDVuelo";
+            // 
+            // columnIdHabitacion
+            // 
+            this.columnIdHabitacion.Text = "IDHabitacion";
+            this.columnIdHabitacion.Width = 80;
             // 
             // FormAñadirPasajero
             // 
@@ -282,5 +295,7 @@
         private System.Windows.Forms.Button btnDebug;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboProductos;
+        private System.Windows.Forms.ColumnHeader columnIdTarifaVuelo;
+        private System.Windows.Forms.ColumnHeader columnIdHabitacion;
     }
 }

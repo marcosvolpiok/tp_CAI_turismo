@@ -6,12 +6,26 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using TPCAI.Entidades.SubClasses;
 
 namespace TPCAI
 {
     static internal class Validacion
     {
-        public static bool validarNuevoCliente(
+
+        public static bool validarPasajeros(
+            List<Pasajero> pasajeros
+            )
+        {
+            foreach(Pasajero pasajero in pasajeros)
+            {
+
+            }
+
+           return true;
+        }
+
+            public static bool validarNuevoCliente(
             Cliente cliente
             )
         {
