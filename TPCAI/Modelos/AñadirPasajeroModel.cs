@@ -190,6 +190,35 @@ namespace TPCAI.Modelos
                         return false;
                     }
                 }
+
+                if (item.SubItems[4].Text != "" && item.SubItems[4].Text != null)
+                { //Es Vuelo
+                    int totalAdultos = 0;
+                    double totalMenores = 0;
+
+                    foreach (ListViewItem itemAlojamiento in listViewPasajeros.Items)
+                    {
+                        if (item.SubItems[5].Text == itemAlojamiento.SubItems[5].Text)
+                        {
+                            int edad = calcularEdad(DateTime.Parse(itemAlojamiento.SubItems[3].Text));
+                            if (edad >= 18)
+                            {
+                                totalAdultos++;
+                            }
+                            else
+                            {
+                                totalMenores++;
+                            }
+                        }
+                    }
+
+                    if(totalAdultos < (totalMenores/2))
+                    {
+                        MessageBox.Show("Debe haber al menos 1 adulto por cada 2 menores");
+
+                        return false;
+                    }
+                }
             }
 
             return true;
