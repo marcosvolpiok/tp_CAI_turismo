@@ -34,7 +34,15 @@ namespace TPCAI
             }
             else
             {
-                lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
+                if ((model.ObtenerPresupuestoActivo().IDHabitacion == null || model.ObtenerPresupuestoActivo().IDHabitacion.Count() == 0) &&
+                    (model.ObtenerPresupuestoActivo().IdTarifaVuelo == null || model.ObtenerPresupuestoActivo().IdTarifaVuelo.Count() == 0) ) {
+                    MessageBox.Show("Añada Productos al presupuesto primero");
+                    this.Close();
+                }
+                else
+                {
+                    lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
+                }
             }
         }
 
