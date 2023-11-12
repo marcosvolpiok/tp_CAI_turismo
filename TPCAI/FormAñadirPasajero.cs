@@ -42,6 +42,55 @@ namespace TPCAI
                 else
                 {
                     lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
+
+                    
+                    List<Producto> productos = new List<Producto>();
+
+                    //Añade Habitaciones
+                    string nombreHabitacion;
+                    if(model.ObtenerPresupuestoActivo().IDHabitacion!=null && model.ObtenerPresupuestoActivo().IDHabitacion.Count() > 0)
+                    {
+                        foreach (int habitacion in model.ObtenerPresupuestoActivo().IDHabitacion)
+                        {
+                            nombreHabitacion = model.ObtenerHabitacionNombre(habitacion);
+                            if (nombreHabitacion == null)
+                            {
+                                MessageBox.Show("Habitación ID: " + habitacion + " No encontrada");
+                            }
+                            else
+                            {
+                                Producto producto = new Producto();
+                                producto.nombre = nombreHabitacion;
+                                producto.idhabitacion = habitacion;
+                                productos.Add(producto);
+                            }
+                        }
+                    }
+                    
+
+                    //Añade Vuelos
+                    if(model.ObtenerPresupuestoActivo().IdTarifaVuelo !=null && model.ObtenerPresupuestoActivo().IdTarifaVuelo.Count() > 0)
+                    {
+                        string nombreVuelo;
+                        foreach (string vuelo in model.ObtenerPresupuestoActivo().IdTarifaVuelo)
+                        {
+                            nombreVuelo = model.ObtenerVueloNombre(vuelo);
+                            if (nombreVuelo == null)
+                            {
+                                MessageBox.Show("Vuelo ID: " + vuelo + " No encontrada");
+                            }
+                            else
+                            {
+                                Producto producto = new Producto();
+                                producto.nombre = nombreVuelo;
+                                producto.idVuelo = vuelo;
+                                productos.Add(producto);
+                            }
+                        }
+                    }
+
+                    comboProductos.Items.AddRange(productos.ToArray());
+                    comboProductos.DisplayMember = "nombre";
                 }
             }
         }

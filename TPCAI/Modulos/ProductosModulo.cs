@@ -68,7 +68,7 @@ namespace TPCAI
                 bool flag3PuntoParaFiltradoRangoFechas;
                 DateTime dateTimeFechaIngreso = DateTime.Parse(alojamientosModel.fechaIngreso);
                 DateTime dateTimeFechaEgreso = DateTime.Parse(alojamientosModel.fechaEgreso);
-                List<int> habitacionesIDAgregar=new List<int>();
+                List<int> habitacionesIDAgregar = new List<int>();
 
                 int intCantidadAdultos = int.Parse(alojamientosModel.cantidadAdultos);
 
@@ -173,11 +173,11 @@ namespace TPCAI
 
                     if (flag1PuntoParaFiltrado && flag2PuntoParaFiltrado && flag3PuntoParaFiltradoRangoFechas == true && flagSalirBucleDeDisponibilidad == false)
                     {
-                        foreach(int habitacionAgregar in habitacionesIDAgregar)
+                        foreach (int habitacionAgregar in habitacionesIDAgregar)
                         {
                             alojamientosFiltrados.AddRange(ObtenerAlojamientoPorIdHabitacion(habitacionAgregar));
                         }
-                        
+
                     }
                 }
                 return alojamientosFiltrados;
@@ -263,7 +263,33 @@ namespace TPCAI
 
         }
 
-        internal static Vuelo ObtenerVueloPorId(string vuelosId) => throw new NotImplementedException();
+        internal static VuelosEnt ObtenerVueloPorId(string vueloId) {
+            foreach (VuelosEnt vuelo in AlmacenVuelos.vuelos) { 
+                foreach(Tarifa tarifa in vuelo.Tarifas)
+                {
+                    if (tarifa.IdTarifaVuelos == vueloId)
+                    {
+                        VuelosEnt nuevoVuelo = new VuelosEnt();
+                        nuevoVuelo.Aerolinea = vuelo.Aerolinea;
+                        nuevoVuelo.Origen = vuelo.Origen;
+
+                        Tarifa nuevaTarifa = new Tarifa();
+                        nuevaTarifa.TipoPasajero = tarifa.TipoPasajero;
+                        nuevaTarifa.Clase = tarifa.Clase;
+
+                        nuevoVuelo.Tarifas = new List<Tarifa>
+                        {
+                            nuevaTarifa
+                        };
+
+
+                        return nuevoVuelo;
+                    }
+                }
+            }
+
+            return null;
+        }
 
         internal static List<Alojamiento> ObtenerAlojamientoPorIdHabitacion (int idHabitacion)
         {
@@ -314,5 +340,55 @@ namespace TPCAI
 
             return alojamientosFiltrados;
          }
+
+        internal static Alojamiento ObtenerAlojamientoPorIdHabitacionIndividual(int idHabitacion)
+        {
+            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
+            List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
+
+
+            foreach (var alojamiento in alojamientos)
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    foreach (var habitacion in disponibilidad.Habitaciones)
+                    {
+                        if (habitacion.IDHabitacion == idHabitacion)
+                        {
+                            List<DisponibilidadSubClass> disponibilidades = new List<DisponibilidadSubClass>();
+                            DisponibilidadSubClass disponibilidadNuevo = new DisponibilidadSubClass();
+                            disponibilidadNuevo.Nombre = disponibilidad.Nombre;
+                            disponibilidadNuevo.Tarifa = disponibilidad.Tarifa;
+                            disponibilidadNuevo.Capacidad = disponibilidad.Capacidad;
+                            disponibilidadNuevo.Adultos = disponibilidad.Adultos;
+                            disponibilidadNuevo.Menores = disponibilidad.Menores;
+                            disponibilidadNuevo.Infantes = disponibilidad.Infantes;
+                            disponibilidadNuevo.IDDisponibilidad = disponibilidad.IDDisponibilidad;
+                            disponibilidadNuevo.Habitaciones = new List<HabitacionesHotelSubClass>();
+
+                            List<HabitacionesHotelSubClass> habitaciones = new List<HabitacionesHotelSubClass>();
+                            HabitacionesHotelSubClass habitacionNuevo = new HabitacionesHotelSubClass();
+                            habitacionNuevo.IDHabitacion = habitacion.IDHabitacion;
+                            habitacionNuevo.FechaHabitacionHotel = habitacion.FechaHabitacionHotel;
+                            habitacionNuevo.Cantidad = habitacion.Cantidad;
+
+                            disponibilidadNuevo.Habitaciones.Add(habitacionNuevo);
+                            disponibilidades.Add(disponibilidadNuevo);
+
+                            return new Alojamiento(
+                                        alojamiento.CodigoHotel,
+                                        alojamiento.Nombre,
+                                        alojamiento.CodigoCiudad,
+                                        alojamiento.Direccion,
+                                        alojamiento.Calificacion,
+                                        disponibilidades
+                                );
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

@@ -47,6 +47,8 @@
             this.columnDNI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnFechaNacimiento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDebug = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboProductos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblPresupuestoActivo
@@ -211,11 +213,30 @@
             this.btnDebug.Visible = false;
             this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(81, 554);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Producto";
+            // 
+            // comboProductos
+            // 
+            this.comboProductos.FormattingEnabled = true;
+            this.comboProductos.Location = new System.Drawing.Point(82, 576);
+            this.comboProductos.Name = "comboProductos";
+            this.comboProductos.Size = new System.Drawing.Size(305, 21);
+            this.comboProductos.TabIndex = 75;
+            // 
             // FormAñadirPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 606);
+            this.Controls.Add(this.comboProductos);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnDebug);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dateTimeFechaNacimiento);
@@ -259,5 +280,7 @@
         private System.Windows.Forms.ColumnHeader columnDNI;
         private System.Windows.Forms.ColumnHeader columnFechaNacimiento;
         private System.Windows.Forms.Button btnDebug;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboProductos;
     }
 }
