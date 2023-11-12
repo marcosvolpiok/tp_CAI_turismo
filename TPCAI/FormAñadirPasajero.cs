@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
+using TPCAI.Extras;
 using TPCAI.Modelos;
 using TPCAI.Modulos;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -52,6 +53,7 @@ namespace TPCAI
 
         private void cargarComboProductos()
         {
+            List<Producto> productosRepetidos = new List<Producto>();
             List<Producto> productos = new List<Producto>();
 
             //Añade Habitaciones
@@ -61,20 +63,28 @@ namespace TPCAI
                 foreach (int habitacion in model.ObtenerPresupuestoActivo().IDHabitacion)
                 {
                     nombreHabitacion = model.ObtenerHabitacionNombre(habitacion);
+                    DisponibilidadSubClass dispobibilidad = model.ObtenerDisponibilidadDeHabitacionID(habitacion);
+
                     if (nombreHabitacion == null)
                     {
                         MessageBox.Show("Habitación ID: " + habitacion + " No encontrada");
                     }
                     else
                     {
+                        //Obtiene hotel a la que pertenece la habitacion
+                        //Muestra info del hotel
+                        Alojamiento alojamiento = model.ObtenerAlojamientoDeHabitacionID(habitacion);
+
+
                         Producto producto = new Producto();
-                        producto.nombre = nombreHabitacion;
-                        producto.idhabitacion = habitacion;
-                        productos.Add(producto);
+                        producto.nombre = alojamiento.Nombre;
+                        producto.IDDisponibilidadAlojamiento = dispobibilidad.IDDisponibilidad;
+                        productosRepetidos.Add(producto);
                     }
                 }
-            }
 
+                productos = productosRepetidos.Distinct(new ProductoEqualityComparer()).ToList();
+            }
 
             //Añade Vuelos
             if (model.ObtenerPresupuestoActivo().IdTarifaVuelo != null && model.ObtenerPresupuestoActivo().IdTarifaVuelo.Count() > 0)
@@ -134,14 +144,14 @@ namespace TPCAI
             }
             else
             {
-                var item = new ListViewItem(new[] { this.textNombre.Text, this.textApellido.Text, this.textDNI.Text, this.dateTimeFechaNacimiento.Value.ToString("dd-MM-yyyy"), null, productoSeleccionado.idhabitacion.ToString() });
+                var item = new ListViewItem(new[] { this.textNombre.Text, this.textApellido.Text, this.textDNI.Text, this.dateTimeFechaNacimiento.Value.ToString("dd-MM-yyyy"), null, productoSeleccionado.IDDisponibilidadAlojamiento.ToString() });
                 listViewPasajeros.Items.Add(item);
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (model.validarPasajerosDeDataGridView(this.listViewPasajeros))
+            if (model.validarPasajerosDeDataGridView(this.listViewPasajeros, comboProductos))
             {
                 List<Pasajero> pasajeros = new List<Pasajero>();
                 foreach (ListViewItem item in listViewPasajeros.Items)
@@ -151,6 +161,17 @@ namespace TPCAI
                     pasajero.ApellidoPasajero = item.SubItems[1].Text;
                     pasajero.Dni = long.Parse(item.SubItems[2].Text);
                     pasajero.FechaNacimiento = DateTime.Parse(item.SubItems[3].Text);
+
+                    if(item.SubItems[4].Text!= null && item.SubItems[4].Text != "")
+                    {
+                        pasajero.IdTarifaVuelos = item.SubItems[4].Text;
+                    }
+
+                    if (item.SubItems[5].Text != null && item.SubItems[5].Text != "")
+                    {
+                        Alojamiento alojamiento = model.ObtenerAlojamientoDeHabitacionID(int.Parse(item.SubItems[5].Text));
+                        pasajero.IdAlojamiento = alojamiento.CodigoHotel;
+                    }
                     pasajeros.Add(pasajero);
                 }
 

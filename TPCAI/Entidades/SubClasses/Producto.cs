@@ -9,7 +9,7 @@ namespace TPCAI.Entidades.SubClasses
     internal class Producto
     {
         public string idVuelo { get; set; }
-        public int idhabitacion { get; set; }
+        public long IDDisponibilidadAlojamiento { get; set; }
         public string nombre { get; set; }
 
 

@@ -19,9 +19,29 @@ namespace TPCAI.Modelos
             return ModuloPresupuestos.PresupuestoActivo;
         }
 
-        public bool validarPasajerosDeDataGridView(ListView listViewPasajeros)
+        public Alojamiento ObtenerAlojamientoDeHabitacionID(int IDhabitacion)
+        {
+            foreach (var alojamiento in ProductosModulo.ObtenerAlojamientos())
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    foreach (var habitacion in disponibilidad.Habitaciones)
+                    {
+                        if (habitacion.IDHabitacion == IDhabitacion)
+                        {
+                            return alojamiento;
+                        }
+                    }
+                }
+             }
+
+            return null;
+        }
+
+        public bool validarPasajerosDeDataGridView(ListView listViewPasajeros, ComboBox comboProductos)
         {
             string patternSololetras = "^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ ]+$";
+            List<string> listadoIDsProductos = new List<string>();
 
             if (listViewPasajeros.Items.Count == 0)
             {
@@ -143,7 +163,7 @@ namespace TPCAI.Modelos
                 */
 
 
-                if(item.SubItems[5].Text != "" && item.SubItems[5].Text != null){ //Es Alojamiento
+                if (item.SubItems[5].Text != "" && item.SubItems[5].Text != null){ //Es Alojamiento
                     int totalAdultos = 0;
                     int totalMenores = 0;
                     int totalInfantes = 0;
@@ -163,29 +183,44 @@ namespace TPCAI.Modelos
                             {
                                 totalInfantes++;
                             }
+
+                            if (!listadoIDsProductos.Any(itemRepetido => itemRepetido == itemAlojamiento.SubItems[5].Text))
+                            {
+                                listadoIDsProductos.Add(itemAlojamiento.SubItems[5].Text);
+                            }
                         }
                     }
 
                     //Obtener producto
-                    Alojamiento habitacion = ProductosModulo.ObtenerAlojamientoPorIdHabitacionIndividual(int.Parse(item.SubItems[5].Text));
+                    //Alojamiento alojamiento = this.obtenerAlojamientoPorIDAlojamiento(item.SubItems[5].Text);
+                    DisponibilidadSubClass disponibilidad = this.ObtenerDisponibilidadPorID(int.Parse(item.SubItems[5].Text));
 
-                    if (totalAdultos >  habitacion.Disponibilidad[0].Adultos)
+                    if (totalAdultos > disponibilidad.Adultos)
                     {
                         MessageBox.Show("Cantidad de adultos excede el total permitido");
 
                         return false;
                     }
 
-                    if (totalMenores > habitacion.Disponibilidad[0].Menores)
+                    if (totalMenores > disponibilidad.Menores)
                     {
                         MessageBox.Show("Cantidad de menores excede el total permitido");
 
                         return false;
                     }
 
-                    if (totalInfantes > habitacion.Disponibilidad[0].Infantes)
+                    if (totalInfantes > disponibilidad.Infantes)
                     {
                         MessageBox.Show("Cantidad de infantes excede el total permitido");
+
+                        return false;
+                    }
+
+                    //MessageBox.Show("total ::: " + (totalAdultos + totalMenores + totalInfantes));
+
+                    if ((totalAdultos + totalMenores + totalInfantes)==0)
+                    {
+                        MessageBox.Show("Debe cargar como mínimo 1 pasajero a cada Alojamiento");
 
                         return false;
                     }
@@ -210,6 +245,11 @@ namespace TPCAI.Modelos
                                 totalMenores++;
                             }
                         }
+
+                        if (!listadoIDsProductos.Any(itemRepetido => itemRepetido == itemAlojamiento.SubItems[4].Text))
+                        {
+                            listadoIDsProductos.Add(itemAlojamiento.SubItems[4].Text);
+                        }
                     }
 
                     if(totalAdultos < (totalMenores/2))
@@ -218,10 +258,36 @@ namespace TPCAI.Modelos
 
                         return false;
                     }
+
+                    if ((totalAdultos + totalMenores) == 0)
+                    {
+                        MessageBox.Show("Debe cargar como mínimo 1 pasajero a cada Vuelo");
+
+                        return false;
+                    }
                 }
             }
 
+            if (listadoIDsProductos.Count() < comboProductos.Items.Count)
+            {
+                MessageBox.Show("Cada producto debe tener como mínimo cargado 1 pasajero");
+                return false;
+            }
+
             return true;
+        }
+
+        private Alojamiento obtenerAlojamientoPorIDAlojamiento(string IDAlojamiento)
+        {
+            foreach(Alojamiento alojamiento in ProductosModulo.ObtenerAlojamientos())
+            {
+                if(alojamiento.CodigoHotel == IDAlojamiento)
+                {
+                    return alojamiento;
+                }
+            }
+
+            return null;
         }
 
         private int calcularEdad(DateTime nacimiento)
@@ -257,6 +323,47 @@ namespace TPCAI.Modelos
 
                 return nombreHabitacion;
             }
+            return null;
+        }
+
+        
+        public DisponibilidadSubClass ObtenerDisponibilidadDeHabitacionID(int IDHabitacion)
+        {
+            List<Alojamiento> alojamientos = ProductosModulo.ObtenerAlojamientos();
+
+            foreach (var alojamiento in alojamientos)
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    foreach (var habitacion in disponibilidad.Habitaciones)
+                    {
+                        if (habitacion.IDHabitacion == IDHabitacion)
+                        {
+                            return disponibilidad;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
+        public DisponibilidadSubClass ObtenerDisponibilidadPorID(int IDDisponibilidad)
+        {
+            List<Alojamiento> alojamientos = ProductosModulo.ObtenerAlojamientos();
+
+            foreach (var alojamiento in alojamientos)
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    if (disponibilidad.IDDisponibilidad == IDDisponibilidad)
+                    {
+                        return disponibilidad;
+                    }
+                }
+            }
+
             return null;
         }
 

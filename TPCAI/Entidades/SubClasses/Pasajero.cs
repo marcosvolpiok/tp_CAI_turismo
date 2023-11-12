@@ -12,7 +12,7 @@ namespace TPCAI.Entidades.SubClasses
     {
         public int CodigoPasajero { get; set; }
         public string IdTarifaVuelos { get; set; }
-        public int IdHabitacion { get; set; }
+        public string IdAlojamiento { get; set; }
         public string NombrePasajero { get; set; }
         public string ApellidoPasajero { get; set; }
         public long Dni { get; set; }
