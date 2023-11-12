@@ -30,6 +30,11 @@ namespace TPCAI
         private void FormListadoPresupuestos_Load(object sender, EventArgs e)
         {
             model = new ListadoPresupuestosModel();
+
+            lblDNICliente.Text = "";
+            lblNombreCliente.Text = "";
+
+
             ActualizarPresupuestoVuelos(); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
             //TODO: hacer lo mismo para alojamientos.
 
@@ -156,8 +161,8 @@ namespace TPCAI
             var nombre = model.NombreCliente();
             var dni = model.DniClilente();
 
-            label2.Text = $"Cliente: {nombre}";
-            label3.Text = $"DNI: {dni}";
+            lblNombreCliente.Text = $"Cliente: {nombre}";
+            lblDNICliente.Text = $"DNI: {dni}";
         }
     }
 }

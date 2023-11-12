@@ -46,6 +46,7 @@ namespace TPCAI.Modulos
             if (Validacion.validarNuevoCliente(cliente) == true)
             {
                 ClienteEnt clienteNuevo = new ClienteEnt();
+                clienteNuevo.ID = GenerarID();
                 clienteNuevo.Nombre = cliente.Nombre;
                 clienteNuevo.Apellido = cliente.Apellido;
                 clienteNuevo.DNI = long.Parse(cliente.DNI);

@@ -32,6 +32,13 @@
             this.tabControlAlojamientosVuelos = new System.Windows.Forms.TabControl();
             this.tabAlojamientos = new System.Windows.Forms.TabPage();
             this.dataGridViewPresupuestosAlojamientos = new System.Windows.Forms.DataGridView();
+            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabVuelos = new System.Windows.Forms.TabPage();
             this.dataGridViewPresupuestosVuelos = new System.Windows.Forms.DataGridView();
             this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,15 +54,8 @@
             this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPresupuestoActivo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombreAlojamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipoHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.lblDNICliente = new System.Windows.Forms.Label();
             this.tabControlAlojamientosVuelos.SuspendLayout();
             this.tabAlojamientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestosAlojamientos)).BeginInit();
@@ -111,6 +111,41 @@
             this.dataGridViewPresupuestosAlojamientos.Name = "dataGridViewPresupuestosAlojamientos";
             this.dataGridViewPresupuestosAlojamientos.Size = new System.Drawing.Size(951, 459);
             this.dataGridViewPresupuestosAlojamientos.TabIndex = 4;
+            // 
+            // ColumnDestino
+            // 
+            this.ColumnDestino.HeaderText = "Destino";
+            this.ColumnDestino.Name = "ColumnDestino";
+            // 
+            // ColumnNombreAlojamiento
+            // 
+            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
+            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
+            // 
+            // ColumnTarifa
+            // 
+            this.ColumnTarifa.HeaderText = "Tarifa";
+            this.ColumnTarifa.Name = "ColumnTarifa";
+            // 
+            // ColumnFechaIngreso
+            // 
+            this.ColumnFechaIngreso.HeaderText = "Noche del";
+            this.ColumnFechaIngreso.Name = "ColumnFechaIngreso";
+            // 
+            // ColumnCalificacion
+            // 
+            this.ColumnCalificacion.HeaderText = "Calificacion";
+            this.ColumnCalificacion.Name = "ColumnCalificacion";
+            // 
+            // ColumnTipoHabitacion
+            // 
+            this.ColumnTipoHabitacion.HeaderText = "Nombre Habitacion";
+            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
+            // 
+            // IDHabitacion
+            // 
+            this.IDHabitacion.HeaderText = "ID Habitacion";
+            this.IDHabitacion.Name = "IDHabitacion";
             // 
             // tabVuelos
             // 
@@ -214,9 +249,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 557);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Total: $25.000";
+            this.label1.Text = "Total";
             // 
             // lblPresupuestoActivo
             // 
@@ -224,70 +259,35 @@
             this.lblPresupuestoActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPresupuestoActivo.Location = new System.Drawing.Point(29, 10);
             this.lblPresupuestoActivo.Name = "lblPresupuestoActivo";
-            this.lblPresupuestoActivo.Size = new System.Drawing.Size(214, 20);
+            this.lblPresupuestoActivo.Size = new System.Drawing.Size(177, 20);
             this.lblPresupuestoActivo.TabIndex = 59;
-            this.lblPresupuestoActivo.Text = "Presupuesto Activo: 4545";
+            this.lblPresupuestoActivo.Text = "lblPresupuestoActivo";
             // 
-            // label2
+            // lblNombreCliente
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
-            this.label2.TabIndex = 60;
-            this.label2.Text = "Cliente: José Cabrera";
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.Location = new System.Drawing.Point(289, 9);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(86, 13);
+            this.lblNombreCliente.TabIndex = 60;
+            this.lblNombreCliente.Text = "lblNombreCliente";
             // 
-            // label3
+            // lblDNICliente
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(405, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "DNI: 36.258.110";
-            // 
-            // ColumnDestino
-            // 
-            this.ColumnDestino.HeaderText = "Destino";
-            this.ColumnDestino.Name = "ColumnDestino";
-            // 
-            // ColumnNombreAlojamiento
-            // 
-            this.ColumnNombreAlojamiento.HeaderText = "Nombre Alojamiento";
-            this.ColumnNombreAlojamiento.Name = "ColumnNombreAlojamiento";
-            // 
-            // ColumnTarifa
-            // 
-            this.ColumnTarifa.HeaderText = "Tarifa";
-            this.ColumnTarifa.Name = "ColumnTarifa";
-            // 
-            // ColumnFechaIngreso
-            // 
-            this.ColumnFechaIngreso.HeaderText = "Noche del";
-            this.ColumnFechaIngreso.Name = "ColumnFechaIngreso";
-            // 
-            // ColumnCalificacion
-            // 
-            this.ColumnCalificacion.HeaderText = "Calificacion";
-            this.ColumnCalificacion.Name = "ColumnCalificacion";
-            // 
-            // ColumnTipoHabitacion
-            // 
-            this.ColumnTipoHabitacion.HeaderText = "Nombre Habitacion";
-            this.ColumnTipoHabitacion.Name = "ColumnTipoHabitacion";
-            // 
-            // IDHabitacion
-            // 
-            this.IDHabitacion.HeaderText = "ID Habitacion";
-            this.IDHabitacion.Name = "IDHabitacion";
+            this.lblDNICliente.AutoSize = true;
+            this.lblDNICliente.Location = new System.Drawing.Point(289, 22);
+            this.lblDNICliente.Name = "lblDNICliente";
+            this.lblDNICliente.Size = new System.Drawing.Size(68, 13);
+            this.lblDNICliente.TabIndex = 61;
+            this.lblDNICliente.Text = "lblDNICliente";
             // 
             // FormListadoPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 592);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblDNICliente);
+            this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblPresupuestoActivo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAñadirDatosCliente);
@@ -318,8 +318,8 @@
         private System.Windows.Forms.Button btnAñadirDatosCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPresupuestoActivo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNombreCliente;
+        private System.Windows.Forms.Label lblDNICliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFechaHoraArribo;

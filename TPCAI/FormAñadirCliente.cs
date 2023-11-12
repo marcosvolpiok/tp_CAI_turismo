@@ -44,15 +44,13 @@ namespace TPCAI
 
                 this.Close();
                 FormListadoPresupuestos presupuestos = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
-                presupuestos.ShowDialog();
             }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormListadoPresupuestos formPresup = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
-            formPresup.Show();
+            this.Close();
         }
 
         private void FormAñadirCliente_Load_1(object sender, EventArgs e)

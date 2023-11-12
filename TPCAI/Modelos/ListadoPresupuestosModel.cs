@@ -104,10 +104,25 @@ namespace TPCAI.Modelos
             return ciudadVacia;
         }
 
-        internal string NombreCliente() => ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre + " " + ModuloPresupuestos.PresupuestoActivo.Clientes.Apellido;
+        internal string NombreCliente()
+        {
+            if (ModuloPresupuestos.PresupuestoActivo.Clientes != null)
+            {
+                return ModuloPresupuestos.PresupuestoActivo.Clientes.Nombre + " " + ModuloPresupuestos.PresupuestoActivo.Clientes.Apellido;
+             }
 
-        internal long DniClilente() => ModuloPresupuestos.PresupuestoActivo.Clientes.DNI;
+            return "-";
+        }
 
+        internal string DniClilente()
+        {
+            if (ModuloPresupuestos.PresupuestoActivo.Clientes != null)
+            {
+                return ModuloPresupuestos.PresupuestoActivo.Clientes.DNI.ToString() ;
+            }
+
+            return "-";
+        }
         public PresupuestosEnt ObtenerPresupuestoActivo()
         {
             return ModuloPresupuestos.PresupuestoActivo;
