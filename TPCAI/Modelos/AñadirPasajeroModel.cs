@@ -23,6 +23,13 @@ namespace TPCAI.Modelos
         {
             string patternSololetras = "^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ ]+$";
 
+            if (listViewPasajeros.Items.Count == 0)
+            {
+                MessageBox.Show("Ingrese los pasajeros");
+
+                return false;
+            }
+
             foreach (ListViewItem item in listViewPasajeros.Items)
             {
                 //DNI: solo números
@@ -95,11 +102,28 @@ namespace TPCAI.Modelos
                     return false;
                 }
 
-                //Nombre: solo letras, espacios
-
-                //Apellido: solo letras, espacios
 
                 //Fecha de nacimiento: inferior a este momento
+                if (item.SubItems[3].Text == "" || item.SubItems[3].Text == null)
+                {
+                    MessageBox.Show("Fecha de nacimiento inválida porfavor volver a ingresar");
+
+                    return false;
+                }
+
+                if (DateTime.Parse(item.SubItems[3].Text) > DateTime.Now)
+                {
+                    MessageBox.Show("Fecha de nacimiento ingresada es posterior al día de la fecha. Por favor, ingrese nuevamente la fecha de nacimiento");
+
+                    return false;
+                }
+
+                if ((item.SubItems[4].Text == "" || item.SubItems[4].Text == null) && (item.SubItems[5].Text == "" || item.SubItems[5].Text == null))
+                {
+                    MessageBox.Show("Debe seleccionar un producto para el pasajero");
+
+                    return false;
+                }
 
                 //Fecha de nacimiento: que concuerde con el total de máximos del producto
             }

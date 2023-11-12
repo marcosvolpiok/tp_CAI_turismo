@@ -70,7 +70,7 @@ namespace TPCAI
 
             if (cliente.FechaNacimiento > DateTime.Now)
             {
-                MessageBox.Show("Fecha de nacimiento ingresada es posterior al día de la fecha. Por favor, ingrese nuevamente su fecha de nacimiento"); //OK: Validado con CU
+                MessageBox.Show("Fecha de nacimiento ingresada es posterior al día de la fecha. Por favor, ingrese nuevamente la fecha de nacimiento"); //OK: Validado con CU
 
                 return false;
             }
