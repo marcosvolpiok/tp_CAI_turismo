@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modelos;
 using TPCAI.Modulos;
@@ -27,7 +28,7 @@ namespace TPCAI
         {
             model = new AñadirPasajeroModel();
 
-            if(model.ObtenerPresupuestoActivo() == null)
+            if (model.ObtenerPresupuestoActivo() == null)
             {
                 MessageBox.Show("Seleccione un presupuesto primero");
                 this.Close();
@@ -43,56 +44,61 @@ namespace TPCAI
                 {
                     lblPresupuestoActivo.Text = "Presupusto Activo: " + model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString();
 
-                    
-                    List<Producto> productos = new List<Producto>();
-
-                    //Añade Habitaciones
-                    string nombreHabitacion;
-                    if(model.ObtenerPresupuestoActivo().IDHabitacion!=null && model.ObtenerPresupuestoActivo().IDHabitacion.Count() > 0)
-                    {
-                        foreach (int habitacion in model.ObtenerPresupuestoActivo().IDHabitacion)
-                        {
-                            nombreHabitacion = model.ObtenerHabitacionNombre(habitacion);
-                            if (nombreHabitacion == null)
-                            {
-                                MessageBox.Show("Habitación ID: " + habitacion + " No encontrada");
-                            }
-                            else
-                            {
-                                Producto producto = new Producto();
-                                producto.nombre = nombreHabitacion;
-                                producto.idhabitacion = habitacion;
-                                productos.Add(producto);
-                            }
-                        }
-                    }
-                    
-
-                    //Añade Vuelos
-                    if(model.ObtenerPresupuestoActivo().IdTarifaVuelo !=null && model.ObtenerPresupuestoActivo().IdTarifaVuelo.Count() > 0)
-                    {
-                        string nombreVuelo;
-                        foreach (string vuelo in model.ObtenerPresupuestoActivo().IdTarifaVuelo)
-                        {
-                            nombreVuelo = model.ObtenerVueloNombre(vuelo);
-                            if (nombreVuelo == null)
-                            {
-                                MessageBox.Show("Vuelo ID: " + vuelo + " No encontrada");
-                            }
-                            else
-                            {
-                                Producto producto = new Producto();
-                                producto.nombre = nombreVuelo;
-                                producto.idVuelo = vuelo;
-                                productos.Add(producto);
-                            }
-                        }
-                    }
-
-                    comboProductos.Items.AddRange(productos.ToArray());
-                    comboProductos.DisplayMember = "nombre";
+                    cargarComboProductos();
                 }
             }
+        }
+
+
+        private void cargarComboProductos()
+        {
+            List<Producto> productos = new List<Producto>();
+
+            //Añade Habitaciones
+            string nombreHabitacion;
+            if (model.ObtenerPresupuestoActivo().IDHabitacion != null && model.ObtenerPresupuestoActivo().IDHabitacion.Count() > 0)
+            {
+                foreach (int habitacion in model.ObtenerPresupuestoActivo().IDHabitacion)
+                {
+                    nombreHabitacion = model.ObtenerHabitacionNombre(habitacion);
+                    if (nombreHabitacion == null)
+                    {
+                        MessageBox.Show("Habitación ID: " + habitacion + " No encontrada");
+                    }
+                    else
+                    {
+                        Producto producto = new Producto();
+                        producto.nombre = nombreHabitacion;
+                        producto.idhabitacion = habitacion;
+                        productos.Add(producto);
+                    }
+                }
+            }
+
+
+            //Añade Vuelos
+            if (model.ObtenerPresupuestoActivo().IdTarifaVuelo != null && model.ObtenerPresupuestoActivo().IdTarifaVuelo.Count() > 0)
+            {
+                string nombreVuelo;
+                foreach (string vuelo in model.ObtenerPresupuestoActivo().IdTarifaVuelo)
+                {
+                    nombreVuelo = model.ObtenerVueloNombre(vuelo);
+                    if (nombreVuelo == null)
+                    {
+                        MessageBox.Show("Vuelo ID: " + vuelo + " No encontrada");
+                    }
+                    else
+                    {
+                        Producto producto = new Producto();
+                        producto.nombre = nombreVuelo;
+                        producto.idVuelo = vuelo;
+                        productos.Add(producto);
+                    }
+                }
+            }
+
+            comboProductos.Items.AddRange(productos.ToArray());
+            comboProductos.DisplayMember = "nombre";
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -178,6 +184,26 @@ namespace TPCAI
             {
                 MessageBox.Show("Añada pasajeros para poder debuggear");
             }
+        }
+
+        private void btnCargarVuelo_Click(object sender, EventArgs e)
+        {
+            // ***** DEBUG 
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
+            PresupuestosEnt nuevoPresupDEBUGVuelo = new PresupuestosEnt();
+            nuevoPresupDEBUGVuelo.IdTarifaVuelo = new List<string> { "TV1" };
+            ModuloPresupuestos.PresupuestoActivo = nuevoPresupDEBUGVuelo;
+
+            cargarComboProductos();
         }
     }
 }

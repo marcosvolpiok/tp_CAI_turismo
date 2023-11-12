@@ -51,6 +51,7 @@
             this.comboProductos = new System.Windows.Forms.ComboBox();
             this.columnIdTarifaVuelo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnIdHabitacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCargarVuelo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPresupuestoActivo
@@ -243,11 +244,24 @@
             this.columnIdHabitacion.Text = "IDHabitacion";
             this.columnIdHabitacion.Width = 80;
             // 
+            // btnCargarVuelo
+            // 
+            this.btnCargarVuelo.BackColor = System.Drawing.Color.Red;
+            this.btnCargarVuelo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCargarVuelo.Location = new System.Drawing.Point(719, 479);
+            this.btnCargarVuelo.Name = "btnCargarVuelo";
+            this.btnCargarVuelo.Size = new System.Drawing.Size(161, 52);
+            this.btnCargarVuelo.TabIndex = 76;
+            this.btnCargarVuelo.Text = "DEBUG: Cargar vuelo en Combo Productos";
+            this.btnCargarVuelo.UseVisualStyleBackColor = false;
+            this.btnCargarVuelo.Click += new System.EventHandler(this.btnCargarVuelo_Click);
+            // 
             // FormAñadirPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 606);
+            this.Controls.Add(this.btnCargarVuelo);
             this.Controls.Add(this.comboProductos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnDebug);
@@ -297,5 +311,6 @@
         private System.Windows.Forms.ComboBox comboProductos;
         private System.Windows.Forms.ColumnHeader columnIdTarifaVuelo;
         private System.Windows.Forms.ColumnHeader columnIdHabitacion;
+        private System.Windows.Forms.Button btnCargarVuelo;
     }
 }
