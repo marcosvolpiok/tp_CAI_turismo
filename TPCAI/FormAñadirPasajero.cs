@@ -102,9 +102,14 @@ namespace TPCAI
 
         private void btnQuitarPasajero_Click(object sender, EventArgs e)
         {
-
-
-
+            if (listViewPasajeros.SelectedItems.Count > 0)
+            {
+                listViewPasajeros.Items.Remove(listViewPasajeros.SelectedItems[0]);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un pasajero de la lista");
+            }
         }
 
         private void btnAniadir_Click(object sender, EventArgs e)

@@ -30,7 +30,7 @@ namespace TPCAI.Modelos
                 //DNI: mayor a 999.999
                 if (item.SubItems[2].Text == "" || item.SubItems[2].Text == null)
                 {
-                    MessageBox.Show("vacio - Documento ingresado inválido por favor volver a ingresar");
+                    MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
 
                     return false;
                 }
@@ -39,21 +39,21 @@ namespace TPCAI.Modelos
                 {
                     if (resultDNI < 0)
                     {
-                        MessageBox.Show("< 0 - Documento ingresado inválido por favor volver a ingresar");
+                        MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
 
                         return false;
                     }
 
                     if (resultDNI < 1000000)
                     {
-                        MessageBox.Show("< 1000000 - Documento ingresado inválido por favor volver a ingresar");
+                        MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
 
                         return false;
                     }
 
                     if (resultDNI > 100000000)
                     {
-                        MessageBox.Show(" > 100000000 - Documento ingresado inválido por favor volver a ingresar");
+                        MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
 
                         return false;
                     }
@@ -72,7 +72,7 @@ namespace TPCAI.Modelos
 
                 if (!Regex.IsMatch(item.SubItems[0].Text, patternSololetras))
                 {
-                    MessageBox.Show("Nombre - No ha ingresado correctamente los datos solicitados. Por favor, vuelva a intentarlo.");
+                    MessageBox.Show("No ha ingresado correctamente los datos solicitados. Por favor, vuelva a intentarlo.");
 
                     return false;
                 }
