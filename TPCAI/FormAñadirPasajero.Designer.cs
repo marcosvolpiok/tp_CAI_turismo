@@ -254,6 +254,7 @@
             this.btnCargarVuelo.TabIndex = 76;
             this.btnCargarVuelo.Text = "DEBUG: Cargar vuelo en Combo Productos";
             this.btnCargarVuelo.UseVisualStyleBackColor = false;
+            this.btnCargarVuelo.Visible = false;
             this.btnCargarVuelo.Click += new System.EventHandler(this.btnCargarVuelo_Click);
             // 
             // FormAñadirPasajero
