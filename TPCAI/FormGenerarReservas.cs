@@ -225,7 +225,7 @@ namespace TPCAI
                         // Llenar el DataGridView con los datos del presupuesto encontrado
                         dataGridViewPresupuestos.Rows.Clear();
                         dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, null, presupuestoEncontrado.PrecioTotal);
-                        lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
+                        //lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
                     }
                     else
                     {
