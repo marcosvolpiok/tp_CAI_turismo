@@ -55,7 +55,20 @@ namespace TPCAI
 
         public void BuscarAlojamientosFiltrados()
         {
-            AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientosFiltrados(this);
+
+            bool resultadoValidacion = Validacion.validarFiltrosBusquedaAlojamiento(
+                this.destino,
+                this.fechaIngreso,
+                this.fechaEgreso,
+                this.cantidadAdultos,
+                this.cantidadMenores,
+                this.cantidadInfantes,
+                this.calificacion
+                );
+            if (resultadoValidacion == true)
+            {
+                AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientosFiltrados(this);
+            }
         }
 
         public void AgregarAlojamientoAPresupuesto(string idHabitacion)
