@@ -149,6 +149,8 @@ namespace TPCAI
                 }
 
                 model.GuardarPasajeros(pasajeros);
+
+                MessageBox.Show("Pasajeros guardados en el presupuesto activo");
             }
         }
 

@@ -125,10 +125,88 @@ namespace TPCAI.Modelos
                     return false;
                 }
 
+                /*
                 //Fecha de nacimiento: que concuerde con el total de máximos del producto
+                //Si es Hotel
+                    //Recorre todo el listview
+                        //Si es adulto, suma 1 a totalAdultos
+                        //Si es menor, suma 1 a totalMenores
+                        //Si es infante, suma 1 a total infantes
+                    //Valida que cumpla con los máximos del producto
+
+
+                //Si es vuelo
+                    //Recorre el listview
+                        //Si es adulto, suma 1 a totalAdultos
+                        //Si es menor, suma 1 a totalMenores
+                    //Valida que haya al menos 1 adulto cada 2 menores
+                */
+
+
+                if(item.SubItems[5].Text != "" && item.SubItems[5].Text != null){ //Es Alojamiento
+                    int totalAdultos = 0;
+                    int totalMenores = 0;
+                    int totalInfantes = 0;
+
+                    foreach (ListViewItem itemAlojamiento in listViewPasajeros.Items)
+                    {
+                        if(item.SubItems[5].Text == itemAlojamiento.SubItems[5].Text) {
+                            int edad = calcularEdad(DateTime.Parse(itemAlojamiento.SubItems[3].Text));
+                            if(edad >= 18)
+                            {
+                                totalAdultos++;
+                            }else if (edad >= 2)
+                            {
+                                totalMenores++;
+                            }
+                            else
+                            {
+                                totalInfantes++;
+                            }
+                        }
+                    }
+
+                    //Obtener producto
+                    Alojamiento habitacion = ProductosModulo.ObtenerAlojamientoPorIdHabitacionIndividual(int.Parse(item.SubItems[5].Text));
+
+                    if (totalAdultos >  habitacion.Disponibilidad[0].Adultos)
+                    {
+                        MessageBox.Show("Cantidad de adultos excede el total permitido");
+
+                        return false;
+                    }
+
+                    if (totalMenores > habitacion.Disponibilidad[0].Menores)
+                    {
+                        MessageBox.Show("Cantidad de menores excede el total permitido");
+
+                        return false;
+                    }
+
+                    if (totalInfantes > habitacion.Disponibilidad[0].Infantes)
+                    {
+                        MessageBox.Show("Cantidad de infantes excede el total permitido");
+
+                        return false;
+                    }
+                }
             }
 
             return true;
+        }
+
+        private int calcularEdad(DateTime nacimiento)
+        {
+            DateTime currentDate = DateTime.Now;
+
+            int edad = currentDate.Year - nacimiento.Year;
+
+            if (nacimiento.Date > currentDate.AddYears(-edad))
+            {
+                edad--;
+            }
+
+            return edad;
         }
 
         public void GuardarPasajeros(List<Pasajero> pasajeros)
