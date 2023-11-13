@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPCAI.Entidades
 {
-    internal class VuelosEnt
+    public class VuelosEnt
     {
         public string CodigoVuelo { get; set; }
         public string Origen { get; set; }

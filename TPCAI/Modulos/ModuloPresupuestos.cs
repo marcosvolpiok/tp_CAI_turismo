@@ -8,6 +8,7 @@ using TPCAI.Entidades.SubClasses;
 using TPCAI.Entidades;
 using TPCAI.Modelos;
 using System.Security.Policy;
+using System.Runtime.CompilerServices;
 
 namespace TPCAI.Modulos
 {
@@ -18,7 +19,7 @@ namespace TPCAI.Modulos
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
-            //TODO: eliminar un vuelo del presupuesto activo. Hacer validaciones si es necesario.
+            VuelosPresupuesto.RemoveAll(v => v.IdTarifaVuelos == vueloId);
         }
 
         internal static void EliminarAlojamientoDeActivo(int IDHabitacion)
@@ -186,5 +187,14 @@ namespace TPCAI.Modulos
                 return 0;
             }
         }
+
+        public static List<Vuelo> VuelosPresupuesto { get; private set; } = new List<Vuelo>();
+
+        public static void AgregarVueloAPresupuesto(Vuelo vuelo)
+        {
+            VuelosPresupuesto.Add(vuelo);
+        }
+
+
     }
 }

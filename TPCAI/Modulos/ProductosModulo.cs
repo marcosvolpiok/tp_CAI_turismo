@@ -241,9 +241,11 @@ namespace TPCAI
 
         }
 
-        internal static VuelosEnt ObtenerVueloPorId(string vueloId) {
-            foreach (VuelosEnt vuelo in AlmacenVuelos.vuelos) { 
-                foreach(Tarifa tarifa in vuelo.Tarifas)
+        internal static VuelosEnt ObtenerVueloPorId(string vueloId)
+        {
+            foreach (VuelosEnt vuelo in AlmacenVuelos.vuelos)
+            {
+                foreach (Tarifa tarifa in vuelo.Tarifas)
                 {
                     if (tarifa.IdTarifaVuelos == vueloId)
                     {
@@ -260,6 +262,35 @@ namespace TPCAI
                             nuevaTarifa
                         };
 
+
+                        return nuevoVuelo;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        internal static Vuelo ObtenerVueloPorIdTarifa(string vueloId) 
+        {
+            foreach (VuelosEnt vuelo in AlmacenVuelos.vuelos)
+            {
+                foreach (Tarifa tarifa in vuelo.Tarifas)
+                {
+                    if (tarifa.IdTarifaVuelos == vueloId)
+                    {
+                        // Crear una instancia de la clase Vuelo a partir de VuelosEnt
+                        Vuelo nuevoVuelo = new Vuelo(
+                            vuelo.Origen,
+                            vuelo.Destino,
+                            vuelo.FechaSalida,
+                            vuelo.FechaArribo,
+                            vuelo.Aerolinea,
+                            tarifa.Precio,
+                            tarifa.Clase,
+                            tarifa.TipoPasajero,
+                            tarifa.IdTarifaVuelos
+                        );
 
                         return nuevoVuelo;
                     }
