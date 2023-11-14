@@ -20,7 +20,7 @@ namespace TPCAI.Modulos
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
-            VuelosPresupuesto.RemoveAll(v => v.IdTarifaVuelos == vueloId);
+            PresupuestoActivo.IdTarifaVuelo.RemoveAll(v => v == vueloId);
         }
 
         public static void obtenerVueloPorTarifaId(string vueloId)
