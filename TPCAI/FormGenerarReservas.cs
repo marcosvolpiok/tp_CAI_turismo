@@ -29,6 +29,23 @@ namespace TPCAI
 
         }
 
+        private void recargarTodasLasGrillasConPresupuestoActivo()
+        {
+            if (model.obtenerPrespuestoActivo() != null)
+            {
+                dataGridViewPresupuestos.Rows.Clear();
+                var presupuestoEncontrado = model.BuscarPresupuestoPorId(model.obtenerPrespuestoActivo().CodigoPresupuesto);
+                string infoProductos = model.ObtengoInfoProductos(presupuestoEncontrado);
+                dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, infoProductos, presupuestoEncontrado.PrecioTotal);
+
+                //Busca pre-reservas (tab[1])
+                BuscarPreReservas();
+
+                // Buscar reservas (tab[2]) a confirmar y actualizar el dataGridViewGenerarConfirmacion
+                BuscarReservasAConfirmar();
+            }
+        }
+
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -42,16 +59,7 @@ namespace TPCAI
             {
                 lblActivo.Text = "Presupuesto Activo: " + model.obtenerPrespuestoActivo().CodigoPresupuesto.ToString();
 
-                dataGridViewPresupuestos.Rows.Clear();
-                var presupuestoEncontrado = model.BuscarPresupuestoPorId(model.obtenerPrespuestoActivo().CodigoPresupuesto);
-                string infoProductos = model.ObtengoInfoProductos(presupuestoEncontrado);
-                dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, infoProductos, presupuestoEncontrado.PrecioTotal);
-
-                //Busca pre-reservas (tab[1])
-                BuscarPreReservas();
-
-                // Buscar reservas (tab[2]) a confirmar y actualizar el dataGridViewGenerarConfirmacion
-                BuscarReservasAConfirmar();
+                recargarTodasLasGrillasConPresupuestoActivo();
             }
             else
             {
@@ -82,7 +90,7 @@ namespace TPCAI
                 // Llamar al método GenerarPreReserva de GenerarReservasModel
                 model.GenerarPreReserva(PresupuestoActivo);
 
-                //MessageBox.Show("Presupuesto guardado y Reserva en Estado Pre Reservada creada");
+                recargarTodasLasGrillasConPresupuestoActivo();
             }
             else
             {
@@ -210,6 +218,7 @@ namespace TPCAI
                 // Llamar al método ConfirmarReserva de GenerarReservasModel
                 model.ConfirmarReserva(CodReserva);
 
+                recargarTodasLasGrillasConPresupuestoActivo();
             }
             else
             {
@@ -229,18 +238,11 @@ namespace TPCAI
 
                     if (presupuestoEncontrado != null)
                     {
-                        dataGridViewPresupuestos.Rows.Clear();
-                        string infoProductos = model.ObtengoInfoProductos(presupuestoEncontrado);
-                        dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, infoProductos, presupuestoEncontrado.PrecioTotal);
 
                         model.EstablecerPresupuestoActivo(presupuestoEncontrado.CodigoPresupuesto);
                         lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
 
-                        //Busca pre-reservas (tab[1])
-                        BuscarPreReservas();
-
-                        // Buscar reservas (tab[2]) a confirmar y actualizar el dataGridViewGenerarConfirmacion
-                        BuscarReservasAConfirmar();
+                        recargarTodasLasGrillasConPresupuestoActivo();
                     }
                     else
                     {
@@ -259,7 +261,7 @@ namespace TPCAI
         }
 
         // BUSCADOR TAB GENERAR RESERVA
-        private void button1_Click(object sender, EventArgs e)
+        private void btnReservar_Click(object sender, EventArgs e)
         {
             if (dataGridViewGenerarReserva.SelectedRows.Count > 0)
             {
@@ -269,6 +271,7 @@ namespace TPCAI
                 // Llamar al método ReservarPendientePago de GenerarReservasModel
                 model.ReservarPendientePago(CodReserva);
 
+                recargarTodasLasGrillasConPresupuestoActivo();
             }
             else
             {
@@ -277,18 +280,6 @@ namespace TPCAI
         }
 
 
-        private void btnConsultarVuelos_Click(object sender, EventArgs e)
-        {
-            FormListadoVuelos vuelos = new FormListadoVuelos();
-            vuelos.ShowDialog();
-            buscarPresupuestos();
-        }
 
-        private void btnConsultarAlojamientos_Click(object sender, EventArgs e)
-        {
-            FormListadoAlojamiento alojamiento = new FormListadoAlojamiento();
-            alojamiento.ShowDialog();
-            buscarPresupuestos();
-        }
     }
 }

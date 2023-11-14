@@ -53,9 +53,7 @@ namespace TPCAI.Modulos
                     Pasajeros = null // Puedes inicializar esto según tus necesidades
                 };
 
-                // Agregar la nueva reserva al AlmacenReservas
-                AlmacenReservas.AgregarReserva(nuevaReserva);
-                //AlmacenReservas.Grabar();
+                ModuloReservas.reservas.Add(nuevaReserva);
 
                 // Actualizar estado del presupuesto a "Guardado"
                 presupuesto.EstadoPresupuesto = "Guardado";

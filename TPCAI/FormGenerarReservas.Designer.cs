@@ -42,6 +42,7 @@
             this.ColumnProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTotalPrespuestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabReservar = new System.Windows.Forms.TabPage();
+            this.btnReservar = new System.Windows.Forms.Button();
             this.dataGridViewGenerarReserva = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.lblActivo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabGenerarPreReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresupuestos)).BeginInit();
@@ -185,8 +185,8 @@
             this.ColumnTotalPrespuestado.Name = "ColumnTotalPrespuestado";
             // 
             // tabReservar
-            //
-            this.tabReservar.Controls.Add(this.button1);
+            // 
+            this.tabReservar.Controls.Add(this.btnReservar);
             this.tabReservar.Controls.Add(this.dataGridViewGenerarReserva);
             this.tabReservar.Location = new System.Drawing.Point(4, 22);
             this.tabReservar.Name = "tabReservar";
@@ -195,6 +195,16 @@
             this.tabReservar.TabIndex = 1;
             this.tabReservar.Text = "Generar Reservar";
             this.tabReservar.UseVisualStyleBackColor = true;
+            // 
+            // btnReservar
+            // 
+            this.btnReservar.Location = new System.Drawing.Point(850, 506);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(122, 31);
+            this.btnReservar.TabIndex = 60;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // dataGridViewGenerarReserva
             // 
@@ -207,7 +217,6 @@
             this.dataGridViewTextBoxColumn4});
             this.dataGridViewGenerarReserva.Location = new System.Drawing.Point(3, 0);
             this.dataGridViewGenerarReserva.Name = "dataGridViewGenerarReserva";
-            this.dataGridViewGenerarReserva.Size = new System.Drawing.Size(981, 500);
             this.dataGridViewGenerarReserva.Size = new System.Drawing.Size(981, 543);
             this.dataGridViewGenerarReserva.TabIndex = 4;
             // 
@@ -312,16 +321,6 @@
             this.lblActivo.Size = new System.Drawing.Size(76, 20);
             this.lblActivo.TabIndex = 59;
             this.lblActivo.Text = "lblActivo";
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(850, 506);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 31);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "Reservar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
             // 
             // FormGenerarReservas
             // 
@@ -378,7 +377,7 @@
         private System.Windows.Forms.Button btnAñadirPasajeros;
         private System.Windows.Forms.Button btnNuevoPresupuesto;
         private System.Windows.Forms.Button btnEstablecerActivo;
-        private System.Windows.Forms.Button button1; 
+        private System.Windows.Forms.Button btnReservar; 
         private System.Windows.Forms.Label lblActivo;
     }
 }
