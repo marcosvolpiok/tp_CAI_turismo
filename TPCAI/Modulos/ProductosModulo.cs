@@ -250,6 +250,9 @@ namespace TPCAI
                         Tarifa nuevaTarifa = new Tarifa();
                         nuevaTarifa.TipoPasajero = tarifa.TipoPasajero;
                         nuevaTarifa.Clase = tarifa.Clase;
+                        nuevaTarifa.Precio = tarifa.Precio;
+                        nuevaTarifa.TipoPasajero = tarifa.TipoPasajero;
+                        nuevaTarifa.IdTarifaVuelos = tarifa.IdTarifaVuelos;
 
                         nuevoVuelo.Tarifas = new List<Tarifa>
                         {

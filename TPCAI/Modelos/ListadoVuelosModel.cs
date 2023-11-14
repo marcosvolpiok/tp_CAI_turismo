@@ -33,11 +33,7 @@ namespace TPCAI.Modelos
 
         public void AgregarVueloAPresupuesto(string vueloId)
         {
-            Vuelo vuelo = VuelosFiltrados.Find(v => v.IdTarifaVuelos == vueloId);
-            if (vuelo != null)
-            {
-                ModuloPresupuestos.AgregarVueloAPresupuesto(vuelo);                
-            }
+            ModuloPresupuestos.AgregarVueloAPresupuesto(vueloId);
         }
 
 

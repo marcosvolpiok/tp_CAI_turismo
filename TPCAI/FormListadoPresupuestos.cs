@@ -36,7 +36,6 @@ namespace TPCAI
 
 
             ActualizarPresupuestoVuelos(); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
-            //TODO: hacer lo mismo para alojamientos.
 
             ActualizarPresupuestoAlojamientos();
 

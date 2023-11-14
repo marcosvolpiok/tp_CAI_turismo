@@ -24,7 +24,25 @@ namespace TPCAI.Modelos
 
         public List<Vuelo> ObtenerVuelosPresupuesto()
         {
-            return ModuloPresupuestos.VuelosPresupuesto;
+            List <Vuelo> vuelosPresupuesto = new List <Vuelo>();
+
+            foreach (string vuelo in  ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
+            {
+                VuelosEnt vueloEntNuevo = ProductosModulo.ObtenerVueloPorId(vuelo);
+                vuelosPresupuesto.Add(new Vuelo(
+                                        vueloEntNuevo.Origen,
+                                        vueloEntNuevo.Destino,
+                                        vueloEntNuevo.FechaSalida,
+                                        vueloEntNuevo.FechaArribo,
+                                        vueloEntNuevo.Aerolinea,
+                                        vueloEntNuevo.Tarifas[0].Precio,
+                                        vueloEntNuevo.Tarifas[0].Clase,
+                                        vueloEntNuevo.Tarifas[0].TipoPasajero,
+                                        vueloEntNuevo.Tarifas[0].IdTarifaVuelos
+                                    ));
+            }
+
+            return vuelosPresupuesto;
         }
 
         public List<Alojamiento> ObtenerAlojamientosPresupuesto()

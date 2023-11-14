@@ -15,12 +15,17 @@ namespace TPCAI.Modulos
     public static class ModuloPresupuestos
     {
         public static PresupuestosEnt PresupuestoActivo { get; set; }
-        public static List<PresupuestosEnt> Presupuestos { get; set; }
+        public static List<PresupuestosEnt> Presupuestos { get; set; } //Referencia viva de Presupuestos
         public static List<Vuelo> VuelosPresupuesto { get; private set; } = new List<Vuelo>();
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
             VuelosPresupuesto.RemoveAll(v => v.IdTarifaVuelos == vueloId);
+        }
+
+        public static void obtenerVueloPorTarifaId(string vueloId)
+        {
+
         }
 
         internal static void EliminarAlojamientoDeActivo(int IDHabitacion)
@@ -183,9 +188,9 @@ namespace TPCAI.Modulos
         }
 
 
-        public static void AgregarVueloAPresupuesto(Vuelo vuelo)
+        public static void AgregarVueloAPresupuesto(string vueloId)
         {
-            VuelosPresupuesto.Add(vuelo);
+            PresupuestoActivo.IdTarifaVuelo.Add(vueloId);
         }
 
 
