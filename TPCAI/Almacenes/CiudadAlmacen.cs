@@ -7,28 +7,23 @@ using System.IO;
 using Newtonsoft.Json;
 using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
+using System.Windows.Forms;
 
 namespace TPCAI.Almacenes
 {
     internal static class CiudadAlmacen
     {
-        internal static readonly CiudadesEnt ciudades;
-
-        public static CiudadesEnt ListadoCiudades
+        static CiudadAlmacen()
         {
-            get { return ciudades; }
+           
         }
 
-        static CiudadAlmacen()
+        public static void Leer()
         {
             if (File.Exists("../../JSON/Ciudades.json"))
             {
                 string contenidoArchivo = File.ReadAllText("../../JSON/Ciudades.json");
-                ciudades = JsonConvert.DeserializeObject<CiudadesEnt>(contenidoArchivo);
-            }
-            else
-            {
-                ciudades = new CiudadesEnt();
+                ProductosModulo.ciudades = JsonConvert.DeserializeObject<CiudadesEnt>(contenidoArchivo);
             }
         }
     }

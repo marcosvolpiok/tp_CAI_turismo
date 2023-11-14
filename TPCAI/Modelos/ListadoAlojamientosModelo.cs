@@ -26,12 +26,12 @@ namespace TPCAI
 
         public CiudadesEnt obtenerCiudades()
         {
-            return ProductosModulo.obtenerCiudades();
+            return ProductosModulo.ciudades;
         }
 
         public CiudadesDetailSubClass obtenerCiudadPorCodigo(string codigoCiudad)
         {
-            CiudadesEnt ciudades = ProductosModulo.obtenerCiudades();
+            CiudadesEnt ciudades = ProductosModulo.ciudades;
             foreach(CiudadesDetailSubClass ciudad in ciudades.Ciudades)
             {
                 if(ciudad.CodigoISO == codigoCiudad)

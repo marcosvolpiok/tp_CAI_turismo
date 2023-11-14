@@ -14,10 +14,7 @@ namespace TPCAI
 {
     public static class ProductosModulo
     {
-        public static CiudadesEnt obtenerCiudades()
-        {
-            return CiudadAlmacen.ListadoCiudades;
-        }
+        public static CiudadesEnt ciudades { get; set; }
 
         public static List<Alojamiento> ObtenerAlojamientos(
             )

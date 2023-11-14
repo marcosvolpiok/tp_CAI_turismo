@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Almacenes;
 
 namespace TPCAI
 {
@@ -14,13 +15,18 @@ namespace TPCAI
         [STAThread]
         static void Main()
         {
+            //Lee Almacenes
+            CiudadAlmacen.Leer();
+
+            //AlojamientoAlmacen;
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FromMenu());
 
 
-            //Lee Almacenes
-            //AlojamientoAlmacen;
+
         }
     }
 }

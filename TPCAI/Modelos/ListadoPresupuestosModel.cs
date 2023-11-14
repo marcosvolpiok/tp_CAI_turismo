@@ -73,7 +73,7 @@ namespace TPCAI.Modelos
 
         public CiudadesDetailSubClass obtenerCiudadPorCodigo(string codigoCiudad)
         {
-            CiudadesEnt ciudades = ProductosModulo.obtenerCiudades();
+            CiudadesEnt ciudades = ProductosModulo.ciudades;
             foreach (CiudadesDetailSubClass ciudad in ciudades.Ciudades)
             {
                 if (ciudad.CodigoISO == codigoCiudad)

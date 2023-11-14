@@ -41,6 +41,7 @@ namespace TPCAI
 
             comboDestino.DisplayMember = "Nombre";
             CiudadesEnt ciudades = model.obtenerCiudades();
+
             comboDestino.Items.AddRange(ciudades.Ciudades.ToArray());
 
             //Carga calificaciones (cantidad de estrellas)
