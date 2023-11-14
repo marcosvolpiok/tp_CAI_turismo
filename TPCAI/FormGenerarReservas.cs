@@ -87,8 +87,10 @@ namespace TPCAI
                 var selectedRow = dataGridViewPresupuestos.SelectedRows[0];
                 int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
 
+                establecerComoActivoPresupestoSeleccionado();
                 // Llamar al método GenerarPreReserva de GenerarReservasModel
                 model.GenerarPreReserva(PresupuestoActivo);
+                
 
                 recargarTodasLasGrillasConPresupuestoActivo();
             }
@@ -133,6 +135,8 @@ namespace TPCAI
             {
                 //AGRGAR DATOS RESTANTES DEL GRID VIEW
                 this.dataGridViewPresupuestos.Rows.Add(nuevoCodPresupuesto.CodigoPresupuesto, null, null);
+
+                establecerComoActivoPresupestoPorID(nuevoCodPresupuesto.CodigoPresupuesto);
             }
             else
             {
@@ -143,20 +147,32 @@ namespace TPCAI
 
         private void btnEstablecerActivo_Click(object sender, EventArgs e)
         {
+            establecerComoActivoPresupestoSeleccionado();
+        }
+
+        private void establecerComoActivoPresupestoSeleccionado()
+        {
             if (this.dataGridViewPresupuestos.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewPresupuestos.SelectedRows[0];
-                int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
-                model.EstablecerPresupuestoActivo(PresupuestoActivo);
-                MessageBox.Show($"Presupuesto número {PresupuestoActivo} establecido como activo");
-
-                lblActivo.Text = $"Presupuesto Activo: {PresupuestoActivo}";
+                int PresupuestoSeleccionado = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
+                establecerComoActivoPresupestoPorID(PresupuestoSeleccionado);
             }
             else
             {
                 MessageBox.Show("Por favor seleccione un presupuesto para establecer como activo");
             }
+        }
 
+        private void establecerComoActivoPresupestoPorID(int IDPresupuesto)
+        {
+            model.EstablecerPresupuestoActivo(IDPresupuesto);
+
+            if (IDPresupuesto != model.obtenerPrespuestoActivo().CodigoPresupuesto)
+            {
+                lblActivo.Text = $"Presupuesto Activo: {IDPresupuesto}";
+                MessageBox.Show($"Presupuesto número {IDPresupuesto} establecido como activo");
+            }
         }
 
         private void BuscarPreReservas()
