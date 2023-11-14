@@ -214,23 +214,22 @@ namespace TPCAI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
+
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 if (int.TryParse(textBox1.Text, out int codigoPresupuesto))
                 {
                     var presupuestoEncontrado = model.BuscarPresupuestoPorId(codigoPresupuesto);
 
-                    // Llamada al método ObtengoInfoProductos en GenerarReservasModel
-                    string infoProductos = model.ObtengoInfoProductos(presupuestoEncontrado);
-
                     if (presupuestoEncontrado != null)
                     {
-                        // Llenar el DataGridView con los datos del presupuesto encontrado
                         dataGridViewPresupuestos.Rows.Clear();
-
+                        string infoProductos = model.ObtengoInfoProductos(presupuestoEncontrado);
                         dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, infoProductos, presupuestoEncontrado.PrecioTotal);
-                        lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
+
                         model.EstablecerPresupuestoActivo(presupuestoEncontrado.CodigoPresupuesto);
+                        lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
                     }
                     else
                     {
