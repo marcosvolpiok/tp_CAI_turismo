@@ -17,6 +17,7 @@ namespace TPCAI
         {
             //Lee Almacenes
             CiudadAlmacen.Leer();
+            AlojamientoAlmacen.Leer();
 
             //AlojamientoAlmacen;
 

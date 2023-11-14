@@ -14,13 +14,13 @@ namespace TPCAI
 {
     public static class ProductosModulo
     {
-        public static CiudadesEnt ciudades { get; set; }
+        public static CiudadesEnt ciudades { get; set; } //Rerecencia viva de las ciudades
+        public static List<AlojamientosEnt> alojamientos { get; set; } //Rerecencia viva de los alojamientos
 
         public static List<Alojamiento> ObtenerAlojamientos(
             )
         {
             List<Alojamiento> alojamientosEncontrados = new List<Alojamiento>();
-            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
 
             foreach (AlojamientosEnt alojamiento in alojamientos)
             {
@@ -83,7 +83,7 @@ namespace TPCAI
                 intCalificacion = 0;
             }
 
-            foreach (var alojamiento in AlojamientoAlmacen.Alojamientos)
+            foreach (var alojamiento in alojamientos)
             {
                 flag1PuntoParaFiltrado = false;
                 flag2PuntoParaFiltrado = false;
@@ -299,7 +299,6 @@ namespace TPCAI
 
         internal static List<Alojamiento> ObtenerAlojamientoPorIdHabitacion (int idHabitacion)
         {
-            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
             List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
 
 
@@ -349,7 +348,6 @@ namespace TPCAI
 
         internal static Alojamiento ObtenerAlojamientoPorIdHabitacionIndividual(int idHabitacion)
         {
-            List<AlojamientosEnt> alojamientos = AlojamientoAlmacen.alojamientos;
             List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();
 
 

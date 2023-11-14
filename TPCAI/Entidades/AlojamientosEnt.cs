@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TPCAI
 {
-    internal class AlojamientosEnt
+    public class AlojamientosEnt
     {
         public long IDAlojamientos { get; set; }
         public string CodigoHotel { get; set; }

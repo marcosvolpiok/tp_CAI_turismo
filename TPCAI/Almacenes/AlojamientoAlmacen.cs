@@ -7,31 +7,21 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Windows.Forms;
 using System.Diagnostics;
+using TPCAI.Entidades.SubClasses;
 
 namespace TPCAI
 {
     internal static class AlojamientoAlmacen
     {
-        internal static readonly List<AlojamientosEnt> alojamientos;
-
-        public static List<AlojamientosEnt> Alojamientos
-        {
-            get { return alojamientos; }
-        }
-
-        static AlojamientoAlmacen()
+        public static void Leer()
         {
             if (File.Exists("../../JSON/Alojamientos.json"))
             {
                 string contenidoArchivo = File.ReadAllText("../../JSON/Alojamientos.json");
-                alojamientos = JsonConvert.DeserializeObject<List<AlojamientosEnt>>(contenidoArchivo);
-            }
-            else
-            {
-                alojamientos = new List<AlojamientosEnt>();
+                ProductosModulo.alojamientos = JsonConvert.DeserializeObject<List<AlojamientosEnt>>(contenidoArchivo);
             }
         }
 
-        public static void Grabar() => File.WriteAllText("../../JSON/Alojamientos.json", JsonConvert.SerializeObject(alojamientos));
+        public static void Grabar() => File.WriteAllText("../../JSON/Alojamientos.json", JsonConvert.SerializeObject(ProductosModulo.alojamientos));
     }
 }
