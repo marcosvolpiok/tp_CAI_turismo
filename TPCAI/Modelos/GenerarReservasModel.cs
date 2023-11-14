@@ -51,11 +51,10 @@ namespace TPCAI.Modelos
         public List<ReservasEnt> BuscarPreReservas()
         {
             // Obtengo reservas con EstadoReserva = "Pre reservada" para el presupuesto activo
-            var codigoPresupuestoActivo = obtenerPrespuestoActivo().CodigoPresupuesto;
-            var reservasPreReservadas = ModuloReservas.BuscarPreReservas(codigoPresupuestoActivo);
+            int codigoPresupuestoActivo = obtenerPrespuestoActivo().CodigoPresupuesto;
+            List<ReservasEnt> reservasPreReservadas = ModuloReservas.BuscarPreReservas(codigoPresupuestoActivo);
 
-            // Llamo al método BuscarPreReservas de ModuloReservas
-            return ModuloReservas.BuscarPreReservas(obtenerPrespuestoActivo().CodigoPresupuesto);
+            return reservasPreReservadas;
         }
 
         public List<ReservasEnt> BuscarReservasConfirmar()
