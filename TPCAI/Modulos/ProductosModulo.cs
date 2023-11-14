@@ -16,6 +16,9 @@ namespace TPCAI
     {
         public static CiudadesEnt ciudades { get; set; } //Rerecencia viva de las ciudades
         public static List<AlojamientosEnt> alojamientos { get; set; } //Rerecencia viva de los alojamientos
+        public static List<VuelosEnt> vuelos { get; set; } //Rerecencia viva de los alojamientos
+        public static List<Vuelo> vuelosEnPantalla { get; set; } //Para mostrar en pantalla
+
 
         public static List<Alojamiento> ObtenerAlojamientos(
             )
@@ -183,14 +186,8 @@ namespace TPCAI
         // BUSQUEDA VUELOS
         internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
         {
-
-
             // Creo una lista para almacenar los vuelos filtrados
             List<Vuelo> vuelosEncontrados = new List<Vuelo>();
-
-            // Obtengo los vuelos desde el AlmacenVuelos.
-            List<VuelosEnt> vuelos = AlmacenVuelos.vuelos;
-
 
             foreach (var vueloEnt in vuelos)
             {
@@ -240,7 +237,7 @@ namespace TPCAI
 
         internal static VuelosEnt ObtenerVueloPorId(string vueloId)
         {
-            foreach (VuelosEnt vuelo in AlmacenVuelos.vuelos)
+            foreach (VuelosEnt vuelo in vuelos)
             {
                 foreach (Tarifa tarifa in vuelo.Tarifas)
                 {
@@ -270,7 +267,7 @@ namespace TPCAI
 
         internal static Vuelo ObtenerVueloPorIdTarifa(string vueloId) 
         {
-            foreach (VuelosEnt vuelo in AlmacenVuelos.vuelos)
+            foreach (VuelosEnt vuelo in vuelos)
             {
                 foreach (Tarifa tarifa in vuelo.Tarifas)
                 {

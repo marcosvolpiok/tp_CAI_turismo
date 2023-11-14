@@ -18,6 +18,7 @@ namespace TPCAI
             //Lee Almacenes
             ProductosModulo.ciudades = CiudadAlmacen.ObtenerCiudades();
             ProductosModulo.alojamientos = AlojamientoAlmacen.ObtenerAlojamientos();
+            ProductosModulo.vuelos = AlmacenVuelos.ObtenerVuelos();
 
             //Guardar Almacenes
 

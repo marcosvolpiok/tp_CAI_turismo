@@ -24,8 +24,6 @@ namespace TPCAI.Modelos
 
         public List<Vuelo> VuelosFiltrados { get; set; }
 
-        public List<Vuelo> vuelosPresupuesto => ModuloPresupuestos.VuelosPresupuesto;
-
         public void BuscarVuelos()
         {
             // Realiza la búsqueda de vuelos y guarda los resultados en VuelosFiltrados.
