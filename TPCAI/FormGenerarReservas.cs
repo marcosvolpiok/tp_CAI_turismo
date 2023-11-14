@@ -84,6 +84,15 @@ namespace TPCAI
             //MessageBox.Show("Estado de presupuesto modificado a Reserva");
             if (dataGridViewPresupuestos.SelectedRows.Count > 0)
             {
+                if ((model.obtenerPrespuestoActivo().IDHabitacion == null || model.obtenerPrespuestoActivo().IDHabitacion.Count() == 0) &&
+                    (model.obtenerPrespuestoActivo().IdTarifaVuelo == null || model.obtenerPrespuestoActivo().IdTarifaVuelo.Count() == 0))
+                {
+                    MessageBox.Show("Añada Productos al presupuesto primero");
+
+                    return;
+                }
+
+
                 var selectedRow = dataGridViewPresupuestos.SelectedRows[0];
                 int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
 
@@ -147,16 +156,16 @@ namespace TPCAI
 
         private void btnEstablecerActivo_Click(object sender, EventArgs e)
         {
-            establecerComoActivoPresupestoSeleccionado();
+            establecerComoActivoPresupestoSeleccionado(true);
         }
 
-        private void establecerComoActivoPresupestoSeleccionado()
+        private void establecerComoActivoPresupestoSeleccionado(bool mostrarSiempreMensaje = false)
         {
             if (this.dataGridViewPresupuestos.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewPresupuestos.SelectedRows[0];
                 int PresupuestoSeleccionado = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
-                establecerComoActivoPresupestoPorID(PresupuestoSeleccionado);
+                establecerComoActivoPresupestoPorID(PresupuestoSeleccionado, mostrarSiempreMensaje);
             }
             else
             {
@@ -164,14 +173,20 @@ namespace TPCAI
             }
         }
 
-        private void establecerComoActivoPresupestoPorID(int IDPresupuesto)
+        private void establecerComoActivoPresupestoPorID(int IDPresupuesto, bool mostrarSiempreMensaje = false)
         {
-            model.EstablecerPresupuestoActivo(IDPresupuesto);
-
-            if (IDPresupuesto != model.obtenerPrespuestoActivo().CodigoPresupuesto)
+            string mensaje = $"Presupuesto número {IDPresupuesto} establecido como activo";
+            if (model.obtenerPrespuestoActivo() == null || IDPresupuesto != model.obtenerPrespuestoActivo().CodigoPresupuesto)
             {
                 lblActivo.Text = $"Presupuesto Activo: {IDPresupuesto}";
-                MessageBox.Show($"Presupuesto número {IDPresupuesto} establecido como activo");
+                MessageBox.Show(mensaje);
+            }
+
+            model.EstablecerPresupuestoActivo(IDPresupuesto);
+
+            if(mostrarSiempreMensaje == true)
+            {
+                MessageBox.Show(mensaje);
             }
         }
 
