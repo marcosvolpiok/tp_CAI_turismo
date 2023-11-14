@@ -13,18 +13,20 @@ namespace TPCAI.Almacenes
 {
     internal static class CiudadAlmacen
     {
-        static CiudadAlmacen()
-        {
-           
-        }
+        private static readonly CiudadesEnt ciudades;
 
-        public static void Leer()
+        static CiudadAlmacen()
         {
             if (File.Exists("../../JSON/Ciudades.json"))
             {
                 string contenidoArchivo = File.ReadAllText("../../JSON/Ciudades.json");
-                ProductosModulo.ciudades = JsonConvert.DeserializeObject<CiudadesEnt>(contenidoArchivo);
+                ciudades = JsonConvert.DeserializeObject<CiudadesEnt>(contenidoArchivo);
             }
+        }
+
+        public static CiudadesEnt ObtenerCiudades()
+        {
+            return ciudades;
         }
     }
 }

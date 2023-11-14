@@ -16,7 +16,7 @@ namespace TPCAI
         static void Main()
         {
             //Lee Almacenes
-            CiudadAlmacen.Leer();
+            ProductosModulo.ciudades = CiudadAlmacen.ObtenerCiudades();
             ProductosModulo.alojamientos = AlojamientoAlmacen.ObtenerAlojamientos();
 
             //Guardar Almacenes
