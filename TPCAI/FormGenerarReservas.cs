@@ -230,6 +230,7 @@ namespace TPCAI
 
                         dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, infoProductos, presupuestoEncontrado.PrecioTotal);
                         lblActivo.Text = $"Presupuesto Activo: {presupuestoEncontrado.CodigoPresupuesto}";
+                        model.EstablecerPresupuestoActivo(presupuestoEncontrado.CodigoPresupuesto);
                     }
                     else
                     {
