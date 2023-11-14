@@ -41,6 +41,17 @@ namespace TPCAI
             if (model.obtenerPrespuestoActivo() != null)
             {
                 lblActivo.Text = "Presupuesto Activo: " + model.obtenerPrespuestoActivo().CodigoPresupuesto.ToString();
+
+                dataGridViewPresupuestos.Rows.Clear();
+                var presupuestoEncontrado = model.BuscarPresupuestoPorId(model.obtenerPrespuestoActivo().CodigoPresupuesto);
+                string infoProductos = model.ObtengoInfoProductos(presupuestoEncontrado);
+                dataGridViewPresupuestos.Rows.Add(presupuestoEncontrado.CodigoPresupuesto, presupuestoEncontrado.FechaPresupuesto.Date, infoProductos, presupuestoEncontrado.PrecioTotal);
+
+                //Busca pre-reservas (tab[1])
+                BuscarPreReservas();
+
+                // Buscar reservas (tab[2]) a confirmar y actualizar el dataGridViewGenerarConfirmacion
+                BuscarReservasAConfirmar();
             }
             else
             {
