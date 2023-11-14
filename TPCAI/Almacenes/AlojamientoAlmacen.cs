@@ -16,20 +16,20 @@ namespace TPCAI
     {
         private static readonly List<AlojamientosEnt> alojamientos;
 
+        public static List<AlojamientosEnt> ObtenerAlojamientos()
+        {
+            return alojamientos;
+        }
+
         static AlojamientoAlmacen()
         {
             if (File.Exists("../../JSON/Alojamientos.json"))
             {
                 string contenidoArchivo = File.ReadAllText("../../JSON/Alojamientos.json");
                 alojamientos = JsonConvert.DeserializeObject<List<AlojamientosEnt>>(contenidoArchivo);
-                ProductosModulo.alojamientos = alojamientos;
             }
         }
 
-        public static void Leer()
-        {
-            
-        }
 
         public static void Grabar() => File.WriteAllText("../../JSON/Alojamientos.json", JsonConvert.SerializeObject(ProductosModulo.alojamientos));
     }

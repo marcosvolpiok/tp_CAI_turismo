@@ -17,10 +17,9 @@ namespace TPCAI
         {
             //Lee Almacenes
             CiudadAlmacen.Leer();
-            AlojamientoAlmacen.Leer();
+            ProductosModulo.alojamientos = AlojamientoAlmacen.ObtenerAlojamientos();
 
-            //AlojamientoAlmacen;
-
+            //Guardar Almacenes
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
