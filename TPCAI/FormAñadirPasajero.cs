@@ -169,8 +169,8 @@ namespace TPCAI
 
                     if (item.SubItems[5].Text != null && item.SubItems[5].Text != "")
                     {
-                        Alojamiento alojamiento = model.ObtenerAlojamientoDeHabitacionID(int.Parse(item.SubItems[5].Text));
-                        pasajero.IdAlojamiento = alojamiento.CodigoHotel;
+                        DisponibilidadSubClass disponibilidad = model.ObtenerDisponibilidadPorHabitacionID(int.Parse(item.SubItems[5].Text));
+                        pasajero.IdAlojamiento = disponibilidad.IDDisponibilidad.ToString();
                     }
                     pasajeros.Add(pasajero);
                 }

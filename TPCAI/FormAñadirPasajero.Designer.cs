@@ -33,6 +33,12 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAddAñadir = new System.Windows.Forms.Button();
             this.listViewPasajeros = new System.Windows.Forms.ListView();
+            this.ColumnNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnApellido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnDNI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnFechaNacimiento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnIdTarifaVuelo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnIdHabitacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,15 +48,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimeFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.ColumnNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnApellido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnDNI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnFechaNacimiento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDebug = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboProductos = new System.Windows.Forms.ComboBox();
-            this.columnIdTarifaVuelo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnIdHabitacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCargarVuelo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -110,6 +110,35 @@
             this.listViewPasajeros.TabIndex = 62;
             this.listViewPasajeros.UseCompatibleStateImageBehavior = false;
             this.listViewPasajeros.View = System.Windows.Forms.View.Details;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.Text = "Nombre";
+            this.ColumnNombre.Width = 185;
+            // 
+            // columnApellido
+            // 
+            this.columnApellido.Text = "Apellido";
+            this.columnApellido.Width = 131;
+            // 
+            // columnDNI
+            // 
+            this.columnDNI.Text = "DNI";
+            this.columnDNI.Width = 116;
+            // 
+            // columnFechaNacimiento
+            // 
+            this.columnFechaNacimiento.Text = "Fecha Nacimiento";
+            this.columnFechaNacimiento.Width = 120;
+            // 
+            // columnIdTarifaVuelo
+            // 
+            this.columnIdTarifaVuelo.Text = "IDVuelo";
+            // 
+            // columnIdHabitacion
+            // 
+            this.columnIdHabitacion.Text = "IDHabitacion";
+            this.columnIdHabitacion.Width = 80;
             // 
             // textNombre
             // 
@@ -185,26 +214,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.Text = "Nombre";
-            this.ColumnNombre.Width = 185;
-            // 
-            // columnApellido
-            // 
-            this.columnApellido.Text = "Apellido";
-            this.columnApellido.Width = 131;
-            // 
-            // columnDNI
-            // 
-            this.columnDNI.Text = "DNI";
-            this.columnDNI.Width = 116;
-            // 
-            // columnFechaNacimiento
-            // 
-            this.columnFechaNacimiento.Text = "Fecha Nacimiento";
-            this.columnFechaNacimiento.Width = 120;
-            // 
             // btnDebug
             // 
             this.btnDebug.BackColor = System.Drawing.Color.Red;
@@ -234,15 +243,6 @@
             this.comboProductos.Name = "comboProductos";
             this.comboProductos.Size = new System.Drawing.Size(305, 21);
             this.comboProductos.TabIndex = 75;
-            // 
-            // columnIdTarifaVuelo
-            // 
-            this.columnIdTarifaVuelo.Text = "IDVuelo";
-            // 
-            // columnIdHabitacion
-            // 
-            this.columnIdHabitacion.Text = "IDHabitacion";
-            this.columnIdHabitacion.Width = 80;
             // 
             // btnCargarVuelo
             // 

@@ -38,6 +38,25 @@ namespace TPCAI.Modelos
             return null;
         }
 
+        public DisponibilidadSubClass ObtenerDisponibilidadPorHabitacionID(int IDhabitacion)
+        {
+            foreach (var alojamiento in ProductosModulo.ObtenerAlojamientos())
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    foreach (var habitacion in disponibilidad.Habitaciones)
+                    {
+                        if (habitacion.IDHabitacion == IDhabitacion)
+                        {
+                            return disponibilidad;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public bool validarPasajerosDeDataGridView(ListView listViewPasajeros, ComboBox comboProductos)
         {
             string patternSololetras = "^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ ]+$";
