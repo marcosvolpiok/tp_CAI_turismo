@@ -131,10 +131,6 @@ namespace TPCAI
                 model.EstablecerPresupuestoActivo(PresupuestoActivo);
                 MessageBox.Show($"Presupuesto número {PresupuestoActivo} establecido como activo");
 
-                // Buscar reservas a confirmar y actualizar el dataGridViewGenerarConfirmacion
-                BuscarReservasAConfirmar();
-
-
                 lblActivo.Text = $"Presupuesto Activo: {PresupuestoActivo}";
             }
             else
@@ -231,6 +227,9 @@ namespace TPCAI
 
                         //Busca pre-reservas (tab[1])
                         BuscarPreReservas();
+
+                        // Buscar reservas (tab[2]) a confirmar y actualizar el dataGridViewGenerarConfirmacion
+                        BuscarReservasAConfirmar();
                     }
                     else
                     {
