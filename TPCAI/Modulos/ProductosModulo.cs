@@ -246,6 +246,8 @@ namespace TPCAI
                         VuelosEnt nuevoVuelo = new VuelosEnt();
                         nuevoVuelo.Aerolinea = vuelo.Aerolinea;
                         nuevoVuelo.Origen = vuelo.Origen;
+                        nuevoVuelo.Destino = vuelo.Destino;
+
 
                         Tarifa nuevaTarifa = new Tarifa();
                         nuevaTarifa.TipoPasajero = tarifa.TipoPasajero;

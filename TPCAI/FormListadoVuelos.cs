@@ -93,20 +93,25 @@ namespace TPCAI
         {
             // Mapear los resultados en el dataGridViewListadoVuelos
             this.dataGridViewListadoVuelos.Rows.Clear();
-            foreach (var vuelo in model.VuelosFiltrados)
+
+            if (model.VuelosFiltrados != null)
             {
-                this.dataGridViewListadoVuelos.Rows.Add(
-                    vuelo.Origen,
-                    vuelo.Destino,
-                    vuelo.FechaSalida,
-                    vuelo.FechaArribo,
-                    vuelo.Aerolinea,
-                    vuelo.Precio,
-                    vuelo.Clase,
-                    vuelo.TipoPasajero,
-                    vuelo.IdTarifaVuelos
-                );
+                foreach (var vuelo in model.VuelosFiltrados)
+                {
+                    this.dataGridViewListadoVuelos.Rows.Add(
+                        vuelo.Origen,
+                        vuelo.Destino,
+                        vuelo.FechaSalida,
+                        vuelo.FechaArribo,
+                        vuelo.Aerolinea,
+                        vuelo.Precio,
+                        vuelo.Clase,
+                        vuelo.TipoPasajero,
+                        vuelo.IdTarifaVuelos
+                    );
+                }
             }
+            
             this.dataGridViewListadoVuelos.Refresh();
         }
 
