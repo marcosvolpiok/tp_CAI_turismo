@@ -16,6 +16,7 @@ namespace TPCAI.Modulos
     {
         public static PresupuestosEnt PresupuestoActivo { get; set; }
         public static List<PresupuestosEnt> Presupuestos { get; set; }
+        public static List<Vuelo> VuelosPresupuesto { get; private set; } = new List<Vuelo>();
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
@@ -93,7 +94,7 @@ namespace TPCAI.Modulos
         private static int ObtenerNuevoCodigoPresupuesto()
         {
             List<PresupuestosEnt> presupuestosTmp = new List<PresupuestosEnt>();
-            presupuestosTmp.AddRange(AlmacenPresupuestos.Presupuestos);
+            presupuestosTmp.AddRange(Presupuestos);
             if (Presupuestos != null)
             {
                 presupuestosTmp.AddRange(Presupuestos);
@@ -122,6 +123,8 @@ namespace TPCAI.Modulos
         {
             int idPresupuestoNuevo = CrearPresupuesto();
             PresupuestosEnt presupuestoNuevo = new PresupuestosEnt();
+            presupuestoNuevo.IDHabitacion = new List<int>();
+            presupuestoNuevo.IdTarifaVuelo = new List<string>();
             presupuestoNuevo.CodigoPresupuesto = idPresupuestoNuevo;
 
             if (ModuloPresupuestos.Presupuestos == null)
@@ -135,20 +138,11 @@ namespace TPCAI.Modulos
 
         public static List<PresupuestosEnt> obtenerPresupuestos()
         {
-            List<PresupuestosEnt> tmpPresup = new List<PresupuestosEnt>();
-            tmpPresup.AddRange(AlmacenPresupuestos.presupuestos);
-            if (Presupuestos != null)
-            {
-                tmpPresup.AddRange(Presupuestos);
-            }
-
-            return tmpPresup;
+            return Presupuestos;
         }
 
         public static PresupuestosEnt BusquedaPresupuestoId(int codigoPresupuesto)
         {
-            List<PresupuestosEnt> Presupuestos = AlmacenPresupuestos.presupuestos;
-
             if (Presupuestos != null)
             {
                 return Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == codigoPresupuesto);
@@ -161,7 +155,7 @@ namespace TPCAI.Modulos
 
         public static string ObtenerInfoP(PresupuestosEnt presupuestoActivo)
         {
-            var presupuesto = AlmacenPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoActivo.CodigoPresupuesto);
+            var presupuesto = Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoActivo.CodigoPresupuesto);
 
             if (presupuesto != null)
             {
@@ -175,7 +169,7 @@ namespace TPCAI.Modulos
         }
         public static decimal ObtenerInfoPrecioTotal(PresupuestosEnt presupuestoActivo)
         {
-            var presupuesto = AlmacenPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoActivo.CodigoPresupuesto);
+            var presupuesto = Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoActivo.CodigoPresupuesto);
 
             if (presupuesto != null)
             {
@@ -188,7 +182,6 @@ namespace TPCAI.Modulos
             }
         }
 
-        public static List<Vuelo> VuelosPresupuesto { get; private set; } = new List<Vuelo>();
 
         public static void AgregarVueloAPresupuesto(Vuelo vuelo)
         {

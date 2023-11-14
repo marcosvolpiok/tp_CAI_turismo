@@ -37,7 +37,7 @@ namespace TPCAI.Modulos
         public static void GenerarPreReserva(int codigoPresupuesto)
         {
             // Validar que el EstadoPresupuesto no sea "Guardada"
-            var presupuesto = AlmacenPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == codigoPresupuesto);
+            var presupuesto = ModuloPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == codigoPresupuesto);
 
             if (presupuesto != null && presupuesto.EstadoPresupuesto != "Guardado")
             {

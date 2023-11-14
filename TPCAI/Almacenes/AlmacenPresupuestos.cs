@@ -7,18 +7,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using TPCAI.Entidades;
+using TPCAI.Entidades.SubClasses;
 
 namespace TPCAI.Almacenes
 {
     internal static class AlmacenPresupuestos
     {
-        // esto debe ser private, pero lo dejo asi para probar
-        internal static readonly List<PresupuestosEnt> presupuestos;
-        // NO SE SI ESTO ESTA BIEN, REVISAR CON ANDRES
+        private static readonly List<PresupuestosEnt> presupuestos;
 
-        public static List<PresupuestosEnt> Presupuestos
+        public static List<PresupuestosEnt> ObtenerPresupuestos()
         {
-            get { return presupuestos; }
+            return presupuestos;
         }
 
         static AlmacenPresupuestos()
@@ -38,15 +37,7 @@ namespace TPCAI.Almacenes
 
         public static void Grabar() => File.WriteAllText("../../JSON/Presupuestos.json", JsonConvert.SerializeObject(presupuestos));
 
-        public static void AgregarPresupuesto(PresupuestosEnt presupuesto)
-        {
-            presupuestos.Add(presupuesto);
-        }
-
-        public static void QuitarPresupuesto(PresupuestosEnt presupuesto)
-        {
-            presupuestos.Remove(presupuesto);
-        }
+        
 
     }
 }

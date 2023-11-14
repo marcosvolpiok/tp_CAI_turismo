@@ -13,16 +13,18 @@ namespace TPCAI.Modelos
     {
         public PresupuestosEnt NuevoPresupuesto()
         {
-            return ModuloPresupuestos.agregarPresupuestoNuevo();
+            PresupuestosEnt presupuestoNuevo = ModuloPresupuestos.agregarPresupuestoNuevo();
+            ModuloPresupuestos.Presupuestos.Add(presupuestoNuevo);
+
+            return presupuestoNuevo;
         }
 
         public int EstablecerPresupuestoActivo(int presupuestoId)
         {
-            PresupuestosEnt nuevoPresup = new PresupuestosEnt();
-            nuevoPresup.CodigoPresupuesto = presupuestoId;
-            ModuloPresupuestos.PresupuestoActivo = nuevoPresup;
+            PresupuestosEnt presupuesto = ModuloPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoId);
+            ModuloPresupuestos.PresupuestoActivo = presupuesto;
 
-            return presupuestoId;
+            return presupuesto.CodigoPresupuesto;
         }
 
         public List<PresupuestosEnt> obtenerPresupuestos()
@@ -71,7 +73,7 @@ namespace TPCAI.Modelos
         internal string ObtengoInfoProductos(PresupuestosEnt presupuestoActivo)
         {
             var infoProductos = ModuloPresupuestos.ObtenerInfoP(presupuestoActivo);
-            return infoProductos; ;
+            return infoProductos;
         }
 
         internal decimal ObtengoPrecioTotal(PresupuestosEnt presupuestoActivo)

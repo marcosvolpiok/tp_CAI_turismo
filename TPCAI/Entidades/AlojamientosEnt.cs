@@ -16,8 +16,5 @@ namespace TPCAI
         public string Direccion { get; set; }
         public int Calificacion { get; set; }
         public List<DisponibilidadSubClass> Disponibilidad { get; set; }
-        
-
-
     }
 }

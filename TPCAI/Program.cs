@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPCAI.Almacenes;
+using TPCAI.Modulos;
 
 namespace TPCAI
 {
@@ -19,6 +20,7 @@ namespace TPCAI
             ProductosModulo.ciudades = CiudadAlmacen.ObtenerCiudades();
             ProductosModulo.alojamientos = AlojamientoAlmacen.ObtenerAlojamientos();
             ProductosModulo.vuelos = AlmacenVuelos.ObtenerVuelos();
+            ModuloPresupuestos.Presupuestos = AlmacenPresupuestos.ObtenerPresupuestos();
 
             //Guardar Almacenes
 
