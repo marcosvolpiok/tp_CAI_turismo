@@ -28,6 +28,12 @@ namespace TPCAI
                 return;
             }
 
+            if(ModuloPresupuestos.PresupuestoActivo.EstadoPresupuesto == "Guardado")
+            {
+                MessageBox.Show("No se puede añadir productos a un presupusto en este estado.");
+                return;
+            }
+
             FormListadoVuelos vuelos = new FormListadoVuelos();
             vuelos.ShowDialog(); //queda detenida acá. Hasta que.... se oculte FormListadoVuelos.
         }
@@ -61,6 +67,12 @@ namespace TPCAI
             if (ModuloPresupuestos.PresupuestoActivo == null)
             {
                 MessageBox.Show("Seleccione un presupuesto primero.");
+                return;
+            }
+
+            if (ModuloPresupuestos.PresupuestoActivo.EstadoPresupuesto == "Guardado")
+            {
+                MessageBox.Show("No se puede añadir productos a un presupusto en este estado.");
                 return;
             }
 
