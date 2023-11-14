@@ -107,7 +107,9 @@ namespace TPCAI
         // CREO METODO PARA ACTUALIZAR GRID VIEW VUELOS
         private void ActualizarPresupuestoVuelos()
         {
+
             var vuelos = model.ObtenerVuelosPresupuesto();
+            //Console.WriteLine(vuelos);
 
             dataGridViewPresupuestosVuelos.Rows.Clear();
 
@@ -123,7 +125,7 @@ namespace TPCAI
                     vuelo.Precio,
                     vuelo.Clase,
                     vuelo.TipoPasajero,
-                    vuelo.IdTarifaVuelos
+                    vuelo.IdTarifaVuelos                    
                 );
             }
             this.dataGridViewPresupuestosVuelos.Refresh();

@@ -12,6 +12,7 @@ namespace TPCAI.Modelos
 {
     internal class ListadoPresupuestosModel
     {
+
         public void EliminarAlojamientoDelPresupuesto (int IDHabitacion)
         {
             ModuloPresupuestos.EliminarAlojamientoDeActivo(IDHabitacion);
@@ -23,24 +24,7 @@ namespace TPCAI.Modelos
 
         public List<Vuelo> ObtenerVuelosPresupuesto()
         {
-            /*
-             * TO DO: este código no compila.
-             * Marcos lo comentó para poder probar esta pantalla con Alojamientos.
-             * 
-             * 
-            var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
-            var vuelos = new List<Vuelo>();
-            foreach(var vueloId in vuelosIds)
-            {                
-                Vuelo vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
-                vuelos.Add(vuelo);
-            }
-
-            return vuelos;
-            */
-
-            List<Vuelo> listaVuelos = new List<Vuelo>(); //TO DO: esto es para que compile. Mirar comentario de arriba
-            return listaVuelos;
+            return ModuloPresupuestos.VuelosPresupuesto;
         }
 
         public List<Alojamiento> ObtenerAlojamientosPresupuesto()

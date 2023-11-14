@@ -23,12 +23,14 @@ namespace TPCAI.Modelos
         public string Clase { get; set; }
 
         public List<Vuelo> VuelosFiltrados { get; set; }
-        private List<Vuelo> vuelosPresupuesto = new List<Vuelo>();
+
+        public List<Vuelo> vuelosPresupuesto => ModuloPresupuestos.VuelosPresupuesto;
 
         public void BuscarVuelos()
         {
             // Realiza la búsqueda de vuelos y guarda los resultados en VuelosFiltrados.
-            VuelosFiltrados = ProductosModulo.BusquedaVuelos(this);
+            VuelosFiltrados = new List<Vuelo>();
+            VuelosFiltrados = ProductosModulo.BusquedaVuelos(this);            
         }
 
         public void AgregarVueloAPresupuesto(string vueloId)
@@ -36,14 +38,10 @@ namespace TPCAI.Modelos
             Vuelo vuelo = VuelosFiltrados.Find(v => v.IdTarifaVuelos == vueloId);
             if (vuelo != null)
             {
-                vuelosPresupuesto.Add(vuelo);
+                ModuloPresupuestos.AgregarVueloAPresupuesto(vuelo);                
             }
         }
 
-        public List<Vuelo> ObtenerVuelosPresupuesto()
-        {
-            return vuelosPresupuesto;
-        }
 
         public int PresupuestoActivo()
         {
