@@ -6,18 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPCAI.Entidades;
+using TPCAI.Entidades.SubClasses;
 
 namespace TPCAI.Almacenes
 {
     internal static class AlmacenReservas
     {
-        // esto debe ser private, pero lo dejo asi para probar
-        internal static readonly List<ReservasEnt> reservas;
-        // NO SE SI ESTO ESTA BIEN, REVISAR CON ANDRES
+        private static readonly List<ReservasEnt> reservas;
 
-        public static List<ReservasEnt> Reservas
+        public static List<ReservasEnt> ObtenerReservas()
         {
-            get { return reservas; }
+            return reservas;
         }
 
         static AlmacenReservas()
@@ -26,10 +25,6 @@ namespace TPCAI.Almacenes
             {
                 var contenidoArchivo = File.ReadAllText("../../JSON/Reservas.json");
                 reservas = JsonConvert.DeserializeObject<List<ReservasEnt>>(contenidoArchivo);
-            }
-            else
-            {
-                reservas = new List<ReservasEnt>();
             }
         }
         public static void Grabar() => File.WriteAllText("../../JSON/Reservas.json", JsonConvert.SerializeObject(reservas));

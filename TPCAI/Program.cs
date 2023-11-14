@@ -21,6 +21,7 @@ namespace TPCAI
             ProductosModulo.alojamientos = AlojamientoAlmacen.ObtenerAlojamientos();
             ProductosModulo.vuelos = AlmacenVuelos.ObtenerVuelos();
             ModuloPresupuestos.Presupuestos = AlmacenPresupuestos.ObtenerPresupuestos();
+            ModuloReservas.reservas = AlmacenReservas.ObtenerReservas();
 
             //Guardar Almacenes
 

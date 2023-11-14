@@ -14,6 +14,7 @@ namespace TPCAI.Modulos
     public static class ModuloReservas
     {
         public static ConcurrentDictionary<int, List<Pasajero>> diccionarioPresupuestoPasajero { get; set; } = new ConcurrentDictionary<int, List<Pasajero>>();
+        public static List<ReservasEnt> reservas { get; set; } //Rerecencia viva de las reservas
 
 
         internal static void guardarPasajeroAPresupuestoActivo(List<Pasajero> pasajeros)
@@ -71,13 +72,13 @@ namespace TPCAI.Modulos
         private static int ObtenerNuevoCodigoReserva()
         {
             // Obtener el último código de reserva y sumar 1
-            return AlmacenReservas.Reservas.Max(r => r.CodigoReserva) + 1;
+            return reservas.Max(r => r.CodigoReserva) + 1;
         }
 
         public static List<ReservasEnt> BuscarPreReservas(int codigoPresupuesto)
         {
             // Obtengo reservas con EstadoReserva = "Pre reservada" para el presupuesto dado
-            var reservasPreReservadas = AlmacenReservas.Reservas
+            var reservasPreReservadas = reservas
             .Where(r => r.Presupuesto == codigoPresupuesto && r.EstadoReserva == "Pre reservada")
             .ToList();
 
@@ -87,7 +88,7 @@ namespace TPCAI.Modulos
         public static List<ReservasEnt> BuscarReservasAConfirmar(int codigoPresupuesto)
         {
             // Obtengo reservas con EstadoReserva = "Pendiente de pago" para el presupuesto dado
-            var reservasPreReservadas = AlmacenReservas.Reservas
+            var reservasPreReservadas = reservas
             .Where(r => r.Presupuesto == codigoPresupuesto && (r.EstadoReserva == "Pendiente de pago" || r.EstadoReserva == "Pagado"))
             .ToList();
 
@@ -97,7 +98,7 @@ namespace TPCAI.Modulos
         public static void GenerarReservaPendPago(int codReserva)
         {
             // busco la reserva por el código
-            var reserva = AlmacenReservas.Reservas.FirstOrDefault(r => r.CodigoReserva == codReserva);
+            var reserva = reservas.FirstOrDefault(r => r.CodigoReserva == codReserva);
 
             // verifico si la reserva existe y su estado actual es "Pre reservada"
             if (reserva != null && reserva.EstadoReserva == "Pre reservada")
@@ -115,7 +116,7 @@ namespace TPCAI.Modulos
         internal static void GenerarReservaConfirmada(int codReserva)
         {
             // Buscar la reserva por el código
-            var reserva = AlmacenReservas.Reservas.FirstOrDefault(r => r.CodigoReserva == codReserva);
+            var reserva = reservas.FirstOrDefault(r => r.CodigoReserva == codReserva);
 
             // Verificar si la reserva existe y su estado actual es "Pagado"
             if (reserva != null && reserva.EstadoReserva == "Pagado")
