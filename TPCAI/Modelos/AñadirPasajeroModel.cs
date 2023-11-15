@@ -261,10 +261,10 @@ namespace TPCAI.Modelos
                             }
                         }
 
-                        if (!listadoIDsProductos.Any(itemRepetido => itemRepetido == itemAlojamiento.SubItems[4].Text))
-                        {
+                        //if (!listadoIDsProductos.Any(itemRepetido => itemRepetido == itemAlojamiento.SubItems[4].Text))
+                        //{
                             listadoIDsProductos.Add(itemAlojamiento.SubItems[4].Text);
-                        }
+                        //}
                     }
 
                     if(totalAdultos < (totalMenores/2))
