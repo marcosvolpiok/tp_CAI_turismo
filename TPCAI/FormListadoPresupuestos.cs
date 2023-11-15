@@ -50,7 +50,7 @@ namespace TPCAI
         {
             decimal totalVuelos = model.ImporteTotalVuelos();
             decimal totalAlojamientos = model.ImporteTotalAlojamientos();
-            label1.Text = $"Presupuesto Activo: {(totalVuelos + totalAlojamientos):C2}";
+            lblTotal.Text = $"Total Presupuesto Activo: {(totalVuelos + totalAlojamientos):C2}";
         }
 
         private void btnAñadirDatosCliente_Click(object sender, EventArgs e)

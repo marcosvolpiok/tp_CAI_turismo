@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,26 +66,47 @@ namespace TPCAI.Modelos
 
         internal decimal ImporteTotalAlojamientos()
         {
-            return 0M; //TODO: lo mismo que vuelos.
+            decimal importe = 0M;
+
+            if (ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Count() > 0)
+            {
+                foreach (int idHabitacion in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
+                {
+                    List<Alojamiento> alojamientos = ProductosModulo.ObtenerAlojamientoPorIdHabitacion((int)idHabitacion);
+
+                    foreach (Alojamiento alojamiento in alojamientos)
+                    {
+                        foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+                        {
+                            importe += disponibilidad.Tarifa;
+                        }
+                    }
+
+                }
+            }
+
+            return importe;
         }
 
 
         internal decimal ImporteTotalVuelos()
         {
-            /* TO DO: Comentado por Marcos para poder probar porque al abrir el formulario tira error
-             * REVISAR
-             * 
-             * 
+            
             var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
-            decimal importe = 0M;
-            foreach (var vueloId in vuelosIds)
+            if (vuelosIds.Count() > 0)
             {
-                Vuelo vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
-                importe += vuelo.Precio;
-            }
+                decimal importe = 0M;
+                foreach (var vueloId in vuelosIds)
+                {
+                    VuelosEnt vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
+                    foreach (Tarifa tarifa in vuelo.Tarifas)
+                    {
+                        importe += tarifa.Precio;
+                    }
+                }
 
-            return importe;
-            */
+                return importe;
+            }
 
             return 0;
         }

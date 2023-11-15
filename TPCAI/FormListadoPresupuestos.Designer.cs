@@ -52,7 +52,7 @@
             this.IdTarifaVuel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAñadirDatosCliente = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.lblPresupuestoActivo = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblDNICliente = new System.Windows.Forms.Label();
@@ -243,15 +243,15 @@
             this.btnAñadirDatosCliente.UseVisualStyleBackColor = true;
             this.btnAñadirDatosCliente.Click += new System.EventHandler(this.btnAñadirDatosCliente_Click);
             // 
-            // label1
+            // lblTotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 557);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Total";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(30, 557);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(36, 13);
+            this.lblTotal.TabIndex = 12;
+            this.lblTotal.Text = "Total";
             // 
             // lblPresupuestoActivo
             // 
@@ -289,7 +289,7 @@
             this.Controls.Add(this.lblDNICliente);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblPresupuestoActivo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnAñadirDatosCliente);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControlAlojamientosVuelos);
@@ -316,7 +316,7 @@
         private System.Windows.Forms.DataGridView dataGridViewPresupuestosVuelos;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAñadirDatosCliente;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblPresupuestoActivo;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblDNICliente;
