@@ -9,6 +9,7 @@ using TPCAI.Entidades;
 using TPCAI.Modelos;
 using System.Security.Policy;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace TPCAI.Modulos
 {
@@ -18,6 +19,20 @@ namespace TPCAI.Modulos
         public static List<PresupuestosEnt> Presupuestos { get; set; } //Referencia viva de Presupuestos
         public static List<Vuelo> VuelosPresupuesto { get; private set; } = new List<Vuelo>();
         public static List<ClienteEnt> clientes { get; set; }
+
+        public static void AgregarAlojamientoAPresupuesto(string idHabitacion)
+        {
+            int idHabitacionInt;
+            if (int.TryParse(idHabitacion, out idHabitacionInt))
+            {
+                ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Add(idHabitacionInt);
+                ModuloPresupuestos.PresupuestoActivo.PrecioTotal = ProductosModulo.ImporteTotalAlojamientos() + ProductosModulo.ImporteTotalVuelos();
+            }
+            else
+            {
+                MessageBox.Show("El ID de habitación no es un número");
+            }
+        }
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
@@ -123,6 +138,11 @@ namespace TPCAI.Modulos
             return ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto;
         }
 
+        public static void EstablecerPresupuestoActivo(PresupuestosEnt presupuesto)
+        {
+            PresupuestoActivo = presupuesto;
+        }
+
         public static PresupuestosEnt agregarPresupuestoNuevo()
         {
             int idPresupuestoNuevo = CrearPresupuesto();
@@ -132,11 +152,11 @@ namespace TPCAI.Modulos
             presupuestoNuevo.CodigoPresupuesto = idPresupuestoNuevo;
             presupuestoNuevo.EstadoPresupuesto = "No Guardado";
 
-            if (ModuloPresupuestos.Presupuestos == null)
+            if (Presupuestos == null)
             {
-                ModuloPresupuestos.Presupuestos = new List<PresupuestosEnt>();
+                Presupuestos = new List<PresupuestosEnt>();
             }
-            ModuloPresupuestos.Presupuestos.Add(presupuestoNuevo);
+            Presupuestos.Add(presupuestoNuevo);
 
             return presupuestoNuevo;
         }

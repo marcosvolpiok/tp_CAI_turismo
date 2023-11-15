@@ -14,7 +14,6 @@ namespace TPCAI.Modelos
         public PresupuestosEnt NuevoPresupuesto()
         {
             PresupuestosEnt presupuestoNuevo = ModuloPresupuestos.agregarPresupuestoNuevo();
-            ModuloPresupuestos.Presupuestos.Add(presupuestoNuevo);
 
             return presupuestoNuevo;
         }
@@ -34,7 +33,7 @@ namespace TPCAI.Modelos
         public int EstablecerPresupuestoActivo(int presupuestoId)
         {
             PresupuestosEnt presupuesto = ModuloPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoId);
-            ModuloPresupuestos.PresupuestoActivo = presupuesto;
+            ModuloPresupuestos.EstablecerPresupuestoActivo(presupuesto);
 
             return presupuesto.CodigoPresupuesto;
         }
@@ -73,7 +72,6 @@ namespace TPCAI.Modelos
         {
             // Obtengo reservas con EstadoReserva = "Pendiente de pago" para el presupuesto activo
             var codigoPresupuestoActivo = obtenerPrespuestoActivo().CodigoPresupuesto;
-            var reservasAConfirmar = ModuloReservas.BuscarReservasAConfirmar(codigoPresupuestoActivo);
 
             // Llamo al método BuscarPreReservas de ModuloReservas
             return ModuloReservas.BuscarReservasAConfirmar(obtenerPrespuestoActivo().CodigoPresupuesto);

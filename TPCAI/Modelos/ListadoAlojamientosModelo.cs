@@ -78,16 +78,7 @@ namespace TPCAI
 
         public void AgregarAlojamientoAPresupuesto(string idHabitacion)
         {
-
-            int idHabitacionInt;
-            if (int.TryParse(idHabitacion, out idHabitacionInt)){
-                ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Add(idHabitacionInt);
-                ModuloPresupuestos.PresupuestoActivo.PrecioTotal = ProductosModulo.ImporteTotalAlojamientos() + ProductosModulo.ImporteTotalVuelos();
-            }
-            else
-            {
-                MessageBox.Show("El ID de habitación no es un número");
-            }
+            ModuloPresupuestos.AgregarAlojamientoAPresupuesto(idHabitacion);
         }
 
         public PresupuestosEnt ObtenerPresupuestoActivo()
