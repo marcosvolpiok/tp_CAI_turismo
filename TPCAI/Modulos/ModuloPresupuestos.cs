@@ -17,6 +17,7 @@ namespace TPCAI.Modulos
         public static PresupuestosEnt PresupuestoActivo { get; set; }
         public static List<PresupuestosEnt> Presupuestos { get; set; } //Referencia viva de Presupuestos
         public static List<Vuelo> VuelosPresupuesto { get; private set; } = new List<Vuelo>();
+        public static List<ClienteEnt> clientes { get; set; }
 
         internal static void EliminarVueloDeActivo(string vueloId)
         {
@@ -60,6 +61,7 @@ namespace TPCAI.Modulos
                 cliente.FechaNacimiento = cliente.FechaNacimiento;
 
                 PresupuestoActivo.Clientes = clienteNuevo;
+                clientes.Add(clienteNuevo);
 
                 return true;
             }
@@ -69,9 +71,6 @@ namespace TPCAI.Modulos
 
         private static int GenerarID()
         {
-            // Obtener la lista de clientes desde AlmacenClientes
-            List<ClienteEnt> clientes = AlmacenClientes.Clientes;
-
             var nuevoId = 1; // Valor predeterminado si no hay clientes registrados
 
             // Verifico si hay clientes registrados

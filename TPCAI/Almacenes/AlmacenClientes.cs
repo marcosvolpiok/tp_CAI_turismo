@@ -11,12 +11,11 @@ namespace TPCAI.Almacenes
 {
     internal static class AlmacenClientes
     {
-        // esto debe ser private, pero lo dejo asi para probar
-        internal static readonly List<ClienteEnt> clientes;
-        // NO SE SI ESTO ESTA BIEN, REVISAR CON ANDRES
-        public static List<ClienteEnt> Clientes
+        private static readonly List<ClienteEnt> clientes;
+
+        public static List<ClienteEnt> ObtenerClientes()
         {
-            get { return clientes; }
+            return clientes;
         }
 
         static AlmacenClientes()
@@ -33,18 +32,5 @@ namespace TPCAI.Almacenes
         }
 
         public static void Grabar() => File.WriteAllText("../../JSON/Clientes.json", JsonConvert.SerializeObject(clientes));
-
-        public static void AgregarCliente(ClienteEnt cliente)
-        {
-            clientes.Add(cliente);
-        }
-
-        public static void QuitarCliente(ClienteEnt cliente)
-        {
-            clientes.Remove(cliente);
-        }
-
-        
-
     }
 }
