@@ -9,6 +9,7 @@ using TPCAI.Almacenes;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Entidades;
 using TPCAI.Modelos;
+using TPCAI.Modulos;
 
 namespace TPCAI
 {
@@ -19,6 +20,52 @@ namespace TPCAI
         public static List<VuelosEnt> vuelos { get; set; } //Rerecencia viva de los alojamientos
         public static List<Vuelo> vuelosEnPantalla { get; set; } //Para mostrar en pantalla
 
+
+        public static decimal ImporteTotalVuelos()
+        {
+
+            var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
+            if (vuelosIds.Count() > 0)
+            {
+                decimal importe = 0M;
+                foreach (var vueloId in vuelosIds)
+                {
+                    VuelosEnt vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
+                    foreach (Tarifa tarifa in vuelo.Tarifas)
+                    {
+                        importe += tarifa.Precio;
+                    }
+                }
+
+                return importe;
+            }
+
+            return 0;
+        }
+
+        public static decimal ImporteTotalAlojamientos()
+        {
+            decimal importe = 0M;
+
+            if (ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Count() > 0)
+            {
+                foreach (int idHabitacion in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
+                {
+                    List<Alojamiento> alojamientos = ProductosModulo.ObtenerAlojamientoPorIdHabitacion((int)idHabitacion);
+
+                    foreach (Alojamiento alojamiento in alojamientos)
+                    {
+                        foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+                        {
+                            importe += disponibilidad.Tarifa;
+                        }
+                    }
+
+                }
+            }
+
+            return importe;
+        }
 
         public static List<Alojamiento> ObtenerAlojamientos(
             )

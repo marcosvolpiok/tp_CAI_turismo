@@ -192,6 +192,7 @@ namespace TPCAI.Modulos
         public static void AgregarVueloAPresupuesto(string vueloId)
         {
             PresupuestoActivo.IdTarifaVuelo.Add(vueloId);
+            ModuloPresupuestos.PresupuestoActivo.PrecioTotal = ProductosModulo.ImporteTotalAlojamientos() + ProductosModulo.ImporteTotalVuelos();
         }
 
 

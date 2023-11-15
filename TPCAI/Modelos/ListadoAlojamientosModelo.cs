@@ -77,6 +77,7 @@ namespace TPCAI
             int idHabitacionInt;
             if (int.TryParse(idHabitacion, out idHabitacionInt)){
                 ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Add(idHabitacionInt);
+                ModuloPresupuestos.PresupuestoActivo.PrecioTotal = ProductosModulo.ImporteTotalAlojamientos() + ProductosModulo.ImporteTotalVuelos();
             }
             else
             {

@@ -21,6 +21,7 @@ namespace TPCAI.Modelos
         public void EliminarVueloDelPresupuesto(string vueloId)
         {
             ModuloPresupuestos.EliminarVueloDeActivo(vueloId);
+            ModuloPresupuestos.PresupuestoActivo.PrecioTotal = ProductosModulo.ImporteTotalAlojamientos() + ProductosModulo.ImporteTotalVuelos();
         }
 
         public List<Vuelo> ObtenerVuelosPresupuesto()
@@ -66,49 +67,15 @@ namespace TPCAI.Modelos
 
         internal decimal ImporteTotalAlojamientos()
         {
-            decimal importe = 0M;
-
-            if (ModuloPresupuestos.PresupuestoActivo.IDHabitacion.Count() > 0)
-            {
-                foreach (int idHabitacion in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
-                {
-                    List<Alojamiento> alojamientos = ProductosModulo.ObtenerAlojamientoPorIdHabitacion((int)idHabitacion);
-
-                    foreach (Alojamiento alojamiento in alojamientos)
-                    {
-                        foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
-                        {
-                            importe += disponibilidad.Tarifa;
-                        }
-                    }
-
-                }
-            }
-
-            return importe;
+            
+            return ProductosModulo.ImporteTotalAlojamientos();
         }
 
 
         internal decimal ImporteTotalVuelos()
         {
-            
-            var vuelosIds = ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo;
-            if (vuelosIds.Count() > 0)
-            {
-                decimal importe = 0M;
-                foreach (var vueloId in vuelosIds)
-                {
-                    VuelosEnt vuelo = ProductosModulo.ObtenerVueloPorId(vueloId);
-                    foreach (Tarifa tarifa in vuelo.Tarifas)
-                    {
-                        importe += tarifa.Precio;
-                    }
-                }
 
-                return importe;
-            }
-
-            return 0;
+            return ProductosModulo.ImporteTotalVuelos();
         }
 
         public CiudadesDetailSubClass obtenerCiudadPorCodigo(string codigoCiudad)
