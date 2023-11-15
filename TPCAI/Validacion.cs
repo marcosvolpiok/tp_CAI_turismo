@@ -87,6 +87,13 @@ namespace TPCAI
                 return false;
             }
 
+            if (cliente.FechaNacimiento == null)
+            {
+                MessageBox.Show("Fecha de nacimiento ingresada es inválida");
+
+                return false;
+            }
+
             string patternSololetras = "^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ ]+$";
 
             if (!Regex.IsMatch(cliente.Nombre, patternSololetras))
