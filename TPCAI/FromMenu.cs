@@ -32,7 +32,7 @@ namespace TPCAI
 
             if(model.PresupuestoActivo().EstadoPresupuesto == "Guardado")
             {
-                MessageBox.Show("No se puede añadir productos a un presupusto en este estado.");
+                MessageBox.Show("No se puede añadir productos a un presupuesto en este estado.");
                 return;
             }
 
@@ -72,7 +72,7 @@ namespace TPCAI
 
             if (model.PresupuestoActivo().EstadoPresupuesto == "Guardado")
             {
-                MessageBox.Show("No se puede añadir productos a un presupusto en este estado.");
+                MessageBox.Show("No se puede añadir productos a un presupuesto en este estado.");
                 return;
             }
 
