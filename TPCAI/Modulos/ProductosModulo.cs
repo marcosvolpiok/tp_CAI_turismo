@@ -231,7 +231,7 @@ namespace TPCAI
 
 
         // BUSQUEDA VUELOS
-        internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
+        /*internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
         {
             // Creo una lista para almacenar los vuelos filtrados
             List<Vuelo> vuelosEncontrados = new List<Vuelo>();
@@ -280,6 +280,55 @@ namespace TPCAI
             }
             return vuelosEncontrados;
 
+        }*/
+
+        internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
+        {
+            // Creo una lista para almacenar los vuelos filtrados
+            List<Vuelo> vuelosEncontrados = new List<Vuelo>();
+
+            foreach (var vueloEnt in vuelos)
+            {
+                if ((vueloEnt.Origen == vuelosModel.Origen && vueloEnt.Destino == vuelosModel.Destino) ||
+                    (vueloEnt.Origen == vuelosModel.Destino && vueloEnt.Destino == vuelosModel.Origen))
+                {
+                    if ((vueloEnt.FechaSalida.Date == vuelosModel.FechaIda.Date ||
+                         vueloEnt.FechaSalida.Date == vuelosModel.FechaVuelta.Date) &&
+                        vueloEnt.Tarifas != null)
+                    {
+                        var tarifasFiltradas = vueloEnt.Tarifas
+                            .Where(tarifa =>
+                                (tarifa.TipoPasajero == "A" && vuelosModel.CantAdultos > 0 && vuelosModel.CantAdultos <= tarifa.Disponibilidad) ||
+                                (tarifa.TipoPasajero == "M" && vuelosModel.CantMenores > 0 && vuelosModel.CantMenores <= tarifa.Disponibilidad) ||
+                                (tarifa.TipoPasajero == "I" && vuelosModel.CantInfantes > 0 && vuelosModel.CantInfantes <= tarifa.Disponibilidad) &&
+                                tarifa.Clase == vuelosModel.Clase);
+
+                        if (tarifasFiltradas.Any())
+                        {
+                            // Creo un vuelo para cada tipo de pasajero y agrego a la lista de vuelos filtrados
+                            foreach (var tarifaParaPasajero in tarifasFiltradas)
+                            {
+                                vuelosEncontrados.Add(new Vuelo(
+                                    vueloEnt.Origen,
+                                    vueloEnt.Destino,
+                                    vueloEnt.FechaSalida,
+                                    vueloEnt.FechaArribo,
+                                    vueloEnt.Aerolinea,
+                                    tarifaParaPasajero.Precio,
+                                    tarifaParaPasajero.Clase,
+                                    tarifaParaPasajero.TipoPasajero,
+                                    tarifaParaPasajero.IdTarifaVuelos
+                                ));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Filtrar por la clase del modelo
+            vuelosEncontrados = vuelosEncontrados.Where(vuelo => vuelo.Clase == vuelosModel.Clase).ToList();
+
+            return vuelosEncontrados;
         }
 
         internal static VuelosEnt ObtenerVueloPorId(string vueloId)

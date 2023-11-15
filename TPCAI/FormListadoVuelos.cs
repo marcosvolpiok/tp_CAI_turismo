@@ -85,9 +85,30 @@ namespace TPCAI
             {
                 model.CantInfantes = cantInfantes;
             }
-            //VALIDACIONES POR AGREGAR
-            model.Origen = comboBox2.Text;
-            model.Destino = comboBox3.Text;
+
+            if (comboBox2.SelectedItem != null)
+            {
+                CiudadesDetailSubClass ciudadSeleccionada = comboBox2.SelectedItem as CiudadesDetailSubClass;
+                model.Origen = ciudadSeleccionada.CodigoISO;
+            }
+            else
+            {
+                model.Origen = "";
+            }
+
+            if (comboBox3.SelectedItem != null)
+            {
+                CiudadesDetailSubClass ciudadSeleccionada = comboBox3.SelectedItem as CiudadesDetailSubClass;
+                model.Destino = ciudadSeleccionada.CodigoISO;
+            }
+            else
+            {
+                model.Destino = "";
+            }
+
+
+
+            //VALIDACIONES POR AGREGAR            
             model.FechaIda = dateTimePicker1.Value;
             model.FechaVuelta = dateTimePicker2.Value;
             model.Clase = comboBox1.Text;
