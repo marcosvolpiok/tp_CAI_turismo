@@ -11,11 +11,11 @@ namespace TPCAI.Entidades.SubClasses
         public string CodigoHotel { get; set; }
         public string Nombre { get; set; }
         public string CodigoCiudad { get; set; }
-        public string Direccion { get; set; }
+        public Direccion Direccion { get; set; }
         public int Calificacion { get; set; }
         public List<DisponibilidadSubClass> Disponibilidad { get; set; }
 
-        public Alojamiento(string codigoHotel, string nombre, string codigoCiudad, string direccion, int calificacion, List<DisponibilidadSubClass> disponibilidad)
+        public Alojamiento(string codigoHotel, string nombre, string codigoCiudad, Direccion direccion, int calificacion, List<DisponibilidadSubClass> disponibilidad)
         {
             CodigoHotel = codigoHotel;
             Nombre = nombre;

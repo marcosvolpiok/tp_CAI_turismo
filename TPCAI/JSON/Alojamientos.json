@@ -4,7 +4,13 @@
     "CodigoHotel": "KAU",
     "Nombre": "Hotel Miami",
     "CodigoCiudad": "MIA",
-    "Direccion": "Calle 85",
+    "Direccion": {
+      "Calle": "Calle 85",
+      "Numero": "588",
+      "CP": "2929",
+      "Latitud": -42.264053617727036,
+      "Longitud": -117.15017616616105
+    },
     "Calificacion": 5,
     "Disponibilidad": [
       {
@@ -65,7 +71,13 @@
     "CodigoHotel": "HMA",
     "Nombre": "Hotel Madrid",
     "CodigoCiudad": "MAD",
-    "Direccion": "Calle 185",
+    "Direccion": {
+      "Calle": "Calle 185",
+      "Numero": "588",
+      "CP": "2929",
+      "Latitud": -42.264053617727036,
+      "Longitud": -117.15017616616105
+    },
     "Calificacion": 5,
     "Disponibilidad": [
       {
@@ -126,7 +138,13 @@
     "CodigoHotel": "HLA",
     "Nombre": "Hotel LA",
     "CodigoCiudad": "LAX",
-    "Direccion": "Calle 250",
+    "Direccion": {
+      "Calle": "Calle 250",
+      "Numero": "588",
+      "CP": "2929",
+      "Latitud": -42.264053617727036,
+      "Longitud": -117.15017616616105
+    },
     "Calificacion": 4,
     "Disponibilidad": [
       {
@@ -238,7 +256,13 @@
     "CodigoHotel": "HMA",
     "Nombre": "Hotel Buenos Aires",
     "CodigoCiudad": "EZE",
-    "Direccion": "Calle 95",
+    "Direccion": {
+      "Calle": "Calle 95",
+      "Numero": "588",
+      "CP": "2929",
+      "Latitud": -42.264053617727036,
+      "Longitud": -117.15017616616105
+    },
     "Calificacion": 3,
     "Disponibilidad": [
       {

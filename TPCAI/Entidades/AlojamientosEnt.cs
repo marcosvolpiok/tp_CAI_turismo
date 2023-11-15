@@ -14,9 +14,7 @@ namespace TPCAI
         public string CodigoHotel { get; set; }
         public string Nombre { get; set; }
         public string CodigoCiudad { get; set; }
-        //public Direccion Direccion { get; set; }
-
-        public string Direccion { get; set; }
+        public Direccion Direccion { get; set; }
         public int Calificacion { get; set; }
         public List<DisponibilidadSubClass> Disponibilidad { get; set; }
     }
