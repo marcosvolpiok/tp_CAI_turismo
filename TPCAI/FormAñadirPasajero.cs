@@ -29,11 +29,7 @@ namespace TPCAI
         {
             model = new AñadirPasajeroModel();
 
-            if (model.ObtenerPresupuestoActivo() == null)
-            {
-                MessageBox.Show("Seleccione un presupuesto primero");
-                this.Close();
-            }
+            cargarComboProductos();
         }
 
 

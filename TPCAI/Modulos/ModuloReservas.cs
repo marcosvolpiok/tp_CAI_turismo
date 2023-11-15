@@ -42,6 +42,8 @@ namespace TPCAI.Modulos
 
             if (presupuesto != null && presupuesto.EstadoPresupuesto != "Guardado")
             {
+                List<Pasajero> pasajeros = diccionarioPresupuestoPasajero[ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto];
+
                 // Crear nueva reserva
                 var nuevaReserva = new ReservasEnt
                 {
@@ -50,7 +52,7 @@ namespace TPCAI.Modulos
                     EstadoReserva = "Pre reservada",
                     Cobro = false,
                     FechaReservaConfirmada = null,
-                    Pasajeros = null // Puedes inicializar esto según tus necesidades
+                    Pasajeros = pasajeros
                 };
 
                 ModuloReservas.reservas.Add(nuevaReserva);

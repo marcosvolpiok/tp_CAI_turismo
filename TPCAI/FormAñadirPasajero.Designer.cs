@@ -48,10 +48,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimeFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnDebug = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboProductos = new System.Windows.Forms.ComboBox();
-            this.btnCargarVuelo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPresupuestoActivo
@@ -214,19 +212,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnDebug
-            // 
-            this.btnDebug.BackColor = System.Drawing.Color.Red;
-            this.btnDebug.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDebug.Location = new System.Drawing.Point(719, 405);
-            this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(161, 52);
-            this.btnDebug.TabIndex = 73;
-            this.btnDebug.Text = "DEBUG: Ver pasajeros en módulo Reservas";
-            this.btnDebug.UseVisualStyleBackColor = false;
-            this.btnDebug.Visible = false;
-            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -244,28 +229,13 @@
             this.comboProductos.Size = new System.Drawing.Size(305, 21);
             this.comboProductos.TabIndex = 75;
             // 
-            // btnCargarVuelo
-            // 
-            this.btnCargarVuelo.BackColor = System.Drawing.Color.Red;
-            this.btnCargarVuelo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCargarVuelo.Location = new System.Drawing.Point(719, 479);
-            this.btnCargarVuelo.Name = "btnCargarVuelo";
-            this.btnCargarVuelo.Size = new System.Drawing.Size(161, 52);
-            this.btnCargarVuelo.TabIndex = 76;
-            this.btnCargarVuelo.Text = "DEBUG: Cargar vuelo en Combo Productos";
-            this.btnCargarVuelo.UseVisualStyleBackColor = false;
-            this.btnCargarVuelo.Visible = false;
-            this.btnCargarVuelo.Click += new System.EventHandler(this.btnCargarVuelo_Click);
-            // 
             // FormAñadirPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 606);
-            this.Controls.Add(this.btnCargarVuelo);
             this.Controls.Add(this.comboProductos);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnDebug);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dateTimeFechaNacimiento);
             this.Controls.Add(this.label4);
@@ -307,11 +277,9 @@
         private System.Windows.Forms.ColumnHeader columnApellido;
         private System.Windows.Forms.ColumnHeader columnDNI;
         private System.Windows.Forms.ColumnHeader columnFechaNacimiento;
-        private System.Windows.Forms.Button btnDebug;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboProductos;
         private System.Windows.Forms.ColumnHeader columnIdTarifaVuelo;
         private System.Windows.Forms.ColumnHeader columnIdHabitacion;
-        private System.Windows.Forms.Button btnCargarVuelo;
     }
 }
