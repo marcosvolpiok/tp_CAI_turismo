@@ -19,6 +19,18 @@ namespace TPCAI.Modelos
             return presupuestoNuevo;
         }
 
+        public List<Pasajero> ObtenerPasajerosCargadosAPresupuestoPorID(int IDPresupuesto)
+        {
+            if (ModuloReservas.diccionarioPresupuestoPasajero.ContainsKey(IDPresupuesto))
+            {
+                return ModuloReservas.diccionarioPresupuestoPasajero[IDPresupuesto];
+            }
+            else
+            {
+                return new List<Pasajero>();
+            }            
+        }
+
         public int EstablecerPresupuestoActivo(int presupuestoId)
         {
             PresupuestosEnt presupuesto = ModuloPresupuestos.Presupuestos.FirstOrDefault(p => p.CodigoPresupuesto == presupuestoId);

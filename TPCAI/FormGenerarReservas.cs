@@ -84,6 +84,9 @@ namespace TPCAI
             //MessageBox.Show("Estado de presupuesto modificado a Reserva");
             if (dataGridViewPresupuestos.SelectedRows.Count > 0)
             {
+                var selectedRow = dataGridViewPresupuestos.SelectedRows[0];
+                int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
+
                 if ((model.obtenerPrespuestoActivo().IDHabitacion == null || model.obtenerPrespuestoActivo().IDHabitacion.Count() == 0) &&
                     (model.obtenerPrespuestoActivo().IdTarifaVuelo == null || model.obtenerPrespuestoActivo().IdTarifaVuelo.Count() == 0))
                 {
@@ -92,9 +95,14 @@ namespace TPCAI
                     return;
                 }
 
+                if(model.ObtenerPasajerosCargadosAPresupuestoPorID(int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString())).Count() == 0)
+                {
+                    MessageBox.Show("Añada Pasajeros al presupuesto primero");
 
-                var selectedRow = dataGridViewPresupuestos.SelectedRows[0];
-                int PresupuestoActivo = int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString());
+                    return;
+                }
+
+
 
                 establecerComoActivoPresupestoSeleccionado();
                 // Llamar al método GenerarPreReserva de GenerarReservasModel
