@@ -268,9 +268,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(93, 389);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 44;
-            this.label6.Text = "Clase";
+            this.label6.Text = "* Clase";
             // 
             // label5
             // 
