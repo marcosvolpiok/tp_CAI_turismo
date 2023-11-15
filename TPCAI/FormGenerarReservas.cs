@@ -147,6 +147,14 @@ namespace TPCAI
 
         private void btnAñadirPasajeros_Click(object sender, EventArgs e)
         {
+            if ((model.obtenerPrespuestoActivo().IDHabitacion == null || model.obtenerPrespuestoActivo().IDHabitacion.Count() == 0) &&
+                    (model.obtenerPrespuestoActivo().IdTarifaVuelo == null || model.obtenerPrespuestoActivo().IdTarifaVuelo.Count() == 0))
+            {
+                MessageBox.Show("Añada Productos al presupuesto primero");
+
+                return;
+            }
+
             FormAñadirPasajero formPasajero = new FormAñadirPasajero();
             formPasajero.ShowDialog();
         }

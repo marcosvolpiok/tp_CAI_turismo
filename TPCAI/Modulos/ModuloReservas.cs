@@ -44,6 +44,57 @@ namespace TPCAI.Modulos
             {
                 List<Pasajero> pasajeros = diccionarioPresupuestoPasajero[ModuloPresupuestos.PresupuestoActivo.CodigoPresupuesto];
 
+
+                //Verifica si cada vuelo tiene stock suficiente
+                foreach (string vuelo1 in ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
+                {
+                    int totalvuelo = 0;
+                    //Tarifa tarifa = ProductosModulo.ObtenerTarifaRefPorIdTarifa(vuelo);
+                    //tarifa.Disponibilidad--;
+                    foreach (string vuelo2 in ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
+                    {
+                        if (vuelo1 == vuelo2)
+                        {
+                            totalvuelo++;
+                        }
+                    }
+
+                    Tarifa tarifa = ProductosModulo.ObtenerTarifaRefPorIdTarifa(vuelo1);
+                    VuelosEnt vuelo = ProductosModulo.ObtenerVueloPorId(vuelo1);
+                    if(totalvuelo > tarifa.Disponibilidad)
+                    {
+                        MessageBox.Show("El vuelo " + vuelo.Origen + " " + vuelo.Destino + " (ID Tarifa: "+vuelo1+") no posee stock suficiente. Solicitados: "+totalvuelo+". Disponible: "+ tarifa.Disponibilidad);
+                    }
+                }
+
+
+
+
+
+                //Verifica si cada alojamiento tiene stock suficiente
+
+                foreach (int habitacion1 in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
+                {
+                    int totalhabitacion = 0;
+                    foreach (int habitacion2 in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
+                    {
+                        if (habitacion1 == habitacion2)
+                        {
+                            totalhabitacion++;
+                        }
+                    }
+
+                    HabitacionesHotelSubClass habitacion = ProductosModulo.ObtenerAlojamientoRefPorIdHabitacion(habitacion1);
+                    Alojamiento alojamiento = ProductosModulo.ObtenerAlojamientoPorIdHabitacionIndividual(habitacion1);
+
+                    if (totalhabitacion > habitacion.Cantidad)
+                    {
+                        MessageBox.Show("La habitación " + alojamiento.Nombre + " (ID Habitación: " + habitacion1 + ") no posee stock suficiente. Solicitados: " + totalhabitacion + ". Disponible: " + habitacion.Cantidad);
+                    }
+                }
+
+
+
                 // Crear nueva reserva
                 var nuevaReserva = new ReservasEnt
                 {
