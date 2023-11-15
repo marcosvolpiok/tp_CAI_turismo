@@ -17,6 +17,7 @@ namespace TPCAI.Modelos
         public void EliminarAlojamientoDelPresupuesto (int IDHabitacion)
         {
             ModuloPresupuestos.EliminarAlojamientoDeActivo(IDHabitacion);
+            ModuloPresupuestos.PresupuestoActivo.PrecioTotal = ProductosModulo.ImporteTotalAlojamientos() + ProductosModulo.ImporteTotalVuelos();
         }
         public void EliminarVueloDelPresupuesto(string vueloId)
         {
