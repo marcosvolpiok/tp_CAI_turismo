@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPCAI.Entidades;
 using TPCAI.Entidades.SubClasses;
 using TPCAI.Modelos;
 
@@ -38,6 +39,15 @@ namespace TPCAI
         private void FormListadoVuelos_Load(object sender, EventArgs e)
         {
             model = new ListadoVuelosModel();
+
+            comboBox2.DisplayMember = "Nombre";
+            CiudadesEnt ciudades = model.obtenerCiudades();
+
+            comboBox2.Items.AddRange(ciudades.Ciudades.ToArray());
+
+            comboBox3.DisplayMember = "Nombre";
+            comboBox3.Items.AddRange(ciudades.Ciudades.ToArray());
+
 
             var CodPresupuestoActivo = model.PresupuestoActivo();            
             label10.Text = $"Presupuesto Activo: {CodPresupuestoActivo}";

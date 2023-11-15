@@ -8,6 +8,8 @@ using TPCAI.Entidades.SubClasses;
 using TPCAI.Almacenes;
 using TPCAI.Modelos;
 using TPCAI.Modulos;
+using System.Windows.Forms;
+using TPCAI.Entidades;
 
 namespace TPCAI.Modelos
 {
@@ -23,6 +25,29 @@ namespace TPCAI.Modelos
         public string Clase { get; set; }
 
         public List<Vuelo> VuelosFiltrados { get; set; }
+
+        public CiudadesEnt obtenerCiudades()
+        {
+            return ProductosModulo.ciudades;
+        }
+
+        public CiudadesDetailSubClass obtenerCiudadPorCodigo(string codigoCiudad)
+        {
+            CiudadesEnt ciudades = ProductosModulo.ciudades;
+            foreach (CiudadesDetailSubClass ciudad in ciudades.Ciudades)
+            {
+                if (ciudad.CodigoISO == codigoCiudad)
+                {
+                    return ciudad;
+                }
+            }
+
+            MessageBox.Show("Código de ciudad " + codigoCiudad + " no encontrado");
+            CiudadesDetailSubClass ciudadVacia = new CiudadesDetailSubClass();
+            ciudadVacia.Nombre = "-";
+            return ciudadVacia;
+        }
+
 
         public void BuscarVuelos()
         {

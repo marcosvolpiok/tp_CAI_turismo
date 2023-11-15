@@ -4,7 +4,7 @@
     "CodigoHotel": "KAU",
     "Nombre": "Hotel Miami",
     "CodigoCiudad": "MIA",
-    "Direccion": "Av Santa Cruz 1234",
+    "Direccion": "Calle 85",
     "Calificacion": 5,
     "Disponibilidad": [
       {
@@ -17,42 +17,42 @@
         "Habitaciones": [
           {
             "IDHabitacion": 1,
-            "FechaHabitacionHotel": "2024-03-03T00:00:00",
+            "FechaHabitacionHotel": "2024-10-02T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 2,
-            "FechaHabitacionHotel": "2024-03-04T00:00:00",
+            "FechaHabitacionHotel": "2024-10-03T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 3,
-            "FechaHabitacionHotel": "2024-03-05T00:00:00",
+            "FechaHabitacionHotel": "2024-10-04T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 4,
-            "FechaHabitacionHotel": "2024-03-06T00:00:00",
+            "FechaHabitacionHotel": "2024-10-05T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 5,
-            "FechaHabitacionHotel": "2024-03-07T00:00:00",
+            "FechaHabitacionHotel": "2024-10-06T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 6,
-            "FechaHabitacionHotel": "2024-03-08T00:00:00",
+            "FechaHabitacionHotel": "2024-10-07T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 7,
-            "FechaHabitacionHotel": "2024-03-09T00:00:00",
+            "FechaHabitacionHotel": "2024-10-08T00:00:00",
             "Cantidad": 10
           },
           {
             "IDHabitacion": 8,
-            "FechaHabitacionHotel": "2024-03-10T00:00:00",
+            "FechaHabitacionHotel": "2024-10-09T00:00:00",
             "Cantidad": 10
           }
         ],
@@ -61,16 +61,16 @@
     ]
   },
   {
-    "IDAlojamientos": 1,
-    "CodigoHotel": "KAU",
+    "IDAlojamientos": 2,
+    "CodigoHotel": "HMA",
     "Nombre": "Hotel Madrid",
     "CodigoCiudad": "MAD",
-    "Direccion": "Av Santa Cruz 1234",
+    "Direccion": "Calle 185",
     "Calificacion": 5,
     "Disponibilidad": [
       {
         "Nombre": "SUITE NORMAL",
-        "Tarifa": 570000,
+        "Tarifa": 30000,
         "Capacidad": 2,
         "Adultos": 1,
         "Menores": 1,
@@ -78,7 +78,42 @@
         "Habitaciones": [
           {
             "IDHabitacion": 9,
-            "FechaHabitacionHotel": "2024-03-10T00:00:00",
+            "FechaHabitacionHotel": "2024-10-02T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 10,
+            "FechaHabitacionHotel": "2024-10-03T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 11,
+            "FechaHabitacionHotel": "2024-10-04T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 12,
+            "FechaHabitacionHotel": "2024-10-05T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 13,
+            "FechaHabitacionHotel": "2024-10-06T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 14,
+            "FechaHabitacionHotel": "2024-10-07T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 15,
+            "FechaHabitacionHotel": "2024-10-08T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 16,
+            "FechaHabitacionHotel": "2024-10-09T00:00:00",
             "Cantidad": 10
           }
         ],
@@ -87,12 +122,12 @@
     ]
   },
   {
-    "IDAlojamientos": 1,
-    "CodigoHotel": "KAU",
-    "Nombre": "Hotel Buenos Aires",
-    "CodigoCiudad": "EZE",
-    "Direccion": "Av Santa Cruz 1234",
-    "Calificacion": 3,
+    "IDAlojamientos": 3,
+    "CodigoHotel": "HLA",
+    "Nombre": "Hotel LA",
+    "CodigoCiudad": "LAX",
+    "Direccion": "Calle 250",
+    "Calificacion": 4,
     "Disponibilidad": [
       {
         "Nombre": "SUITE NORMAL",
@@ -103,12 +138,210 @@
         "Infantes": 1,
         "Habitaciones": [
           {
-            "IDHabitacion": 10,
-            "FechaHabitacionHotel": "2024-03-14T00:00:00",
+            "IDHabitacion": 17,
+            "FechaHabitacionHotel": "2024-10-02T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 18,
+            "FechaHabitacionHotel": "2024-10-03T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 19,
+            "FechaHabitacionHotel": "2024-10-04T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 20,
+            "FechaHabitacionHotel": "2024-10-05T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 21,
+            "FechaHabitacionHotel": "2024-10-06T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 22,
+            "FechaHabitacionHotel": "2024-10-07T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 23,
+            "FechaHabitacionHotel": "2024-10-08T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 24,
+            "FechaHabitacionHotel": "2024-10-09T00:00:00",
             "Cantidad": 10
           }
         ],
         "IDDisponibilidad": 3
+      },
+      {
+        "Nombre": "SUITE Individual",
+        "Tarifa": 57000,
+        "Capacidad": 1,
+        "Adultos": 1,
+        "Menores": 0,
+        "Infantes": 0,
+        "Habitaciones": [
+          {
+            "IDHabitacion": 25,
+            "FechaHabitacionHotel": "2024-10-02T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 26,
+            "FechaHabitacionHotel": "2024-10-03T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 27,
+            "FechaHabitacionHotel": "2024-10-04T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 28,
+            "FechaHabitacionHotel": "2024-10-05T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 29,
+            "FechaHabitacionHotel": "2024-10-06T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 30,
+            "FechaHabitacionHotel": "2024-10-07T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 31,
+            "FechaHabitacionHotel": "2024-10-08T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 32,
+            "FechaHabitacionHotel": "2024-10-09T00:00:00",
+            "Cantidad": 10
+          }
+        ],
+        "IDDisponibilidad": 4
+      }
+    ]
+  },
+  {
+    "IDAlojamientos": 4,
+    "CodigoHotel": "HMA",
+    "Nombre": "Hotel Buenos Aires",
+    "CodigoCiudad": "EZE",
+    "Direccion": "Calle 95",
+    "Calificacion": 3,
+    "Disponibilidad": [
+      {
+        "Nombre": "SUITE NORMAL",
+        "Tarifa": 370000,
+        "Capacidad": 2,
+        "Adultos": 1,
+        "Menores": 1,
+        "Infantes": 1,
+        "Habitaciones": [
+          {
+            "IDHabitacion": 33,
+            "FechaHabitacionHotel": "2024-10-02T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 34,
+            "FechaHabitacionHotel": "2024-10-03T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 35,
+            "FechaHabitacionHotel": "2024-10-04T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 36,
+            "FechaHabitacionHotel": "2024-10-05T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 37,
+            "FechaHabitacionHotel": "2024-10-06T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 38,
+            "FechaHabitacionHotel": "2024-10-07T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 39,
+            "FechaHabitacionHotel": "2024-10-08T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 40,
+            "FechaHabitacionHotel": "2024-10-09T00:00:00",
+            "Cantidad": 10
+          }
+        ],
+        "IDDisponibilidad": 5
+      },
+      {
+        "Nombre": "SUITE Individual",
+        "Tarifa": 27000,
+        "Capacidad": 1,
+        "Adultos": 1,
+        "Menores": 0,
+        "Infantes": 0,
+        "Habitaciones": [
+          {
+            "IDHabitacion": 41,
+            "FechaHabitacionHotel": "2024-10-02T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 42,
+            "FechaHabitacionHotel": "2024-10-03T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 43,
+            "FechaHabitacionHotel": "2024-10-04T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 44,
+            "FechaHabitacionHotel": "2024-10-05T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 45,
+            "FechaHabitacionHotel": "2024-10-06T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 46,
+            "FechaHabitacionHotel": "2024-10-07T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 47,
+            "FechaHabitacionHotel": "2024-10-08T00:00:00",
+            "Cantidad": 10
+          },
+          {
+            "IDHabitacion": 48,
+            "FechaHabitacionHotel": "2024-10-09T00:00:00",
+            "Cantidad": 10
+          }
+        ],
+        "IDDisponibilidad": 6
       }
     ]
   }

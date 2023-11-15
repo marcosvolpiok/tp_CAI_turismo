@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridViewListadoVuelos = new System.Windows.Forms.DataGridView();
+            this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFechaHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFechaHoraArribo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAerolinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIdTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.btnAñadirAPresupuesto = new System.Windows.Forms.Button();
             this.btnVerPresupuesto = new System.Windows.Forms.Button();
@@ -51,15 +60,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.ColumnOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFechaHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFechaHoraArribo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAerolinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipoPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnIdTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoVuelos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +82,51 @@
             this.dataGridViewListadoVuelos.Name = "dataGridViewListadoVuelos";
             this.dataGridViewListadoVuelos.Size = new System.Drawing.Size(957, 477);
             this.dataGridViewListadoVuelos.TabIndex = 3;
+            // 
+            // ColumnOrigen
+            // 
+            this.ColumnOrigen.HeaderText = "Origen";
+            this.ColumnOrigen.Name = "ColumnOrigen";
+            // 
+            // ColumnDestino
+            // 
+            this.ColumnDestino.HeaderText = "Destino";
+            this.ColumnDestino.Name = "ColumnDestino";
+            // 
+            // ColumnFechaHoraSalida
+            // 
+            this.ColumnFechaHoraSalida.HeaderText = "Fecha Hora Salida";
+            this.ColumnFechaHoraSalida.Name = "ColumnFechaHoraSalida";
+            // 
+            // ColumnFechaHoraArribo
+            // 
+            this.ColumnFechaHoraArribo.HeaderText = "Fecha Hora Arribo";
+            this.ColumnFechaHoraArribo.Name = "ColumnFechaHoraArribo";
+            // 
+            // ColumnAerolinea
+            // 
+            this.ColumnAerolinea.HeaderText = "Aerolinea";
+            this.ColumnAerolinea.Name = "ColumnAerolinea";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnClase
+            // 
+            this.ColumnClase.HeaderText = "Clase de Vuelo";
+            this.ColumnClase.Name = "ColumnClase";
+            // 
+            // ColumnTipoPasajero
+            // 
+            this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
+            this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
+            // 
+            // ColumnIdTarifa
+            // 
+            this.ColumnIdTarifa.HeaderText = "Id Tarifa";
+            this.ColumnIdTarifa.Name = "ColumnIdTarifa";
             // 
             // btnVolverMenu
             // 
@@ -127,11 +172,6 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Rosario, Argentina",
-            "New York, Estados Unidos",
-            "Moscú, Rusia",
-            "LAX"});
             this.comboBox3.Location = new System.Drawing.Point(249, 125);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(196, 21);
@@ -141,12 +181,6 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "CABA, Argentina",
-            "Córdoba, Argentina",
-            "Mendoza, Argentina",
-            "Madrid, España",
-            "MIA"});
             this.comboBox2.Location = new System.Drawing.Point(251, 83);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(196, 21);
@@ -293,51 +327,6 @@
             this.label10.Size = new System.Drawing.Size(214, 20);
             this.label10.TabIndex = 57;
             this.label10.Text = "Presupuesto Activo: 4545";
-            // 
-            // ColumnOrigen
-            // 
-            this.ColumnOrigen.HeaderText = "Origen";
-            this.ColumnOrigen.Name = "ColumnOrigen";
-            // 
-            // ColumnDestino
-            // 
-            this.ColumnDestino.HeaderText = "Destino";
-            this.ColumnDestino.Name = "ColumnDestino";
-            // 
-            // ColumnFechaHoraSalida
-            // 
-            this.ColumnFechaHoraSalida.HeaderText = "Fecha Hora Salida";
-            this.ColumnFechaHoraSalida.Name = "ColumnFechaHoraSalida";
-            // 
-            // ColumnFechaHoraArribo
-            // 
-            this.ColumnFechaHoraArribo.HeaderText = "Fecha Hora Arribo";
-            this.ColumnFechaHoraArribo.Name = "ColumnFechaHoraArribo";
-            // 
-            // ColumnAerolinea
-            // 
-            this.ColumnAerolinea.HeaderText = "Aerolinea";
-            this.ColumnAerolinea.Name = "ColumnAerolinea";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnClase
-            // 
-            this.ColumnClase.HeaderText = "Clase de Vuelo";
-            this.ColumnClase.Name = "ColumnClase";
-            // 
-            // ColumnTipoPasajero
-            // 
-            this.ColumnTipoPasajero.HeaderText = "Tipo Pasajero";
-            this.ColumnTipoPasajero.Name = "ColumnTipoPasajero";
-            // 
-            // IdTarifa
-            // 
-            this.ColumnIdTarifa.HeaderText = "Id Tarifa";
-            this.ColumnIdTarifa.Name = "ColumnIdTarifa";
             // 
             // FormListadoVuelos
             // 

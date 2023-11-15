@@ -3,8 +3,8 @@
     "CodigoVuelo": "NGD",
     "Origen": "MIA",
     "Destino": "LAX",
-    "FechaSalida": "2024-10-02 00:00:00",
-    "FechaArribo": "2024-10-02 04:00:00",
+    "FechaSalida": "2024-10-02T00:00:00",
+    "FechaArribo": "2024-10-02T04:00:00",
     "TiempoVuelo": 4,
     "Aerolinea": "SIA",
     "IdVuelo": "V-1",
@@ -99,8 +99,8 @@
     "CodigoVuelo": "XMI",
     "Origen": "LAX",
     "Destino": "MIA",
-    "FechaSalida": "2024-10-04 00:00:00",
-    "FechaArribo": "2024-10-04 04:00:00",
+    "FechaSalida": "2024-10-04T00:00:00",
+    "FechaArribo": "2024-10-04T04:00:00",
     "TiempoVuelo": 4,
     "Aerolinea": "SIA",
     "IdVuelo": "V-2",
@@ -184,6 +184,198 @@
       },
       {
         "IdTarifaVuelos": "TV24",
+        "Clase": "First",
+        "TipoPasajero": "I",
+        "Precio": 550,
+        "Disponibilidad": 4
+      }
+    ]
+  },
+  {
+    "CodigoVuelo": "XZE",
+    "Origen": "EZE",
+    "Destino": "MAD",
+    "FechaSalida": "2024-10-02T00:00:00",
+    "FechaArribo": "2024-10-02T04:00:00",
+    "TiempoVuelo": 4,
+    "Aerolinea": "SIA",
+    "IdVuelo": "V-3",
+    "Tarifas": [
+      {
+        "IdTarifaVuelos": "TV25",
+        "Clase": "Economy",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV26",
+        "Clase": "Economy",
+        "TipoPasajero": "M",
+        "Precio": 150,
+        "Disponibilidad": 4
+      },
+      {
+        "IdTarifaVuelos": "TV27",
+        "Clase": "Economy",
+        "TipoPasajero": "I",
+        "Precio": 450,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV28",
+        "Clase": "Premium",
+        "TipoPasajero": "A",
+        "Precio": 350,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV29",
+        "Clase": "Premium",
+        "TipoPasajero": "M",
+        "Precio": 350,
+        "Disponibilidad": 3
+      },
+      {
+        "IdTarifaVuelos": "TV30",
+        "Clase": "Premium",
+        "TipoPasajero": "I",
+        "Precio": 400,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV31",
+        "Clase": "Business",
+        "TipoPasajero": "A",
+        "Precio": 450,
+        "Disponibilidad": 1
+      },
+      {
+        "IdTarifaVuelos": "TV32",
+        "Clase": "Business",
+        "TipoPasajero": "M",
+        "Precio": 650,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV33",
+        "Clase": "Business",
+        "TipoPasajero": "I",
+        "Precio": 150,
+        "Disponibilidad": 9
+      },
+      {
+        "IdTarifaVuelos": "TV34",
+        "Clase": "First",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 6
+      },
+      {
+        "IdTarifaVuelos": "TV35",
+        "Clase": "First",
+        "TipoPasajero": "M",
+        "Precio": 750,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV36",
+        "Clase": "First",
+        "TipoPasajero": "I",
+        "Precio": 550,
+        "Disponibilidad": 4
+      }
+    ]
+  },
+  {
+    "CodigoVuelo": "XMA",
+    "Origen": "MAD",
+    "Destino": "EZE",
+    "FechaSalida": "2024-10-04T00:00:00",
+    "FechaArribo": "2024-10-04T04:00:00",
+    "TiempoVuelo": 4,
+    "Aerolinea": "SIA",
+    "IdVuelo": "V-4",
+    "Tarifas": [
+      {
+        "IdTarifaVuelos": "TV37",
+        "Clase": "Economy",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV38",
+        "Clase": "Economy",
+        "TipoPasajero": "M",
+        "Precio": 150,
+        "Disponibilidad": 4
+      },
+      {
+        "IdTarifaVuelos": "TV39",
+        "Clase": "Economy",
+        "TipoPasajero": "I",
+        "Precio": 450,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV40",
+        "Clase": "Premium",
+        "TipoPasajero": "A",
+        "Precio": 350,
+        "Disponibilidad": 8
+      },
+      {
+        "IdTarifaVuelos": "TV41",
+        "Clase": "Premium",
+        "TipoPasajero": "M",
+        "Precio": 350,
+        "Disponibilidad": 3
+      },
+      {
+        "IdTarifaVuelos": "TV42",
+        "Clase": "Premium",
+        "TipoPasajero": "I",
+        "Precio": 400,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV43",
+        "Clase": "Business",
+        "TipoPasajero": "A",
+        "Precio": 450,
+        "Disponibilidad": 1
+      },
+      {
+        "IdTarifaVuelos": "TV44",
+        "Clase": "Business",
+        "TipoPasajero": "M",
+        "Precio": 650,
+        "Disponibilidad": 7
+      },
+      {
+        "IdTarifaVuelos": "TV45",
+        "Clase": "Business",
+        "TipoPasajero": "I",
+        "Precio": 150,
+        "Disponibilidad": 9
+      },
+      {
+        "IdTarifaVuelos": "TV46",
+        "Clase": "First",
+        "TipoPasajero": "A",
+        "Precio": 550,
+        "Disponibilidad": 6
+      },
+      {
+        "IdTarifaVuelos": "TV47",
+        "Clase": "First",
+        "TipoPasajero": "M",
+        "Precio": 750,
+        "Disponibilidad": 10
+      },
+      {
+        "IdTarifaVuelos": "TV48",
         "Clase": "First",
         "TipoPasajero": "I",
         "Precio": 550,
