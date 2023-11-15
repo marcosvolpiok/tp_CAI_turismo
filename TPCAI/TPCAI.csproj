@@ -125,6 +125,7 @@
     </Compile>
     <Compile Include="Modelos\ListadoPresupuestosModel.cs" />
     <Compile Include="Modelos\ListadoVuelosModel.cs" />
+    <Compile Include="Modelos\MenuModelo.cs" />
     <Compile Include="Modulos\ModuloPresupuestos.cs" />
     <Compile Include="Modulos\ModuloReservas.cs" />
     <Compile Include="Modulos\ProductosModulo.cs" />
