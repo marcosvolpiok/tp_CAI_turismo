@@ -151,7 +151,6 @@ namespace TPCAI
             {
                 MessageBox.Show("No se pudo obtener un nuevo presupuesto del modelo.");
             }
-
         }
 
         private void btnEstablecerActivo_Click(object sender, EventArgs e)

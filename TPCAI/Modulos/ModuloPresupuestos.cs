@@ -131,6 +131,7 @@ namespace TPCAI.Modulos
             presupuestoNuevo.IDHabitacion = new List<int>();
             presupuestoNuevo.IdTarifaVuelo = new List<string>();
             presupuestoNuevo.CodigoPresupuesto = idPresupuestoNuevo;
+            presupuestoNuevo.EstadoPresupuesto = "No Guardado";
 
             if (ModuloPresupuestos.Presupuestos == null)
             {
