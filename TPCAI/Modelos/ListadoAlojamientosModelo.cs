@@ -67,6 +67,11 @@ namespace TPCAI
                 );
             if (resultadoValidacion == true)
             {
+                if (this.calificacion == "TODOS")
+                {
+                    this.calificacion = "";
+                }
+
                 AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientosFiltrados(this);
             }
         }
