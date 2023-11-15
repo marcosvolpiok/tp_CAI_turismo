@@ -95,6 +95,13 @@ namespace TPCAI
                     return;
                 }
 
+                if (model.obtenerPrespuestoActivo().Clientes == null)
+                {
+                    MessageBox.Show("Añada el Cliente al presupuesto primero");
+
+                    return;
+                }
+
                 if(model.ObtenerPasajerosCargadosAPresupuestoPorID(int.Parse(selectedRow.Cells["ColumnNroPresupuesto"].Value.ToString())).Count() == 0)
                 {
                     MessageBox.Show("Añada Pasajeros al presupuesto primero");
