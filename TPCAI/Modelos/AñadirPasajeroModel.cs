@@ -210,8 +210,6 @@ namespace TPCAI.Modelos
                         }
                     }
 
-                    //Obtener producto
-                    //Alojamiento alojamiento = this.obtenerAlojamientoPorIDAlojamiento(item.SubItems[5].Text);
                     DisponibilidadSubClass disponibilidad = this.ObtenerDisponibilidadPorID(int.Parse(item.SubItems[5].Text));
 
                     if (totalAdultos > disponibilidad.Adultos)
@@ -234,8 +232,6 @@ namespace TPCAI.Modelos
 
                         return false;
                     }
-
-                    //MessageBox.Show("total ::: " + (totalAdultos + totalMenores + totalInfantes));
 
                     if ((totalAdultos + totalMenores + totalInfantes)==0)
                     {

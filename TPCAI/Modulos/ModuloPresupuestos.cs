@@ -63,8 +63,7 @@ namespace TPCAI.Modulos
             }
         }
 
-        //CLIENTES
-        public static bool AgregarClientes(Cliente cliente)
+       public static bool AgregarClientes(Cliente cliente)
         {
             if (Validacion.validarNuevoCliente(cliente) == true)
             {
@@ -86,15 +85,11 @@ namespace TPCAI.Modulos
 
         private static int GenerarID()
         {
-            var nuevoId = 1; // Valor predeterminado si no hay clientes registrados
+            var nuevoId = 1;
 
-            // Verifico si hay clientes registrados
             if (clientes != null && clientes.Count > 0)
             {
-                // Obtengo el último cliente registrado
                 ClienteEnt ultimoCliente = clientes.Last();
-
-                // Incrementar el ID del último cliente en 1
                 nuevoId = ultimoCliente.ID + 1;
             }
 
@@ -119,16 +114,13 @@ namespace TPCAI.Modulos
                 presupuestosTmp.AddRange(Presupuestos);
             }
 
-            // Verifico si hay presupuestos existentes
             if (presupuestosTmp.Any())
             {
-                // Obtener el código del último presupuesto
                 int ultimoCodigo = presupuestosTmp.Max(p => p.CodigoPresupuesto);                
                 return ultimoCodigo + 1;
             }
             else
             {
-                // Si no hay presupuestos, comenzar desde el código 1
                 return 1;
             }
         }

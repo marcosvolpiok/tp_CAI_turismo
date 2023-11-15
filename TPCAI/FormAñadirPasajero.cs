@@ -162,51 +162,5 @@ namespace TPCAI
                 MessageBox.Show("Pasajeros guardados en el presupuesto activo");
             }
         }
-
-        private void btnDebug_Click(object sender, EventArgs e)
-        {
-            ;
-            if(model.ObtenerPasajerosPresupuestos().TryGetValue(model.ObtenerPresupuestoActivo().CodigoPresupuesto, out List<Pasajero> valorPasajero))
-            {
-                MessageBox.Show("Cantidad de pasajeros en el presupusto activo: " +
-                                model.ObtenerPasajerosPresupuestos()[model.ObtenerPresupuestoActivo().CodigoPresupuesto].Count().ToString());
-
-                MessageBox.Show("Ahora voy a mostrar un messageBox con el nombre y apellido de cada pasajero en el presupuesto activo.");
-
-                foreach (Pasajero pasajero in model.ObtenerPasajerosPresupuestos()[model.ObtenerPresupuestoActivo().CodigoPresupuesto])
-                {
-                    MessageBox.Show("Datos de pasajero: " +
-                                " - nombre: " + pasajero.NombrePasajero +
-                                " - apellido: " + pasajero.ApellidoPasajero +
-                                " - DNI: " + pasajero.Dni +
-                                " - FechaNacimiento: " + pasajero.FechaNacimiento.ToString()
-                                );
-                }
-            }
-            else
-            {
-                MessageBox.Show("Añada pasajeros para poder debuggear");
-            }
-        }
-
-        private void btnCargarVuelo_Click(object sender, EventArgs e)
-        {
-            // ***** DEBUG 
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            // Borrar este método porque le está pegando al Módulo, SOLO PARA DEBUGGEAR PORQUE NO ANDA LA CARGA DE VUELOS A PRESUPUESTO
-            PresupuestosEnt nuevoPresupDEBUGVuelo = new PresupuestosEnt();
-            nuevoPresupDEBUGVuelo.IdTarifaVuelo = new List<string> { "TV1" };
-            ModuloPresupuestos.PresupuestoActivo = nuevoPresupDEBUGVuelo;
-
-            cargarComboProductos();
-        }
     }
 }

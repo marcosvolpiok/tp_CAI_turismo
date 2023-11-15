@@ -12,8 +12,6 @@ namespace TPCAI
     {
         internal static bool AgregarCliente(Cliente cliente)
         {
-            // Agregar lógica de validación para el cliente si es necesario
-
             return ModuloPresupuestos.AgregarClientes(cliente);
         }
 

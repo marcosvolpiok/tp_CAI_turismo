@@ -66,22 +66,10 @@ namespace TPCAI
                 lblActivo.Text = "";
             }
 
-            buscarPresupuestos();
-        }
-
-        private void buscarPresupuestos()
-        {
-            /*dataGridViewPresupuestos.Rows.Clear();
-            foreach (var presupuesto in model.obtenerPresupuestos())
-            {
-                this.dataGridViewPresupuestos.Rows.Add(presupuesto.CodigoPresupuesto, null, null);
-            }
-            this.dataGridViewPresupuestos.Refresh();*/
         }
 
         private void btnPreReservar_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Estado de presupuesto modificado a Reserva");
             if (dataGridViewPresupuestos.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridViewPresupuestos.SelectedRows[0];
@@ -110,12 +98,8 @@ namespace TPCAI
                 }
 
 
-
                 establecerComoActivoPresupestoSeleccionado();
-                // Llamar al método GenerarPreReserva de GenerarReservasModel
                 model.GenerarPreReserva(PresupuestoActivo);
-                
-
                 recargarTodasLasGrillasConPresupuestoActivo();
             }
             else
@@ -214,21 +198,16 @@ namespace TPCAI
 
         private void BuscarPreReservas()
         {
-            // Llamo al método BuscarPreReservas de GenerarReservasModel
             var preReservas = model.BuscarPreReservas();
 
-            // Limpio el DataGridViewGenerarReserva antes de mostrar nuevos datos
             dataGridViewGenerarReserva.Rows.Clear();
 
             var presupuestoActivo = model.obtenerPrespuestoActivo();
 
-            // Llamada al método ObtengoInfoProductos en GenerarReservasModel
             string infoProductos = model.ObtengoInfoProductos(presupuestoActivo);
 
-            // Llamada al método ObtengoPrecioTotal en GenerarReservasModel
             decimal precioTotal = model.ObtengoPrecioTotal(presupuestoActivo);
 
-            // Llenar el dataGridViewGenerarReserva con la información obtenida
             foreach (var preReserva in preReservas)
             {
                 dataGridViewGenerarReserva.Rows.Add(preReserva.CodigoReserva, infoProductos, precioTotal);
@@ -238,22 +217,16 @@ namespace TPCAI
 
         private void BuscarReservasAConfirmar()
         {
-            // Llamo al método BuscarReservasConfirmar de GenerarReservasModel
             var ReservasConfirmar = model.BuscarReservasConfirmar();
 
-            // Limpio el dataGridViewGenerarConfirmacion antes de mostrar nuevos datos
             dataGridViewGenerarConfirmacion.Rows.Clear();
 
             var presupuestoActivo = model.obtenerPrespuestoActivo();
 
-            // Llamada al método ObtengoInfoProductos en GenerarReservasModel
             string infoProductos = model.ObtengoInfoProductos(presupuestoActivo);
 
-            // Llamada al método ObtengoPrecioTotal en GenerarReservasModel
             decimal precioTotal = model.ObtengoPrecioTotal(presupuestoActivo);
 
-
-            // Llenar el dataGridViewGenerarConfirmacion con la información obtenida
             foreach (var ReservaAConfirmar in ReservasConfirmar)
             {
                 dataGridViewGenerarConfirmacion.Rows.Add(ReservaAConfirmar.CodigoReserva, infoProductos, ReservaAConfirmar.EstadoReserva, precioTotal);
@@ -268,7 +241,6 @@ namespace TPCAI
                 var selectedRow = dataGridViewGenerarConfirmacion.SelectedRows[0];
                 int CodReserva = int.Parse(selectedRow.Cells["dataGridViewTextBoxColumn5"].Value.ToString());
 
-                // Llamar al método ConfirmarReserva de GenerarReservasModel
                 model.ConfirmarReserva(CodReserva);
 
                 recargarTodasLasGrillasConPresupuestoActivo();
@@ -321,7 +293,6 @@ namespace TPCAI
                 var selectedRow = dataGridViewGenerarReserva.SelectedRows[0];
                 int CodReserva = int.Parse(selectedRow.Cells["dataGridViewTextBoxColumn1"].Value.ToString());
 
-                // Llamar al método ReservarPendientePago de GenerarReservasModel
                 model.ReservarPendientePago(CodReserva);
 
                 recargarTodasLasGrillasConPresupuestoActivo();

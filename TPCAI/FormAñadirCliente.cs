@@ -21,13 +21,11 @@ namespace TPCAI
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Recopilo los datos del formulario
             string nombre = txtNombre.Text;            
             string apellido = txtApellido.Text;
             string dni = txtDNI.Text;
             DateTime fechaNacimiento = dateTimeFechaNacimiento.Value;
 
-            // Creo un objeto Cliente con los datos
             Cliente cliente = new Cliente
             {
                 Nombre = nombre,
@@ -36,20 +34,18 @@ namespace TPCAI
                 FechaNacimiento = fechaNacimiento
             };
 
-            // Llamo método en AñadirClienteModel para agregar el cliente
             if (AñadirClienteModel.AgregarCliente(cliente) == true)
             {
-                // MENSAJE DE CONFIRMACION
                 MessageBox.Show("Cliente guardado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
-                FormListadoPresupuestos presupuestos = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
+                FormListadoPresupuestos presupuestos = new FormListadoPresupuestos();
             }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormListadoPresupuestos formPresup = new FormListadoPresupuestos(); //OJO! NO PASARLE MÁS ESTE PARÁMETRO
+            FormListadoPresupuestos formPresup = new FormListadoPresupuestos();
             this.Close();
         }
 

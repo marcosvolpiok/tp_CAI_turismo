@@ -20,7 +20,7 @@ namespace TPCAI
         public string cantidadMenores { get; set; }
         public string cantidadInfantes { get; set; }
         public string calificacion { get; set; }
-        public string IdDisponibilidadsSeleccionada { get; set; } // Nueva propiedad
+        public string IdDisponibilidadsSeleccionada { get; set; }
 
         public List<Alojamiento> AlojamientosFiltrados { get; private set; }
 
@@ -49,7 +49,6 @@ namespace TPCAI
 
         public void BuscarAlojaimentos()
         {
-            //return ProductosModulo.ObtenerAlojamientos();
             AlojamientosFiltrados = ProductosModulo.ObtenerAlojamientos();
         }
 

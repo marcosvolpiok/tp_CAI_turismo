@@ -49,8 +49,6 @@ namespace TPCAI.Modulos
                 foreach (string vuelo1 in ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
                 {
                     int totalvuelo = 0;
-                    //Tarifa tarifa = ProductosModulo.ObtenerTarifaRefPorIdTarifa(vuelo);
-                    //tarifa.Disponibilidad--;
                     foreach (string vuelo2 in ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
                     {
                         if (vuelo1 == vuelo2)
@@ -72,7 +70,6 @@ namespace TPCAI.Modulos
 
 
                 //Verifica si cada alojamiento tiene stock suficiente
-
                 foreach (int habitacion1 in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
                 {
                     int totalhabitacion = 0;
@@ -108,7 +105,6 @@ namespace TPCAI.Modulos
 
                 ModuloReservas.reservas.Add(nuevaReserva);
 
-                // Actualizar estado del presupuesto a "Guardado"
                 presupuesto.EstadoPresupuesto = "Guardado";
                 
 
@@ -131,14 +127,12 @@ namespace TPCAI.Modulos
             }
             else
             {
-                // Mostrar mensaje de error si el presupuesto está "Guardado"
                 MessageBox.Show("El presupuesto seleccionado está en estado 'Guardado'. No se puede generar la pre reserva.");
             }
         }
 
         private static int ObtenerNuevoCodigoReserva()
         {
-            // Obtener el último código de reserva y sumar 1
             return reservas.Max(r => r.CodigoReserva) + 1;
         }
 
@@ -164,13 +158,10 @@ namespace TPCAI.Modulos
 
         public static void GenerarReservaPendPago(int codReserva)
         {
-            // busco la reserva por el código
             var reserva = reservas.FirstOrDefault(r => r.CodigoReserva == codReserva);
 
-            // verifico si la reserva existe y su estado actual es "Pre reservada"
             if (reserva != null && reserva.EstadoReserva == "Pre reservada")
             {
-                // actualizo el estado de la reserva a "Pendiente de Pago"
                 reserva.EstadoReserva = "Pendiente de pago";
                 MessageBox.Show("Se ha cambiado el estado de la reserva a Pendiente de pago");
             }
@@ -182,16 +173,12 @@ namespace TPCAI.Modulos
 
         internal static void GenerarReservaConfirmada(int codReserva)
         {
-            // Buscar la reserva por el código
             var reserva = reservas.FirstOrDefault(r => r.CodigoReserva == codReserva);
 
-            // Verificar si la reserva existe y su estado actual es "Pagado"
             if (reserva != null && reserva.EstadoReserva == "Pagado")
             {
-                // Verificar si la reserva ya está confirmada
                 if (reserva.EstadoReserva != "Confirmada")
                 {
-                    // Actualizar el estado de la reserva a "Confirmada"
                     reserva.EstadoReserva = "Confirmada";
                     reserva.FechaReservaConfirmada = DateTime.Now;
                     MessageBox.Show("La reserva ha sido confirmada");

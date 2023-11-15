@@ -35,11 +35,11 @@ namespace TPCAI
             lblNombreCliente.Text = "";
 
 
-            ActualizarPresupuestoVuelos(); // Inicialmente, muestra una lista vacía de vuelos en el dataGridViewPresupuestosVuelos
+            ActualizarPresupuestoVuelos();
 
             ActualizarPresupuestoAlojamientos();
 
-            ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
+            ActualizarTotalPresupuesto();
 
             ActualizarDatosCliente();
 
@@ -69,7 +69,7 @@ namespace TPCAI
                 if (this.dataGridViewPresupuestosVuelos.SelectedRows.Count > 0)
                 {
                     DataGridViewRow selectedRow = dataGridViewPresupuestosVuelos.SelectedRows[0];
-                    string vueloId = selectedRow.Cells["IdTarifaVuel"].Value.ToString(); //Obtener algún tipo de identificación de la tarifa a partir de la fila.
+                    string vueloId = selectedRow.Cells["IdTarifaVuel"].Value.ToString();
                     model.EliminarVueloDelPresupuesto(vueloId);
                     ActualizarPresupuestoVuelos();
                 }
@@ -101,7 +101,7 @@ namespace TPCAI
                 }
             }
             
-            ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
+            ActualizarTotalPresupuesto();
         }
 
         

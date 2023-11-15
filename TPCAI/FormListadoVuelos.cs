@@ -51,7 +51,6 @@ namespace TPCAI
 
             var CodPresupuestoActivo = model.PresupuestoActivo();            
             label10.Text = $"Presupuesto Activo: {CodPresupuestoActivo}";
-            /* inicializar y llenar datos de origenes y destinos */
         }
 
         private void btnAñadirAPresupuesto_Click(object sender, EventArgs e)
@@ -101,7 +100,6 @@ namespace TPCAI
         
         private void Buscar()
         {
-            // Mapear los resultados en el dataGridViewListadoVuelos
             this.dataGridViewListadoVuelos.Rows.Clear();
 
             if (model.VuelosFiltrados != null)
