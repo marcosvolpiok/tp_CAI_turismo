@@ -346,6 +346,41 @@ namespace TPCAI
             return null;
         }
 
+        internal static Tarifa ObtenerTarifaRefPorIdTarifa(string vueloId)
+        {
+            foreach (VuelosEnt vuelo in vuelos)
+            {
+                foreach (Tarifa tarifa in vuelo.Tarifas)
+                {
+                    if (tarifa.IdTarifaVuelos == vueloId)
+                    {
+                        return tarifa;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        internal static HabitacionesHotelSubClass ObtenerAlojamientoRefPorIdHabitacion(int idHabitacion)
+        {
+            foreach (var alojamiento in alojamientos)
+            {
+                foreach (var disponibilidad in alojamiento.Disponibilidad)
+                {
+                    foreach (var habitacion in disponibilidad.Habitaciones)
+                    {
+                        if (habitacion.IDHabitacion == idHabitacion)
+                        {
+                            return habitacion;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         internal static List<Alojamiento> ObtenerAlojamientoPorIdHabitacion (int idHabitacion)
         {
             List<Alojamiento> alojamientosFiltrados = new List<Alojamiento>();

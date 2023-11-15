@@ -59,7 +59,23 @@ namespace TPCAI.Modulos
 
                 // Actualizar estado del presupuesto a "Guardado"
                 presupuesto.EstadoPresupuesto = "Guardado";
-                //AlmacenPresupuestos.Grabar();
+                
+
+                //Baja stock de vuelos
+                foreach(string vuelo in ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
+                {
+                    Tarifa tarifa = ProductosModulo.ObtenerTarifaRefPorIdTarifa(vuelo);
+                    tarifa.Disponibilidad--;
+                }
+
+                //Baja stock de Alojamientos
+                foreach (int IDHabitacion in ModuloPresupuestos.PresupuestoActivo.IDHabitacion)
+                {
+                    HabitacionesHotelSubClass habitacion = ProductosModulo.ObtenerAlojamientoRefPorIdHabitacion(IDHabitacion);
+                    habitacion.Cantidad--;
+                }
+
+
                 MessageBox.Show("Presupuesto guardado y Reserva en Estado Pre Reservada creada");
             }
             else
