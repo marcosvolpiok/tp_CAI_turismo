@@ -34,17 +34,6 @@ namespace TPCAI.Almacenes
         }
 
 
-        public static void Grabar() => File.WriteAllText("../../JSON/Vuelos.json", JsonConvert.SerializeObject(vuelos));
-
-        public static void AgregarCliente(VuelosEnt vuelo)
-        {
-            vuelos.Add(vuelo);
-        }
-
-        public static void QuitarCliente(VuelosEnt vuelo)
-        {
-            vuelos.Remove(vuelo);
-        }
-
+        public static void Grabar(List<VuelosEnt> vuelosNew) => File.WriteAllText("../../JSON/Vuelos.json", JsonConvert.SerializeObject(vuelosNew));
     }
 }

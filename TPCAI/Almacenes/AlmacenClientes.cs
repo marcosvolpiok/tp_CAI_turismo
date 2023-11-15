@@ -31,6 +31,6 @@ namespace TPCAI.Almacenes
             }
         }
 
-        public static void Grabar() => File.WriteAllText("../../JSON/Clientes.json", JsonConvert.SerializeObject(clientes));
+        public static void Grabar(List<ClienteEnt> clientesNew) => File.WriteAllText("../../JSON/Clientes.json", JsonConvert.SerializeObject(clientesNew));
     }
 }

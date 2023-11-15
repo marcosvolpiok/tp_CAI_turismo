@@ -40,7 +40,9 @@ namespace TPCAI
             ActualizarPresupuestoAlojamientos();
 
             ActualizarTotalPresupuesto(); // Agrego esta línea para actualizar el total al cargar el formulario.
-                                          // 
+
+            ActualizarDatosCliente();
+
             lblPresupuestoActivo.Text = $"Presupuesto Activo: {model.ObtenerPresupuestoActivo().CodigoPresupuesto.ToString()}";
 
         }

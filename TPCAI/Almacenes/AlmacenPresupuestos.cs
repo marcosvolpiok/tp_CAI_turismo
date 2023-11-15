@@ -35,7 +35,7 @@ namespace TPCAI.Almacenes
 
 
 
-        public static void Grabar() => File.WriteAllText("../../JSON/Presupuestos.json", JsonConvert.SerializeObject(presupuestos));
+        public static void Grabar(List<PresupuestosEnt> presupuestosNew) => File.WriteAllText("../../JSON/Presupuestos.json", JsonConvert.SerializeObject(presupuestosNew));
 
         
 

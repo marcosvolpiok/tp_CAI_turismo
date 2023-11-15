@@ -27,17 +27,6 @@ namespace TPCAI.Almacenes
                 reservas = JsonConvert.DeserializeObject<List<ReservasEnt>>(contenidoArchivo);
             }
         }
-        public static void Grabar() => File.WriteAllText("../../JSON/Reservas.json", JsonConvert.SerializeObject(reservas));
-
-        public static void AgregarReserva(ReservasEnt reserva)
-        {
-            reservas.Add(reserva);
-        }
-
-        public static void QuitarReserva(ReservasEnt reserva)
-        {
-            reservas.Remove(reserva);
-        }
-
+        public static void Grabar(List<ReservasEnt> reservasNew) => File.WriteAllText("../../JSON/Reservas.json", JsonConvert.SerializeObject(reservasNew));
     }
 }

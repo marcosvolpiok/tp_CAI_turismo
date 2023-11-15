@@ -40,7 +40,8 @@ namespace TPCAI
 
         private void btnSalirMenu_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            //Environment.Exit(1);
+            this.Close();
         }
 
         private void btnGenerarReservas_Click(object sender, EventArgs e)
@@ -57,9 +58,6 @@ namespace TPCAI
 
         private void FromMenu_Load(object sender, EventArgs e)
         {
-
-
-
         }
 
         private void btnAlojamientos_Click(object sender, EventArgs e)

@@ -28,5 +28,8 @@ namespace TPCAI.Almacenes
         {
             return ciudades;
         }
+
+        public static void Grabar(CiudadesEnt ciudades) => File.WriteAllText("../../JSON/Ciudades.json", JsonConvert.SerializeObject(ciudades));
+
     }
 }

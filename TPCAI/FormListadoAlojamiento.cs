@@ -26,7 +26,7 @@ namespace TPCAI
         {
             FormListadoPresupuestos listadoPresupuestos = new FormListadoPresupuestos();
             listadoPresupuestos.ShowDialog();
-            this.mostrarAlojamientosEnGrilla();
+            this.mostrarAlojamientosEnGrilla(true);
 
         }
 
@@ -56,30 +56,32 @@ namespace TPCAI
             }
         }
 
-        private void mostrarAlojamientosEnGrilla()
+        private void mostrarAlojamientosEnGrilla(bool ocultarMsgbox = false)
         {
             this.dataGridViewListadoAlojamiento.Rows.Clear();
 
-            //Muestra en lista
-            foreach (Alojamiento alojamiento in model.AlojamientosFiltrados)
-            {
-                foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
+            if (model.AlojamientosFiltrados != null && model.AlojamientosFiltrados.Count() > 0) {
+                //Muestra en lista
+                foreach (Alojamiento alojamiento in model.AlojamientosFiltrados)
                 {
-                    foreach (HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
+                    foreach (DisponibilidadSubClass disponibilidad in alojamiento.Disponibilidad)
                     {
-                        this.dataGridViewListadoAlojamiento.Rows.Add(
-                            model.obtenerCiudadPorCodigo(alojamiento.CodigoCiudad).Nombre,
-                            alojamiento.Nombre,
-                            disponibilidad.Tarifa,
-                            alojamiento.Calificacion,
-                            disponibilidad.Nombre,
-                            habitacion.FechaHabitacionHotel.ToString("dd-MM-yyyy"),
-                            habitacion.IDHabitacion);
+                        foreach (HabitacionesHotelSubClass habitacion in disponibilidad.Habitaciones)
+                        {
+                            this.dataGridViewListadoAlojamiento.Rows.Add(
+                                model.obtenerCiudadPorCodigo(alojamiento.CodigoCiudad).Nombre,
+                                alojamiento.Nombre,
+                                disponibilidad.Tarifa,
+                                alojamiento.Calificacion,
+                                disponibilidad.Nombre,
+                                habitacion.FechaHabitacionHotel.ToString("dd-MM-yyyy"),
+                                habitacion.IDHabitacion);
+                        }
                     }
                 }
             }
-
-            if (this.dataGridViewListadoAlojamiento.Rows.Count == 0)
+            
+            if (this.dataGridViewListadoAlojamiento.Rows.Count == 0 && ocultarMsgbox == false)
             {
                 MessageBox.Show("No se encontraron alojamientos con los parámetros solicitados");
             }

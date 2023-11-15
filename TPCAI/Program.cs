@@ -14,6 +14,7 @@ namespace TPCAI
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
         static void Main()
         {
             //Lee Almacenes
@@ -23,16 +24,27 @@ namespace TPCAI
             ModuloPresupuestos.Presupuestos = AlmacenPresupuestos.ObtenerPresupuestos();
             ModuloPresupuestos.clientes = AlmacenClientes.ObtenerClientes();
             ModuloReservas.reservas = AlmacenReservas.ObtenerReservas();
-            
-
-            //Guardar Almacenes
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FromMenu());
 
-
+            GuardarAlmacenes();
 
         }
+
+        
+        public static void GuardarAlmacenes()
+        {
+            CiudadAlmacen.Grabar(ProductosModulo.ciudades);
+            AlojamientoAlmacen.Grabar(ProductosModulo.alojamientos);
+            AlmacenVuelos.Grabar(ProductosModulo.vuelos);
+            AlmacenPresupuestos.Grabar(ModuloPresupuestos.Presupuestos);
+            AlmacenClientes.Grabar(ModuloPresupuestos.clientes);
+            AlmacenReservas.Grabar(ModuloReservas.reservas);
+
+            //Application.Exit();
+        }
+        
     }
 }
