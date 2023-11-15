@@ -259,7 +259,7 @@ namespace TPCAI
                             foreach (var tipoPasajero in tarifas.Select(tarifa => tarifa.TipoPasajero).Distinct())
                             {
                                 var tarifaParaPasajero = tarifas.FirstOrDefault(tarifa => tarifa.TipoPasajero == tipoPasajero);
-                                if (tarifaParaPasajero != null)
+                                if (tarifaParaPasajero != null && tarifaParaPasajero.Disponibilidad > 0)
                                 {
                                     vuelosEncontrados.Add(new Vuelo(
                                         vueloEnt.Origen,
