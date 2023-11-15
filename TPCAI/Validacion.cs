@@ -29,6 +29,12 @@ namespace TPCAI
             Cliente cliente
             )
         {
+            if (cliente.DNI == "")
+            {
+                MessageBox.Show("No ha ingresado correctamente los datos solicitados. Por favor, vuelva a intentarlo.");
+
+                return false;
+            }
 
             if (cliente.Nombre == "")
             {
@@ -66,6 +72,12 @@ namespace TPCAI
 
                     return false;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
+
+                return false;
             }
 
             if (cliente.FechaNacimiento > DateTime.Now)
