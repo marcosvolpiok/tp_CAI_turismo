@@ -61,7 +61,6 @@
     <Compile Include="Entidades\SubClasses\CiudadesDetailSubClass.cs" />
     <Compile Include="Entidades\SubClasses\Direccion.cs" />
     <Compile Include="Entidades\SubClasses\Pasajero.cs" />
-    <Compile Include="Entidades\SubClasses\Presupuestos.cs" />
     <Compile Include="Entidades\SubClasses\Producto.cs" />
     <Compile Include="Entidades\SubClasses\Tarifa.cs" />
     <Compile Include="Entidades\SubClasses\Vuelo.cs" />
