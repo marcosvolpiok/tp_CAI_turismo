@@ -54,11 +54,6 @@ namespace TPCAI
             {
                 lblPresupuestoActivo.Text = "Presupuesto Activo: " + presupuestoActivo.CodigoPresupuesto.ToString();
             }
-
-            //Busca alojamientos
-            model.BuscarAlojaimentos();
-
-            this.mostrarAlojamientosEnGrilla();
         }
 
         private void mostrarAlojamientosEnGrilla()
