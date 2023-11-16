@@ -53,7 +53,14 @@ namespace TPCAI.Modelos
         {
             // Realiza la búsqueda de vuelos y guarda los resultados en VuelosFiltrados.
             VuelosFiltrados = new List<Vuelo>();
-            VuelosFiltrados = ProductosModulo.BusquedaVuelos(this);            
+            //VuelosFiltrados = ProductosModulo.BusquedaVuelos(this);            
+
+            bool resultadoValidacion = Validacion.validarDatosVuelo(this.Origen, this.Destino, this.FechaIda.ToString(), this.FechaVuelta.ToString(), this.CantAdultos.ToString(), this.CantMenores.ToString(), this.CantInfantes.ToString(), this.Clase);
+
+            if (resultadoValidacion == true)
+            {
+                VuelosFiltrados = ProductosModulo.BusquedaVuelos(this);
+            }
         }
 
         public void AgregarVueloAPresupuesto(string vueloId)
