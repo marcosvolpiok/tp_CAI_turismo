@@ -64,7 +64,7 @@ namespace TPCAI
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un alojamiento para agregar al presupuesto.");
+                MessageBox.Show("Por favor, seleccione un vuelo para agregar al presupuesto.");
             }
         }
 
