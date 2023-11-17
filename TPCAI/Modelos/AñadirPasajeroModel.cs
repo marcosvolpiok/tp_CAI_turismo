@@ -77,18 +77,6 @@ namespace TPCAI.Modelos
 
                     return false;
                 }
-                else
-                {
-                    if (fechaDataTime > DateTime.Now)
-                    {
-                        MessageBox.Show("La fecha de nacimiento es inválida");
-
-                        return false;
-                    }
-                }
-
-
-
 
                 //DNI: solo números
                 //DNI: menor a 100.000.000
@@ -238,6 +226,7 @@ namespace TPCAI.Modelos
 
                     DisponibilidadSubClass disponibilidad = this.ObtenerDisponibilidadPorID(int.Parse(item.SubItems[5].Text));
 
+
                     if (totalAdultos > disponibilidad.Adultos)
                     {
                         MessageBox.Show("Cantidad de adultos excede el total permitido");
@@ -306,16 +295,35 @@ namespace TPCAI.Modelos
 
                         return false;
                     }
+
+                    if ((totalAdultos + totalMenores) > obtenerCantidadDeVuelosDePresupuestoActivo())
+                    {
+                        MessageBox.Show("El total de pasajeros en los vuelos excede el máximo permitido");
+
+                        return false;
+                    }
                 }
             }
 
             if (listadoIDsProductos.Count() < comboProductos.Items.Count)
             {
                 MessageBox.Show("Cada producto debe tener como mínimo cargado 1 pasajero");
+
                 return false;
             }
 
             return true;
+        }
+
+        private int obtenerCantidadDeVuelosDePresupuestoActivo()
+        {
+            int total = 0;
+            foreach(string IDTarifa in ModuloPresupuestos.PresupuestoActivo.IdTarifaVuelo)
+            {
+                total++;
+            }
+
+            return total;
         }
 
         private Alojamiento obtenerAlojamientoPorIDAlojamiento(string IDAlojamiento)
