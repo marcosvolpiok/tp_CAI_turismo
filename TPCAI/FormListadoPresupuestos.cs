@@ -75,7 +75,7 @@ namespace TPCAI
                 }
                 else
                 {
-                    MessageBox.Show("Por favor seleccione al menos una fila para eliminar el vuelo del presupuesto.");
+                    MessageBox.Show("Por favor seleccione al menos un producto para eliminar del presupuesto.");
                     return;
                 }
             }
@@ -96,7 +96,7 @@ namespace TPCAI
                 }
                 else
                 {
-                    MessageBox.Show("Por favor seleccione al menos una fila para eliminar el alojamiento del presupuesto.");
+                    MessageBox.Show("Por favor seleccione al menos un producto para eliminar del presupuesto.");
                     return;
                 }
             }
