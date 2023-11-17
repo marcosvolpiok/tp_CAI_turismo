@@ -71,9 +71,35 @@ namespace TPCAI.Modelos
 
             foreach (ListViewItem item in listViewPasajeros.Items)
             {
+                if(!DateTime.TryParse(item.SubItems[3].Text, out DateTime fechaDataTime))
+                {
+                    MessageBox.Show("La fecha de nacimiento es inválida");
+
+                    return false;
+                }
+                else
+                {
+                    if (fechaDataTime > DateTime.Now)
+                    {
+                        MessageBox.Show("La fecha de nacimiento es inválida");
+
+                        return false;
+                    }
+                }
+
+
+
+
                 //DNI: solo números
                 //DNI: menor a 100.000.000
                 //DNI: mayor a 999.999
+                if (!int.TryParse(item.SubItems[2].Text, out int numeroDNI))
+                {
+                    MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
+
+                    return false;
+                }
+
                 if (item.SubItems[2].Text == "" || item.SubItems[2].Text == null)
                 {
                     MessageBox.Show("Documento ingresado inválido por favor volver a ingresar");
