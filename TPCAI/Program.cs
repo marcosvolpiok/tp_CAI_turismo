@@ -27,13 +27,20 @@ namespace TPCAI
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FromMenu());
 
-            GuardarAlmacenes();
-
+            try
+            {
+                Application.Run(new FromMenu());
+                GuardarAlmacenes();
+            }
+            catch (Exception ex)
+            {
+                GuardarAlmacenes();
+                MessageBox.Show("Se encontró un error no reconocido, por favor repórtelo. Los cambios que realizó fueron guardados");
+                MessageBox.Show("Por favor reporte este error con este mensaje. Descripción técnica del error: " + ex.Message + " - StackTrace: " + ex.StackTrace);
+            }
         }
 
-        
         public static void GuardarAlmacenes()
         {
             CiudadAlmacen.Grabar(ProductosModulo.ciudades);
