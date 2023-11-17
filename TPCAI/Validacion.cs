@@ -164,7 +164,7 @@ namespace TPCAI
                     if (resultAdultos < 1)
                     {
 
-                        MessageBox.Show("Debe ingresar al menos 1 adulto en cantidad de pasajero");
+                        MessageBox.Show("Debe ingresar al menos 1 adulto en cantidad de pasajeros");
                     }
                 }
             }
@@ -254,7 +254,7 @@ namespace TPCAI
                     if (resultAdultos < 1)
                     {
 
-                        MessageBox.Show("Debe ingresar al menos 1 adulto en cantidad de pasajero");
+                        MessageBox.Show("Debe ingresar al menos 1 adulto en cantidad de pasajeros");
                     }
                 }
             }
