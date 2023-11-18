@@ -315,6 +315,12 @@ namespace TPCAI
                 MessageBox.Show("Ingrese una cantidad de adultos mayor o igual a la cantidad de menores e infantes");
                 return false;
             }
+
+            if (Clase == "" )
+            {
+                MessageBox.Show("El campo Clase es obligatorio, por favor elija una Clase para buscar vuelos");
+                flagHuboError = true;
+            }
                 
 
 

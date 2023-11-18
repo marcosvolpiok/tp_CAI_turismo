@@ -119,7 +119,7 @@ namespace TPCAI
         }
 
         
-        private void Buscar()
+        private void Buscar(bool ocultarMsgbox = false)
         {
             this.dataGridViewListadoVuelos.Rows.Clear();
 
@@ -142,6 +142,11 @@ namespace TPCAI
             }
             
             this.dataGridViewListadoVuelos.Refresh();
+
+            if (this.dataGridViewListadoVuelos.Rows.Count == 0 && ocultarMsgbox == false)
+            {
+                MessageBox.Show("No se encontraron vuelos con los parámetros solicitados");
+            }
         }
 
 

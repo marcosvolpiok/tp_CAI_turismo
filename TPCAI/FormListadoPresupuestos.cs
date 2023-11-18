@@ -109,8 +109,7 @@ namespace TPCAI
         private void ActualizarPresupuestoVuelos()
         {
 
-            var vuelos = model.ObtenerVuelosPresupuesto();
-            //Console.WriteLine(vuelos);
+            var vuelos = model.ObtenerVuelosPresupuesto();            
 
             dataGridViewPresupuestosVuelos.Rows.Clear();
 

@@ -230,58 +230,7 @@ namespace TPCAI
         }
 
 
-        // BUSQUEDA VUELOS
-        /*internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
-        {
-            // Creo una lista para almacenar los vuelos filtrados
-            List<Vuelo> vuelosEncontrados = new List<Vuelo>();
-
-            foreach (var vueloEnt in vuelos)
-            {
-                if (vueloEnt.Origen == vuelosModel.Origen &&
-                    vueloEnt.Destino == vuelosModel.Destino &&
-                    vueloEnt.FechaSalida.Date == vuelosModel.FechaIda.Date ||
-                    vueloEnt.FechaSalida.Date == vuelosModel.FechaVuelta.Date)
-                {
-                    if (vueloEnt.Tarifas != null) // Compruebo si Tarifa no es nulo
-                    {
-                        var tarifas = vueloEnt.Tarifas
-                            .Where(tarifa =>
-                                (vuelosModel.CantAdultos == 0 || (tarifa.TipoPasajero == "A" && vuelosModel.CantAdultos <= tarifa.Disponibilidad)) &&
-                                (vuelosModel.CantMenores == 0 || (tarifa.TipoPasajero == "M" && vuelosModel.CantMenores <= tarifa.Disponibilidad)) &&
-                                (vuelosModel.CantInfantes == 0 || (tarifa.TipoPasajero == "I" && vuelosModel.CantInfantes <= tarifa.Disponibilidad)) &&
-                                tarifa.Clase == vuelosModel.Clase);
-
-                        // Verifico si 'tarifas' no es nulo y si contiene elementos antes de iterar sobre ella.
-                        if (tarifas != null && tarifas.Any())
-                        {
-                            // Creo un vuelo para cada tipo de pasajero y agrego a la lista de vuelos filtrados
-                            foreach (var tipoPasajero in tarifas.Select(tarifa => tarifa.TipoPasajero).Distinct())
-                            {
-                                var tarifaParaPasajero = tarifas.FirstOrDefault(tarifa => tarifa.TipoPasajero == tipoPasajero);
-                                if (tarifaParaPasajero != null && tarifaParaPasajero.Disponibilidad > 0)
-                                {
-                                    vuelosEncontrados.Add(new Vuelo(
-                                        vueloEnt.Origen,
-                                        vueloEnt.Destino,
-                                        vueloEnt.FechaSalida,
-                                        vueloEnt.FechaArribo,
-                                        vueloEnt.Aerolinea,
-                                        tarifaParaPasajero.Precio,
-                                        vuelosModel.Clase,
-                                        tarifaParaPasajero.TipoPasajero,
-                                        tarifaParaPasajero.IdTarifaVuelos // Agrego el IdTarifaVuelos
-                                    ));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return vuelosEncontrados;
-
-        }*/
-
+        // BUSQUEDA VUELOS        
         internal static List<Vuelo> BusquedaVuelos(ListadoVuelosModel vuelosModel)
         {
             // Creo una lista para almacenar los vuelos filtrados
@@ -343,6 +292,8 @@ namespace TPCAI
                         nuevoVuelo.Aerolinea = vuelo.Aerolinea;
                         nuevoVuelo.Origen = vuelo.Origen;
                         nuevoVuelo.Destino = vuelo.Destino;
+                        nuevoVuelo.FechaSalida = vuelo.FechaSalida;
+                        nuevoVuelo.FechaArribo = vuelo.FechaArribo;
 
 
                         Tarifa nuevaTarifa = new Tarifa();
@@ -364,36 +315,7 @@ namespace TPCAI
             }
 
             return null;
-        }
-
-        internal static Vuelo ObtenerVueloPorIdTarifa(string vueloId) 
-        {
-            foreach (VuelosEnt vuelo in vuelos)
-            {
-                foreach (Tarifa tarifa in vuelo.Tarifas)
-                {
-                    if (tarifa.IdTarifaVuelos == vueloId)
-                    {
-                        // Crear una instancia de la clase Vuelo a partir de VuelosEnt
-                        Vuelo nuevoVuelo = new Vuelo(
-                            vuelo.Origen,
-                            vuelo.Destino,
-                            vuelo.FechaSalida,
-                            vuelo.FechaArribo,
-                            vuelo.Aerolinea,
-                            tarifa.Precio,
-                            tarifa.Clase,
-                            tarifa.TipoPasajero,
-                            tarifa.IdTarifaVuelos
-                        );
-
-                        return nuevoVuelo;
-                    }
-                }
-            }
-
-            return null;
-        }
+        }        
 
         internal static Tarifa ObtenerTarifaRefPorIdTarifa(string vueloId)
         {
