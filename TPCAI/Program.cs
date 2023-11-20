@@ -36,7 +36,9 @@ namespace TPCAI
             catch (Exception ex)
             {
                 GuardarAlmacenes();
-                MessageBox.Show("Se encontró un error no reconocido, por favor repórtelo. Los cambios que realizó fueron guardados");
+                MessageBox.Show("Se encontró un error no reconocido, por favor repórtelo. Los cambios que realizó fueron guardados", "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                 MessageBox.Show("Por favor reporte este error con este mensaje. Descripción técnica del error: " + ex.Message + " - StackTrace: " + ex.StackTrace);
             }
         }
